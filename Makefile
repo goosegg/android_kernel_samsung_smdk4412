@@ -371,7 +371,7 @@ KBUILD_CFLAGS   := -O2 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-delete-null-pointer-checks \
 		   -march=armv7-a -mcpu=cortex-a9 \
 		   -mfpu=neon -mfloat-abi=softfp -munaligned-access -marm \
-		   -pipe
+		   -pipe -finline-functions -fpredictive-commoning
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
