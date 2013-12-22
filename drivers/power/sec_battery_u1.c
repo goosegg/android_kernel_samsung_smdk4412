@@ -3489,3 +3489,5 @@ MODULE_DESCRIPTION("SEC battery driver");
 MODULE_AUTHOR("<ms925.kim@samsung.com>");
 MODULE_AUTHOR("<joshua.chang@samsung.com>");
 MODULE_LICENSE("GPL");
+
+
