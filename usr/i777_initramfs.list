@@ -26,6 +26,8 @@ file /res/gpucat source/usr/galaxys2_initramfs_files/res/gpucat 755 0 0
 file /res/gpuwatch source/usr/galaxys2_initramfs_files/res/gpuwatch 755 0 0
 file /res/uci.sh source/usr/galaxys2_initramfs_files/res/uci.sh 755 01000 01003
 file /res/update.url source/usr/galaxys2_initramfs_files/res/update.url 755 01000 01003
+file /res/lights.exynos4.so source/usr/galaxys2_initramfs_files/res/lights.exynos4.so 755 0 0
+file /res/power.default.so source/usr/galaxys2_initramfs_files/res/power.default.so 755 0 0
 file /res/power.default.so.off source/usr/galaxys2_initramfs_files/res/power.default.so.off 755 0 0
 dir /res/customconfig 755 0 0
 file /res/customconfig/customconfig.xml source/usr/galaxys2_initramfs_files/res/customconfig/customconfig.xml 755 0 0
