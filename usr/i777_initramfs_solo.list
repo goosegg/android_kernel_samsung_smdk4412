@@ -1,0 +1,62 @@
+dir /cache 755 0 0
+dir /dev 755 0 0
+dir /dev/block 755 0 0
+nod /dev/block/mmcblk0 600 0 0 b 179 0
+nod /dev/block/mmcblk0p1 600 0 0 b 179 1
+nod /dev/block/mmcblk0p2 600 0 0 b 179 2
+nod /dev/block/mmcblk0p3 600 0 0 b 179 3
+nod /dev/block/mmcblk0p4 600 0 0 b 179 4
+nod /dev/block/mmcblk0p5 600 0 0 b 179 5
+nod /dev/block/mmcblk0p6 600 0 0 b 179 6
+nod /dev/block/mmcblk0p7 600 0 0 b 179 7
+nod /dev/block/mmcblk0p8 600 0 0 b 179 8
+nod /dev/block/mmcblk0p9 600 0 0 b 179 9
+nod /dev/block/mmcblk0p10 600 0 0 b 179 10
+nod /dev/block/mmcblk0p11 600 0 0 b 179 11
+nod /dev/block/mmcblk0p12 600 0 0 b 179 12
+nod /dev/block/mmcblk1 600 0 0 b 179 16
+nod /dev/block/mmcblk1p1 600 0 0 b 179 17
+slink /init /stage1/init 777 0 0
+dir /proc 755 0 0
+dir /stage1 755 0 0
+file /stage1/busybox usr/galaxys2_initramfs_files/busybox 755 0 0
+file /stage1/init usr/galaxys2_initramfs_files/init 755 0 0
+dir /res 755 0 0
+file /res/gpucat usr/galaxys2_initramfs_files/res/gpucat 755 0 0
+file /res/gpuwatch usr/galaxys2_initramfs_files/res/gpuwatch 755 0 0
+file /res/uci.sh usr/galaxys2_initramfs_files/res/uci.sh 755 01000 01003
+file /res/update.url usr/galaxys2_initramfs_files/res/update.url 755 01000 01003
+file /res/lights.exynos4.so usr/galaxys2_initramfs_files/res/lights.exynos4.so 755 0 0
+file /res/power.default.so usr/galaxys2_initramfs_files/res/power.default.so 755 0 0
+file /res/power.default.so.off usr/galaxys2_initramfs_files/res/power.default.so.off 755 0 0
+dir /res/customconfig 755 0 0
+file /res/customconfig/customconfig.xml usr/galaxys2_initramfs_files/res/customconfig/customconfig.xml 755 0 0
+file /res/customconfig/customconfig-helper usr/galaxys2_initramfs_files/res/customconfig/customconfig-helper 755 0 0
+file /res/customconfig/default.profile usr/galaxys2_initramfs_files/res/customconfig/default.profile 755 0 0
+dir /res/customconfig/actions 755 0 0
+file /res/customconfig/actions/boostfreq usr/galaxys2_initramfs_files/res/customconfig/actions/boostfreq 755 0 0
+file /res/customconfig/actions/boosttime usr/galaxys2_initramfs_files/res/customconfig/actions/boosttime 755 0 0
+file /res/customconfig/actions/bln_effect usr/galaxys2_initramfs_files/res/customconfig/actions/bln_effect 755 0 0
+file /res/customconfig/actions/lights usr/galaxys2_initramfs_files/res/customconfig/actions/lights 755 0 0
+file /res/customconfig/actions/selinux usr/galaxys2_initramfs_files/res/customconfig/actions/selinux 755 0 0
+file /res/customconfig/actions/chargecurrent usr/galaxys2_initramfs_files/res/customconfig/actions/chargecurrent 755 0 0
+file /res/customconfig/actions/cpu-voltage usr/galaxys2_initramfs_files/res/customconfig/actions/cpu-voltage 755 0 0
+file /res/customconfig/actions/generic usr/galaxys2_initramfs_files/res/customconfig/actions/generic 755 0 0
+file /res/customconfig/actions/generic01 usr/galaxys2_initramfs_files/res/customconfig/actions/generic01 755 0 0
+file /res/customconfig/actions/navigationbar usr/galaxys2_initramfs_files/res/customconfig/actions/navigationbar 755 0 0
+file /res/customconfig/actions/reset-fuelgauge usr/galaxys2_initramfs_files/res/customconfig/actions/reset-fuelgauge 755 0 0
+file /res/customconfig/actions/schedfeat usr/galaxys2_initramfs_files/res/customconfig/actions/schedfeat 755 0 0
+file /res/customconfig/actions/scrollcache usr/galaxys2_initramfs_files/res/customconfig/actions/scrollcache 755 0 0
+file /res/customconfig/actions/sound_volume usr/galaxys2_initramfs_files/res/customconfig/actions/sound_volume 755 0 0
+file /res/customconfig/actions/test-bln usr/galaxys2_initramfs_files/res/customconfig/actions/test-bln 755 0 0
+file /res/customconfig/actions/usb-mode usr/galaxys2_initramfs_files/res/customconfig/actions/usb-mode 755 0 0
+dir /sbin 755 0 0
+dir /sbin/ext 755 0 0
+file /sbin/ext/efs-backup.sh usr/galaxys2_initramfs_files/sbin/ext/efs-backup.sh 755 0 0
+file /sbin/ext/post-init.sh usr/galaxys2_initramfs_files/sbin/ext/post-init.sh 755 0 0
+file /sbin/ext/run-init-scripts.sh usr/galaxys2_initramfs_files/sbin/ext/run-init-scripts.sh 755 0 0
+dir /sys 755 0 0
+dir /mnt 755 0 0
+dir /mnt/.lfs 755 0 0
+file /stage1/boot.cpio usr/ramdisk_cm.cpio 644 0 0
+file /stage1/recovery.cpio usr/ramdisk-recovery.cpio 644 0 0
