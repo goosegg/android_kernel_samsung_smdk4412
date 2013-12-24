@@ -983,11 +983,7 @@ bool blk_reinsert_req_sup(struct request_queue *q)
 	if (unlikely(!q))
 		return false;
 	return q->elevator->elevator_type->ops.elevator_reinsert_req_fn ?
-<<<<<<< HEAD
-		true : false;
-=======
     true : false;
->>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 }
 EXPORT_SYMBOL(blk_reinsert_req_sup);
 

@@ -913,4 +913,3 @@ module_exit(mdnie_exit);
 
 MODULE_DESCRIPTION("mDNIe Driver");
 MODULE_LICENSE("GPL");
-

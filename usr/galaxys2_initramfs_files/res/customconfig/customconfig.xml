@@ -15,10 +15,7 @@
              <spinnerItem name="powersave" value="powersave"/> 
              <spinnerItem name="performance" value="performance"/>
        </spinner>
-<<<<<<< HEAD
-=======
 <checkbox description="Enable or Disable Boostpulse for ondemand and pegasusq. This boosts cpu frequency to 800mhz for 0,5 sec when scrolling or opening apps. Needs restart." name="Boostpulse" action="generic /tmp/boostpulse" label="Boostpulse"/>
->>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 			<seekBar description="Scaling maximum frequency (Samsung default: 1200000)"
                 name="scaling_max_freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq" unit=" kHz" min="800000" reversed="false" step="200000" max="1400000"/>
        <seekBar description="Scaling minimum frequency (Samsung default: 200000)"
@@ -34,27 +31,6 @@
       </spinner>
     </settingsPane>
   </settingsTab>
-<<<<<<< HEAD
-<settingsTab name="BOOSTPULSE">
-<settingsPane description="Boostpulse for ondemand based governors. This will boost the CPU frequency when scrolling or opening apps for 0,5 seconds. Needs restart if turning on/off or when changing governors."
-	name="Boostpulse">
-	<checkbox description="Enable or Disable Boostpulse for ondemand and pegasusq." name="Boostpulse" action="generic /tmp/boostpulse" label="Boostpulse"/>
-	<spinner description="This will set the frequency used by boostpulse." name="Boostpulse Frequency" action="boostfreq">
-		<spinnerItem name="500" value="500"/> 
-		<spinnerItem name="800" value="800"/>
-		<spinnerItem name="1000" value="1000"/>
-		<spinnerItem name="1200" value="1200"/>
-		<spinnerItem name="1400" value="1400"/>
-</spinner>
-<spinner description="This will set how long the boostpulse duration is. Higher values mean more performance and less battery." name="Boostpulse Duration" action="boosttime">
-		<spinnerItem name="0,5 sec" value="500000"/> 
-		<spinnerItem name="1 sec" value="1000000"/>
-		<spinnerItem name="2 sec" value="2000000"/>
-</spinner>
-</settingsPane>	
-</settingsTab>   
-=======
->>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 <settingsTab name="CPU VOLTAGE">
 <settingsPane description="CPU Voltage Controls." name="CPU Voltage Controls">
 <seekBar description="CPU Voltage for 1400 MHz. (Default: 1325 mV)"
@@ -77,8 +53,6 @@
 <checkbox description="Using ARCH_POWER enables the use of arm topology power functions instead of generic ones." name="ARCH_POWER" action="schedfeat ARCH_POWER" label="ARCH_POWER"/>
 </settingsPane>
 <settingsPane description="These settings control misc kernel and ROM tweaks." name="MISC tweaks">
-<<<<<<< HEAD
-=======
 <spinner description="Set GPS tweaks based on your location. You can also copy your custom GPS configuration to /data/gps.conf then set to Off/Custom, your custom configuration will be applied at every boot and will survive rom flashing." name="GPS Tweaks" action="gps">
              <spinnerItem name="Off/Custom" value="0"/>
              <spinnerItem name="Africa" value="1"/>
@@ -88,7 +62,6 @@
              <spinnerItem name="Oceania" value="5"/>
              <spinnerItem name="South America" value="6"/>
        </spinner>
->>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 <spinner description="Set SELinux to permissive or enforce." name="SELinux Mode" action="selinux">
              <spinnerItem name="Permissive" value="0"/>
              <spinnerItem name="Enforce" value="1"/>
