@@ -58,5 +58,5 @@ file /sbin/ext/run-init-scripts.sh source/usr/galaxys2_initramfs_files/sbin/ext/
 dir /sys 755 0 0
 dir /mnt 755 0 0
 dir /mnt/.lfs 755 0 0
-file /stage1/boot.cpio source/usr/ramdisk_cm.cpio 644 0 0
-file /stage1/recovery.cpio source/usr/ramdisk-recovery.cpio 644 0 0
+file /stage1/boot.cpio usr/ramdisk_cm.cpio 644 0 0
+file /stage1/recovery.cpio usr/ramdisk-recovery.cpio 644 0 0
