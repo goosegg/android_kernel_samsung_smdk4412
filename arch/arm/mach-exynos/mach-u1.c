@@ -826,6 +826,9 @@ static int m5mo_flash_power(int enable)
 		if (regulator_is_enabled(movie))
 			regulator_disable(movie);
 	}
+torch_exit:
+	regulator_put(flash);
+	regulator_put(movie);
 
 	return 0;
 }
@@ -2437,8 +2440,8 @@ static struct lcd_platform_data ld9040_platform_data = {
 	.gpio_cfg_lateresume = lcd_gpio_cfg_lateresume,
 	/* it indicates whether lcd panel is enabled from u-boot. */
 	.lcd_enabled = 1,
-	.reset_delay = 10,  /* 10ms */
-    .power_on_delay = 10,  /* 10ms */
+	.reset_delay = 20,	/* 10ms */
+	.power_on_delay = 20,	/* 20ms */
 	.power_off_delay = 200,	/* 120ms */
 	.pdata = &u1_panel_data,
 };
@@ -3092,7 +3095,7 @@ REGULATOR_INIT(ldo17, "VTF_2.8V", 2800000, 2800000, 0,
 REGULATOR_INIT(ldo18, "TOUCH_LED_3.3V", 3300000, 3300000, 0,
 		REGULATOR_CHANGE_STATUS, 1);
 #else
-REGULATOR_INIT(ldo18, "TOUCH_LED_3.3V", 2500000, 3300000, 0,
+REGULATOR_INIT(ldo18, "TOUCH_LED_3.3V", 3000000, 3300000, 0,
 	REGULATOR_CHANGE_STATUS | REGULATOR_CHANGE_VOLTAGE, 1);
 #endif
 REGULATOR_INIT(ldo21, "VDDQ_M1M2_1.2V", 1200000, 1200000, 1,
@@ -3140,7 +3143,7 @@ static struct regulator_init_data buck2_init_data = {
 static struct regulator_init_data buck3_init_data = {
 	.constraints	= {
 		.name		= "G3D_1.1V",
-		.min_uV		= 800000,
+		.min_uV		= 900000,
 		.max_uV		= 1200000,
 		.always_on	= 0,
 		.boot_on	= 0,
@@ -3868,11 +3871,7 @@ static struct platform_device bcm4330_bluetooth_device = {
 #endif
 
 #ifdef CONFIG_SND_SOC_U1_MC1N2
-#ifndef CONFIG_MACH_Q1_BD
 static DEFINE_SPINLOCK(mic_bias_lock);
-#endif
-
-#ifndef CONFIG_MACH_Q1_BD
 static bool mc1n2_mainmic_bias;
 static bool mc1n2_submic_bias;
 
@@ -3885,7 +3884,6 @@ static void set_shared_mic_bias(void)
 		gpio_set_value(GPIO_EAR_MIC_BIAS_EN, mc1n2_mainmic_bias
 			       || mc1n2_submic_bias);
 }
-#endif
 
 void sec_set_sub_mic_bias(bool on)
 {
@@ -4823,7 +4821,6 @@ static unsigned int sec_bat_get_lpcharging_state(void)
 	return val;
 }
 
-#if 0
 static void sec_bat_initial_check(void)
 {
 	pr_info("%s: connected_cable_type:%d\n",
@@ -4831,7 +4828,6 @@ static void sec_bat_initial_check(void)
 	if (connected_cable_type != CABLE_TYPE_NONE)
 		max8997_muic_charger_cb(connected_cable_type);
 }
-#endif
 
 static struct sec_bat_platform_data sec_bat_pdata = {
 	.fuel_gauge_name	= "fuelgauge",
@@ -6123,6 +6119,7 @@ struct mxt540e_platform_data mxt540e_data = {
 
 #ifdef CONFIG_EPEN_WACOM_G5SP
 static int p6_wacom_init_hw(void);
+static int p6_wacom_exit_hw(void);
 static int p6_wacom_suspend_hw(void);
 static int p6_wacom_resume_hw(void);
 static int p6_wacom_early_suspend_hw(void);
@@ -7770,10 +7767,10 @@ static void __init exynos4_reserve_mem(void)
 
 	static const char map[] __initconst =
 		"android_pmem.0=pmem;android_pmem.1=pmem_gpu1;"
-		"s3cfb.0=fimd;exynos4-fb.0=fimd;samsung-pd.1=fimd;"
-		"s3c-fimc.0=fimc0;s3c-fimc.1=fimc1;s3c-fimc.2=fimc2;s3c-fimc.3=fimc3;"
+		"s3cfb.0=fimd;exynos4-fb.0=fimd;"
+		"s3c-fimc.0=fimc0;s3c-fimc.1=fimc1;s3c-fimc.2=fimc2;"
 		"exynos4210-fimc.0=fimc0;exynos4210-fimc.1=fimc1;"
-		"exynos4210-fimc.2=fimc2;exynos4210-fimc.3=fimc3;"
+		"exynos4210-fimc.2=fimc2;exynos4210-fimc3=fimc3;"
 #ifdef CONFIG_ION_EXYNOS
 		"ion-exynos=ion;"
 #endif

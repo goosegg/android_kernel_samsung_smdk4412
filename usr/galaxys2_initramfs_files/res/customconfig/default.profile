@@ -1,4 +1,5 @@
 scaling_governor=ondemand
+<<<<<<< HEAD
 scaling_max_freq=1200000
 scaling_min_freq=200000
 scheduler=sio
@@ -6,6 +7,12 @@ boostpulse=on
 boostfreq=800
 boosttime=1000000
 cpu_voltage_switch=off
+=======
+boostpulse=off
+scaling_max_freq=1200000
+scaling_min_freq=200000
+scheduler=sio
+>>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 CPUVOLT1=1325
 CPUVOLT2=1275
 CPUVOLT3=1175
@@ -14,6 +21,10 @@ CPUVOLT5=975
 CPUVOLT6=950
 GENTLE_FAIR_SLEEPERS=off
 ARCH_POWER=on
+<<<<<<< HEAD
+=======
+gps=0
+>>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 selinux=0
 scrollcache=on
 navigationbar=off
@@ -29,7 +40,11 @@ notification_timeout=0
 bln_effect=0
 blnww=on
 led_timeout=0
+<<<<<<< HEAD
 lights=0
+=======
+lights=1
+>>>>>>> 429629608260f840e7d61ad3c74ed183e7392f09
 touchkey_brightness=3000
 dyn_brightness=on
 logger=on

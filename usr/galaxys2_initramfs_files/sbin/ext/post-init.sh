@@ -110,15 +110,5 @@ setprop net.dns2 8.8.4.4
 # make sure dynamic fsync is active
 echo "1" > /sys/kernel/dyn_fsync/Dyn_fsync_active
 
-# enable JIT compiler for packet filters
-
-echo "1" > /proc/sys/net/core/bpf_jit_enable
-
-# cgroup timer slack
-mount -t cgroup -o timer_slack none /sys/fs/cgroup
-ls /sys/fs/cgroup/timer_slack.*
-echo "50000" > /sys/fs/cgroup/timer_slack.min_slack_ns
-echo "100000" > /sys/fs/cgroup/timer_slack.effective_slack_ns
-
 ##### init scripts #####
 /system/bin/sh sh /sbin/ext/run-init-scripts.sh
