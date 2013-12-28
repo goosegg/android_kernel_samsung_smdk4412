@@ -213,4 +213,3 @@
 /* MIXER_CM_COEFF_Cr */
 #define S5P_MXR_BG_COLOR_CR(x)			(((x) & 0xFF) << 0)
 #endif /* __ARCH_ARM_REGS_MIXER_H */
-

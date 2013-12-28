@@ -105,7 +105,7 @@ static inline void hlist_nulls_del(struct hlist_nulls_node *n)
  *
  */
 #define hlist_nulls_for_each_entry_from(tpos, pos, member)	\
-	for (; (!is_a_nulls(pos)) && 				\
+	for (; (!is_a_nulls(pos)) &&				\
 		({ tpos = hlist_nulls_entry(pos, typeof(*tpos), member); 1;}); \
 	     pos = pos->next)
 

@@ -6,7 +6,7 @@
  *
  *		Description	: MC Driver resource control
  *
- *		Version		: 1.0.0 	2010.09.10
+ *		Version		: 1.0.0		2010.09.10
  *
  ****************************************************************************/
 
@@ -1015,19 +1015,19 @@ static void	InitVolInfo
 	{
 		gsGlobalInfo.sVolInfo.aswA_Lin1[bCh]		= MCDRV_LOGICAL_VOL_MUTE;
 	}
-	for(bCh = 0; bCh < LIN2_VOL_CHANNELS; bCh++)	
+	for(bCh = 0; bCh < LIN2_VOL_CHANNELS; bCh++)
 	{
 		gsGlobalInfo.sVolInfo.aswA_Lin2[bCh]		= MCDRV_LOGICAL_VOL_MUTE;
 	}
-	for(bCh = 0; bCh < MIC1_VOL_CHANNELS; bCh++)	
+	for(bCh = 0; bCh < MIC1_VOL_CHANNELS; bCh++)
 	{
 		gsGlobalInfo.sVolInfo.aswA_Mic1[bCh]		= MCDRV_LOGICAL_VOL_MUTE;
 	}
-	for(bCh = 0; bCh < MIC2_VOL_CHANNELS; bCh++)	
+	for(bCh = 0; bCh < MIC2_VOL_CHANNELS; bCh++)
 	{
 		gsGlobalInfo.sVolInfo.aswA_Mic2[bCh]		= MCDRV_LOGICAL_VOL_MUTE;
 	}
-	for(bCh = 0; bCh < MIC3_VOL_CHANNELS; bCh++)	
+	for(bCh = 0; bCh < MIC3_VOL_CHANNELS; bCh++)
 	{
 		gsGlobalInfo.sVolInfo.aswA_Mic3[bCh]		= MCDRV_LOGICAL_VOL_MUTE;
 	}
@@ -9285,16 +9285,16 @@ SINT32	McResCtrl_WaitEvent
 	case	MCDRV_EVT_ADCMUTE:
 		dInterval	= gsGlobalInfo.sInitInfo.sWaitTime.dSvolInterval;
 		dTimeOut	= gsGlobalInfo.sInitInfo.sWaitTime.dSvolTimeOut;
-		bSlaveAddr 	= McDevProf_GetSlaveAddr(eMCDRV_SLAVE_ADDR_DIG);
-		abWriteData[0] 	 = MCI_MIX_ADR<<1;
-		abWriteData[1] 	 = MCI_AD_VFLAGL;
+		bSlaveAddr	= McDevProf_GetSlaveAddr(eMCDRV_SLAVE_ADDR_DIG);
+		abWriteData[0]	 = MCI_MIX_ADR<<1;
+		abWriteData[1]	 = MCI_AD_VFLAGL;
 		McSrv_WriteI2C(bSlaveAddr, abWriteData, 2);
 		sdRet	= WaitBitRelease(bSlaveAddr, (UINT16)MCI_MIX_WINDOW, MCB_ADC_VFLAGL, dInterval, dTimeOut);
 		if(MCDRV_SUCCESS != sdRet)
 		{
 			 break;
 		}
-		abWriteData[1] 	 = MCI_AD_VFLAGR;
+		abWriteData[1]	 = MCI_AD_VFLAGR;
 		McSrv_WriteI2C(bSlaveAddr, abWriteData, 2);
 		sdRet	= WaitBitRelease(bSlaveAddr, (UINT16)MCI_MIX_WINDOW, MCB_ADC_VFLAGR, dInterval, dTimeOut);
 		break;
@@ -9424,4 +9424,3 @@ static SINT32	WaitBitRelease
 
 	return sdRet;
 }
-

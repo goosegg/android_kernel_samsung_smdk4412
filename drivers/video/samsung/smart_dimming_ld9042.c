@@ -746,4 +746,3 @@ u32 calc_gamma_table_19(struct str_smart_dim *smart, u32 gv, u8 result[])
 #endif
 	return 0;
 }
-

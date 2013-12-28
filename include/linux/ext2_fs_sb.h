@@ -36,7 +36,7 @@ struct ext2_reserve_window {
 };
 
 struct ext2_reserve_window_node {
-	struct rb_node	 	rsv_node;
+	struct rb_node		rsv_node;
 	__u32			rsv_goal_size;
 	__u32			rsv_alloc_hit;
 	struct ext2_reserve_window	rsv_window;

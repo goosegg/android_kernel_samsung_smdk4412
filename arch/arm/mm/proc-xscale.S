@@ -71,7 +71,7 @@
 	.macro	cpwait, rd
 	mrc	p15, 0, \rd, c2, c0, 0		@ arbitrary read of cp15
 	mov	\rd, \rd			@ wait for completion
-	sub 	pc, pc, #4			@ flush instruction pipeline
+	sub	pc, pc, #4			@ flush instruction pipeline
 	.endm
 
 	.macro	cpwait_ret, lr, rd
@@ -582,7 +582,7 @@ __xscale_setup:
 	 *  R
 	 * .RVI ZFRS BLDP WCAM
 	 * ..11 1.01 .... .101
-	 * 
+	 *
 	 */
 	.type	xscale_crval, #object
 xscale_crval:

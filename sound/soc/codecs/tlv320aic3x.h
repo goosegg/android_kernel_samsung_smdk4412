@@ -250,7 +250,7 @@ enum {
 #define AIC3X_HEADSET_DETECT_MASK	3
 #define AIC3X_HEADSET_DEBOUNCE_SHIFT	2
 #define AIC3X_HEADSET_DEBOUNCE_MASK	7
-#define AIC3X_BUTTON_DEBOUNCE_SHIFT 	0
+#define AIC3X_BUTTON_DEBOUNCE_SHIFT	0
 #define AIC3X_BUTTON_DEBOUNCE_MASK	3
 
 /* see the enums above for valid parameters to this function */

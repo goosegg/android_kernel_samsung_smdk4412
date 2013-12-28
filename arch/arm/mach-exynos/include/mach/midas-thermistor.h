@@ -56,4 +56,3 @@ extern struct platform_device sec_device_thermistor;
 #endif
 
 #endif /* __MIDAS_THERMISTOR_H */
-

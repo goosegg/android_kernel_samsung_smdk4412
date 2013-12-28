@@ -198,7 +198,7 @@ struct vm_fault {
 /*
  * These are the virtual MM functions - opening of an area, closing and
  * unmapping it (needed to keep files on disk up-to-date etc), pointer
- * to the functions called when a no-page or a wp-page exception occurs. 
+ * to the functions called when a no-page or a wp-page exception occurs.
  */
 struct vm_operations_struct {
 	void (*open)(struct vm_area_struct * area);
@@ -1317,9 +1317,9 @@ extern void free_area_init_node(int nid, unsigned long * zones_size,
  * usage, an architecture is expected to do something like
  *
  * unsigned long max_zone_pfns[MAX_NR_ZONES] = {max_dma, max_normal_pfn,
- * 							 max_highmem_pfn};
+ *							 max_highmem_pfn};
  * for_each_valid_physical_page_range()
- * 	add_active_range(node_id, start_pfn, end_pfn)
+ *	add_active_range(node_id, start_pfn, end_pfn)
  * free_area_init_nodes(max_zone_pfns);
  *
  * If the architecture guarantees that there are no holes in the ranges

@@ -8,7 +8,7 @@
  *
  * Moved to kernel/relay.c by Paul Mundt, 2006.
  * November 2006 - CPU hotplug support by Mathieu Desnoyers
- * 	(mathieu.desnoyers@polymtl.ca)
+ *	(mathieu.desnoyers@polymtl.ca)
  *
  * This file is released under the GPL.
  */
@@ -440,10 +440,10 @@ static struct dentry *relay_create_buf_file(struct rchan *chan,
  */
 static struct rchan_buf *relay_open_buf(struct rchan *chan, unsigned int cpu)
 {
- 	struct rchan_buf *buf = NULL;
+	struct rchan_buf *buf = NULL;
 	struct dentry *dentry;
 
- 	if (chan->is_global)
+	if (chan->is_global)
 		return chan->buf[0];
 
 	buf = relay_create_buf(chan);
@@ -457,18 +457,18 @@ static struct rchan_buf *relay_open_buf(struct rchan *chan, unsigned int cpu)
 		relay_set_buf_dentry(buf, dentry);
 	}
 
- 	buf->cpu = cpu;
- 	__relay_reset(buf, 1);
+	buf->cpu = cpu;
+	__relay_reset(buf, 1);
 
- 	if(chan->is_global) {
- 		chan->buf[0] = buf;
- 		buf->cpu = 0;
-  	}
+	if(chan->is_global) {
+		chan->buf[0] = buf;
+		buf->cpu = 0;
+	}
 
 	return buf;
 
 free_buf:
- 	relay_destroy_buf(buf);
+	relay_destroy_buf(buf);
 	return NULL;
 }
 
@@ -509,12 +509,12 @@ static void setup_callbacks(struct rchan *chan,
 }
 
 /**
- * 	relay_hotcpu_callback - CPU hotplug callback
- * 	@nb: notifier block
- * 	@action: hotplug action to take
- * 	@hcpu: CPU number
+ *	relay_hotcpu_callback - CPU hotplug callback
+ *	@nb: notifier block
+ *	@action: hotplug action to take
+ *	@hcpu: CPU number
  *
- * 	Returns the success/failure of the operation. (%NOTIFY_OK, %NOTIFY_BAD)
+ *	Returns the success/failure of the operation. (%NOTIFY_OK, %NOTIFY_BAD)
  */
 static int __cpuinit relay_hotcpu_callback(struct notifier_block *nb,
 				unsigned long action,

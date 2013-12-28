@@ -31,7 +31,7 @@ struct deadline_data {
 	/*
 	 * requests (deadline_rq s) are present on both sort_list and fifo_list
 	 */
-	struct rb_root sort_list[2];	
+	struct rb_root sort_list[2];
 	struct list_head fifo_list[2];
 
 	/*
@@ -432,7 +432,7 @@ static struct elv_fs_entry deadline_attrs[] = {
 
 static struct elevator_type iosched_deadline = {
 	.ops = {
-		.elevator_merge_fn = 		deadline_merge,
+		.elevator_merge_fn =		deadline_merge,
 		.elevator_merged_fn =		deadline_merged_request,
 		.elevator_merge_req_fn =	deadline_merged_requests,
 		.elevator_dispatch_fn =		deadline_dispatch_requests,

@@ -58,7 +58,7 @@ enum android_alarm_type {
  */
 
 struct alarm {
-	struct rb_node 		node;
+	struct rb_node		node;
 	enum android_alarm_type type;
 	ktime_t			softexpires;
 	ktime_t			expires;

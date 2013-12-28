@@ -1179,7 +1179,7 @@ void __init mipi_fb_init(void)
 #if defined(CONFIG_FB_S5P_S6D6AA1)
 	dsim_lcd_info->lcd_panel_info = (void *)&s6d6aa1;
 #endif
-	
+
 #if defined(CONFIG_FB_S5P_NT71391)
 	dsim_lcd_info->lcd_panel_info = (void *)&nt71391;
 #endif
@@ -1225,7 +1225,7 @@ void __init mipi_fb_init(void)
 	platform_device_register(&s5p_device_dsim);
 
 	/*s3cfb_set_platdata(&fb_platform_data);*/
-	
+
 #if defined(CONFIG_FB_S5P_NT71391)
 	lcd_bl_init();
 #endif

@@ -32,4 +32,3 @@ struct lcd_property {
 };
 
 #endif /* LCD_PROPERTY_H */
-

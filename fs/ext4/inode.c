@@ -3627,7 +3627,7 @@ static void ext4_end_io_dio(struct kiocb *iocb, loff_t offset,
 
 	ext_debug("ext4_end_io_dio(): io_end 0x%p"
 		  "for inode %lu, iocb 0x%p, offset %llu, size %llu\n",
- 		  iocb->private, io_end->inode->i_ino, iocb, offset,
+		  iocb->private, io_end->inode->i_ino, iocb, offset,
 		  size);
 
 	/* if not aio dio with unwritten extents, just free io and return */
@@ -3761,16 +3761,16 @@ static ssize_t ext4_ext_direct_IO(int rw, struct kiocb *iocb,
 	loff_t final_size = offset + count;
 	if (rw == WRITE && final_size <= inode->i_size) {
 		/*
- 		 * We could direct write to holes and fallocate.
+		 * We could direct write to holes and fallocate.
 		 *
- 		 * Allocated blocks to fill the hole are marked as uninitialized
- 		 * to prevent parallel buffered read to expose the stale data
- 		 * before DIO complete the data IO.
+		 * Allocated blocks to fill the hole are marked as uninitialized
+		 * to prevent parallel buffered read to expose the stale data
+		 * before DIO complete the data IO.
 		 *
- 		 * As to previously fallocated extents, ext4 get_block
- 		 * will just simply mark the buffer mapped but still
- 		 * keep the extents uninitialized.
- 		 *
+		 * As to previously fallocated extents, ext4 get_block
+		 * will just simply mark the buffer mapped but still
+		 * keep the extents uninitialized.
+		 *
 		 * for non AIO case, we will convert those unwritten extents
 		 * to written after return back from blockdev_direct_IO.
 		 *
@@ -3779,7 +3779,7 @@ static ssize_t ext4_ext_direct_IO(int rw, struct kiocb *iocb,
 		 * will be called to take care of the conversion work.
 		 * Here for async case, we allocate an io_end structure to
 		 * hook to the iocb.
- 		 */
+		 */
 		iocb->private = NULL;
 		EXT4_I(inode)->cur_aio_dio = NULL;
 		if (!is_sync_kiocb(iocb)) {

@@ -6,8 +6,8 @@
  * Based on the previous xscale OProfile code.
  *
  * There are two variants of the xscale PMU that we support:
- * 	- xscale1pmu: 2 event counters and a cycle counter
- * 	- xscale2pmu: 4 event counters and a cycle counter
+ *	- xscale1pmu: 2 event counters and a cycle counter
+ *	- xscale2pmu: 4 event counters and a cycle counter
  * The two variants share event definitions, but have different
  * PMU structures.
  */

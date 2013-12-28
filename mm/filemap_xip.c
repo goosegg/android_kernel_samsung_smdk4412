@@ -323,7 +323,7 @@ __xip_file_write(struct file *filp, const char __user *buf,
 {
 	struct address_space * mapping = filp->f_mapping;
 	const struct address_space_operations *a_ops = mapping->a_ops;
-	struct inode 	*inode = mapping->host;
+	struct inode	*inode = mapping->host;
 	long		status = 0;
 	size_t		bytes;
 	ssize_t		written = 0;

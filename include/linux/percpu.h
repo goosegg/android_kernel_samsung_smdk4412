@@ -290,7 +290,7 @@ do {									\
 		case 2: stem##2(variable, __VA_ARGS__);break;		\
 		case 4: stem##4(variable, __VA_ARGS__);break;		\
 		case 8: stem##8(variable, __VA_ARGS__);break;		\
-		default: 						\
+		default:						\
 			__bad_size_call_parameter();break;		\
 	}								\
 } while (0)

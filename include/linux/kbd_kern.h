@@ -30,15 +30,15 @@ struct kbd_struct {
    they can be associated to arbitrarily chosen keys */
 #define VC_SHIFTLOCK	KG_SHIFT	/* shift lock mode */
 #define VC_ALTGRLOCK	KG_ALTGR	/* altgr lock mode */
-#define VC_CTRLLOCK	KG_CTRL 	/* control lock mode */
-#define VC_ALTLOCK	KG_ALT  	/* alt lock mode */
+#define VC_CTRLLOCK	KG_CTRL		/* control lock mode */
+#define VC_ALTLOCK	KG_ALT		/* alt lock mode */
 #define VC_SHIFTLLOCK	KG_SHIFTL	/* shiftl lock mode */
 #define VC_SHIFTRLOCK	KG_SHIFTR	/* shiftr lock mode */
-#define VC_CTRLLLOCK	KG_CTRLL 	/* ctrll lock mode */
-#define VC_CTRLRLOCK	KG_CTRLR 	/* ctrlr lock mode */
-	unsigned char slockstate; 	/* for `sticky' Shift, Ctrl, etc. */
+#define VC_CTRLLLOCK	KG_CTRLL	/* ctrll lock mode */
+#define VC_CTRLRLOCK	KG_CTRLR	/* ctrlr lock mode */
+	unsigned char slockstate;	/* for `sticky' Shift, Ctrl, etc. */
 
-	unsigned char ledmode:2; 	/* one 2-bit value */
+	unsigned char ledmode:2;	/* one 2-bit value */
 #define LED_SHOW_FLAGS 0        /* traditional state */
 #define LED_SHOW_IOCTL 1        /* only change leds upon ioctl */
 #define LED_SHOW_MEM 2          /* `heartbeat': peek into memory */

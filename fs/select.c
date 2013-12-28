@@ -10,7 +10,7 @@
  *     parameter to reflect time remaining.
  *
  *  24 January 2000
- *     Changed sys_poll()/do_poll() to use PAGE_SIZE chunk-based allocation 
+ *     Changed sys_poll()/do_poll() to use PAGE_SIZE chunk-based allocation
  *     of fds to overcome nfds < 16390 descriptors limit (Tigran Aivazian).
  */
 
@@ -543,7 +543,7 @@ int core_sys_select(int n, fd_set __user *inp, fd_set __user *outp,
 	/*
 	 * We need 6 bitmaps (in/out/ex for both incoming and outgoing),
 	 * since we used fdset we need to allocate memory in units of
-	 * long-words. 
+	 * long-words.
 	 */
 	size = FDS_BYTES(n);
 	bits = stack_fds;
@@ -828,14 +828,14 @@ int do_sys_poll(struct pollfd __user *ufds, unsigned int nfds,
 		struct timespec *end_time)
 {
 	struct poll_wqueues table;
- 	int err = -EFAULT, fdcount, len, size;
+	int err = -EFAULT, fdcount, len, size;
 	/* Allocate small arguments on the stack to save memory and be
 	   faster - use long to make sure the buffer is aligned properly
 	   on 64 bit archs to avoid unaligned access */
 	long stack_pps[POLL_STACK_ALLOC/sizeof(long)];
 	struct poll_list *const head = (struct poll_list *)stack_pps;
- 	struct poll_list *walk = head;
- 	unsigned long todo = nfds;
+	struct poll_list *walk = head;
+	unsigned long todo = nfds;
 
 	if (nfds > rlimit(RLIMIT_NOFILE))
 		return -EINVAL;
@@ -875,7 +875,7 @@ int do_sys_poll(struct pollfd __user *ufds, unsigned int nfds,
 		for (j = 0; j < walk->len; j++, ufds++)
 			if (__put_user(fds[j].revents, &ufds->revents))
 				goto out_fds;
-  	}
+	}
 
 	err = fdcount;
 out_fds:

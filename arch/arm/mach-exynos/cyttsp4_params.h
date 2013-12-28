@@ -1526,4 +1526,3 @@ static const uint8_t cyttsp4_param_addr[] = {
 	0xE1, 0xDC, /* Reserved1500 */
 	0xE1, 0xFC, /* CONFIG_CRC */
 };
-

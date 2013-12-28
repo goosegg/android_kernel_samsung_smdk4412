@@ -448,7 +448,7 @@ static struct platform_device s5pv310_ts_platform_device = {
 	.name		= S5PV310_TS_DEVICE_NAME,
 	.id		= -1,
 	.num_resources	= 0,
-	.dev 		= {
+	.dev		= {
 		.release= s5pv310_ts_release_device,
 	},
 };

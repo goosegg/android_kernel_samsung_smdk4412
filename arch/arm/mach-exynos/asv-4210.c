@@ -90,7 +90,7 @@ static int exynos4210_check_vdd_arm(void)
 #endif
 	return 0;
 }
-static int  exynos4210_hpm_clk_enable(void) 
+static int  exynos4210_hpm_clk_enable(void)
 {
         struct clk *clk_iec;
         struct clk *clk_apc;

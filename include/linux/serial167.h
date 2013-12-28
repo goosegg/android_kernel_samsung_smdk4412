@@ -15,7 +15,7 @@ struct cyclades_monitor {
 
 /*
  * This is our internal structure for each serial port's state.
- * 
+ *
  * Many fields are paralleled by the structure used by the serial_struct
  * structure.
  *
@@ -27,8 +27,8 @@ struct cyclades_port {
 	int                     type;
 	int			card;
 	int			line;
-	int			flags; 		/* defined in tty.h */
-	struct tty_struct 	*tty;
+	int			flags;		/* defined in tty.h */
+	struct tty_struct	*tty;
 	int			read_status_mask;
 	int			timeout;
 	int			xmit_fifo_size;
@@ -36,13 +36,13 @@ struct cyclades_port {
 	int                     tbpr,tco,rbpr,rco;
 	int			ignore_status_mask;
 	int			close_delay;
-	int			IER; 	/* Interrupt Enable Register */
+	int			IER;	/* Interrupt Enable Register */
 	unsigned long		last_active;
 	int			count;	/* # of fd on device */
 	int                     x_char; /* to be pushed out ASAP */
 	int                     x_break;
 	int			blocked_open; /* # of blocked opens */
-	unsigned char 		*xmit_buf;
+	unsigned char		*xmit_buf;
 	int			xmit_head;
 	int			xmit_tail;
 	int			xmit_cnt;
@@ -136,7 +136,7 @@ struct cyclades_port {
 #define CyTBPR		(0xc3)
 #define CyTCOR		(0xc0)
 #define CySCHR1		(0x1f)
-#define CySCHR2 	(0x1e)
+#define CySCHR2		(0x1e)
 #define CyTPR		(0xda)
 #define CyPILR1		(0xe3)
 #define CyPILR2		(0xe0)

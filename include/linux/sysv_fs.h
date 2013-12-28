@@ -51,7 +51,7 @@ struct xenix_super_block {
 	__fs32		s_type;		/* type of file system: 1 for 512 byte blocks
 								2 for 1024 byte blocks
 								3 for 2048 byte blocks */
-								
+
 };
 
 /*
@@ -96,7 +96,7 @@ struct sysv4_super_block {
 
 /* SystemV2 super-block data on disk */
 struct sysv2_super_block {
-	__fs16	s_isize; 		/* index of first data zone */
+	__fs16	s_isize;		/* index of first data zone */
 	__fs32	s_fsize __packed2__;	/* total number of zones of this fs */
 	/* the start of the free block list: */
 	__fs16	s_nfree;		/* number of free blocks in s_free, <= SYSV_NICFREE */

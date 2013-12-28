@@ -18,7 +18,7 @@ struct dma_ops {
 	int	(*request)(unsigned int, dma_t *);		/* optional */
 	void	(*free)(unsigned int, dma_t *);			/* optional */
 	void	(*enable)(unsigned int, dma_t *);		/* mandatory */
-	void 	(*disable)(unsigned int, dma_t *);		/* mandatory */
+	void	(*disable)(unsigned int, dma_t *);		/* mandatory */
 	int	(*residue)(unsigned int, dma_t *);		/* optional */
 	int	(*setspeed)(unsigned int, dma_t *, int);	/* optional */
 	const char *type;

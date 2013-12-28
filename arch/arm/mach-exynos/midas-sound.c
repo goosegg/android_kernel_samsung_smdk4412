@@ -519,7 +519,7 @@ static struct platform_device *midas_sound_devices[] __initdata = {
 void __init midas_sound_init(void)
 {
 	printk(KERN_INFO "Sound: start %s\n", __func__);
-	
+
 #ifdef CONFIG_USE_ADC_DET
 #if defined(CONFIG_MACH_KONA)
 		midas_sound_pdata.use_jackdet_type = 1;
@@ -532,7 +532,7 @@ void __init midas_sound_init(void)
 
 	platform_add_devices(midas_sound_devices,
 		ARRAY_SIZE(midas_sound_devices));
-	
+
 #ifdef CONFIG_EXYNOS_SOUND_PLATFORM_DATA
 	pr_info("%s: set sound platform data for midas device\n", __func__);
 	if (exynos_sound_set_platform_data(&midas_sound_pdata))
@@ -562,7 +562,7 @@ void __init midas_sound_init(void)
 	SET_PLATDATA_CODEC(NULL);
 	i2c_register_board_info(I2C_NUM_CODEC, i2c_wm1811,
 					ARRAY_SIZE(i2c_wm1811));
-		
+
 #else
 	if (system_rev != 3 && system_rev >= 0) {
 		SET_PLATDATA_CODEC(NULL);
@@ -597,4 +597,3 @@ void __init midas_sound_init(void)
 #endif
 
 }
-

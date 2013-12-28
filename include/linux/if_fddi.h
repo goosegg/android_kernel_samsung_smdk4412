@@ -41,20 +41,20 @@
 #define FDDI_K_LLC_LEN		4491	/* Max octets in LLC frame sans FCS */
 
 /* Define FDDI Frame Control (FC) Byte values */
-#define FDDI_FC_K_VOID					0x00	
-#define FDDI_FC_K_NON_RESTRICTED_TOKEN	0x80	
-#define FDDI_FC_K_RESTRICTED_TOKEN		0xC0	
+#define FDDI_FC_K_VOID					0x00
+#define FDDI_FC_K_NON_RESTRICTED_TOKEN	0x80
+#define FDDI_FC_K_RESTRICTED_TOKEN		0xC0
 #define FDDI_FC_K_SMT_MIN				0x41
-#define FDDI_FC_K_SMT_MAX		   		0x4F
+#define FDDI_FC_K_SMT_MAX				0x4F
 #define FDDI_FC_K_MAC_MIN				0xC1
-#define FDDI_FC_K_MAC_MAX		  		0xCF	
+#define FDDI_FC_K_MAC_MAX				0xCF
 #define FDDI_FC_K_ASYNC_LLC_MIN			0x50
 #define FDDI_FC_K_ASYNC_LLC_DEF			0x54
 #define FDDI_FC_K_ASYNC_LLC_MAX			0x5F
 #define FDDI_FC_K_SYNC_LLC_MIN			0xD0
 #define FDDI_FC_K_SYNC_LLC_MAX			0xD7
 #define FDDI_FC_K_IMPLEMENTOR_MIN		0x60
-#define FDDI_FC_K_IMPLEMENTOR_MAX  		0x6F
+#define FDDI_FC_K_IMPLEMENTOR_MAX		0x6F
 #define FDDI_FC_K_RESERVED_MIN			0x70
 #define FDDI_FC_K_RESERVED_MAX			0x7F
 

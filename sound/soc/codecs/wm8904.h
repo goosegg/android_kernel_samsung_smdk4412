@@ -144,9 +144,9 @@
 /*
  * R1 (0x01) - Revision
  */
-#define WM8904_REVISION_MASK              	0x000F  /* REVISION - [3:0] */
-#define WM8904_REVISION_SHIFT             	     0  /* REVISION - [3:0] */
-#define WM8904_REVISION_WIDTH             	    16  /* REVISION - [3:0] */
+#define WM8904_REVISION_MASK			0x000F  /* REVISION - [3:0] */
+#define WM8904_REVISION_SHIFT			     0  /* REVISION - [3:0] */
+#define WM8904_REVISION_WIDTH			    16  /* REVISION - [3:0] */
 
 /*
  * R4 (0x04) - Bias Control 0

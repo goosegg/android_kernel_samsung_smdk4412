@@ -604,13 +604,13 @@ struct ethtool_flash {
 /**
  * struct ethtool_dump - used for retrieving, setting device dump
  * @cmd: Command number - %ETHTOOL_GET_DUMP_FLAG, %ETHTOOL_GET_DUMP_DATA, or
- * 	%ETHTOOL_SET_DUMP
+ *	%ETHTOOL_SET_DUMP
  * @version: FW version of the dump, filled in by driver
  * @flag: driver dependent flag for dump setting, filled in by driver during
- * 	  get and filled in by ethtool for set operation
+ *	  get and filled in by ethtool for set operation
  * @len: length of dump data, used as the length of the user buffer on entry to
- * 	 %ETHTOOL_GET_DUMP_DATA and this is returned as dump length by driver
- * 	 for %ETHTOOL_GET_DUMP_FLAG command
+ *	 %ETHTOOL_GET_DUMP_DATA and this is returned as dump length by driver
+ *	 for %ETHTOOL_GET_DUMP_FLAG command
  * @data: data collected for get dump data operation
  */
 struct ethtool_dump {
@@ -813,7 +813,7 @@ bool ethtool_invalid_flags(struct net_device *dev, u32 data, u32 supported);
  * @set_tx_csum: Deprecated in favour of generic netdev features.  Turn
  *	transmit checksums on or off.  Returns a negative error code or zero.
  * @get_sg: Deprecated as redundant.  Report whether scatter-gather is
- *	enabled.  
+ *	enabled.
  * @set_sg: Deprecated in favour of generic netdev features.  Turn
  *	scatter-gather on or off. Returns a negative error code or zero.
  * @get_tso: Deprecated as redundant.  Report whether TCP segmentation
@@ -846,7 +846,7 @@ bool ethtool_invalid_flags(struct net_device *dev, u32 data, u32 supported);
  * @set_ufo: Deprecated in favour of generic netdev features.  Turn UDP
  *	fragmentation offload on or off.  Returns a negative error code or zero.
  * @get_flags: Deprecated as redundant.  Report features included in
- *	&enum ethtool_flags that are enabled.  
+ *	&enum ethtool_flags that are enabled.
  * @set_flags: Deprecated in favour of generic netdev features.  Turn
  *	features included in &enum ethtool_flags on or off.  Returns a
  *	negative error code or zero.
@@ -874,7 +874,7 @@ bool ethtool_invalid_flags(struct net_device *dev, u32 data, u32 supported);
  * @set_channels: Set number of channels.  Returns a negative error code or
  *	zero.
  * @get_dump_flag: Get dump flag indicating current dump length, version,
- * 		   and flag of the device.
+ *		   and flag of the device.
  * @get_dump_data: Get dump data.
  * @set_dump: Set dump specific flags to the device.
  *

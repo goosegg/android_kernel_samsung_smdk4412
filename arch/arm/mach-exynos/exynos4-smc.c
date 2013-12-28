@@ -48,5 +48,3 @@ u32 exynos_smc_readsfr(u32 addr, u32 *val)
 }
 
 #endif
-
-

@@ -1113,7 +1113,7 @@ static ssize_t ld9040_sysfs_store_user_gamma_adjust(struct device *dev,
 	if (lcd->ldi_enable)
 	{
 		if(lcd->current_user_gamma_adjust == lcd->user_gamma_adjust)
-			printk("there is no gamma shift & brightness changed\n");	
+			printk("there is no gamma shift & brightness changed\n");
 		else
 		{
 			dev_info(lcd->dev, "user_gamma_adjust update : (id=%d) bl=%d\n", lcd->user_lcdtype, lcd->bl);
@@ -1447,4 +1447,3 @@ module_exit(ld9040_exit);
 
 MODULE_DESCRIPTION("LD9040 AMOLED LCD Driver");
 MODULE_LICENSE("GPL");
-

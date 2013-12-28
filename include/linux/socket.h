@@ -40,7 +40,7 @@ typedef unsigned short	sa_family_t;
 /*
  *	1003.1g requires sa_family_t and that sa_data is char.
  */
- 
+
 struct sockaddr {
 	sa_family_t	sa_family;	/* address family, AF_xxx	*/
 	char		sa_data[14];	/* 14 bytes of protocol address	*/
@@ -58,13 +58,13 @@ struct linger {
  *	system, not 4.3. Thus msg_accrights(len) are now missing. They
  *	belong in an obscure libc emulation or the bin.
  */
- 
+
 struct msghdr {
 	void	*	msg_name;	/* Socket name			*/
 	int		msg_namelen;	/* Length of name		*/
 	struct iovec *	msg_iov;	/* Data blocks			*/
 	__kernel_size_t	msg_iovlen;	/* Number of blocks		*/
-	void 	*	msg_control;	/* Per protocol magic (eg BSD file descriptor passing) */
+	void	*	msg_control;	/* Per protocol magic (eg BSD file descriptor passing) */
 	__kernel_size_t	msg_controllen;	/* Length of cmsg list */
 	unsigned	msg_flags;
 };
@@ -122,7 +122,7 @@ struct cmsghdr {
  *	inside range, given by msg->msg_controllen before using
  *	ancillary object DATA.				--ANK (980731)
  */
- 
+
 static inline struct cmsghdr * __cmsg_nxthdr(void *__ctl, __kernel_size_t __size,
 					       struct cmsghdr *__cmsg)
 {
@@ -154,16 +154,16 @@ struct ucred {
 
 /* Supported address families. */
 #define AF_UNSPEC	0
-#define AF_UNIX		1	/* Unix domain sockets 		*/
+#define AF_UNIX		1	/* Unix domain sockets		*/
 #define AF_LOCAL	1	/* POSIX name for AF_UNIX	*/
-#define AF_INET		2	/* Internet IP Protocol 	*/
-#define AF_AX25		3	/* Amateur Radio AX.25 		*/
-#define AF_IPX		4	/* Novell IPX 			*/
-#define AF_APPLETALK	5	/* AppleTalk DDP 		*/
-#define AF_NETROM	6	/* Amateur Radio NET/ROM 	*/
-#define AF_BRIDGE	7	/* Multiprotocol bridge 	*/
+#define AF_INET		2	/* Internet IP Protocol		*/
+#define AF_AX25		3	/* Amateur Radio AX.25		*/
+#define AF_IPX		4	/* Novell IPX			*/
+#define AF_APPLETALK	5	/* AppleTalk DDP		*/
+#define AF_NETROM	6	/* Amateur Radio NET/ROM	*/
+#define AF_BRIDGE	7	/* Multiprotocol bridge		*/
 #define AF_ATMPVC	8	/* ATM PVCs			*/
-#define AF_X25		9	/* Reserved for X.25 project 	*/
+#define AF_X25		9	/* Reserved for X.25 project	*/
 #define AF_INET6	10	/* IP version 6			*/
 #define AF_ROSE		11	/* Amateur Radio X.25 PLP	*/
 #define AF_DECnet	12	/* Reserved for DECnet project	*/
@@ -176,7 +176,7 @@ struct ucred {
 #define AF_ASH		18	/* Ash				*/
 #define AF_ECONET	19	/* Acorn Econet			*/
 #define AF_ATMSVC	20	/* ATM SVCs			*/
-#define AF_RDS		21	/* RDS sockets 			*/
+#define AF_RDS		21	/* RDS sockets			*/
 #define AF_SNA		22	/* Linux SNA Project (nutters!) */
 #define AF_IRDA		23	/* IRDA sockets			*/
 #define AF_PPPOX	24	/* PPPoX sockets		*/
@@ -184,10 +184,10 @@ struct ucred {
 #define AF_LLC		26	/* Linux LLC			*/
 #define AF_CAN		29	/* Controller Area Network      */
 #define AF_TIPC		30	/* TIPC sockets			*/
-#define AF_BLUETOOTH	31	/* Bluetooth sockets 		*/
+#define AF_BLUETOOTH	31	/* Bluetooth sockets		*/
 #define AF_IUCV		32	/* IUCV sockets			*/
-#define AF_RXRPC	33	/* RxRPC sockets 		*/
-#define AF_ISDN		34	/* mISDN sockets 		*/
+#define AF_RXRPC	33	/* RxRPC sockets		*/
+#define AF_ISDN		34	/* mISDN sockets		*/
 #define AF_PHONET	35	/* Phonet sockets		*/
 #define AF_IEEE802154	36	/* IEEE802154 sockets		*/
 #define AF_CAIF		37	/* CAIF sockets			*/
@@ -239,10 +239,10 @@ struct ucred {
 /* Maximum queue length specifiable by listen.  */
 #define SOMAXCONN	128
 
-/* Flags we can use with send/ and recv. 
+/* Flags we can use with send/ and recv.
    Added those for 1003.1g not all are supported yet
  */
- 
+
 #define MSG_OOB		1
 #define MSG_PEEK	2
 #define MSG_DONTROUTE	4
@@ -318,9 +318,9 @@ extern void cred_to_ucred(struct pid *pid, const struct cred *cred, struct ucred
 extern int memcpy_fromiovec(unsigned char *kdata, struct iovec *iov, int len);
 extern int memcpy_fromiovecend(unsigned char *kdata, const struct iovec *iov,
 			       int offset, int len);
-extern int csum_partial_copy_fromiovecend(unsigned char *kdata, 
-					  struct iovec *iov, 
-					  int offset, 
+extern int csum_partial_copy_fromiovecend(unsigned char *kdata,
+					  struct iovec *iov,
+					  int offset,
 					  unsigned int len, __wsum *csump);
 
 extern int verify_iovec(struct msghdr *m, struct iovec *iov, struct sockaddr *address, int mode);

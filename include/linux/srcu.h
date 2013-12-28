@@ -20,7 +20,7 @@
  * Author: Paul McKenney <paulmck@us.ibm.com>
  *
  * For detailed explanation of Read-Copy Update mechanism see -
- * 		Documentation/RCU/ *.txt
+ *		Documentation/RCU/ *.txt
  *
  */
 

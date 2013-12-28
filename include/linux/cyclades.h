@@ -20,23 +20,23 @@
  *
  *Revision 2.5  1998/08/03 16:57:01  ivan
  *added cyclades_idle_stats structure;
- * 
+ *
  *Revision 2.4  1998/06/01 12:09:53  ivan
  *removed closing_wait2 from cyclades_port structure;
  *
  *Revision 2.3  1998/03/16 18:01:12  ivan
- *changes in the cyclades_port structure to get it closer to the 
+ *changes in the cyclades_port structure to get it closer to the
  *standard serial port structure;
  *added constants for new ioctls;
  *
  *Revision 2.2  1998/02/17 16:50:00  ivan
- *changes in the cyclades_port structure (addition of shutdown_wait and 
+ *changes in the cyclades_port structure (addition of shutdown_wait and
  *chip_rev variables);
  *added constants for new ioctls and for CD1400 rev. numbers.
  *
  *Revision 2.1	1997/10/24 16:03:00  ivan
- *added rflow (which allows enabling the CD1400 special flow control 
- *feature) and rtsdtr_inv (which allows DTR/RTS pin inversion) to 
+ *added rflow (which allows enabling the CD1400 special flow control
+ *feature) and rtsdtr_inv (which allows DTR/RTS pin inversion) to
  *cyclades_port structure;
  *added Alpha support
  *
@@ -249,7 +249,7 @@ struct RUNTIME_9060 {
 #define	ZFIRM_HLT	0x59505B5CL	/* ZFIRM needs external power supply */
 #define	ZFIRM_RST	0x56040674L	/* RST signal (due to FW reset) */
 
-#define	ZF_TINACT_DEF	1000		/* default inactivity timeout 
+#define	ZF_TINACT_DEF	1000		/* default inactivity timeout
 					   (1000 ms) */
 #define	ZF_TINACT	ZF_TINACT_DEF
 
@@ -313,7 +313,7 @@ struct	FIRM_ID {
 #define C_IN_IOCTLW	0x00020000      /* I/O control w/ wait */
 #define C_IN_MRTS	0x00040000	/* modem RTS drop */
 #define C_IN_ICHAR	0x00080000
- 
+
 /* flow control */
 
 #define	C_FL_OXX	0x00000001	/* output Xon/Xoff flow control */
@@ -329,7 +329,7 @@ struct	FIRM_ID {
 
 /* rs_control/rs_status RS-232 signals */
 
-#define C_RS_PARAM	0x80000000	/* Indicates presence of parameter in 
+#define C_RS_PARAM	0x80000000	/* Indicates presence of parameter in
 					   IOCTLM command */
 #define	C_RS_RTS	0x00000001	/* RTS */
 #define	C_RS_DTR	0x00000004	/* DTR */
@@ -360,9 +360,9 @@ struct	FIRM_ID {
 #define	C_CM_ACK_DSBL	0x55		/* disable acknowledged intr mode */
 #define	C_CM_FLUSH_RX	0x56		/* flushes Rx buffer */
 #define	C_CM_FLUSH_TX	0x57		/* flushes Tx buffer */
-#define C_CM_Q_ENABLE	0x58		/* enables queue access from the 
+#define C_CM_Q_ENABLE	0x58		/* enables queue access from the
 					   driver */
-#define C_CM_Q_DISABLE  0x59            /* disables queue access from the 
+#define C_CM_Q_DISABLE  0x59            /* disables queue access from the
 					   driver */
 
 #define	C_CM_TXBEMPTY	0x60		/* Tx buffer is empty */
@@ -434,7 +434,7 @@ struct	BUF_CTRL	{
 };
 
 /*
- *	BOARD_CTRL - This per board structure contains all global 
+ *	BOARD_CTRL - This per board structure contains all global
  *	control fields related to the board.
  */
 
@@ -480,7 +480,7 @@ struct	INT_QUEUE {
  *	ZFW_CTRL - This is the data structure that includes all other
  *	data structures used by the Firmware.
  */
- 
+
 struct ZFW_CTRL {
 	struct BOARD_CTRL	board_ctrl;
 	struct CH_CTRL		ch_ctrl[MAX_CHAN];
@@ -531,7 +531,7 @@ struct cyclades_icount {
 
 /*
  * This is our internal structure for each serial port's state.
- * 
+ *
  * Many fields are paralleled by the structure used by the serial_struct
  * structure.
  *
@@ -552,7 +552,7 @@ struct cyclades_port {
 		} cyz;
 	} u;
 	int			line;
-	int			flags; 		/* defined in tty.h */
+	int			flags;		/* defined in tty.h */
 	int                     type;		/* UART type */
 	int			read_status_mask;
 	int			ignore_status_mask;
@@ -593,11 +593,11 @@ struct cyclades_port {
 
 #define	CyISA_Ywin	0x2000
 
-#define CyPCI_Ywin 	0x4000
-#define CyPCI_Yctl 	0x80
-#define CyPCI_Zctl 	CTRL_WINDOW_SIZE
-#define CyPCI_Zwin 	0x80000
-#define CyPCI_Ze_win 	(2 * CyPCI_Zwin)
+#define CyPCI_Ywin	0x4000
+#define CyPCI_Yctl	0x80
+#define CyPCI_Zctl	CTRL_WINDOW_SIZE
+#define CyPCI_Zwin	0x80000
+#define CyPCI_Ze_win	(2 * CyPCI_Zwin)
 
 #define PCI_DEVICE_ID_MASK	0x06
 
@@ -606,10 +606,10 @@ struct cyclades_port {
 #define CD1400_REV_G	0x46
 #define CD1400_REV_J	0x48
 
-#define CyRegSize  	0x0400
-#define Cy_HwReset 	0x1400
-#define Cy_ClrIntr 	0x1800
-#define Cy_EpldRev 	0x1e00
+#define CyRegSize	0x0400
+#define Cy_HwReset	0x1400
+#define Cy_ClrIntr	0x1800
+#define Cy_EpldRev	0x1e00
 
 /* Global Registers */
 
@@ -642,7 +642,7 @@ struct cyclades_port {
 #define      CyIRUnfair		(0x20)
 #define      CyIRContext	(0x1C)
 #define      CyIRChannel	(0x03)
-#define CyPPR 		(0x7E*2)
+#define CyPPR		(0x7E*2)
 #define      CyCLOCK_20_1MS	(0x27)
 #define      CyCLOCK_25_1MS	(0x31)
 #define      CyCLOCK_25_5MS	(0xf4)
@@ -747,13 +747,13 @@ struct cyclades_port {
 #define      CyTxFlon		(0x02)
 #define CyRDCR		(0x0E*2)
 #define CySCHR1		(0x1A*2)
-#define CySCHR2 	(0x1B*2)
+#define CySCHR2		(0x1B*2)
 #define CySCHR3		(0x1C*2)
 #define CySCHR4		(0x1D*2)
 #define CySCRL		(0x22*2)
 #define CySCRH		(0x23*2)
 #define CyLNC		(0x24*2)
-#define CyMCOR1 	(0x15*2)
+#define CyMCOR1		(0x15*2)
 #define CyMCOR2		(0x16*2)
 #define CyRTPR		(0x21*2)
 #define CyMSVR1		(0x6C*2)

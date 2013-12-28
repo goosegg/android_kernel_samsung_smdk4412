@@ -56,16 +56,16 @@
 
 /* ks108 chipset specific defines and code */
 
-#define KS_SET_DPY_START_LINE 	0xC0
-#define KS_SET_PAGE_NUM 	0xB8
-#define KS_SET_X 		0x40
-#define KS_CEHI 		0x01
-#define KS_CELO 		0x00
-#define KS_SEL_CMD 		0x08
-#define KS_SEL_DATA 		0x00
-#define KS_DPY_ON 		0x3F
-#define KS_DPY_OFF 		0x3E
-#define KS_INTACK 		0x40
+#define KS_SET_DPY_START_LINE	0xC0
+#define KS_SET_PAGE_NUM		0xB8
+#define KS_SET_X		0x40
+#define KS_CEHI			0x01
+#define KS_CELO			0x00
+#define KS_SEL_CMD		0x08
+#define KS_SEL_DATA		0x00
+#define KS_DPY_ON		0x3F
+#define KS_DPY_OFF		0x3E
+#define KS_INTACK		0x40
 #define KS_CLRINT		0x02
 
 struct arcfb_par {
@@ -499,7 +499,7 @@ static struct fb_ops arcfb_ops = {
 	.fb_fillrect	= arcfb_fillrect,
 	.fb_copyarea	= arcfb_copyarea,
 	.fb_imageblit	= arcfb_imageblit,
-	.fb_ioctl 	= arcfb_ioctl,
+	.fb_ioctl	= arcfb_ioctl,
 };
 
 static int __devinit arcfb_probe(struct platform_device *dev)
@@ -665,4 +665,3 @@ module_exit(arcfb_exit);
 MODULE_DESCRIPTION("fbdev driver for Arc monochrome LCD board");
 MODULE_AUTHOR("Jaya Kumar");
 MODULE_LICENSE("GPL");
-

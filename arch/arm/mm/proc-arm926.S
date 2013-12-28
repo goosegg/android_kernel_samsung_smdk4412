@@ -142,7 +142,7 @@ __flush_whole_cache:
 #ifdef CONFIG_CPU_DCACHE_WRITETHROUGH
 	mcr	p15, 0, ip, c7, c6, 0		@ invalidate D cache
 #else
-1:	mrc	p15, 0, r15, c7, c14, 3 	@ test,clean,invalidate
+1:	mrc	p15, 0, r15, c7, c14, 3		@ test,clean,invalidate
 	bne	1b
 #endif
 	tst	r2, #VM_EXEC
@@ -365,7 +365,7 @@ ENTRY(cpu_arm926_switch_mm)
 	mcr	p15, 0, ip, c7, c6, 0		@ invalidate D cache
 #else
 @ && 'Clean & Invalidate whole DCache'
-1:	mrc	p15, 0, r15, c7, c14, 3 	@ test,clean,invalidate
+1:	mrc	p15, 0, r15, c7, c14, 3		@ test,clean,invalidate
 	bne	1b
 #endif
 	mcr	p15, 0, ip, c7, c5, 0		@ invalidate I cache
@@ -441,7 +441,7 @@ __arm926_setup:
 #ifdef CONFIG_CPU_DCACHE_WRITETHROUGH
 	mov	r0, #4				@ disable write-back on caches explicitly
 	mcr	p15, 7, r0, c15, c0, 0
-#endif 
+#endif
 
 	adr	r5, arm926_crval
 	ldmia	r5, {r5, r6}
@@ -458,7 +458,7 @@ __arm926_setup:
 	 *  R
 	 * .RVI ZFRS BLDP WCAM
 	 * .011 0001 ..11 0101
-	 * 
+	 *
 	 */
 	.type	arm926_crval, #object
 arm926_crval:

@@ -10,7 +10,7 @@
  *		      Paolo Valente <paolo.valente@unimore.it>
  *
  * Copyright (C) 2009 Vivek Goyal <vgoyal@redhat.com>
- * 	              Nauman Rafique <nauman@google.com>
+ *	              Nauman Rafique <nauman@google.com>
  */
 
 #include <linux/cgroup.h>

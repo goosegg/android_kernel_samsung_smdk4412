@@ -295,7 +295,7 @@ static void hotplug_timer(struct work_struct *work)
 		cpu_down(cpu_rq_min);
 		DBG_PRINT("cpu%d off!\n", cpu_rq_min);
 		hotpluging_rate = CHECK_DELAY_OFF;
-	} 
+	}
 
 no_hotplug:
 

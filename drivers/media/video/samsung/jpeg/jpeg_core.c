@@ -123,4 +123,3 @@ int jpeg_exe_enc(struct jpeg_control *ctrl)
 
 	return 0;
 }
-

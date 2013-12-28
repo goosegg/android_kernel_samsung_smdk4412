@@ -202,4 +202,3 @@ void ielcd_init_global(void)
 
 	ielcd_window_on();
 }
-

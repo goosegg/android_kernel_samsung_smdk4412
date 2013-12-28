@@ -1539,8 +1539,8 @@ static int invent_group_ids(struct vfsmount *mnt, bool recurse)
  *  @source_mnt : mount tree to be attached
  *  @nd         : place the mount tree @source_mnt is attached
  *  @parent_nd  : if non-null, detach the source_mnt from its parent and
- *  		   store the parent mount and mountpoint dentry.
- *  		   (done when source_mnt is moved)
+ *		   store the parent mount and mountpoint dentry.
+ *		   (done when source_mnt is moved)
  *
  *  NOTE: in the table below explains the semantics when a source mount
  *  of a given type is attached to a destination mount of a given type.
@@ -1560,8 +1560,8 @@ static int invent_group_ids(struct vfsmount *mnt, bool recurse)
  * destination mount.
  *
  * (++)  the cloned mount is propagated to all the mounts in the propagation
- * 	 tree of the destination mount and the cloned mount is added to
- * 	 the peer group of the source mount.
+ *	 tree of the destination mount and the cloned mount is added to
+ *	 the peer group of the source mount.
  * (+)   the cloned mount is created under the destination mount and is marked
  *       as shared. The cloned mount is added to the peer group of the source
  *       mount.
@@ -1570,10 +1570,10 @@ static int invent_group_ids(struct vfsmount *mnt, bool recurse)
  *       of the same master as that of the source mount. The cloned mount
  *       is marked as 'shared and slave'.
  * (*)   the cloned mount is made a slave of the same master as that of the
- * 	 source mount.
+ *	 source mount.
  *
  * ---------------------------------------------------------------------------
- * |         		MOVE MOUNT OPERATION                                 |
+ * |			MOVE MOUNT OPERATION                                 |
  * |**************************************************************************
  * | source-->| shared        |       private  |       slave    | unbindable |
  * | dest     |               |                |                |            |
@@ -1586,11 +1586,11 @@ static int invent_group_ids(struct vfsmount *mnt, bool recurse)
  * ***************************************************************************
  *
  * (+)  the mount is moved to the destination. And is then propagated to
- * 	all the mounts in the propagation tree of the destination mount.
+ *	all the mounts in the propagation tree of the destination mount.
  * (+*)  the mount is moved to the destination.
  * (+++)  the mount is moved to the destination and is then propagated to
- * 	all the mounts belonging to the destination mount's propagation tree.
- * 	the mount is marked as 'shared and slave'.
+ *	all the mounts belonging to the destination mount's propagation tree.
+ *	the mount is marked as 'shared and slave'.
  * (*)	the mount continues to be a slave at the new location.
  *
  * if the source mount is a tree, the operations explained above is

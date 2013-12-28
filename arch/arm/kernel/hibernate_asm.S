@@ -133,7 +133,7 @@ ENDPROC(swsusp_arch_resume)
 	.align	4
 .Lsaved_context_r0:		.long	saved_context_r0
 .Lsaved_cpsr:			.long	saved_cpsr
-.Lsaved_context_r13_svc: 	.long	saved_context_r13_svc
+.Lsaved_context_r13_svc:	.long	saved_context_r13_svc
 .Lsaved_context_r14_svc:	.long	saved_context_r14_svc
 .Lsaved_spsr_svc:		.long	saved_spsr_svc
 .Lrestore_pblist:		.long	restore_pblist

@@ -18,7 +18,7 @@ enum {
 };
 
 enum bp_type_idx {
-	TYPE_INST 	= 0,
+	TYPE_INST	= 0,
 #ifdef CONFIG_HAVE_MIXED_BREAKPOINTS_REGS
 	TYPE_DATA	= 0,
 #else
@@ -129,13 +129,13 @@ register_wide_hw_breakpoint(struct perf_event_attr *attr,
 static inline int
 register_perf_hw_breakpoint(struct perf_event *bp)	{ return -ENOSYS; }
 static inline int
-__register_perf_hw_breakpoint(struct perf_event *bp) 	{ return -ENOSYS; }
+__register_perf_hw_breakpoint(struct perf_event *bp)	{ return -ENOSYS; }
 static inline void unregister_hw_breakpoint(struct perf_event *bp)	{ }
 static inline void
 unregister_wide_hw_breakpoint(struct perf_event * __percpu *cpu_events)	{ }
 static inline int
 reserve_bp_slot(struct perf_event *bp)			{return -ENOSYS; }
-static inline void release_bp_slot(struct perf_event *bp) 		{ }
+static inline void release_bp_slot(struct perf_event *bp)		{ }
 
 static inline void flush_ptrace_hw_breakpoint(struct task_struct *tsk)	{ }
 

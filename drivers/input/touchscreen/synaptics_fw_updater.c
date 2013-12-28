@@ -469,7 +469,7 @@ int synaptics_fw_updater(struct synaptics_drv_data *data, u8 *fw_data)
 		fw->fw_data = fw_data;
         update = true;
     }
-	
+
 	if (update) {
 		printk(KERN_DEBUG "[TSP] tsp update!!\n");
 		disable_irq(irq);
@@ -512,4 +512,3 @@ void forced_fw_update(struct synaptics_drv_data *data)
 	synaptics_fw_updater(data, (u8 *)rmi_fw);
 #endif
 }
-

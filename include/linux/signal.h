@@ -272,11 +272,11 @@ int unhandled_signal(struct task_struct *tsk, int sig);
  * The possible effects an unblocked signal set to SIG_DFL can have are:
  *   ignore	- Nothing Happens
  *   terminate	- kill the process, i.e. all threads in the group,
- * 		  similar to exit_group.  The group leader (only) reports
+ *		  similar to exit_group.  The group leader (only) reports
  *		  WIFSIGNALED status to its parent.
  *   coredump	- write a core dump file describing all threads using
  *		  the same mm and then kill all those threads
- *   stop 	- stop all the threads in the group, i.e. TASK_STOPPED state
+ *   stop	- stop all the threads in the group, i.e. TASK_STOPPED state
  *
  * SIGKILL and SIGSTOP cannot be caught, blocked, or ignored.
  * Other signals when not blocked and set to SIG_DFL behaves as follows.
@@ -287,34 +287,34 @@ int unhandled_signal(struct task_struct *tsk, int sig);
  *	+--------------------+------------------+
  *	|  SIGHUP            |  terminate	|
  *	|  SIGINT            |	terminate	|
- *	|  SIGQUIT           |	coredump 	|
- *	|  SIGILL            |	coredump 	|
- *	|  SIGTRAP           |	coredump 	|
- *	|  SIGABRT/SIGIOT    |	coredump 	|
- *	|  SIGBUS            |	coredump 	|
- *	|  SIGFPE            |	coredump 	|
+ *	|  SIGQUIT           |	coredump	|
+ *	|  SIGILL            |	coredump	|
+ *	|  SIGTRAP           |	coredump	|
+ *	|  SIGABRT/SIGIOT    |	coredump	|
+ *	|  SIGBUS            |	coredump	|
+ *	|  SIGFPE            |	coredump	|
  *	|  SIGKILL           |	terminate(+)	|
  *	|  SIGUSR1           |	terminate	|
- *	|  SIGSEGV           |	coredump 	|
+ *	|  SIGSEGV           |	coredump	|
  *	|  SIGUSR2           |	terminate	|
  *	|  SIGPIPE           |	terminate	|
  *	|  SIGALRM           |	terminate	|
  *	|  SIGTERM           |	terminate	|
- *	|  SIGCHLD           |	ignore   	|
+ *	|  SIGCHLD           |	ignore		|
  *	|  SIGCONT           |	ignore(*)	|
- *	|  SIGSTOP           |	stop(*)(+)  	|
- *	|  SIGTSTP           |	stop(*)  	|
- *	|  SIGTTIN           |	stop(*)  	|
- *	|  SIGTTOU           |	stop(*)  	|
- *	|  SIGURG            |	ignore   	|
- *	|  SIGXCPU           |	coredump 	|
- *	|  SIGXFSZ           |	coredump 	|
+ *	|  SIGSTOP           |	stop(*)(+)	|
+ *	|  SIGTSTP           |	stop(*)		|
+ *	|  SIGTTIN           |	stop(*)		|
+ *	|  SIGTTOU           |	stop(*)		|
+ *	|  SIGURG            |	ignore		|
+ *	|  SIGXCPU           |	coredump	|
+ *	|  SIGXFSZ           |	coredump	|
  *	|  SIGVTALRM         |	terminate	|
  *	|  SIGPROF           |	terminate	|
  *	|  SIGPOLL/SIGIO     |	terminate	|
- *	|  SIGSYS/SIGUNUSED  |	coredump 	|
+ *	|  SIGSYS/SIGUNUSED  |	coredump	|
  *	|  SIGSTKFLT         |	terminate	|
- *	|  SIGWINCH          |	ignore   	|
+ *	|  SIGWINCH          |	ignore		|
  *	|  SIGPWR            |	terminate	|
  *	|  SIGRTMIN-SIGRTMAX |	terminate       |
  *	+--------------------+------------------+

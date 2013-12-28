@@ -142,8 +142,8 @@ static int pcm3008_soc_resume(struct snd_soc_codec *codec)
 #endif
 
 static struct snd_soc_codec_driver soc_codec_dev_pcm3008 = {
-	.probe = 	pcm3008_soc_probe,
-	.remove = 	pcm3008_soc_remove,
+	.probe =	pcm3008_soc_probe,
+	.remove =	pcm3008_soc_remove,
 	.suspend =	pcm3008_soc_suspend,
 	.resume =	pcm3008_soc_resume,
 };

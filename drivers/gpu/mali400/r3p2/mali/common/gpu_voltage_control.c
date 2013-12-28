@@ -65,12 +65,12 @@ static ssize_t gpu_voltage_store(struct device *dev, struct device_attribute *at
                 if(ret==MALI_STEPS)
                     mali_dvfs[i].vol=gv[i];
         }
-        
+
         step0_vol = mali_dvfs[0].vol;
         step1_vol = mali_dvfs[1].vol;
         step2_vol = mali_dvfs[2].vol;
         step3_vol = mali_dvfs[3].vol;
-        
+
         return count;
 }
 

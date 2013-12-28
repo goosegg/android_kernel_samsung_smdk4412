@@ -17,9 +17,9 @@
 *				uclong, ucchar, etc deleted, the u8, u16, u32
 *				types are the portable way to go.
 * 1999/01/03	acme		judicious use of data types... u16, u32, etc
-* 1998/12/26	acme	 	FIXED_BUFFERS, CONF_OFFSET,
+* 1998/12/26	acme		FIXED_BUFFERS, CONF_OFFSET,
 *                               removal of cy_read{bwl}
-* 1998/08/08	acme	 	Initial version.
+* 1998/08/08	acme		Initial version.
 */
 #ifndef	_CYCX_DRV_H
 #define	_CYCX_DRV_H

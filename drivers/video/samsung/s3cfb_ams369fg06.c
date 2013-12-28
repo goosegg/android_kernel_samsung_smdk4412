@@ -307,11 +307,11 @@ void ams369fg06_gpio_cfg(void)
 	s3c_gpio_cfgpin(EXYNOS4_GPB(5), S3C_GPIO_OUTPUT);
 	s3c_gpio_setpull(EXYNOS4_GPB(5), S3C_GPIO_PULL_NONE);
 
-	
+
 	/* LCD_SCLK */
 	s3c_gpio_cfgpin(EXYNOS4_GPB(4), S3C_GPIO_OUTPUT);
 	s3c_gpio_setpull(EXYNOS4_GPB(4), S3C_GPIO_PULL_NONE);
-	
+
 	/* LCD_SDI */
 	s3c_gpio_cfgpin(EXYNOS4_GPB(7), S3C_GPIO_OUTPUT);
 	s3c_gpio_setpull(EXYNOS4_GPB(7), S3C_GPIO_PULL_NONE);
@@ -403,10 +403,10 @@ static int s5p_bl_update_status(struct backlight_device *bd)
 
 		switch (level) {
 		/* If bl is not halved, variation in brightness is
-	 	 * observed as a curve with the middle region being
-	 	 * brightest and the sides being darker. It is
-	 	 * required that brightness increases gradually
-	 	 * from left to right.*/
+		 * observed as a curve with the middle region being
+		 * brightest and the sides being darker. It is
+		 * required that brightness increases gradually
+		 * from left to right.*/
 	case 1:
 		ams369fg06_spi_write(0x46, 0x2F);
 		ams369fg06_spi_write(0x56, 0x2E);

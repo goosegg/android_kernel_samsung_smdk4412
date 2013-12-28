@@ -1976,7 +1976,7 @@ static int wm8903_probe(struct snd_soc_codec *codec)
 
 		wm8903->mic_delay = pdata->micdet_delay;
 	}
-	
+
 	if (wm8903->irq) {
 		if (pdata && pdata->irq_active_low) {
 			trigger = IRQF_TRIGGER_LOW;
@@ -1988,7 +1988,7 @@ static int wm8903_probe(struct snd_soc_codec *codec)
 
 		snd_soc_update_bits(codec, WM8903_INTERRUPT_CONTROL,
 				    WM8903_IRQ_POL, irq_pol);
-		
+
 		ret = request_threaded_irq(wm8903->irq, NULL, wm8903_irq,
 					   trigger | IRQF_ONESHOT,
 					   "wm8903", codec);

@@ -106,7 +106,7 @@ struct fsl_usb2_platform_data {
 struct spi_device;
 
 struct fsl_spi_platform_data {
-	u32 	initial_spmode;	/* initial SPMODE value */
+	u32	initial_spmode;	/* initial SPMODE value */
 	s16	bus_num;
 	unsigned int flags;
 #define SPI_QE_CPU_MODE		(1 << 0) /* QE CPU ("PIO") mode */

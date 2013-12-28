@@ -77,7 +77,7 @@ enum { US_DO_ALL_FLAGS };
 #define USB_US_TYPE_STOR   1		/* usb-storage */
 #define USB_US_TYPE_UB     2		/* ub */
 
-#define USB_US_TYPE(flags) 		(((flags) >> 24) & 0xFF)
+#define USB_US_TYPE(flags)		(((flags) >> 24) & 0xFF)
 #define USB_US_ORIG_FLAGS(flags)	((flags) & 0x00FFFFFF)
 
 #include <linux/usb/storage.h>

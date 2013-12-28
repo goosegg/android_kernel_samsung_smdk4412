@@ -80,8 +80,8 @@ ENTRY(cpu_arm1020e_proc_init)
  */
 ENTRY(cpu_arm1020e_proc_fin)
 	mrc	p15, 0, r0, c1, c0, 0		@ ctrl register
-	bic	r0, r0, #0x1000 		@ ...i............
-	bic	r0, r0, #0x000e 		@ ............wca.
+	bic	r0, r0, #0x1000			@ ...i............
+	bic	r0, r0, #0x000e			@ ............wca.
 	mcr	p15, 0, r0, c1, c0, 0		@ disable caches
 	mov	pc, lr
 
@@ -103,8 +103,8 @@ ENTRY(cpu_arm1020e_reset)
 	mcr	p15, 0, ip, c8, c7, 0		@ invalidate I & D TLBs
 #endif
 	mrc	p15, 0, ip, c1, c0, 0		@ ctrl register
-	bic	ip, ip, #0x000f 		@ ............wcam
-	bic	ip, ip, #0x1100 		@ ...i...s........
+	bic	ip, ip, #0x000f			@ ............wcam
+	bic	ip, ip, #0x1100			@ ...i...s........
 	mcr	p15, 0, ip, c1, c0, 0		@ ctrl register
 	mov	pc, r0
 
@@ -380,7 +380,7 @@ ENTRY(cpu_arm1020e_switch_mm)
 	mcr	p15, 0, r3, c7, c10, 4
 	mov	r1, #0xF			@ 16 segments
 1:	mov	r3, #0x3F			@ 64 entries
-2:	mov	ip, r3, LSL #26 		@ shift up entry
+2:	mov	ip, r3, LSL #26			@ shift up entry
 	orr	ip, ip, r1, LSL #5		@ shift in/up index
 	mcr	p15, 0, ip, c7, c14, 2		@ Clean & Inval DCache entry
 	mov	ip, #0
@@ -401,7 +401,7 @@ ENTRY(cpu_arm1020e_switch_mm)
 	mcr	p15, 0, r1, c8, c7, 0		@ invalidate I & D TLBs
 #endif
 	mov	pc, lr
-        
+
 /*
  * cpu_arm1020e_set_pte(ptep, pte)
  *
@@ -434,7 +434,7 @@ __arm1020e_setup:
 	bic	r0, r0, r5
 	orr	r0, r0, r6
 #ifdef CONFIG_CPU_CACHE_ROUND_ROBIN
-	orr	r0, r0, #0x4000 		@ .R.. .... .... ....
+	orr	r0, r0, #0x4000			@ .R.. .... .... ....
 #endif
 	mov	pc, lr
 	.size	__arm1020e_setup, . - __arm1020e_setup

@@ -239,4 +239,3 @@ typedef unsigned char		BOOLEAN;
 #define MELFAS_ROLLBACK_WATCHDOG_TIMER_RESET()
 
 #endif
-

@@ -65,7 +65,7 @@ struct nfs_pageio_descriptor {
 
 	struct inode		*pg_inode;
 	int			(*pg_doio)(struct nfs_pageio_descriptor *);
-	int 			pg_ioflags;
+	int			pg_ioflags;
 	int			pg_error;
 	struct pnfs_layout_segment *pg_lseg;
 	bool			(*pg_test)(struct nfs_pageio_descriptor *, struct nfs_page *, struct nfs_page *);

@@ -3422,13 +3422,13 @@ static void __init smdk4x12_subdev_config(void)
 #ifdef CONFIG_VIDEO_S5K6A3
 #ifdef CONFIG_S5K6A3_CSI_C
 	s5p_mipi_csis0_default_data.clk_rate	= 160000000;
-	s5p_mipi_csis0_default_data.lanes 	= 1;
+	s5p_mipi_csis0_default_data.lanes	= 1;
 	s5p_mipi_csis0_default_data.alignment	= 24;
 	s5p_mipi_csis0_default_data.hs_settle	= 12;
 #endif
 #ifdef CONFIG_S5K6A3_CSI_D
 	s5p_mipi_csis1_default_data.clk_rate	= 160000000;
-	s5p_mipi_csis1_default_data.lanes 	= 1;
+	s5p_mipi_csis1_default_data.lanes	= 1;
 	s5p_mipi_csis1_default_data.alignment	= 24;
 	s5p_mipi_csis1_default_data.hs_settle	= 12;
 #endif
@@ -3878,7 +3878,7 @@ int samsung_board_rev;
 
 static int get_samsung_board_rev(void)
 {
-	int 		adc_val = 0;
+	int		adc_val = 0;
 	struct clk	*adc_clk;
 	struct resource	*res;
 	void __iomem	*adc_regs;
@@ -4064,7 +4064,7 @@ static void __init smdk4x12_machine_init(void)
 	clk_add_alias("hdmiphy", "s5p-hdmi", "hdmiphy", &s5p_device_hdmi.dev);
 
 	s5p_tv_setup();
-       
+
 	/* setup dependencies between TV devices */
 	s5p_device_hdmi.dev.parent = &exynos4_device_pd[PD_TV].dev;
 	s5p_device_mixer.dev.parent = &exynos4_device_pd[PD_TV].dev;

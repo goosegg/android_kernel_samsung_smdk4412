@@ -33,4 +33,3 @@
 #define IOCTL_GET_PHYMEM_BASE		_IOR(JPEG_IOCTL_MAGIC, 10, unsigned int)
 #define IOCTL_GET_PHYMEM_SIZE		_IOR(JPEG_IOCTL_MAGIC, 11, unsigned int)
 #endif /*__JPEG_DEV_H__*/
-

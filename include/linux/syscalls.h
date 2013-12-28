@@ -83,7 +83,7 @@ struct file_handle;
 #define __SC_DECL5(t5, a5, ...) t5 a5, __SC_DECL4(__VA_ARGS__)
 #define __SC_DECL6(t6, a6, ...) t6 a6, __SC_DECL5(__VA_ARGS__)
 
-#define __SC_LONG1(t1, a1) 	long a1
+#define __SC_LONG1(t1, a1)	long a1
 #define __SC_LONG2(t2, a2, ...) long a2, __SC_LONG1(__VA_ARGS__)
 #define __SC_LONG3(t3, a3, ...) long a3, __SC_LONG2(__VA_ARGS__)
 #define __SC_LONG4(t4, a4, ...) long a4, __SC_LONG3(__VA_ARGS__)
@@ -158,9 +158,9 @@ extern struct trace_event_functions exit_syscall_print_funcs;
 	SYSCALL_TRACE_EXIT_EVENT(sname);			\
 	static struct syscall_metadata __used			\
 	  __syscall_meta_##sname = {				\
-		.name 		= "sys"#sname,			\
+		.name		= "sys"#sname,			\
 		.syscall_nr	= -1,	/* Filled in at boot */	\
-		.nb_args 	= nb,				\
+		.nb_args	= nb,				\
 		.types		= types_##sname,		\
 		.args		= args_##sname,			\
 		.enter_event	= &event_enter_##sname,		\
@@ -176,9 +176,9 @@ extern struct trace_event_functions exit_syscall_print_funcs;
 	SYSCALL_TRACE_EXIT_EVENT(_##sname);			\
 	static struct syscall_metadata __used			\
 	  __syscall_meta__##sname = {				\
-		.name 		= "sys_"#sname,			\
+		.name		= "sys_"#sname,			\
 		.syscall_nr	= -1,	/* Filled in at boot */	\
-		.nb_args 	= 0,				\
+		.nb_args	= 0,				\
 		.enter_event	= &event_enter__##sname,	\
 		.exit_event	= &event_exit__##sname,		\
 		.enter_fields	= LIST_HEAD_INIT(__syscall_meta__##sname.enter_fields), \

@@ -12,7 +12,7 @@
  */
 #define ATPORT_FIRST	1
 #define ATPORT_RESERVED	128
-#define ATPORT_LAST	254		/* 254 is only legal on localtalk */ 
+#define ATPORT_LAST	254		/* 254 is only legal on localtalk */
 #define ATADDR_ANYNET	(__u16)0
 #define ATADDR_ANYNODE	(__u8)0
 #define ATADDR_ANYPORT  (__u8)0
@@ -69,7 +69,7 @@ struct atalk_iface {
 	struct atalk_netrange	nets;
 	struct atalk_iface	*next;
 };
-	
+
 struct atalk_sock {
 	/* struct sock has to be the first member of atalk_sock */
 	struct sock	sk;
@@ -163,7 +163,7 @@ extern int		 aarp_send_ddp(struct net_device *dev,
 				       struct atalk_addr *sa, void *hwaddr);
 extern void		 aarp_device_down(struct net_device *dev);
 extern void		 aarp_probe_network(struct atalk_iface *atif);
-extern int 		 aarp_proxy_probe_network(struct atalk_iface *atif,
+extern int		 aarp_proxy_probe_network(struct atalk_iface *atif,
 				     struct atalk_addr *sa);
 extern void		 aarp_proxy_remove(struct net_device *dev,
 					   struct atalk_addr *sa);

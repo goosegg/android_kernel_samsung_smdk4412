@@ -44,7 +44,7 @@
  *
  * int first_node(mask)			Number lowest set bit, or MAX_NUMNODES
  * int next_node(node, mask)		Next node past 'node', or MAX_NUMNODES
- * int first_unset_node(mask)		First node not set in mask, or 
+ * int first_unset_node(mask)		First node not set in mask, or
  *					MAX_NUMNODES.
  *
  * nodemask_t nodemask_of_node(node)	Return nodemask with bit 'node' set
@@ -462,8 +462,8 @@ static inline int num_node_state(enum node_states state)
 #define node_set_offline(node)	   node_clear_state((node), N_ONLINE)
 #endif
 
-#define node_online_map 	node_states[N_ONLINE]
-#define node_possible_map 	node_states[N_POSSIBLE]
+#define node_online_map		node_states[N_ONLINE]
+#define node_possible_map	node_states[N_POSSIBLE]
 
 #define num_online_nodes()	num_node_state(N_ONLINE)
 #define num_possible_nodes()	num_node_state(N_POSSIBLE)

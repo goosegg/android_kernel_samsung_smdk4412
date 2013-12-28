@@ -250,4 +250,3 @@ static void sromc_config_access_timing(unsigned int csn,
 }
 
 #endif
-

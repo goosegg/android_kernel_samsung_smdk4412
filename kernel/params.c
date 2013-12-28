@@ -218,7 +218,7 @@ int parse_args(const char *name,
 }
 
 /* Lazy bastard, eh? */
-#define STANDARD_PARAM_DEF(name, type, format, tmptype, strtolfn)      	\
+#define STANDARD_PARAM_DEF(name, type, format, tmptype, strtolfn)	\
 	int param_set_##name(const char *val, const struct kernel_param *kp) \
 	{								\
 		tmptype l;						\
@@ -534,7 +534,7 @@ static ssize_t param_attr_store(struct module_attribute *mattr,
 				struct module *owner,
 				const char *buf, size_t len)
 {
- 	int err;
+	int err;
 	struct param_attribute *attribute = to_param_attr(mattr);
 
 	if (!attribute->param->ops->set)

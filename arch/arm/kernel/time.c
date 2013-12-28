@@ -155,4 +155,3 @@ void __init time_init(void)
 	sched_clock_postinit();
 #endif
 }
-

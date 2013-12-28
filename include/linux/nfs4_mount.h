@@ -57,7 +57,7 @@ struct nfs4_mount_data {
 
 /* bits in the flags field */
 /* Note: the fields that correspond to existing NFSv2/v3 mount options
- * 	 should mirror the values from include/linux/nfs_mount.h
+ *	 should mirror the values from include/linux/nfs_mount.h
  */
 
 #define NFS4_MOUNT_SOFT		0x0001	/* 1 */

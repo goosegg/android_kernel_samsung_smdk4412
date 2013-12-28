@@ -50,9 +50,9 @@
 #define SIOCGIFMTU	0x8921		/* get MTU size			*/
 #define SIOCSIFMTU	0x8922		/* set MTU size			*/
 #define SIOCSIFNAME	0x8923		/* set interface name */
-#define	SIOCSIFHWADDR	0x8924		/* set hardware address 	*/
+#define	SIOCSIFHWADDR	0x8924		/* set hardware address		*/
 #define SIOCGIFENCAP	0x8925		/* get/set encapsulations       */
-#define SIOCSIFENCAP	0x8926		
+#define SIOCSIFENCAP	0x8926
 #define SIOCGIFHWADDR	0x8927		/* Get hardware address		*/
 #define SIOCGIFSLAVE	0x8929		/* Driver slaving support	*/
 #define SIOCSIFSLAVE	0x8930
@@ -68,10 +68,10 @@
 #define SIOCKILLADDR	0x8939		/* kill sockets with this local addr */
 
 #define SIOCGIFBR	0x8940		/* Bridging support		*/
-#define SIOCSIFBR	0x8941		/* Set bridging options 	*/
+#define SIOCSIFBR	0x8941		/* Set bridging options		*/
 
 #define SIOCGIFTXQLEN	0x8942		/* Get the tx queue length	*/
-#define SIOCSIFTXQLEN	0x8943		/* Set the tx queue length 	*/
+#define SIOCSIFTXQLEN	0x8943		/* Set the tx queue length	*/
 
 /* SIOCGIFDIVERT was:	0x8944		Frame diversion support */
 /* SIOCSIFDIVERT was:	0x8945		Set frame diversion options */
@@ -108,7 +108,7 @@
 #define SIOCDELDLCI	0x8981		/* Delete DLCI device		*/
 
 #define SIOCGIFVLAN	0x8982		/* 802.1Q VLAN support		*/
-#define SIOCSIFVLAN	0x8983		/* Set 802.1Q VLAN options 	*/
+#define SIOCSIFVLAN	0x8983		/* Set 802.1Q VLAN options	*/
 
 /* bonding calls */
 
@@ -118,7 +118,7 @@
 #define SIOCBONDSLAVEINFOQUERY 0x8993   /* rtn info about slave state   */
 #define SIOCBONDINFOQUERY      0x8994	/* rtn info about bond state    */
 #define SIOCBONDCHANGEACTIVE   0x8995   /* update to a new active slave */
-			
+
 /* bridge calls */
 #define SIOCBRADDBR     0x89a0		/* create new bridge device     */
 #define SIOCBRDELBR     0x89a1		/* remove bridge device         */
@@ -138,12 +138,12 @@
  *
  *	THESE IOCTLS ARE _DEPRECATED_ AND WILL DISAPPEAR IN 2.5.X -DaveM
  */
- 
+
 #define SIOCDEVPRIVATE	0x89F0	/* to 89FF */
 
 /*
  *	These 16 ioctl calls are protocol private
  */
- 
+
 #define SIOCPROTOPRIVATE 0x89E0 /* to 89EF */
 #endif	/* _LINUX_SOCKIOS_H */

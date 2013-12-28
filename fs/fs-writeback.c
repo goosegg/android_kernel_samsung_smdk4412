@@ -1005,7 +1005,7 @@ static noinline void block_dump___mark_inode_dirty(struct inode *inode)
  *	@inode: inode to mark
  *	@flags: what kind of dirty (i.e. I_DIRTY_SYNC)
  *	Mark an inode as dirty. Callers should use mark_inode_dirty or
- *  	mark_inode_dirty_sync.
+ *	mark_inode_dirty_sync.
  *
  * Put the inode on the super block's dirty list.
  *

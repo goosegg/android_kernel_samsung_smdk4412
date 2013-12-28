@@ -270,9 +270,9 @@ static inline void atmel_lcdfb_free_video_memory(struct atmel_lcdfb_info *sinfo)
 /**
  *	atmel_lcdfb_alloc_video_memory - Allocate framebuffer memory
  *	@sinfo: the frame buffer to allocate memory for
- * 	
- * 	This function is called only from the atmel_lcdfb_probe()
- * 	so no locking by fb_info->mm_lock around smem_len setting is needed.
+ *
+ *	This function is called only from the atmel_lcdfb_probe()
+ *	so no locking by fb_info->mm_lock around smem_len setting is needed.
  */
 static int atmel_lcdfb_alloc_video_memory(struct atmel_lcdfb_info *sinfo)
 {
@@ -625,7 +625,7 @@ static inline unsigned int chan_to_field(unsigned int chan, const struct fb_bitf
 }
 
 /**
- *  	atmel_lcdfb_setcolreg - Optional function. Sets a color register.
+ *	atmel_lcdfb_setcolreg - Optional function. Sets a color register.
  *      @regno: Which register in the CLUT we are programming
  *      @red: The red value which can be up to 16 bits wide
  *	@green: The green value which can be up to 16 bits wide
@@ -633,8 +633,8 @@ static inline unsigned int chan_to_field(unsigned int chan, const struct fb_bitf
  *	@transp: If supported the alpha value which can be up to 16 bits wide.
  *      @info: frame buffer info structure
  *
- *  	Set a single color register. The values supplied have a 16 bit
- *  	magnitude which needs to be scaled in this function for the hardware.
+ *	Set a single color register. The values supplied have a 16 bit
+ *	magnitude which needs to be scaled in this function for the hardware.
  *	Things to take into consideration are how many color registers, if
  *	any, are supported with the current color visual. With truecolor mode
  *	no color palettes are supported. Here a pseudo palette is created
@@ -1013,7 +1013,7 @@ unmap_mmio:
 	exit_backlight(sinfo);
 	iounmap(sinfo->mmio);
 release_mem:
- 	release_mem_region(info->fix.mmio_start, info->fix.mmio_len);
+	release_mem_region(info->fix.mmio_start, info->fix.mmio_len);
 free_fb:
 	if (map)
 		iounmap(info->screen_base);
@@ -1058,7 +1058,7 @@ static int __exit atmel_lcdfb_remove(struct platform_device *pdev)
 	fb_dealloc_cmap(&info->cmap);
 	free_irq(sinfo->irq_base, info);
 	iounmap(sinfo->mmio);
- 	release_mem_region(info->fix.mmio_start, info->fix.mmio_len);
+	release_mem_region(info->fix.mmio_start, info->fix.mmio_len);
 	if (platform_get_resource(pdev, IORESOURCE_MEM, 1)) {
 		iounmap(info->screen_base);
 		release_mem_region(info->fix.smem_start, info->fix.smem_len);

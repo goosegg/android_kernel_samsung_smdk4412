@@ -54,7 +54,7 @@ struct mutex {
 	struct task_struct	*owner;
 #endif
 #ifdef CONFIG_DEBUG_MUTEXES
-	const char 		*name;
+	const char		*name;
 	void			*magic;
 #endif
 #ifdef CONFIG_DEBUG_LOCK_ALLOC

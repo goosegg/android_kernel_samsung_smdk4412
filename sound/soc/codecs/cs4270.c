@@ -407,7 +407,7 @@ static int cs4270_dai_mute(struct snd_soc_dai *dai, int mute)
 
 /**
  * cs4270_soc_put_mute - put callback for the 'Master Playback switch'
- * 			 alsa control.
+ *			 alsa control.
  * @kcontrol: mixer control
  * @ucontrol: control element information
  *

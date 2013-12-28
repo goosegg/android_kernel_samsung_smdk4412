@@ -1,6 +1,6 @@
 /* drivers/media/video/samsung/fimg2d3x/fimg2d3x_cache.c
  *
- * Copyright  2010 Samsung Electronics Co, Ltd. All Rights Reserved. 
+ * Copyright  2010 Samsung Electronics Co, Ltd. All Rights Reserved.
  *		      http://www.samsungsemi.com/
  *
  * This program is free software; you can redistribute it and/or modify
@@ -31,27 +31,27 @@ void g2d_pagetable_clean(const void *start_addr, unsigned long size, unsigned lo
 	size = ALIGN(size, SZ_1M);
 	cur_addr = (void *)((unsigned long)start_addr & ~(SZ_1M-1));
 	end_addr = cur_addr + size + SZ_1M;
-    
-	l1d_phy = (void *)((pgd & 0xffffc000) | (((u32)(cur_addr) & 0xfff00000)>>18)); 
-	
+
+	l1d_phy = (void *)((pgd & 0xffffc000) | (((u32)(cur_addr) & 0xfff00000)>>18));
+
 	if (l1d_phy) {
 		l1d_vir = phys_to_virt((u32)l1d_phy);
 		dmac_map_area(l1d_vir, (size/SZ_1M)*4, DMA_TO_DEVICE);
 	}
-	
+
 	while (cur_addr < end_addr) {
 		outer_clean_range((u32)l1d_phy, (u32)l1d_phy + 4);
 
-		if (l1d_phy) {			
-			l2d_phy = (void *)((readl(phys_to_virt((u32)l1d_phy)) & 0xfffffc00) | 
+		if (l1d_phy) {
+			l2d_phy = (void *)((readl(phys_to_virt((u32)l1d_phy)) & 0xfffffc00) |
 				(((u32)cur_addr & 0x000ff000) >> 10));
 			if (l2d_phy)
-				dmac_map_area(phys_to_virt((u32)l2d_phy), SZ_1K, DMA_TO_DEVICE);  
+				dmac_map_area(phys_to_virt((u32)l2d_phy), SZ_1K, DMA_TO_DEVICE);
 			outer_clean_range((u32)l2d_phy, (u32)l2d_phy + SZ_1K);
 		}
-		cur_addr += SZ_1M; 
+		cur_addr += SZ_1M;
 		l1d_phy = (void *)((pgd & 0xffffc000) | (((u32)(cur_addr) & 0xfff00000)>>18));
-	}  
+	}
 }
 
 
@@ -70,7 +70,7 @@ static unsigned long virt2phys(unsigned long addr)
 	if ((pgd_val(*pgd) & 0x1) != 0x1) {
 		return 0;
 	}
-	
+
 	pmd = pmd_offset(pgd, addr);
 	pte = pte_offset_map(pmd, addr);
 
@@ -80,8 +80,8 @@ static unsigned long virt2phys(unsigned long addr)
 u32 g2d_check_pagetable(void * vaddr, unsigned int size, unsigned long pgd)
 {
     unsigned int level_one_phy, level_two_phy;
-    unsigned int level_one_value, level_two_value; 
-    
+    unsigned int level_one_value, level_two_value;
+
     for (;;) {
 	level_one_phy = (pgd & 0xffffc000) | (((u32)vaddr & 0xfff00000)>>18);
 	if ((int)phys_to_virt(level_one_phy) < 0xc0000000) {
@@ -107,7 +107,7 @@ u32 g2d_check_pagetable(void * vaddr, unsigned int size, unsigned long pgd)
 			return G2D_PT_UNCACHED;
 		return G2D_PT_CACHED;
 	}
-    
+
 	if (size <= PAGE_SIZE) {
 		vaddr += (size-1);
 		size = 0;
@@ -140,9 +140,9 @@ void g2d_mem_inner_cache(g2d_params * params)
 	g2d_clip clip_src;
 	g2d_clip_for_src(&params->src_rect, &params->dst_rect, &params->clip, &clip_src);
 
-	src_addr = (void *)GET_START_ADDR_C(params->src_rect, clip_src); 
+	src_addr = (void *)GET_START_ADDR_C(params->src_rect, clip_src);
 	dst_addr = (void *)GET_START_ADDR_C(params->dst_rect, params->clip);
-	src_size = (unsigned long)GET_RECT_SIZE_C(params->src_rect, clip_src); 
+	src_size = (unsigned long)GET_RECT_SIZE_C(params->src_rect, clip_src);
 	dst_size = (unsigned long)GET_RECT_SIZE_C(params->dst_rect, params->clip);
 
 	if((src_size + dst_size) < L1_ALL_THRESHOLD_SIZE) {
@@ -155,7 +155,7 @@ void g2d_mem_inner_cache(g2d_params * params)
 
 void g2d_mem_outer_cache(struct g2d_global *g2d_dev, g2d_params * params, int *need_dst_clean)
 {
- 	unsigned long start_paddr, end_paddr;
+	unsigned long start_paddr, end_paddr;
 	unsigned long cur_addr, end_addr;
 	unsigned long width_bytes;
 	unsigned long stride;
@@ -167,7 +167,7 @@ void g2d_mem_outer_cache(struct g2d_global *g2d_dev, g2d_params * params, int *n
 		outer_flush_all();
 		*need_dst_clean = true;
 		return;
-	}	
+	}
 #endif
 
 	g2d_clip clip_src;
@@ -182,9 +182,9 @@ void g2d_mem_outer_cache(struct g2d_global *g2d_dev, g2d_params * params, int *n
 		return;
 	}
 
-	if((GET_SPARE_BYTES(params->src_rect) < L2_CACHE_SKIP_MARK) 
+	if((GET_SPARE_BYTES(params->src_rect) < L2_CACHE_SKIP_MARK)
 		|| ((params->src_rect.w * params->src_rect.bytes_per_pixel) >= PAGE_SIZE)) {
-		g2d_mem_outer_cache_clean((void *)GET_START_ADDR_C(params->src_rect, clip_src), 
+		g2d_mem_outer_cache_clean((void *)GET_START_ADDR_C(params->src_rect, clip_src),
 			(unsigned int)GET_RECT_SIZE_C(params->src_rect, clip_src));
 	} else {
 		stride = GET_STRIDE(params->src_rect);
@@ -195,12 +195,12 @@ void g2d_mem_outer_cache(struct g2d_global *g2d_dev, g2d_params * params, int *n
 		while (cur_addr <= end_addr) {
 			start_paddr = virt2phys((unsigned long)cur_addr);
 			end_paddr = virt2phys((unsigned long)cur_addr + width_bytes);
-			
+
 			if (((end_paddr - start_paddr) > 0) && ((end_paddr -start_paddr) < PAGE_SIZE)) {
 				outer_clean_range(start_paddr, end_paddr);
 			} else {
 				outer_clean_range(start_paddr, ((start_paddr + PAGE_SIZE) & PAGE_MASK) - 1);
-				outer_clean_range(end_paddr & PAGE_MASK, end_paddr);			
+				outer_clean_range(end_paddr & PAGE_MASK, end_paddr);
 			}
 			cur_addr += stride;
 		}
@@ -208,20 +208,20 @@ void g2d_mem_outer_cache(struct g2d_global *g2d_dev, g2d_params * params, int *n
 
 	if (*need_dst_clean) {
 		if ((GET_SPARE_BYTES(params->dst_rect) < L2_CACHE_SKIP_MARK)
-			|| ((params->dst_rect.w * params->src_rect.bytes_per_pixel) >= PAGE_SIZE)) {		
-			g2d_mem_outer_cache_flush((void *)GET_START_ADDR_C(params->dst_rect, params->clip), 
+			|| ((params->dst_rect.w * params->src_rect.bytes_per_pixel) >= PAGE_SIZE)) {
+			g2d_mem_outer_cache_flush((void *)GET_START_ADDR_C(params->dst_rect, params->clip),
 				(unsigned int)GET_RECT_SIZE_C(params->dst_rect, params->clip));
 		} else {
 			stride = GET_STRIDE(params->dst_rect);
 			width_bytes = (params->clip.r - params->clip.l) * params->dst_rect.bytes_per_pixel;
-			
+
 			cur_addr = (unsigned long)GET_REAL_START_ADDR_C(params->dst_rect, params->clip);
 			end_addr = (unsigned long)GET_REAL_END_ADDR_C(params->dst_rect, params->clip);
 
 			while (cur_addr <= end_addr) {
 				start_paddr = virt2phys((unsigned long)cur_addr);
 				end_paddr = virt2phys((unsigned long)cur_addr + width_bytes);
-				
+
 				if (((end_paddr - start_paddr) > 0) && ((end_paddr -start_paddr) < PAGE_SIZE)) {
 					outer_flush_range(start_paddr, end_paddr);
 				} else {
@@ -229,15 +229,15 @@ void g2d_mem_outer_cache(struct g2d_global *g2d_dev, g2d_params * params, int *n
 					outer_flush_range(end_paddr & PAGE_MASK, end_paddr);
 				}
 				cur_addr += stride;
-			}	
+			}
 		}
 	}
 }
 
 void g2d_mem_cache_oneshot(void *src_addr,  void *dst_addr, unsigned long src_size, unsigned long dst_size)
 {
- 	unsigned long paddr;
-        	void *cur_addr, *end_addr;
+	unsigned long paddr;
+		void *cur_addr, *end_addr;
 	unsigned long full_size;
 
 	full_size = src_size + dst_size;
@@ -258,11 +258,11 @@ void g2d_mem_cache_oneshot(void *src_addr,  void *dst_addr, unsigned long src_si
 
 	while (cur_addr < end_addr) {
 		paddr = virt2phys((unsigned long)cur_addr);
-		if (paddr) {            
+		if (paddr) {
 			outer_clean_range(paddr, paddr + PAGE_SIZE);
 		}
 		cur_addr += PAGE_SIZE;
-	}   
+	}
 
 	if(full_size < L1_ALL_THRESHOLD_SIZE)
 		dmac_flush_range(dst_addr, dst_addr + dst_size);
@@ -273,7 +273,7 @@ void g2d_mem_cache_oneshot(void *src_addr,  void *dst_addr, unsigned long src_si
 
 	while (cur_addr < end_addr) {
 		paddr = virt2phys((unsigned long)cur_addr);
-		if (paddr) {            
+		if (paddr) {
 			outer_flush_range(paddr, paddr + PAGE_SIZE);
 		}
 		cur_addr += PAGE_SIZE;
@@ -285,14 +285,14 @@ u32 g2d_mem_cache_op(unsigned int cmd, void *addr, unsigned int size)
 	switch(cmd) {
 	case G2D_DMA_CACHE_CLEAN :
 		g2d_mem_outer_cache_clean((void *)addr, size);
-		break;	
+		break;
 	case G2D_DMA_CACHE_FLUSH :
 		g2d_mem_outer_cache_flush((void *)addr, size);
 		break;
 	default :
 		return false;
-		break;		
-	}	
+		break;
+	}
 
 	return true;
 }
@@ -308,11 +308,11 @@ void g2d_mem_outer_cache_flush(void *start_addr, unsigned long size)
 
 	while (cur_addr < end_addr) {
 		paddr = virt2phys((unsigned long)cur_addr);
-		if (paddr) {            
+		if (paddr) {
 			outer_flush_range(paddr, paddr + PAGE_SIZE);
 		}
 	cur_addr += PAGE_SIZE;
-	}   
+	}
 }
 
 void g2d_mem_outer_cache_clean(const void *start_addr, unsigned long size)
@@ -335,10 +335,10 @@ void g2d_mem_outer_cache_clean(const void *start_addr, unsigned long size)
 
 void g2d_mem_outer_cache_inv(g2d_params *params)
 {
- 	unsigned long start_paddr, end_paddr;
+	unsigned long start_paddr, end_paddr;
 	unsigned long cur_addr, end_addr;
 	unsigned long stride;
-	
+
 	stride = GET_STRIDE(params->dst_rect);
 	cur_addr = (unsigned long)GET_START_ADDR_C(params->dst_rect, params->clip);
 	end_addr = cur_addr + (unsigned long)GET_RECT_SIZE_C(params->dst_rect, params->clip);
@@ -348,8 +348,8 @@ void g2d_mem_outer_cache_inv(g2d_params *params)
 	cur_addr = ((unsigned long)cur_addr & PAGE_MASK) + PAGE_SIZE;
 
 	while (cur_addr < end_addr) {
-		start_paddr = virt2phys((unsigned long)cur_addr);		
-		if ((cur_addr + PAGE_SIZE) > end_addr) {		
+		start_paddr = virt2phys((unsigned long)cur_addr);
+		if ((cur_addr + PAGE_SIZE) > end_addr) {
 			end_paddr = virt2phys((unsigned long)end_addr);
 			outer_inv_range(start_paddr, end_paddr);
 			break;
@@ -367,13 +367,13 @@ int g2d_check_need_dst_cache_clean(g2d_params * params)
 	unsigned long cur_addr, end_addr;
 	cur_addr = (unsigned long)GET_START_ADDR_C(params->dst_rect, params->clip);
 	end_addr = cur_addr + (unsigned long)GET_RECT_SIZE_C(params->dst_rect, params->clip);
-	
+
 	if ((params->src_rect.color_format == G2D_RGB_565) &&
 		(params->flag.alpha_val == G2D_ALPHA_BLENDING_OPAQUE) &&
 		(params->dst_rect.full_w == (params->clip.r - params->clip.l)) &&
 		(cur_addr % 32 == 0) && (end_addr % 32 == 0))   {
 		return false;
 	}
-	
+
 	return true;
 }

@@ -85,4 +85,3 @@ unsigned int read_shm(struct mfc_inst_ctx *ctx, unsigned int offset)
 
 	return readl(ctx->shm + offset);
 }
-

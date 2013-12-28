@@ -43,4 +43,3 @@ void s3cfb_set_lcd_info(struct s3cfb_global *ctrl)
 	lte480wv.init_ldi = NULL;
 	ctrl->lcd = &lte480wv;
 }
-

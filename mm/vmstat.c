@@ -120,7 +120,7 @@ int calculate_normal_threshold(struct zone *zone)
 	 * The threshold scales with the number of processors and the amount
 	 * of memory per zone. More memory means that we can defer updates for
 	 * longer, more processors could lead to more contention.
- 	 * fls() is used to have a cheap way of logarithmic scaling.
+	 * fls() is used to have a cheap way of logarithmic scaling.
 	 *
 	 * Some sample thresholds:
 	 *
@@ -128,7 +128,7 @@ int calculate_normal_threshold(struct zone *zone)
 	 * ------------------------------------------------------------------
 	 * 8		1		1	0.9-1 GB	4
 	 * 16		2		2	0.9-1 GB	4
-	 * 20 		2		2	1-2 GB		5
+	 * 20		2		2	1-2 GB		5
 	 * 24		2		2	2-4 GB		6
 	 * 28		2		2	4-8 GB		7
 	 * 32		2		2	8-16 GB		8
@@ -504,7 +504,7 @@ void refresh_cpu_vm_stats(int cpu)
 #ifdef CONFIG_NUMA
 /*
  * zonelist = the list of zones passed to the allocator
- * z 	    = the zone from which the allocation occurred.
+ * z	    = the zone from which the allocation occurred.
  *
  * Must be called with interrupts disabled.
  *

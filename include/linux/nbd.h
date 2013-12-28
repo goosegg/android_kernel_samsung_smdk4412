@@ -52,7 +52,7 @@ struct nbd_device {
 	int flags;
 	int harderror;		/* Code of hard error			*/
 	struct socket * sock;
-	struct file * file; 	/* If == NULL, device is not ready, yet	*/
+	struct file * file;	/* If == NULL, device is not ready, yet	*/
 	int magic;
 
 	spinlock_t queue_lock;
@@ -84,7 +84,7 @@ struct nbd_device {
  */
 struct nbd_request {
 	__be32 magic;
-	__be32 type;	/* == READ || == WRITE 	*/
+	__be32 type;	/* == READ || == WRITE	*/
 	char handle[8];
 	__be64 from;
 	__be32 len;

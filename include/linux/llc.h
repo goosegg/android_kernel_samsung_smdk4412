@@ -49,27 +49,27 @@ enum llc_sockopts {
 #define LLC_OPT_MAX_BUSY_TMR_EXP  60
 
 /* LLC SAP types. */
-#define LLC_SAP_NULL	0x00		/* NULL SAP. 			*/
-#define LLC_SAP_LLC	0x02		/* LLC Sublayer Management. 	*/
-#define LLC_SAP_SNA	0x04		/* SNA Path Control. 		*/
-#define LLC_SAP_PNM	0x0E		/* Proway Network Management.	*/	
-#define LLC_SAP_IP	0x06		/* TCP/IP. 			*/
+#define LLC_SAP_NULL	0x00		/* NULL SAP.			*/
+#define LLC_SAP_LLC	0x02		/* LLC Sublayer Management.	*/
+#define LLC_SAP_SNA	0x04		/* SNA Path Control.		*/
+#define LLC_SAP_PNM	0x0E		/* Proway Network Management.	*/
+#define LLC_SAP_IP	0x06		/* TCP/IP.			*/
 #define LLC_SAP_BSPAN	0x42		/* Bridge Spanning Tree Proto	*/
 #define LLC_SAP_MMS	0x4E		/* Manufacturing Message Srv.	*/
 #define LLC_SAP_8208	0x7E		/* ISO 8208			*/
-#define LLC_SAP_3COM	0x80		/* 3COM. 			*/
+#define LLC_SAP_3COM	0x80		/* 3COM.			*/
 #define LLC_SAP_PRO	0x8E		/* Proway Active Station List	*/
-#define LLC_SAP_SNAP	0xAA		/* SNAP. 			*/
-#define LLC_SAP_BANYAN	0xBC		/* Banyan. 			*/
-#define LLC_SAP_IPX	0xE0		/* IPX/SPX. 			*/
-#define LLC_SAP_NETBEUI	0xF0		/* NetBEUI. 			*/
-#define LLC_SAP_LANMGR	0xF4		/* LanManager. 			*/
+#define LLC_SAP_SNAP	0xAA		/* SNAP.			*/
+#define LLC_SAP_BANYAN	0xBC		/* Banyan.			*/
+#define LLC_SAP_IPX	0xE0		/* IPX/SPX.			*/
+#define LLC_SAP_NETBEUI	0xF0		/* NetBEUI.			*/
+#define LLC_SAP_LANMGR	0xF4		/* LanManager.			*/
 #define LLC_SAP_IMPL	0xF8		/* IMPL				*/
 #define LLC_SAP_DISC	0xFC		/* Discovery			*/
-#define LLC_SAP_OSI	0xFE		/* OSI Network Layers. 		*/
-#define LLC_SAP_LAR	0xDC		/* LAN Address Resolution 	*/
-#define LLC_SAP_RM	0xD4		/* Resource Management 		*/
-#define LLC_SAP_GLOBAL	0xFF		/* Global SAP. 			*/
+#define LLC_SAP_OSI	0xFE		/* OSI Network Layers.		*/
+#define LLC_SAP_LAR	0xDC		/* LAN Address Resolution	*/
+#define LLC_SAP_RM	0xD4		/* Resource Management		*/
+#define LLC_SAP_GLOBAL	0xFF		/* Global SAP.			*/
 
 struct llc_pktinfo {
 	int lpi_ifindex;

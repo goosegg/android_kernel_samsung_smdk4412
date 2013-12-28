@@ -119,4 +119,3 @@ void ppmu_reset(struct device *dev);
 
 extern struct exynos4_ppmu_hw exynos_ppmu[];
 #endif /* __ASM_ARCH_PPMU_H */
-

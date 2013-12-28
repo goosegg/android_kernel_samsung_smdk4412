@@ -76,4 +76,3 @@ enum CMD_LIST {
 };
 
 #endif  /* _SEC_TSP_SYSFS_H */
-

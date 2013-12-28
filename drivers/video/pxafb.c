@@ -560,7 +560,7 @@ static int pxafb_pan_display(struct fb_var_screeninfo *var,
 /*
  * pxafb_blank():
  *	Blank the display by setting all palette values to zero.  Note, the
- * 	16 bpp mode does not really use the palette, so this will not
+ *	16 bpp mode does not really use the palette, so this will not
  *      blank the display in all modes.
  */
 static int pxafb_blank(int blank, struct fb_info *info)
@@ -861,7 +861,7 @@ static struct fb_ops overlay_fb_ops = {
 	.owner			= THIS_MODULE,
 	.fb_open		= overlayfb_open,
 	.fb_release		= overlayfb_release,
-	.fb_check_var 		= overlayfb_check_var,
+	.fb_check_var		= overlayfb_check_var,
 	.fb_set_par		= overlayfb_set_par,
 };
 
@@ -1739,7 +1739,7 @@ static void pxafb_decode_mach_info(struct pxafb_info *fbi,
 
 	fbi->cmap_inverse	= inf->cmap_inverse;
 	fbi->cmap_static	= inf->cmap_static;
-	fbi->lccr4 		= inf->lccr4;
+	fbi->lccr4		= inf->lccr4;
 
 	switch (lcd_conn & LCD_TYPE_MASK) {
 	case LCD_TYPE_MONO_STN:
@@ -2310,7 +2310,7 @@ static int __devexit pxafb_remove(struct platform_device *dev)
 
 static struct platform_driver pxafb_driver = {
 	.probe		= pxafb_probe,
-	.remove 	= __devexit_p(pxafb_remove),
+	.remove		= __devexit_p(pxafb_remove),
 	.driver		= {
 		.owner	= THIS_MODULE,
 		.name	= "pxa2xx-fb",

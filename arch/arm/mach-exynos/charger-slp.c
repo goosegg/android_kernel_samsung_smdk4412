@@ -268,4 +268,3 @@ void cm_change_fullbatt_uV(void)
 	midas_charger_desc.fullbatt_uV =  SDI_2100MA_BATT;
 }
 EXPORT_SYMBOL(cm_change_fullbatt_uV);
-

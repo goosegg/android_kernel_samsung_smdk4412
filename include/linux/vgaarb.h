@@ -206,8 +206,8 @@ static inline int vga_conflicts(struct pci_dev *p1, struct pci_dev *p2)
  *	@irq_set_state: irq state change callback
  *	@set_vga_decode: vga decode change callback
  *
- * 	return value: 0 on success, -1 on failure
- * 	Register a client with the VGA arbitration logic
+ *	return value: 0 on success, -1 on failure
+ *	Register a client with the VGA arbitration logic
  *
  *	Clients have two callback mechanisms they can use.
  *	irq enable/disable callback -

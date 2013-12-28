@@ -191,7 +191,7 @@ struct led_platform_data {
 struct gpio_led {
 	const char *name;
 	const char *default_trigger;
-	unsigned 	gpio;
+	unsigned	gpio;
 	unsigned	active_low : 1;
 	unsigned	retain_state_suspended : 1;
 	unsigned	default_state : 2;
@@ -202,7 +202,7 @@ struct gpio_led {
 #define LEDS_GPIO_DEFSTATE_KEEP		2
 
 struct gpio_led_platform_data {
-	int 		num_leds;
+	int		num_leds;
 	const struct gpio_led *leds;
 
 #define GPIO_LED_NO_BLINK_LOW	0	/* No blink GPIO state low */

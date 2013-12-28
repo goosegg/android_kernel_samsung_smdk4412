@@ -41,7 +41,7 @@
 /*
  * setsockopt/getsockopt for SOL_RDS
  */
-#define RDS_CANCEL_SENT_TO      	1
+#define RDS_CANCEL_SENT_TO		1
 #define RDS_GET_MR			2
 #define RDS_FREE_MR			3
 /* deprecated: RDS_BARRIER 4 */
@@ -214,7 +214,7 @@ struct rds_get_mr_args {
 
 struct rds_get_mr_for_dest_args {
 	struct sockaddr_storage	dest_addr;
-	struct rds_iovec 	vec;
+	struct rds_iovec	vec;
 	uint64_t		cookie_addr;
 	uint64_t		flags;
 };
@@ -235,8 +235,8 @@ struct rds_rdma_args {
 
 struct rds_atomic_args {
 	rds_rdma_cookie_t cookie;
-	uint64_t 	local_addr;
-	uint64_t 	remote_addr;
+	uint64_t	local_addr;
+	uint64_t	remote_addr;
 	union {
 		struct {
 			uint64_t	compare;

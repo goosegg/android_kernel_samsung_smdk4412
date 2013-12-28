@@ -567,7 +567,7 @@ void rt_mutex_adjust_pi(struct task_struct *task)
  * __rt_mutex_slowlock() - Perform the wait-wake-try-to-take loop
  * @lock:		 the rt_mutex to take
  * @state:		 the state the task should block in (TASK_INTERRUPTIBLE
- * 			 or TASK_UNINTERRUPTIBLE)
+ *			 or TASK_UNINTERRUPTIBLE)
  * @timeout:		 the pre-initialized and started timer, or NULL for none
  * @waiter:		 the pre-initialized rt_mutex_waiter
  *
@@ -791,12 +791,12 @@ EXPORT_SYMBOL_GPL(rt_mutex_lock);
 /**
  * rt_mutex_lock_interruptible - lock a rt_mutex interruptible
  *
- * @lock: 		the rt_mutex to be locked
+ * @lock:		the rt_mutex to be locked
  * @detect_deadlock:	deadlock detection on/off
  *
  * Returns:
- *  0 		on success
- * -EINTR 	when interrupted by a signal
+ *  0		on success
+ * -EINTR	when interrupted by a signal
  * -EDEADLK	when the lock would deadlock (when deadlock detection is on)
  */
 int __sched rt_mutex_lock_interruptible(struct rt_mutex *lock,
@@ -814,13 +814,13 @@ EXPORT_SYMBOL_GPL(rt_mutex_lock_interruptible);
  *			the timeout structure is provided
  *			by the caller
  *
- * @lock: 		the rt_mutex to be locked
+ * @lock:		the rt_mutex to be locked
  * @timeout:		timeout structure or NULL (no timeout)
  * @detect_deadlock:	deadlock detection on/off
  *
  * Returns:
- *  0 		on success
- * -EINTR 	when interrupted by a signal
+ *  0		on success
+ * -EINTR	when interrupted by a signal
  * -ETIMEDOUT	when the timeout expired
  * -EDEADLK	when the lock would deadlock (when deadlock detection is on)
  */
@@ -900,7 +900,7 @@ EXPORT_SYMBOL_GPL(__rt_mutex_init);
  * rt_mutex_init_proxy_locked - initialize and lock a rt_mutex on behalf of a
  *				proxy owner
  *
- * @lock: 	the rt_mutex to be locked
+ * @lock:	the rt_mutex to be locked
  * @proxy_owner:the task to set as owner
  *
  * No locking. Caller has to do serializing itself
@@ -918,7 +918,7 @@ void rt_mutex_init_proxy_locked(struct rt_mutex *lock,
 /**
  * rt_mutex_proxy_unlock - release a lock on behalf of owner
  *
- * @lock: 	the rt_mutex to be locked
+ * @lock:	the rt_mutex to be locked
  *
  * No locking. Caller has to do serializing itself
  * Special API call for PI-futex support
@@ -1004,7 +1004,7 @@ struct task_struct *rt_mutex_next_owner(struct rt_mutex *lock)
  * rt_mutex_finish_proxy_lock() - Complete lock acquisition
  * @lock:		the rt_mutex we were woken on
  * @to:			the timeout, null if none. hrtimer should already have
- * 			been started.
+ *			been started.
  * @waiter:		the pre-initialized rt_mutex_waiter
  * @detect_deadlock:	perform deadlock detection (1) or not (0)
  *

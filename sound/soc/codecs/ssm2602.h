@@ -114,7 +114,7 @@
 
 /*********************************************************************/
 
-#define SSM2602_CACHEREGNUM 	10
+#define SSM2602_CACHEREGNUM	10
 
 #define SSM2602_SYSCLK	0
 

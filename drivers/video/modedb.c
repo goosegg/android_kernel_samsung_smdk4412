@@ -513,7 +513,7 @@ static int fb_try_mode(struct fb_var_screeninfo *var, struct fb_info *info,
     var->sync = mode->sync;
     var->vmode = mode->vmode;
     if (info->fbops->fb_check_var)
-    	err = info->fbops->fb_check_var(var, info);
+	err = info->fbops->fb_check_var(var, info);
     var->activate &= ~FB_ACTIVATE_TEST;
     return err;
 }
@@ -1081,7 +1081,7 @@ const struct fb_videomode *fb_find_best_display(const struct fb_monspecs *specs,
 		}
 
 		if (m->flag & FB_MODE_IS_FIRST) {
- 			md = m;
+			md = m;
 			break;
 		}
 	}

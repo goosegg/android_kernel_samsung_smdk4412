@@ -25,8 +25,8 @@ struct ion_handle;
  * @ION_HEAP_TYPE_SYSTEM:	 memory allocated via vmalloc
  * @ION_HEAP_TYPE_SYSTEM_CONTIG: memory allocated via kmalloc
  * @ION_HEAP_TYPE_CARVEOUT:	 memory allocated from a prereserved
- * 				 carveout heap, allocations are physically
- * 				 contiguous
+ *				 carveout heap, allocations are physically
+ *				 contiguous
  * @ION_HEAP_END:		 helper for iterating over heaps
  */
 enum ion_heap_type {
@@ -71,8 +71,8 @@ struct ion_buffer;
 /**
  * struct ion_platform_heap - defines a heap in the given platform
  * @type:	type of the heap from ion_heap_type enum
- * @id:		unique identifier for heap.  When allocating (lower numbers 
- * 		will be allocated from first)
+ * @id:		unique identifier for heap.  When allocating (lower numbers
+ *		will be allocated from first)
  * @name:	used for debug purposes
  * @base:	base address of heap in physical memory if applicable
  * @size:	size of the heap in bytes if applicable

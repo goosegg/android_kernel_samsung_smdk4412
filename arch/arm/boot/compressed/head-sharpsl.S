@@ -26,7 +26,7 @@ __SharpSL_start:
 /* Check for TC6393 - if found we have a Tosa */
 	ldr	r7, .TOSAID
 	mov	r1, #0x10000000		@ Base address of TC6393 chip
-	mov 	r6, #0x03
+	mov	r6, #0x03
 	ldrh	r3, [r1, #8]		@ Load TC6393XB Revison: This is 0x0003
 	cmp	r6, r3
 	beq	.SHARPEND		@ Success -> tosa
@@ -82,7 +82,7 @@ __SharpSL_start:
 /* Check for a second SCOOP chip - if found we have Borzoi */
 	ldr	r1, .SCOOP2ADDR
 	ldr	r7, .BORZOIID
-	mov 	r6, #0x0140
+	mov	r6, #0x0140
 	strh	r6, [r1]
 	ldrh	r6, [r1]
 	cmp	r6, #0x0140
@@ -99,7 +99,7 @@ __SharpSL_start:
 .W100ID:
 	.word	0x57411002		@ w100 Chip ID
 .W100ADDR:
-	.word 	0x08010000		@ w100 Chip ID Reg Address
+	.word	0x08010000		@ w100 Chip ID Reg Address
 .SCOOP2ADDR:
 	.word	0x08800040
 .POODLEID:
@@ -130,7 +130,7 @@ get_flash_ids:
 	bic	r3, r3, #0x11		@ SET NCE
 	orr	r3, r3, #0x0a		@ SET CLR + FLWP
 	strb	r3, [r1, #24]		@ Save to FLASHCTL
-	mov 	r2, #0x90		@ Command "readid"
+	mov	r2, #0x90		@ Command "readid"
 	strb	r2, [r1, #20]		@ Save to FLASHIO
 	bic	r3, r3, #2		@ CLR CLE
 	orr	r3, r3, #4		@ SET ALE

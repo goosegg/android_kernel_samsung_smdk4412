@@ -28,11 +28,11 @@
 #include <asm/traps.h>
 #include <asm/cacheflush.h>
 
-#define MIN_STACK_SIZE(addr) 				\
+#define MIN_STACK_SIZE(addr)				\
 	min((unsigned long)MAX_STACK_SIZE,		\
 	    (unsigned long)current_thread_info() + THREAD_START_SP - (addr))
 
-#define flush_insns(addr, cnt) 				\
+#define flush_insns(addr, cnt)				\
 	flush_icache_range((unsigned long)(addr),	\
 			   (unsigned long)(addr) +	\
 			   sizeof(kprobe_opcode_t) * (cnt))

@@ -2,7 +2,7 @@
 #define	__BPQETHER_H
 
 /*
- * 	Defines for the BPQETHER pseudo device driver
+ *	Defines for the BPQETHER pseudo device driver
  */
 
 #ifndef __LINUX_IF_ETHER_H
@@ -11,13 +11,13 @@
 
 #define SIOCSBPQETHOPT		(SIOCDEVPRIVATE+0)	/* reserved */
 #define SIOCSBPQETHADDR		(SIOCDEVPRIVATE+1)
- 
+
 struct bpq_ethaddr {
 	unsigned char destination[ETH_ALEN];
 	unsigned char accept[ETH_ALEN];
 };
 
-/* 
+/*
  * For SIOCSBPQETHOPT - this is compatible with PI2/PacketTwin card drivers,
  * currently not implemented, though. If someone wants to hook a radio
  * to his Ethernet card he may find this useful. ;-)

@@ -102,18 +102,18 @@ static struct crypto_alg compress_null = {
 	.cra_module		=	THIS_MODULE,
 	.cra_list		=       LIST_HEAD_INIT(compress_null.cra_list),
 	.cra_u			=	{ .compress = {
-	.coa_compress 		=	null_compress,
+	.coa_compress		=	null_compress,
 	.coa_decompress		=	null_compress } }
 };
 
 static struct shash_alg digest_null = {
 	.digestsize		=	NULL_DIGEST_SIZE,
-	.setkey   		=	null_hash_setkey,
-	.init   		=	null_init,
-	.update 		=	null_update,
-	.finup 			=	null_digest,
-	.digest 		=	null_digest,
-	.final  		=	null_final,
+	.setkey			=	null_hash_setkey,
+	.init			=	null_init,
+	.update			=	null_update,
+	.finup			=	null_digest,
+	.digest			=	null_digest,
+	.final			=	null_final,
 	.base			=	{
 		.cra_name		=	"digest_null",
 		.cra_flags		=	CRYPTO_ALG_TYPE_SHASH,
@@ -132,7 +132,7 @@ static struct crypto_alg cipher_null = {
 	.cra_u			=	{ .cipher = {
 	.cia_min_keysize	=	NULL_KEY_SIZE,
 	.cia_max_keysize	=	NULL_KEY_SIZE,
-	.cia_setkey		= 	null_setkey,
+	.cia_setkey		=	null_setkey,
 	.cia_encrypt		=	null_crypt,
 	.cia_decrypt		=	null_crypt } }
 };
@@ -151,7 +151,7 @@ static struct crypto_alg skcipher_null = {
 	.min_keysize		=	NULL_KEY_SIZE,
 	.max_keysize		=	NULL_KEY_SIZE,
 	.ivsize			=	NULL_IV_SIZE,
-	.setkey			= 	null_setkey,
+	.setkey			=	null_setkey,
 	.encrypt		=	skcipher_null_crypt,
 	.decrypt		=	skcipher_null_crypt } }
 };

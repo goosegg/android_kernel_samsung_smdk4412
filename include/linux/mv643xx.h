@@ -2,8 +2,8 @@
  * mv643xx.h - MV-643XX Internal registers definition file.
  *
  * Copyright 2002 Momentum Computer, Inc.
- * 	Author: Matthew Dharm <mdharm@momenco.com>
- * Copyright 2002 GALILEO TECHNOLOGY, LTD. 
+ *	Author: Matthew Dharm <mdharm@momenco.com>
+ * Copyright 2002 GALILEO TECHNOLOGY, LTD.
  *
  * This program is free software; you can redistribute  it and/or modify it
  * under  the terms of  the GNU General  Public License as published by the
@@ -76,7 +76,7 @@
 /* internal registers space base address */
 #define MV64340_INTERNAL_SPACE_BASE_ADDR                            0x068
 
-/* Enables the CS , DEV_CS , PCI 0 and PCI 1 
+/* Enables the CS , DEV_CS , PCI 0 and PCI 1
    windows above */
 #define MV64340_BASE_ADDR_ENABLE                                    0x278
 
@@ -103,7 +103,7 @@
 #define MV64340_PCI_1_MEMORY2_HIGH_ADDR_REMAP                       0x350
 #define MV64340_PCI_1_MEMORY3_LOW_ADDR_REMAP                        0x318
 #define MV64340_PCI_1_MEMORY3_HIGH_ADDR_REMAP                       0x358
- 
+
 #define MV64340_CPU_PCI_0_HEADERS_RETARGET_CONTROL                  0x3b0
 #define MV64340_CPU_PCI_0_HEADERS_RETARGET_BASE                     0x3b8
 #define MV64340_CPU_PCI_1_HEADERS_RETARGET_CONTROL                  0x3c0
@@ -180,7 +180,7 @@
 #define MV64340_CPU_ERROR_MASK                                      0x148
 
 /****************************************/
-/*      CPU Interface Debug Registers 	*/
+/*      CPU Interface Debug Registers	*/
 /****************************************/
 
 #define MV64340_PUNIT_SLAVE_DEBUG_LOW                               0x360
@@ -277,15 +277,15 @@
 #define MV64340_DEVICE_INTERRUPT_CAUSE				    0x4d0
 #define MV64340_DEVICE_INTERRUPT_MASK				    0x4d4
 #define MV64340_DEVICE_ERROR_ADDR				    0x4d8
-#define MV64340_DEVICE_ERROR_DATA   				    0x4dc
-#define MV64340_DEVICE_ERROR_PARITY     			    0x4e0
+#define MV64340_DEVICE_ERROR_DATA				    0x4dc
+#define MV64340_DEVICE_ERROR_PARITY				    0x4e0
 
 /****************************************/
-/* Device debug registers   		*/
+/* Device debug registers		*/
 /****************************************/
 
-#define MV64340_DEVICE_DEBUG_LOW     				    0x4e4
-#define MV64340_DEVICE_DEBUG_HIGH     				    0x4e8
+#define MV64340_DEVICE_DEBUG_LOW				    0x4e4
+#define MV64340_DEVICE_DEBUG_HIGH				    0x4e8
 #define MV64340_RUNIT_MMASK                                         0x4f0
 
 /****************************************/
@@ -346,10 +346,10 @@
 #define MV64340_PCI_1_DEVCS_1_BASE_ADDR_REMAP			    0xdd0
 #define MV64340_PCI_0_DEVCS_2_BASE_ADDR_REMAP			    0xd58
 #define MV64340_PCI_1_DEVCS_2_BASE_ADDR_REMAP			    0xdd8
-#define MV64340_PCI_0_DEVCS_3_BASE_ADDR_REMAP           	    0xc54
-#define MV64340_PCI_1_DEVCS_3_BASE_ADDR_REMAP           	    0xcd4
-#define MV64340_PCI_0_DEVCS_BOOTCS_BASE_ADDR_REMAP      	    0xd54
-#define MV64340_PCI_1_DEVCS_BOOTCS_BASE_ADDR_REMAP      	    0xdd4
+#define MV64340_PCI_0_DEVCS_3_BASE_ADDR_REMAP			    0xc54
+#define MV64340_PCI_1_DEVCS_3_BASE_ADDR_REMAP			    0xcd4
+#define MV64340_PCI_0_DEVCS_BOOTCS_BASE_ADDR_REMAP		    0xd54
+#define MV64340_PCI_1_DEVCS_BOOTCS_BASE_ADDR_REMAP		    0xdd4
 #define MV64340_PCI_0_P2P_MEM0_BASE_ADDR_REMAP_LOW                  0xd5c
 #define MV64340_PCI_1_P2P_MEM0_BASE_ADDR_REMAP_LOW                  0xddc
 #define MV64340_PCI_0_P2P_MEM0_BASE_ADDR_REMAP_HIGH                 0xd60
@@ -359,7 +359,7 @@
 #define MV64340_PCI_0_P2P_MEM1_BASE_ADDR_REMAP_HIGH                 0xd68
 #define MV64340_PCI_1_P2P_MEM1_BASE_ADDR_REMAP_HIGH                 0xde8
 #define MV64340_PCI_0_P2P_I_O_BASE_ADDR_REMAP                       0xd6c
-#define MV64340_PCI_1_P2P_I_O_BASE_ADDR_REMAP                       0xdec 
+#define MV64340_PCI_1_P2P_I_O_BASE_ADDR_REMAP                       0xdec
 #define MV64340_PCI_0_CPU_BASE_ADDR_REMAP_LOW                       0xd70
 #define MV64340_PCI_1_CPU_BASE_ADDR_REMAP_LOW                       0xdf0
 #define MV64340_PCI_0_CPU_BASE_ADDR_REMAP_HIGH                      0xd74
@@ -385,11 +385,11 @@
 #define MV64340_PCI_1_DLL_STATUS_AND_COMMAND                        0x1da0
 #define MV64340_PCI_0_MPP_PADS_DRIVE_CONTROL                        0x1d1C
 #define MV64340_PCI_1_MPP_PADS_DRIVE_CONTROL                        0x1d9C
-#define MV64340_PCI_0_COMMAND			         	    0xc00
+#define MV64340_PCI_0_COMMAND					    0xc00
 #define MV64340_PCI_1_COMMAND					    0xc80
 #define MV64340_PCI_0_MODE                                          0xd00
 #define MV64340_PCI_1_MODE                                          0xd80
-#define MV64340_PCI_0_RETRY	        	 		    0xc04
+#define MV64340_PCI_0_RETRY					    0xc04
 #define MV64340_PCI_1_RETRY				            0xc84
 #define MV64340_PCI_0_READ_BUFFER_DISCARD_TIMER                     0xd04
 #define MV64340_PCI_1_READ_BUFFER_DISCARD_TIMER                     0xd84
@@ -452,9 +452,9 @@
 /*   PCI Configuration Access Registers */
 /****************************************/
 
-#define MV64340_PCI_0_CONFIG_ADDR 				    0xcf8
+#define MV64340_PCI_0_CONFIG_ADDR				    0xcf8
 #define MV64340_PCI_0_CONFIG_DATA_VIRTUAL_REG                       0xcfc
-#define MV64340_PCI_1_CONFIG_ADDR 				    0xc78
+#define MV64340_PCI_1_CONFIG_ADDR				    0xc78
 #define MV64340_PCI_1_CONFIG_DATA_VIRTUAL_REG                       0xc7c
 #define MV64340_PCI_0_INTERRUPT_ACKNOWLEDGE_VIRTUAL_REG	            0xc34
 #define MV64340_PCI_1_INTERRUPT_ACKNOWLEDGE_VIRTUAL_REG	            0xcb4
@@ -489,21 +489,21 @@
 /* PCI Configuration, Function 0, Registers  */
 /*********************************************/
 
-#define MV64340_PCI_DEVICE_AND_VENDOR_ID 			    0x000
+#define MV64340_PCI_DEVICE_AND_VENDOR_ID			    0x000
 #define MV64340_PCI_STATUS_AND_COMMAND				    0x004
 #define MV64340_PCI_CLASS_CODE_AND_REVISION_ID			    0x008
-#define MV64340_PCI_BIST_HEADER_TYPE_LATENCY_TIMER_CACHE_LINE 	    0x00C
+#define MV64340_PCI_BIST_HEADER_TYPE_LATENCY_TIMER_CACHE_LINE	    0x00C
 
-#define MV64340_PCI_SCS_0_BASE_ADDR_LOW   	      		    0x010
-#define MV64340_PCI_SCS_0_BASE_ADDR_HIGH   		            0x014
-#define MV64340_PCI_SCS_1_BASE_ADDR_LOW  	     	            0x018
-#define MV64340_PCI_SCS_1_BASE_ADDR_HIGH 		            0x01C
-#define MV64340_PCI_INTERNAL_REG_MEM_MAPPED_BASE_ADDR_LOW      	    0x020
-#define MV64340_PCI_INTERNAL_REG_MEM_MAPPED_BASE_ADDR_HIGH     	    0x024
+#define MV64340_PCI_SCS_0_BASE_ADDR_LOW				    0x010
+#define MV64340_PCI_SCS_0_BASE_ADDR_HIGH		            0x014
+#define MV64340_PCI_SCS_1_BASE_ADDR_LOW			            0x018
+#define MV64340_PCI_SCS_1_BASE_ADDR_HIGH		            0x01C
+#define MV64340_PCI_INTERNAL_REG_MEM_MAPPED_BASE_ADDR_LOW	    0x020
+#define MV64340_PCI_INTERNAL_REG_MEM_MAPPED_BASE_ADDR_HIGH	    0x024
 #define MV64340_PCI_SUBSYSTEM_ID_AND_SUBSYSTEM_VENDOR_ID	    0x02c
 #define MV64340_PCI_EXPANSION_ROM_BASE_ADDR_REG	                    0x030
 #define MV64340_PCI_CAPABILTY_LIST_POINTER                          0x034
-#define MV64340_PCI_INTERRUPT_PIN_AND_LINE 			    0x03C
+#define MV64340_PCI_INTERRUPT_PIN_AND_LINE			    0x03C
        /* capability list */
 #define MV64340_PCI_POWER_MANAGEMENT_CAPABILITY                     0x040
 #define MV64340_PCI_POWER_MANAGEMENT_STATUS_AND_CONTROL             0x044
@@ -521,64 +521,64 @@
 /*   PCI Configuration, Function 1, Registers  */
 /***********************************************/
 
-#define MV64340_PCI_SCS_2_BASE_ADDR_LOW   			    0x110
+#define MV64340_PCI_SCS_2_BASE_ADDR_LOW				    0x110
 #define MV64340_PCI_SCS_2_BASE_ADDR_HIGH			    0x114
-#define MV64340_PCI_SCS_3_BASE_ADDR_LOW 			    0x118
+#define MV64340_PCI_SCS_3_BASE_ADDR_LOW				    0x118
 #define MV64340_PCI_SCS_3_BASE_ADDR_HIGH			    0x11c
-#define MV64340_PCI_INTERNAL_SRAM_BASE_ADDR_LOW          	    0x120
-#define MV64340_PCI_INTERNAL_SRAM_BASE_ADDR_HIGH         	    0x124
+#define MV64340_PCI_INTERNAL_SRAM_BASE_ADDR_LOW			    0x120
+#define MV64340_PCI_INTERNAL_SRAM_BASE_ADDR_HIGH		    0x124
 
 /***********************************************/
 /*  PCI Configuration, Function 2, Registers   */
 /***********************************************/
 
-#define MV64340_PCI_DEVCS_0_BASE_ADDR_LOW	    		    0x210
-#define MV64340_PCI_DEVCS_0_BASE_ADDR_HIGH 			    0x214
-#define MV64340_PCI_DEVCS_1_BASE_ADDR_LOW 			    0x218
-#define MV64340_PCI_DEVCS_1_BASE_ADDR_HIGH      		    0x21c
-#define MV64340_PCI_DEVCS_2_BASE_ADDR_LOW 			    0x220
-#define MV64340_PCI_DEVCS_2_BASE_ADDR_HIGH      		    0x224
+#define MV64340_PCI_DEVCS_0_BASE_ADDR_LOW			    0x210
+#define MV64340_PCI_DEVCS_0_BASE_ADDR_HIGH			    0x214
+#define MV64340_PCI_DEVCS_1_BASE_ADDR_LOW			    0x218
+#define MV64340_PCI_DEVCS_1_BASE_ADDR_HIGH			    0x21c
+#define MV64340_PCI_DEVCS_2_BASE_ADDR_LOW			    0x220
+#define MV64340_PCI_DEVCS_2_BASE_ADDR_HIGH			    0x224
 
 /***********************************************/
 /*  PCI Configuration, Function 3, Registers   */
 /***********************************************/
 
-#define MV64340_PCI_DEVCS_3_BASE_ADDR_LOW	    		    0x310
-#define MV64340_PCI_DEVCS_3_BASE_ADDR_HIGH 			    0x314
+#define MV64340_PCI_DEVCS_3_BASE_ADDR_LOW			    0x310
+#define MV64340_PCI_DEVCS_3_BASE_ADDR_HIGH			    0x314
 #define MV64340_PCI_BOOT_CS_BASE_ADDR_LOW			    0x318
-#define MV64340_PCI_BOOT_CS_BASE_ADDR_HIGH      		    0x31c
-#define MV64340_PCI_CPU_BASE_ADDR_LOW 				    0x220
-#define MV64340_PCI_CPU_BASE_ADDR_HIGH      			    0x224
+#define MV64340_PCI_BOOT_CS_BASE_ADDR_HIGH			    0x31c
+#define MV64340_PCI_CPU_BASE_ADDR_LOW				    0x220
+#define MV64340_PCI_CPU_BASE_ADDR_HIGH				    0x224
 
 /***********************************************/
 /*  PCI Configuration, Function 4, Registers   */
 /***********************************************/
 
-#define MV64340_PCI_P2P_MEM0_BASE_ADDR_LOW  			    0x410
-#define MV64340_PCI_P2P_MEM0_BASE_ADDR_HIGH 			    0x414
-#define MV64340_PCI_P2P_MEM1_BASE_ADDR_LOW   			    0x418
-#define MV64340_PCI_P2P_MEM1_BASE_ADDR_HIGH 			    0x41c
-#define MV64340_PCI_P2P_I_O_BASE_ADDR                 	            0x420
+#define MV64340_PCI_P2P_MEM0_BASE_ADDR_LOW			    0x410
+#define MV64340_PCI_P2P_MEM0_BASE_ADDR_HIGH			    0x414
+#define MV64340_PCI_P2P_MEM1_BASE_ADDR_LOW			    0x418
+#define MV64340_PCI_P2P_MEM1_BASE_ADDR_HIGH			    0x41c
+#define MV64340_PCI_P2P_I_O_BASE_ADDR			            0x420
 #define MV64340_PCI_INTERNAL_REGS_I_O_MAPPED_BASE_ADDR              0x424
 
 /****************************************/
-/* Messaging Unit Registers (I20)   	*/
+/* Messaging Unit Registers (I20)	*/
 /****************************************/
 
 #define MV64340_I2O_INBOUND_MESSAGE_REG0_PCI_0_SIDE		    0x010
-#define MV64340_I2O_INBOUND_MESSAGE_REG1_PCI_0_SIDE  		    0x014
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_PCI_0_SIDE 		    0x018
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_PCI_0_SIDE  		    0x01C
-#define MV64340_I2O_INBOUND_DOORBELL_REG_PCI_0_SIDE  		    0x020
+#define MV64340_I2O_INBOUND_MESSAGE_REG1_PCI_0_SIDE		    0x014
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_PCI_0_SIDE		    0x018
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_PCI_0_SIDE		    0x01C
+#define MV64340_I2O_INBOUND_DOORBELL_REG_PCI_0_SIDE		    0x020
 #define MV64340_I2O_INBOUND_INTERRUPT_CAUSE_REG_PCI_0_SIDE          0x024
 #define MV64340_I2O_INBOUND_INTERRUPT_MASK_REG_PCI_0_SIDE	    0x028
-#define MV64340_I2O_OUTBOUND_DOORBELL_REG_PCI_0_SIDE 		    0x02C
+#define MV64340_I2O_OUTBOUND_DOORBELL_REG_PCI_0_SIDE		    0x02C
 #define MV64340_I2O_OUTBOUND_INTERRUPT_CAUSE_REG_PCI_0_SIDE         0x030
 #define MV64340_I2O_OUTBOUND_INTERRUPT_MASK_REG_PCI_0_SIDE          0x034
 #define MV64340_I2O_INBOUND_QUEUE_PORT_VIRTUAL_REG_PCI_0_SIDE       0x040
 #define MV64340_I2O_OUTBOUND_QUEUE_PORT_VIRTUAL_REG_PCI_0_SIDE      0x044
-#define MV64340_I2O_QUEUE_CONTROL_REG_PCI_0_SIDE 		    0x050
-#define MV64340_I2O_QUEUE_BASE_ADDR_REG_PCI_0_SIDE 		    0x054
+#define MV64340_I2O_QUEUE_CONTROL_REG_PCI_0_SIDE		    0x050
+#define MV64340_I2O_QUEUE_BASE_ADDR_REG_PCI_0_SIDE		    0x054
 #define MV64340_I2O_INBOUND_FREE_HEAD_POINTER_REG_PCI_0_SIDE        0x060
 #define MV64340_I2O_INBOUND_FREE_TAIL_POINTER_REG_PCI_0_SIDE        0x064
 #define MV64340_I2O_INBOUND_POST_HEAD_POINTER_REG_PCI_0_SIDE        0x068
@@ -589,19 +589,19 @@
 #define MV64340_I2O_OUTBOUND_POST_TAIL_POINTER_REG_PCI_0_SIDE       0x0FC
 
 #define MV64340_I2O_INBOUND_MESSAGE_REG0_PCI_1_SIDE		    0x090
-#define MV64340_I2O_INBOUND_MESSAGE_REG1_PCI_1_SIDE  		    0x094
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_PCI_1_SIDE 		    0x098
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_PCI_1_SIDE  		    0x09C
-#define MV64340_I2O_INBOUND_DOORBELL_REG_PCI_1_SIDE  		    0x0A0
+#define MV64340_I2O_INBOUND_MESSAGE_REG1_PCI_1_SIDE		    0x094
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_PCI_1_SIDE		    0x098
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_PCI_1_SIDE		    0x09C
+#define MV64340_I2O_INBOUND_DOORBELL_REG_PCI_1_SIDE		    0x0A0
 #define MV64340_I2O_INBOUND_INTERRUPT_CAUSE_REG_PCI_1_SIDE          0x0A4
 #define MV64340_I2O_INBOUND_INTERRUPT_MASK_REG_PCI_1_SIDE	    0x0A8
-#define MV64340_I2O_OUTBOUND_DOORBELL_REG_PCI_1_SIDE 		    0x0AC
+#define MV64340_I2O_OUTBOUND_DOORBELL_REG_PCI_1_SIDE		    0x0AC
 #define MV64340_I2O_OUTBOUND_INTERRUPT_CAUSE_REG_PCI_1_SIDE         0x0B0
 #define MV64340_I2O_OUTBOUND_INTERRUPT_MASK_REG_PCI_1_SIDE          0x0B4
 #define MV64340_I2O_INBOUND_QUEUE_PORT_VIRTUAL_REG_PCI_1_SIDE       0x0C0
 #define MV64340_I2O_OUTBOUND_QUEUE_PORT_VIRTUAL_REG_PCI_1_SIDE      0x0C4
-#define MV64340_I2O_QUEUE_CONTROL_REG_PCI_1_SIDE 		    0x0D0
-#define MV64340_I2O_QUEUE_BASE_ADDR_REG_PCI_1_SIDE 		    0x0D4
+#define MV64340_I2O_QUEUE_CONTROL_REG_PCI_1_SIDE		    0x0D0
+#define MV64340_I2O_QUEUE_BASE_ADDR_REG_PCI_1_SIDE		    0x0D4
 #define MV64340_I2O_INBOUND_FREE_HEAD_POINTER_REG_PCI_1_SIDE        0x0E0
 #define MV64340_I2O_INBOUND_FREE_TAIL_POINTER_REG_PCI_1_SIDE        0x0E4
 #define MV64340_I2O_INBOUND_POST_HEAD_POINTER_REG_PCI_1_SIDE        0x0E8
@@ -612,19 +612,19 @@
 #define MV64340_I2O_OUTBOUND_POST_TAIL_POINTER_REG_PCI_1_SIDE       0x07C
 
 #define MV64340_I2O_INBOUND_MESSAGE_REG0_CPU0_SIDE		    0x1C10
-#define MV64340_I2O_INBOUND_MESSAGE_REG1_CPU0_SIDE  		    0x1C14
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_CPU0_SIDE 		    0x1C18
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_CPU0_SIDE  		    0x1C1C
-#define MV64340_I2O_INBOUND_DOORBELL_REG_CPU0_SIDE  		    0x1C20
-#define MV64340_I2O_INBOUND_INTERRUPT_CAUSE_REG_CPU0_SIDE  	    0x1C24
+#define MV64340_I2O_INBOUND_MESSAGE_REG1_CPU0_SIDE		    0x1C14
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_CPU0_SIDE		    0x1C18
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_CPU0_SIDE		    0x1C1C
+#define MV64340_I2O_INBOUND_DOORBELL_REG_CPU0_SIDE		    0x1C20
+#define MV64340_I2O_INBOUND_INTERRUPT_CAUSE_REG_CPU0_SIDE	    0x1C24
 #define MV64340_I2O_INBOUND_INTERRUPT_MASK_REG_CPU0_SIDE	    0x1C28
-#define MV64340_I2O_OUTBOUND_DOORBELL_REG_CPU0_SIDE 		    0x1C2C
+#define MV64340_I2O_OUTBOUND_DOORBELL_REG_CPU0_SIDE		    0x1C2C
 #define MV64340_I2O_OUTBOUND_INTERRUPT_CAUSE_REG_CPU0_SIDE          0x1C30
 #define MV64340_I2O_OUTBOUND_INTERRUPT_MASK_REG_CPU0_SIDE           0x1C34
 #define MV64340_I2O_INBOUND_QUEUE_PORT_VIRTUAL_REG_CPU0_SIDE        0x1C40
 #define MV64340_I2O_OUTBOUND_QUEUE_PORT_VIRTUAL_REG_CPU0_SIDE       0x1C44
-#define MV64340_I2O_QUEUE_CONTROL_REG_CPU0_SIDE 		    0x1C50
-#define MV64340_I2O_QUEUE_BASE_ADDR_REG_CPU0_SIDE 		    0x1C54
+#define MV64340_I2O_QUEUE_CONTROL_REG_CPU0_SIDE			    0x1C50
+#define MV64340_I2O_QUEUE_BASE_ADDR_REG_CPU0_SIDE		    0x1C54
 #define MV64340_I2O_INBOUND_FREE_HEAD_POINTER_REG_CPU0_SIDE         0x1C60
 #define MV64340_I2O_INBOUND_FREE_TAIL_POINTER_REG_CPU0_SIDE         0x1C64
 #define MV64340_I2O_INBOUND_POST_HEAD_POINTER_REG_CPU0_SIDE         0x1C68
@@ -634,19 +634,19 @@
 #define MV64340_I2O_OUTBOUND_POST_HEAD_POINTER_REG_CPU0_SIDE        0x1CF8
 #define MV64340_I2O_OUTBOUND_POST_TAIL_POINTER_REG_CPU0_SIDE        0x1CFC
 #define MV64340_I2O_INBOUND_MESSAGE_REG0_CPU1_SIDE		    0x1C90
-#define MV64340_I2O_INBOUND_MESSAGE_REG1_CPU1_SIDE  		    0x1C94
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_CPU1_SIDE 		    0x1C98
-#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_CPU1_SIDE  		    0x1C9C
-#define MV64340_I2O_INBOUND_DOORBELL_REG_CPU1_SIDE  		    0x1CA0
-#define MV64340_I2O_INBOUND_INTERRUPT_CAUSE_REG_CPU1_SIDE  	    0x1CA4
+#define MV64340_I2O_INBOUND_MESSAGE_REG1_CPU1_SIDE		    0x1C94
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG0_CPU1_SIDE		    0x1C98
+#define MV64340_I2O_OUTBOUND_MESSAGE_REG1_CPU1_SIDE		    0x1C9C
+#define MV64340_I2O_INBOUND_DOORBELL_REG_CPU1_SIDE		    0x1CA0
+#define MV64340_I2O_INBOUND_INTERRUPT_CAUSE_REG_CPU1_SIDE	    0x1CA4
 #define MV64340_I2O_INBOUND_INTERRUPT_MASK_REG_CPU1_SIDE	    0x1CA8
-#define MV64340_I2O_OUTBOUND_DOORBELL_REG_CPU1_SIDE 		    0x1CAC
+#define MV64340_I2O_OUTBOUND_DOORBELL_REG_CPU1_SIDE		    0x1CAC
 #define MV64340_I2O_OUTBOUND_INTERRUPT_CAUSE_REG_CPU1_SIDE          0x1CB0
 #define MV64340_I2O_OUTBOUND_INTERRUPT_MASK_REG_CPU1_SIDE           0x1CB4
 #define MV64340_I2O_INBOUND_QUEUE_PORT_VIRTUAL_REG_CPU1_SIDE        0x1CC0
 #define MV64340_I2O_OUTBOUND_QUEUE_PORT_VIRTUAL_REG_CPU1_SIDE       0x1CC4
-#define MV64340_I2O_QUEUE_CONTROL_REG_CPU1_SIDE 		    0x1CD0
-#define MV64340_I2O_QUEUE_BASE_ADDR_REG_CPU1_SIDE 		    0x1CD4
+#define MV64340_I2O_QUEUE_CONTROL_REG_CPU1_SIDE			    0x1CD0
+#define MV64340_I2O_QUEUE_BASE_ADDR_REG_CPU1_SIDE		    0x1CD4
 #define MV64340_I2O_INBOUND_FREE_HEAD_POINTER_REG_CPU1_SIDE         0x1CE0
 #define MV64340_I2O_INBOUND_FREE_TAIL_POINTER_REG_CPU1_SIDE         0x1CE4
 #define MV64340_I2O_INBOUND_POST_HEAD_POINTER_REG_CPU1_SIDE         0x1CE8
@@ -657,7 +657,7 @@
 #define MV64340_I2O_OUTBOUND_POST_TAIL_POINTER_REG_CPU1_SIDE        0x1C7C
 
 /****************************************/
-/*        Ethernet Unit Registers  		*/
+/*        Ethernet Unit Registers		*/
 /****************************************/
 
 /*******************************************/
@@ -665,7 +665,7 @@
 /*******************************************/
 
          /* Address Decoding Register Map */
-           
+
 #define MV64340_CUNIT_BASE_ADDR_REG0                                0xf200
 #define MV64340_CUNIT_BASE_ADDR_REG1                                0xf208
 #define MV64340_CUNIT_BASE_ADDR_REG2                                0xf210
@@ -709,21 +709,21 @@
 
 #define MV64340_MPSC_CAUSE_REG(port)                               (0xb804 + (port<<3))
 #define MV64340_MPSC_MASK_REG(port)                                (0xb884 + (port<<3))
- 
+
 #define MV64340_MPSC_MAIN_CONFIG_LOW(port)                         (0x8000 + (port<<12))
-#define MV64340_MPSC_MAIN_CONFIG_HIGH(port)                        (0x8004 + (port<<12))    
-#define MV64340_MPSC_PROTOCOL_CONFIG(port)                         (0x8008 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG1(port)                            (0x800c + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG2(port)                            (0x8010 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG3(port)                            (0x8014 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG4(port)                            (0x8018 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG5(port)                            (0x801c + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG6(port)                            (0x8020 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG7(port)                            (0x8024 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG8(port)                            (0x8028 + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG9(port)                            (0x802c + (port<<12))    
-#define MV64340_MPSC_CHANNEL_REG10(port)                           (0x8030 + (port<<12))    
-        
+#define MV64340_MPSC_MAIN_CONFIG_HIGH(port)                        (0x8004 + (port<<12))
+#define MV64340_MPSC_PROTOCOL_CONFIG(port)                         (0x8008 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG1(port)                            (0x800c + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG2(port)                            (0x8010 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG3(port)                            (0x8014 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG4(port)                            (0x8018 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG5(port)                            (0x801c + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG6(port)                            (0x8020 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG7(port)                            (0x8024 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG8(port)                            (0x8028 + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG9(port)                            (0x802c + (port<<12))
+#define MV64340_MPSC_CHANNEL_REG10(port)                           (0x8030 + (port<<12))
+
         /*  MPSC0 Registers      */
 
 
@@ -731,15 +731,15 @@
 /*          SDMA Registers             */
 /***************************************/
 
-#define MV64340_SDMA_CONFIG_REG(channel)                        (0x4000 + (channel<<13))        
-#define MV64340_SDMA_COMMAND_REG(channel)                       (0x4008 + (channel<<13))        
-#define MV64340_SDMA_CURRENT_RX_DESCRIPTOR_POINTER(channel)     (0x4810 + (channel<<13))        
-#define MV64340_SDMA_CURRENT_TX_DESCRIPTOR_POINTER(channel)     (0x4c10 + (channel<<13))        
-#define MV64340_SDMA_FIRST_TX_DESCRIPTOR_POINTER(channel)       (0x4c14 + (channel<<13)) 
+#define MV64340_SDMA_CONFIG_REG(channel)                        (0x4000 + (channel<<13))
+#define MV64340_SDMA_COMMAND_REG(channel)                       (0x4008 + (channel<<13))
+#define MV64340_SDMA_CURRENT_RX_DESCRIPTOR_POINTER(channel)     (0x4810 + (channel<<13))
+#define MV64340_SDMA_CURRENT_TX_DESCRIPTOR_POINTER(channel)     (0x4c10 + (channel<<13))
+#define MV64340_SDMA_FIRST_TX_DESCRIPTOR_POINTER(channel)       (0x4c14 + (channel<<13))
 
 #define MV64340_SDMA_CAUSE_REG                                      0xb800
 #define MV64340_SDMA_MASK_REG                                       0xb880
-         
+
 /* BRG Interrupts */
 
 #define MV64340_BRG_CONFIG_REG(brg)                              (0xb200 + (brg<<3))
@@ -751,13 +751,13 @@
 /* DMA Channel Control			*/
 /****************************************/
 
-#define MV64340_DMA_CHANNEL0_CONTROL 				    0x840
+#define MV64340_DMA_CHANNEL0_CONTROL				    0x840
 #define MV64340_DMA_CHANNEL0_CONTROL_HIGH			    0x880
-#define MV64340_DMA_CHANNEL1_CONTROL 				    0x844
+#define MV64340_DMA_CHANNEL1_CONTROL				    0x844
 #define MV64340_DMA_CHANNEL1_CONTROL_HIGH			    0x884
-#define MV64340_DMA_CHANNEL2_CONTROL 				    0x848
+#define MV64340_DMA_CHANNEL2_CONTROL				    0x848
 #define MV64340_DMA_CHANNEL2_CONTROL_HIGH			    0x888
-#define MV64340_DMA_CHANNEL3_CONTROL 				    0x84C
+#define MV64340_DMA_CHANNEL3_CONTROL				    0x84C
 #define MV64340_DMA_CHANNEL3_CONTROL_HIGH			    0x88C
 
 
@@ -787,7 +787,7 @@
 #define MV64340_DMA_CHANNEL3_CURRENT_DESCRIPTOR_POINTER             0x87C
 
  /*  IDMA Address Decoding Base Address Registers  */
- 
+
 #define MV64340_DMA_BASE_ADDR_REG0                                  0xa00
 #define MV64340_DMA_BASE_ADDR_REG1                                  0xa08
 #define MV64340_DMA_BASE_ADDR_REG2                                  0xa10
@@ -796,9 +796,9 @@
 #define MV64340_DMA_BASE_ADDR_REG5                                  0xa28
 #define MV64340_DMA_BASE_ADDR_REG6                                  0xa30
 #define MV64340_DMA_BASE_ADDR_REG7                                  0xa38
- 
+
  /*  IDMA Address Decoding Size Address Register   */
- 
+
 #define MV64340_DMA_SIZE_REG0                                       0xa04
 #define MV64340_DMA_SIZE_REG1                                       0xa0c
 #define MV64340_DMA_SIZE_REG2                                       0xa14
@@ -808,9 +808,9 @@
 #define MV64340_DMA_SIZE_REG6                                       0xa34
 #define MV64340_DMA_SIZE_REG7                                       0xa3C
 
- /* IDMA Address Decoding High Address Remap and Access 
+ /* IDMA Address Decoding High Address Remap and Access
                   Protection Registers                    */
-                  
+
 #define MV64340_DMA_HIGH_ADDR_REMAP_REG0                            0xa60
 #define MV64340_DMA_HIGH_ADDR_REMAP_REG1                            0xa64
 #define MV64340_DMA_HIGH_ADDR_REMAP_REG2                            0xa68
@@ -842,7 +842,7 @@
 #define MV64340_DMA_SPARE                                           0xA8C
 
 /****************************************/
-/* Timer_Counter 			*/
+/* Timer_Counter			*/
 /****************************************/
 
 #define MV64340_TIMER_COUNTER0					    0x850
@@ -851,10 +851,10 @@
 #define MV64340_TIMER_COUNTER3					    0x85C
 #define MV64340_TIMER_COUNTER_0_3_CONTROL			    0x864
 #define MV64340_TIMER_COUNTER_0_3_INTERRUPT_CAUSE		    0x868
-#define MV64340_TIMER_COUNTER_0_3_INTERRUPT_MASK      		    0x86c
+#define MV64340_TIMER_COUNTER_0_3_INTERRUPT_MASK		    0x86c
 
 /****************************************/
-/*         Watchdog registers  	        */
+/*         Watchdog registers	        */
 /****************************************/
 
 #define MV64340_WATCHDOG_CONFIG_REG                                 0xb410
@@ -885,7 +885,7 @@
 /****************************************/
 
 /****************************************/
-/* Interrupts	  			*/
+/* Interrupts				*/
 /****************************************/
 
 #define MV64340_MAIN_INTERRUPT_CAUSE_LOW                            0x004

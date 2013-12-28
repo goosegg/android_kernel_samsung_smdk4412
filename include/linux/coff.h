@@ -20,7 +20,7 @@
  * and the values loaded from the character positions. It also makes it
  * nice to have it "endian" independent.
  */
- 
+
 /* Load a short int from the following tables with little-endian formats */
 #define COFF_SHORT_L(ps) ((short)(((unsigned short)((unsigned char)ps[1])<<8)|\
 				  ((unsigned short)((unsigned char)ps[0]))))
@@ -30,7 +30,7 @@
 				 ((unsigned long)((unsigned char)ps[2])<<16) |\
 				 ((unsigned long)((unsigned char)ps[1])<<8)  |\
 				 ((unsigned long)((unsigned char)ps[0])))))
- 
+
 /* Load a short int from the following tables with big-endian formats */
 #define COFF_SHORT_H(ps) ((short)(((unsigned short)((unsigned char)ps[0])<<8)|\
 				  ((unsigned short)((unsigned char)ps[1]))))
@@ -126,16 +126,16 @@ struct COFF_filehdr {
    structure actually written to the file!!
 */
 
-typedef struct 
+typedef struct
 {
-  char 	magic[2];		/* type of file				 */
+  char	magic[2];		/* type of file				 */
   char	vstamp[2];		/* version stamp			 */
   char	tsize[4];		/* text size in bytes, padded to FW bdry */
   char	dsize[4];		/* initialized   data "   "		 */
   char	bsize[4];		/* uninitialized data "   "		 */
   char	entry[4];		/* entry pt.				 */
-  char 	text_start[4];		/* base of text used for this file       */
-  char 	data_start[4];		/* base of data used for this file       */
+  char	text_start[4];		/* base of text used for this file       */
+  char	data_start[4];		/* base of data used for this file       */
 }
 COFF_AOUTHDR;
 
@@ -236,7 +236,7 @@ struct COFF_lineno {
  *  All symbols and sections have the following definition
  */
 
-struct COFF_syment 
+struct COFF_syment
 {
   union {
     char e_name[E_SYMNMLEN];    /* Symbol name (first 8 characters) */
@@ -261,7 +261,7 @@ struct COFF_syment
 /*
  *  Auxiliary entries because the main table is too limiting.
  */
-  
+
 union COFF_auxent {
 
 /*
@@ -317,7 +317,7 @@ union COFF_auxent {
 /*
  *   Transfer vector (branch table)
  */
-  
+
   struct {
     char x_tvfill[4];	/* tv fill value */
     char x_tvlen[2];	/* length of .tv */
@@ -326,7 +326,7 @@ union COFF_auxent {
 };
 
 #define	COFF_SYMENT	struct COFF_syment
-#define	COFF_SYMESZ	18	
+#define	COFF_SYMESZ	18
 #define	COFF_AUXENT	union COFF_auxent
 #define	COFF_AUXESZ	18
 

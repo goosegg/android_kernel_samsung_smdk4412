@@ -138,7 +138,7 @@ struct if_dqinfo {
  */
 #define QUOTA_NL_NOWARN 0
 #define QUOTA_NL_IHARDWARN 1		/* Inode hardlimit reached */
-#define QUOTA_NL_ISOFTLONGWARN 2 	/* Inode grace time expired */
+#define QUOTA_NL_ISOFTLONGWARN 2	/* Inode grace time expired */
 #define QUOTA_NL_ISOFTWARN 3		/* Inode softlimit reached */
 #define QUOTA_NL_BHARDWARN 4		/* Block hardlimit reached */
 #define QUOTA_NL_BSOFTLONGWARN 5	/* Block grace time expired */

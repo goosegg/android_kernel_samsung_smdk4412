@@ -58,7 +58,7 @@ struct net_lro_desc {
 	u32 tcp_next_seq;
 	u32 skb_tot_frags_len;
 	u16 ip_tot_len;
-	u16 tcp_saw_tstamp; 		/* timestamps enabled */
+	u16 tcp_saw_tstamp;		/* timestamps enabled */
 	__be16 tcp_window;
 	u16 vlan_tag;
 	int pkt_aggr_cnt;		/* counts aggregated packets */

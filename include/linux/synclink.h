@@ -235,9 +235,9 @@ struct gpio_desc {
 };
 
 #define DEBUG_LEVEL_DATA	1
-#define DEBUG_LEVEL_ERROR 	2
-#define DEBUG_LEVEL_INFO  	3
-#define DEBUG_LEVEL_BH    	4
+#define DEBUG_LEVEL_ERROR	2
+#define DEBUG_LEVEL_INFO	3
+#define DEBUG_LEVEL_BH		4
 #define DEBUG_LEVEL_ISR		5
 
 /*

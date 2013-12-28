@@ -525,7 +525,7 @@ struct ata_ioports {
 
 struct ata_host {
 	spinlock_t		lock;
-	struct device 		*dev;
+	struct device		*dev;
 	void __iomem * const	*iomap;
 	unsigned int		n_ports;
 	void			*private_data;
@@ -761,7 +761,7 @@ struct ata_port {
 
 	struct ata_port_stats	stats;
 	struct ata_host		*host;
-	struct device 		*dev;
+	struct device		*dev;
 	struct device		tdev;
 
 	struct mutex		scsi_scan_mutex;
@@ -909,7 +909,7 @@ struct ata_port_info {
 	unsigned long		mwdma_mask;
 	unsigned long		udma_mask;
 	struct ata_port_operations *port_ops;
-	void 			*private_data;
+	void			*private_data;
 };
 
 struct ata_timing {

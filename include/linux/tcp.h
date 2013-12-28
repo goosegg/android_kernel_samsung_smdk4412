@@ -50,7 +50,7 @@ struct tcphdr {
 		fin:1;
 #else
 #error	"Adjust your <asm/byteorder.h> defines"
-#endif	
+#endif
 	__be16	window;
 	__sum16	check;
 	__be16	urg_ptr;
@@ -61,14 +61,14 @@ struct tcphdr {
  *  (union is compatible to any of its members)
  *  This means this part of the code is -fstrict-aliasing safe now.
  */
-union tcp_word_hdr { 
+union tcp_word_hdr {
 	struct tcphdr hdr;
-	__be32 		  words[5];
-}; 
+	__be32		  words[5];
+};
 
-#define tcp_flag_word(tp) ( ((union tcp_word_hdr *)(tp))->words [3]) 
+#define tcp_flag_word(tp) ( ((union tcp_word_hdr *)(tp))->words [3])
 
-enum { 
+enum {
 	TCP_FLAG_CWR = __cpu_to_be32(0x00800000),
 	TCP_FLAG_ECE = __cpu_to_be32(0x00400000),
 	TCP_FLAG_URG = __cpu_to_be32(0x00200000),
@@ -79,7 +79,7 @@ enum {
 	TCP_FLAG_FIN = __cpu_to_be32(0x00010000),
 	TCP_RESERVED_BITS = __cpu_to_be32(0x0F000000),
 	TCP_DATA_OFFSET = __cpu_to_be32(0xF0000000)
-}; 
+};
 
 /*
  * TCP general constants
@@ -241,9 +241,9 @@ struct tcp_options_received {
 /*	PAWS/RTTM data	*/
 	long	ts_recent_stamp;/* Time we stored ts_recent (for aging) */
 	u32	ts_recent;	/* Time stamp to echo next		*/
-	u32	rcv_tsval;	/* Time stamp value             	*/
-	u32	rcv_tsecr;	/* Time stamp echo reply        	*/
-	u16 	saw_tstamp : 1,	/* Saw TIMESTAMP on last packet		*/
+	u32	rcv_tsval;	/* Time stamp value			*/
+	u32	rcv_tsecr;	/* Time stamp echo reply		*/
+	u16	saw_tstamp : 1,	/* Saw TIMESTAMP on last packet		*/
 		tstamp_ok : 1,	/* TIMESTAMP seen on SYN packet		*/
 		dsack : 1,	/* D-SACK is scheduled			*/
 		wscale_ok : 1,	/* Wscale seen on SYN packet		*/
@@ -275,7 +275,7 @@ struct tcp_cookie_values;
 struct tcp_request_sock_ops;
 
 struct tcp_request_sock {
-	struct inet_request_sock 	req;
+	struct inet_request_sock	req;
 #ifdef CONFIG_TCP_MD5SIG
 	/* Only used by TCP MD5 Signature so far. */
 	const struct tcp_request_sock_ops *af_specific;
@@ -306,13 +306,13 @@ struct tcp_sock {
  *	read the code and the spec side by side (and laugh ...)
  *	See RFC793 and RFC1122. The RFC writes these in capitals.
  */
- 	u32	rcv_nxt;	/* What we want to receive next 	*/
+	u32	rcv_nxt;	/* What we want to receive next		*/
 	u32	copied_seq;	/* Head of yet unread data		*/
 	u32	rcv_wup;	/* rcv_nxt on last window update sent	*/
- 	u32	snd_nxt;	/* Next sequence we send		*/
+	u32	snd_nxt;	/* Next sequence we send		*/
 
- 	u32	snd_una;	/* First byte we want an ack for	*/
- 	u32	snd_sml;	/* Last byte of the most recently transmitted small packet */
+	u32	snd_una;	/* First byte we want an ack for	*/
+	u32	snd_sml;	/* Last byte of the most recently transmitted small packet */
 	u32	rcv_tstamp;	/* timestamp of last received ACK (for keepalives) */
 	u32	lsndtime;	/* timestamp of last sent data packet (for restart window) */
 
@@ -372,14 +372,14 @@ struct tcp_sock {
 /*
  *	Slow start and congestion control (see also Nagle, and Karn & Partridge)
  */
- 	u32	snd_ssthresh;	/* Slow start size threshold		*/
- 	u32	snd_cwnd;	/* Sending congestion window		*/
+	u32	snd_ssthresh;	/* Slow start size threshold		*/
+	u32	snd_cwnd;	/* Sending congestion window		*/
 	u32	snd_cwnd_cnt;	/* Linear increase counter		*/
 	u32	snd_cwnd_clamp; /* Do not allow snd_cwnd to grow above this */
 	u32	snd_cwnd_used;
 	u32	snd_cwnd_stamp;
 
- 	u32	rcv_wnd;	/* Current receiver window		*/
+	u32	rcv_wnd;	/* Current receiver window		*/
 	u32	write_seq;	/* Tail(+1) of data held in tcp send buffer */
 	u32	pushed_seq;	/* Last pushed seq, required to talk to windows */
 	u32	lost_out;	/* Lost packets			*/

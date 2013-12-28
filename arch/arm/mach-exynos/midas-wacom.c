@@ -168,7 +168,7 @@ void __init midas_wacom_init(void)
 	s3c_gpio_cfgpin(gpio, S3C_GPIO_OUTPUT);
 	gpio_direction_output(gpio, 0);
 #endif
-	
+
 #if defined(CONFIG_MACH_KONA)
 	printk(KERN_INFO "[E-PEN] Use FWE\n");
 	gpio = GPIO_PEN_FWE1;

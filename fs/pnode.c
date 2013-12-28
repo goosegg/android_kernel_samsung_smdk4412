@@ -181,11 +181,11 @@ static struct vfsmount *propagation_next(struct vfsmount *m,
 /*
  * return the source mount to be used for cloning
  *
- * @dest 	the current destination mount
- * @last_dest  	the last seen destination mount
- * @last_src  	the last seen source mount
+ * @dest	the current destination mount
+ * @last_dest	the last seen destination mount
+ * @last_src	the last seen source mount
  * @type	return CL_SLAVE if the new mount has to be
- * 		cloned as a slave.
+ *		cloned as a slave.
  */
 static struct vfsmount *get_source(struct vfsmount *dest,
 					struct vfsmount *last_dest,
@@ -320,7 +320,7 @@ int propagate_mount_busy(struct vfsmount *mnt, int refcnt)
 		return 1;
 
 	for (m = propagation_next(parent, parent); m;
-	     		m = propagation_next(m, parent)) {
+			m = propagation_next(m, parent)) {
 		child = __lookup_mnt(m, mnt->mnt_mountpoint, 0);
 		if (child && list_empty(&child->mnt_mounts) &&
 		    (ret = do_refcount_check(child, 1)))

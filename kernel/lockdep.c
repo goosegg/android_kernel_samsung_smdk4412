@@ -481,7 +481,7 @@ void get_usage_chars(struct lock_class *class, char usage[LOCK_USAGE_CHARS])
 {
 	int i = 0;
 
-#define LOCKDEP_STATE(__STATE) 						\
+#define LOCKDEP_STATE(__STATE)						\
 	usage[i++] = get_usage_char(class, LOCK_USED_IN_##__STATE);	\
 	usage[i++] = get_usage_char(class, LOCK_USED_IN_##__STATE##_READ);
 #include "lockdep_states.h"
@@ -714,7 +714,7 @@ register_lock_class(struct lockdep_map *lock, unsigned int subclass, int force)
 
 	/*
 	 * Debug-check: all keys must be persistent!
- 	 */
+	 */
 	if (!static_obj(lock->key)) {
 		debug_locks_off();
 		printk("INFO: trying to register non-static key.\n");
@@ -2104,7 +2104,7 @@ static int validate_chain(struct task_struct *curr, struct lockdep_map *lock,
 }
 #else
 static inline int validate_chain(struct task_struct *curr,
-	       	struct lockdep_map *lock, struct held_lock *hlock,
+		struct lockdep_map *lock, struct held_lock *hlock,
 		int chain_head, u64 chain_key)
 {
 	return 1;

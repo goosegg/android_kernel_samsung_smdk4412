@@ -28,8 +28,8 @@ enum kmsg_dump_reason {
 /**
  * struct kmsg_dumper - kernel crash message dumper structure
  * @dump:	The callback which gets called on crashes. The buffer is passed
- * 		as two sections, where s1 (length l1) contains the older
- * 		messages and s2 (length l2) contains the newer.
+ *		as two sections, where s1 (length l1) contains the older
+ *		messages and s2 (length l2) contains the newer.
  * @list:	Entry in the dumper list (private)
  * @registered:	Flag that specifies if this is already registered
  */

@@ -2329,7 +2329,7 @@ static bool all_unreclaimable(struct zonelist *zonelist,
  * work, and the allocation attempt will fail.
  *
  * returns:	0, if no pages reclaimed
- * 		else, the number of pages reclaimed
+ *		else, the number of pages reclaimed
  */
 static unsigned long do_try_to_free_pages(struct zonelist *zonelist,
 					struct scan_control *sc,
@@ -3246,7 +3246,7 @@ static int __init kswapd_init(void)
 
 	swap_setup();
 	for_each_node_state(nid, N_HIGH_MEMORY)
- 		kswapd_run(nid);
+		kswapd_run(nid);
 	hotcpu_notifier(cpu_callback, 0);
 	return 0;
 }

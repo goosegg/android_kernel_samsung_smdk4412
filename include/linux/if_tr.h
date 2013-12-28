@@ -25,13 +25,13 @@
 /* IEEE 802.5 Token-Ring magic constants.  The frame sizes omit the preamble
    and FCS/CRC (frame check sequence). */
 #define TR_ALEN		6		/* Octets in one token-ring addr */
-#define TR_HLEN 	(sizeof(struct trh_hdr)+sizeof(struct trllc))
+#define TR_HLEN		(sizeof(struct trh_hdr)+sizeof(struct trllc))
 #define AC		0x10
-#define LLC_FRAME 	0x40
+#define LLC_FRAME	0x40
 
 /* LLC and SNAP constants */
-#define EXTENDED_SAP 	0xAA
-#define UI_CMD       	0x03
+#define EXTENDED_SAP	0xAA
+#define UI_CMD		0x03
 
 /* This is an Token-Ring frame header. */
 struct trh_hdr {
@@ -65,7 +65,7 @@ struct trllc {
 struct tr_statistics {
 	unsigned long rx_packets;       /* total packets received	*/
 	unsigned long tx_packets;	/* total packets transmitted	*/
-	unsigned long rx_bytes;		/* total bytes received   	*/
+	unsigned long rx_bytes;		/* total bytes received		*/
 	unsigned long tx_bytes;		/* total bytes transmitted	*/
 	unsigned long rx_errors;	/* bad packets received		*/
 	unsigned long tx_errors;	/* packet transmit problems	*/
@@ -91,13 +91,13 @@ struct tr_statistics {
 };
 
 /* source routing stuff */
-#define TR_RII 			0x80
-#define TR_RCF_DIR_BIT 		0x80
-#define TR_RCF_LEN_MASK 	0x1f00
-#define TR_RCF_BROADCAST 	0x8000	/* all-routes broadcast */
+#define TR_RII			0x80
+#define TR_RCF_DIR_BIT		0x80
+#define TR_RCF_LEN_MASK		0x1f00
+#define TR_RCF_BROADCAST	0x8000	/* all-routes broadcast */
 #define TR_RCF_LIMITED_BROADCAST 0xC000	/* single-route broadcast */
-#define TR_RCF_FRAME2K 		0x20
-#define TR_RCF_BROADCAST_MASK 	0xC000
-#define TR_MAXRIFLEN 		18
+#define TR_RCF_FRAME2K		0x20
+#define TR_RCF_BROADCAST_MASK	0xC000
+#define TR_MAXRIFLEN		18
 
 #endif	/* _LINUX_IF_TR_H */

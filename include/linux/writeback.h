@@ -56,7 +56,7 @@ struct writeback_control {
 
 /*
  * fs/fs-writeback.c
- */	
+ */
 struct bdi_writeback;
 int inode_wait(void *);
 void writeback_inodes_sb(struct super_block *);

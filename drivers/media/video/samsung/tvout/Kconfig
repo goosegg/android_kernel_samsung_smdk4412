@@ -139,9 +139,9 @@ config LSI_HDMI_AUDIO_CH_EVENT
 	default n
 	---help---
 	  receive audio channel info from platform using ioctl.
-	  	#define AUDIO_CH_SET_STATE _IOR('H', 101, unsigned int)
+		#define AUDIO_CH_SET_STATE _IOR('H', 101, unsigned int)
 	  and send this to platform using uevent
-	  	audio_ch_switch.name = "hdmi_audio_ch";
+		audio_ch_switch.name = "hdmi_audio_ch";
 
 config TV_DEBUG
 	bool "TVOUT driver debug message"

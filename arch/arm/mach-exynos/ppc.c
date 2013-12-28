@@ -71,4 +71,3 @@ unsigned long long exynos4_ppc_update(struct exynos4_ppmu_hw *ppmu)
 
 	return 0;
 }
-

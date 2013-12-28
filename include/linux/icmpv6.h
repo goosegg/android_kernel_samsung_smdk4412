@@ -24,18 +24,18 @@ struct icmp6hdr {
                 struct icmpv6_nd_advt {
 #if defined(__LITTLE_ENDIAN_BITFIELD)
                         __u32		reserved:5,
-                        		override:1,
-                        		solicited:1,
-                        		router:1,
+					override:1,
+					solicited:1,
+					router:1,
 					reserved2:24;
 #elif defined(__BIG_ENDIAN_BITFIELD)
                         __u32		router:1,
 					solicited:1,
-                        		override:1,
-                        		reserved:29;
+					override:1,
+					reserved:29;
 #else
 #error	"Please fix <asm/byteorder.h>"
-#endif						
+#endif
                 } u_nd_advt;
 
                 struct icmpv6_nd_ra {
@@ -102,8 +102,8 @@ static inline struct icmp6hdr *icmp6_hdr(const struct sk_buff *skb)
 #define ICMPV6_ECHO_REQUEST		128
 #define ICMPV6_ECHO_REPLY		129
 #define ICMPV6_MGM_QUERY		130
-#define ICMPV6_MGM_REPORT       	131
-#define ICMPV6_MGM_REDUCTION    	132
+#define ICMPV6_MGM_REPORT		131
+#define ICMPV6_MGM_REDUCTION		132
 
 #define ICMPV6_NI_QUERY			139
 #define ICMPV6_NI_REPLY			140

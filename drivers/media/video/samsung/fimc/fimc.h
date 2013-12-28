@@ -340,7 +340,7 @@ struct fimc_scaler {
 struct fimc_ctx {
 	u32			ctx_num;
 	struct v4l2_cropcap	cropcap;
-	struct v4l2_rect 	crop;
+	struct v4l2_rect	crop;
 	struct v4l2_pix_format	pix;
 	struct v4l2_window	win;
 	struct v4l2_framebuffer	fbuf;
@@ -494,13 +494,13 @@ struct fimc_control {
 	enum fimc_log			log;
 	enum fimc_range			range;
 	/* for suspend mode */
-	int 				suspend_flag;
-	int 				suspend_framecnt;
+	int				suspend_flag;
+	int				suspend_framecnt;
 	enum fimc_sysmmu_flag		sysmmu_flag;
 	enum fimc_power_status		power_status;
 	struct timeval			curr_time;
 	struct timeval			before_time;
-	char 				cma_name[16];
+	char				cma_name[16];
 	bool				restart;
 #ifdef CONFIG_SLP_DMABUF
 	struct vb2_buffer       *out_bufs[VIDEO_MAX_FRAME];
@@ -510,10 +510,10 @@ struct fimc_control {
 
 /* global */
 struct fimc_global {
-	struct fimc_control 		ctrl[FIMC_DEVICES];
+	struct fimc_control		ctrl[FIMC_DEVICES];
 	struct s3c_platform_camera	*camera[FIMC_MAXCAMS];
 	int				camera_isvalid[FIMC_MAXCAMS];
-	int 				active_camera;
+	int				active_camera;
 	int				initialized;
 	enum cam_mclk_status		mclk_status;
 	void __iomem				*backup_regs[4];

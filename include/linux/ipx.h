@@ -10,7 +10,7 @@ struct sockaddr_ipx {
 	sa_family_t	sipx_family;
 	__be16		sipx_port;
 	__be32		sipx_network;
-	unsigned char 	sipx_node[IPX_NODE_LEN];
+	unsigned char	sipx_node[IPX_NODE_LEN];
 	__u8		sipx_type;
 	unsigned char	sipx_zero;	/* 16 byte fill */
 };
@@ -45,7 +45,7 @@ struct ipx_interface_definition {
 #define IPX_INTERNAL		2
 	unsigned char ipx_node[IPX_NODE_LEN];
 };
-	
+
 struct ipx_config_data {
 	unsigned char	ipxcfg_auto_select_primary;
 	unsigned char	ipxcfg_auto_create_interfaces;

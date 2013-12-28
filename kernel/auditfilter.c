@@ -35,13 +35,13 @@
  * Locking model:
  *
  * audit_filter_mutex:
- * 		Synchronizes writes and blocking reads of audit's filterlist
- * 		data.  Rcu is used to traverse the filterlist and access
- * 		contents of structs audit_entry, audit_watch and opaque
- * 		LSM rules during filtering.  If modified, these structures
- * 		must be copied and replace their counterparts in the filterlist.
- * 		An audit_parent struct is not accessed during filtering, so may
- * 		be written directly provided audit_filter_mutex is held.
+ *		Synchronizes writes and blocking reads of audit's filterlist
+ *		data.  Rcu is used to traverse the filterlist and access
+ *		contents of structs audit_entry, audit_watch and opaque
+ *		LSM rules during filtering.  If modified, these structures
+ *		must be copied and replace their counterparts in the filterlist.
+ *		An audit_parent struct is not accessed during filtering, so may
+ *		be written directly provided audit_filter_mutex is held.
  */
 
 /* Audit filter lists, defined in <linux/audit.h> */
@@ -930,7 +930,7 @@ static inline int audit_add_rule(struct audit_entry *entry)
 #endif
 	mutex_unlock(&audit_filter_mutex);
 
- 	return 0;
+	return 0;
 
 error:
 	if (watch)

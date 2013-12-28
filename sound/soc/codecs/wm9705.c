@@ -368,8 +368,8 @@ static int wm9705_soc_remove(struct snd_soc_codec *codec)
 }
 
 static struct snd_soc_codec_driver soc_codec_dev_wm9705 = {
-	.probe = 	wm9705_soc_probe,
-	.remove = 	wm9705_soc_remove,
+	.probe =	wm9705_soc_probe,
+	.remove =	wm9705_soc_remove,
 	.suspend =	wm9705_soc_suspend,
 	.resume =	wm9705_soc_resume,
 	.read = ac97_read,

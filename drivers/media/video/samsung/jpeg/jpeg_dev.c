@@ -553,4 +553,3 @@ module_exit(jpeg_exit);
 MODULE_AUTHOR("Hyunmin, Kwak <hyunmin.kwak@samsung.com>");
 MODULE_DESCRIPTION("JPEG Codec Device Driver");
 MODULE_LICENSE("GPL");
-

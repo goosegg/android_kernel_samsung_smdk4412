@@ -2597,7 +2597,7 @@ int isx012_create_file(struct class *cls)
 	if (unlikely(ret < 0))
 		pr_err("cam_init: failed to create device file, %s\n",
 			dev_attr_rear_flash.attr.name);
-		
+
 	ret = device_create_file(dev_rear, &dev_attr_rear_vendorid);
 	if (unlikely(ret < 0))
 		pr_err("cam_init: failed to create device file, %s\n",

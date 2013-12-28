@@ -131,5 +131,3 @@ int __init plat_leds_init(void)
 }
 
 module_init(plat_leds_init);
-
-

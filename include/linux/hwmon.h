@@ -66,4 +66,3 @@ static inline int SENSORS_LIMIT(long value, long low, long high)
 }
 
 #endif
-

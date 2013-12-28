@@ -126,7 +126,7 @@ struct kmem_cache {
 
 /* Size description struct for general caches. */
 struct cache_sizes {
-	size_t		 	cs_size;
+	size_t			cs_size;
 	struct kmem_cache	*cs_cachep;
 #ifdef CONFIG_ZONE_DMA
 	struct kmem_cache	*cs_dmacachep;

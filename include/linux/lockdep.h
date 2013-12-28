@@ -213,7 +213,7 @@ struct held_lock {
 	struct lockdep_map		*instance;
 	struct lockdep_map		*nest_lock;
 #ifdef CONFIG_LOCK_STAT
-	u64 				waittime_stamp;
+	u64				waittime_stamp;
 	u64				holdtime_stamp;
 #endif
 	unsigned int			class_idx:MAX_LOCKDEP_KEYS_BITS;
@@ -382,7 +382,7 @@ static inline void lockdep_on(void)
 # define INIT_LOCKDEP
 # define lockdep_reset()		do { debug_locks = 1; } while (0)
 # define lockdep_free_key_range(start, size)	do { } while (0)
-# define lockdep_sys_exit() 			do { } while (0)
+# define lockdep_sys_exit()			do { } while (0)
 /*
  * The class key takes no space if lockdep is disabled:
  */
@@ -530,13 +530,13 @@ static inline void print_irqtrace_events(struct task_struct *curr)
 #endif
 
 #ifdef CONFIG_PROVE_LOCKING
-# define might_lock(lock) 						\
+# define might_lock(lock)						\
 do {									\
 	typecheck(struct lockdep_map *, &(lock)->dep_map);		\
 	lock_acquire(&(lock)->dep_map, 0, 0, 0, 2, NULL, _THIS_IP_);	\
 	lock_release(&(lock)->dep_map, 0, _THIS_IP_);			\
 } while (0)
-# define might_lock_read(lock) 						\
+# define might_lock_read(lock)						\
 do {									\
 	typecheck(struct lockdep_map *, &(lock)->dep_map);		\
 	lock_acquire(&(lock)->dep_map, 0, 0, 1, 2, NULL, _THIS_IP_);	\

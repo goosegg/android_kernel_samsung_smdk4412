@@ -64,7 +64,7 @@
 #define SHIFT_ASR	0x40
 #define SHIFT_RORRRX	0x60
 
-#define BAD_INSTR 	0xdeadc0de
+#define BAD_INSTR	0xdeadc0de
 
 /* Thumb-2 32 bit format per ARMv7 DDI0406A A6.3, either f800h,e800h,f800h */
 #define IS_T32(hi16) \

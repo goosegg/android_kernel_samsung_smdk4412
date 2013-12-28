@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 1995-2003 Russell King
  *               2001-2002 Keith Owens
- *     
+ *
  * Generate definitions needed by assembly language modules.
  * This code generates raw asm output which is post-processed to extract
  * and format the required data.
@@ -96,9 +96,9 @@ int main(void)
   DEFINE(VMA_VM_MM,		offsetof(struct vm_area_struct, vm_mm));
   DEFINE(VMA_VM_FLAGS,		offsetof(struct vm_area_struct, vm_flags));
   BLANK();
-  DEFINE(VM_EXEC,	       	VM_EXEC);
+  DEFINE(VM_EXEC,		VM_EXEC);
   BLANK();
-  DEFINE(PAGE_SZ,	       	PAGE_SIZE);
+  DEFINE(PAGE_SZ,		PAGE_SIZE);
   BLANK();
   DEFINE(SYS_ERROR0,		0x9f0000);
   BLANK();
@@ -129,5 +129,5 @@ int main(void)
   DEFINE(DMA_BIDIRECTIONAL,	DMA_BIDIRECTIONAL);
   DEFINE(DMA_TO_DEVICE,		DMA_TO_DEVICE);
   DEFINE(DMA_FROM_DEVICE,	DMA_FROM_DEVICE);
-  return 0; 
+  return 0;
 }

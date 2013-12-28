@@ -16,7 +16,7 @@
  */
 
 #define MRT6_BASE	200
-#define MRT6_INIT	(MRT6_BASE)	/* Activate the kernel mroute code 	*/
+#define MRT6_INIT	(MRT6_BASE)	/* Activate the kernel mroute code	*/
 #define MRT6_DONE	(MRT6_BASE+1)	/* Shutdown the kernel mroute		*/
 #define MRT6_ADD_MIF	(MRT6_BASE+2)	/* Add a virtual interface		*/
 #define MRT6_DEL_MIF	(MRT6_BASE+3)	/* Delete a virtual interface		*/
@@ -172,12 +172,12 @@ static inline void ip6_mr_cleanup(void)
 #endif
 
 struct mif_device {
-	struct net_device 	*dev;			/* Device we are using */
+	struct net_device	*dev;			/* Device we are using */
 	unsigned long	bytes_in,bytes_out;
-	unsigned long	pkt_in,pkt_out;		/* Statistics 			*/
-	unsigned long	rate_limit;		/* Traffic shaping (NI) 	*/
-	unsigned char	threshold;		/* TTL threshold 		*/
-	unsigned short	flags;			/* Control flags 		*/
+	unsigned long	pkt_in,pkt_out;		/* Statistics			*/
+	unsigned long	rate_limit;		/* Traffic shaping (NI)		*/
+	unsigned char	threshold;		/* TTL threshold		*/
+	unsigned short	flags;			/* Control flags		*/
 	int		link;			/* Physical interface index	*/
 };
 
@@ -185,8 +185,8 @@ struct mif_device {
 
 struct mfc6_cache {
 	struct list_head list;
-	struct in6_addr mf6c_mcastgrp;			/* Group the entry belongs to 	*/
-	struct in6_addr mf6c_origin;			/* Source of packet 		*/
+	struct in6_addr mf6c_mcastgrp;			/* Group the entry belongs to	*/
+	struct in6_addr mf6c_origin;			/* Source of packet		*/
 	mifi_t mf6c_parent;			/* Source interface		*/
 	int mfc_flags;				/* Flags on line		*/
 

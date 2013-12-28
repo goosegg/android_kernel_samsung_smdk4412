@@ -698,8 +698,8 @@ static void update_lcdc(struct fb_info *info)
 	out_be32(&hw->gamma, pool.gamma.paddr);
 	out_be32(&hw->cursor, pool.cursor.paddr);
 
-	out_be32(&hw->bgnd, 0x007F7F7F); 	/* BGND */
-	out_be32(&hw->bgnd_wb, 0); 		/* BGND_WB */
+	out_be32(&hw->bgnd, 0x007F7F7F);	/* BGND */
+	out_be32(&hw->bgnd_wb, 0);		/* BGND_WB */
 	out_be32(&hw->disp_size, (var->yres << 16 | var->xres));
 						/* DISP SIZE */
 	pr_debug("DIU xres: %d\n", var->xres);
@@ -838,7 +838,7 @@ static int fsl_diu_set_par(struct fb_info *info)
 	ad->src_size_g_alpha = cpu_to_le32((var->yres_virtual << 12) |
 				var->xres_virtual) | mfbi->g_alpha;
 	/* AOI should not be greater than display size */
-	ad->aoi_size 	= cpu_to_le32((var->yres << 16) | var->xres);
+	ad->aoi_size	= cpu_to_le32((var->yres << 16) | var->xres);
 	ad->offset_xyi = cpu_to_le32((var->yoffset << 16) | var->xoffset);
 	ad->offset_xyd = cpu_to_le32((mfbi->y_aoi_d << 16) | mfbi->x_aoi_d);
 
@@ -1724,8 +1724,8 @@ static struct platform_driver fsl_diu_driver = {
 		.owner = THIS_MODULE,
 		.of_match_table = fsl_diu_match,
 	},
-	.probe  	= fsl_diu_probe,
-	.remove 	= fsl_diu_remove,
+	.probe		= fsl_diu_probe,
+	.remove		= fsl_diu_remove,
 	.suspend	= fsl_diu_suspend,
 	.resume		= fsl_diu_resume,
 };
@@ -1815,4 +1815,3 @@ MODULE_PARM_DESC(bpp, "Specify bit-per-pixel if not specified mode");
 module_param_named(monitor, monitor_port, int, 0);
 MODULE_PARM_DESC(monitor,
 	"Specify the monitor port (0, 1 or 2) if supported by the platform");
-

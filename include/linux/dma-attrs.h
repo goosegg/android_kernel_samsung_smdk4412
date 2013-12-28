@@ -26,7 +26,7 @@ struct dma_attrs {
 	unsigned long flags[__DMA_ATTRS_LONGS];
 };
 
-#define DEFINE_DMA_ATTRS(x) 					\
+#define DEFINE_DMA_ATTRS(x)					\
 	struct dma_attrs x = {					\
 		.flags = { [0 ... __DMA_ATTRS_LONGS-1] = 0 },	\
 	}

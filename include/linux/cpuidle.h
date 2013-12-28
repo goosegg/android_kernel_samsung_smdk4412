@@ -89,7 +89,7 @@ struct cpuidle_device {
 	struct cpuidle_state_kobj *kobjs[CPUIDLE_STATE_MAX];
 	struct cpuidle_state	*last_state;
 
-	struct list_head 	device_list;
+	struct list_head	device_list;
 	struct kobject		kobj;
 	struct completion	kobj_unregister;
 	void			*governor_data;
@@ -118,7 +118,7 @@ static inline int cpuidle_get_last_residency(struct cpuidle_device *dev)
 
 struct cpuidle_driver {
 	char			name[CPUIDLE_NAME_LEN];
-	struct module 		*owner;
+	struct module		*owner;
 };
 
 #ifdef CONFIG_CPU_IDLE
@@ -158,7 +158,7 @@ static inline void cpuidle_disable_device(struct cpuidle_device *dev) { }
 
 struct cpuidle_governor {
 	char			name[CPUIDLE_NAME_LEN];
-	struct list_head 	governor_list;
+	struct list_head	governor_list;
 	unsigned int		rating;
 
 	int  (*enable)		(struct cpuidle_device *dev);
@@ -167,7 +167,7 @@ struct cpuidle_governor {
 	int  (*select)		(struct cpuidle_device *dev);
 	void (*reflect)		(struct cpuidle_device *dev);
 
-	struct module 		*owner;
+	struct module		*owner;
 };
 
 #ifdef CONFIG_CPU_IDLE

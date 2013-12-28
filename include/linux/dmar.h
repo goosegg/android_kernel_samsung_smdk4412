@@ -32,10 +32,10 @@ struct dmar_drhd_unit {
 	struct list_head list;		/* list of drhd units	*/
 	struct  acpi_dmar_header *hdr;	/* ACPI header		*/
 	u64	reg_base_addr;		/* register base address*/
-	struct	pci_dev **devices; 	/* target device array	*/
+	struct	pci_dev **devices;	/* target device array	*/
 	int	devices_cnt;		/* target device count	*/
 	u16	segment;		/* PCI domain		*/
-	u8	ignored:1; 		/* ignore drhd		*/
+	u8	ignored:1;		/* ignore drhd		*/
 	u8	include_all:1;
 	struct intel_iommu *iommu;
 };
@@ -51,7 +51,7 @@ extern struct list_head dmar_drhd_units;
 
 #define for_each_iommu(i, drhd)						\
 	list_for_each_entry(drhd, &dmar_drhd_units, list)		\
-		if (i=drhd->iommu, 0) {} else 
+		if (i=drhd->iommu, 0) {} else
 
 extern int dmar_table_init(void);
 extern int dmar_dev_scope_init(void);
@@ -81,7 +81,7 @@ static inline int enable_drhd_fault_handling(void)
 struct irte {
 	union {
 		struct {
-			__u64	present 	: 1,
+			__u64	present		: 1,
 				fpd		: 1,
 				dst_mode	: 1,
 				redir_hint	: 1,
@@ -118,7 +118,7 @@ extern int get_irte(int irq, struct irte *entry);
 extern int modify_irte(int irq, struct irte *irte_modified);
 extern int alloc_irte(struct intel_iommu *iommu, int irq, u16 count);
 extern int set_irte_irq(int irq, struct intel_iommu *iommu, u16 index,
-   			u16 sub_handle);
+			u16 sub_handle);
 extern int map_irq_to_irte_handle(int irq, u16 *sub_handle);
 extern int free_irte(int irq);
 

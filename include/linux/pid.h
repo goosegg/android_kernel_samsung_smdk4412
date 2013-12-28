@@ -127,10 +127,10 @@ extern void free_pid(struct pid *pid);
  * allocated.
  *
  * NOTE:
- * 	ns_of_pid() is expected to be called for a process (task) that has
- * 	an attached 'struct pid' (see attach_pid(), detach_pid()) i.e @pid
- * 	is expected to be non-NULL. If @pid is NULL, caller should handle
- * 	the resulting NULL pid-ns.
+ *	ns_of_pid() is expected to be called for a process (task) that has
+ *	an attached 'struct pid' (see attach_pid(), detach_pid()) i.e @pid
+ *	is expected to be non-NULL. If @pid is NULL, caller should handle
+ *	the resulting NULL pid-ns.
  */
 static inline struct pid_namespace *ns_of_pid(struct pid *pid)
 {

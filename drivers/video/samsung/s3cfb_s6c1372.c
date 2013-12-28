@@ -129,4 +129,3 @@ module_exit(lvds_lcd_exit);
 MODULE_AUTHOR("SAMSUNG");
 MODULE_DESCRIPTION("LVDS LCD driver");
 MODULE_LICENSE("GPL");
-

@@ -48,7 +48,7 @@ struct lcd_info {
 	unsigned int			err_fg_gpio;
 	unsigned int			err_fg_irq;
 	struct delayed_work		err_fg_detection;
-	int				err_fg_detection_count;	
+	int				err_fg_detection_count;
 };
 
 

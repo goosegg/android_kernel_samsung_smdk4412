@@ -442,9 +442,9 @@ static int wm8776_remove(struct snd_soc_codec *codec)
 }
 
 static struct snd_soc_codec_driver soc_codec_dev_wm8776 = {
-	.probe = 	wm8776_probe,
-	.remove = 	wm8776_remove,
-	.suspend = 	wm8776_suspend,
+	.probe =	wm8776_probe,
+	.remove =	wm8776_remove,
+	.suspend =	wm8776_suspend,
 	.resume =	wm8776_resume,
 	.set_bias_level = wm8776_set_bias_level,
 	.reg_cache_size = ARRAY_SIZE(wm8776_reg),

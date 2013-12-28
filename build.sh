@@ -11,4 +11,3 @@ make -j3 zImage CONFIG_INITRAMFS_SOURCE="/home/gustavo/kernel/usr/initramfs/slim
 /home/gustavo/kernel/usr/build_scripts/makezip_slimkat.sh
 make -j3 zImage CONFIG_INITRAMFS_SOURCE="/home/gustavo/kernel/usr/initramfs/slimkat_initramfs.twrp.list"
 /home/gustavo/kernel/usr/build_scripts/makezip_slimkat.twrp.sh
-

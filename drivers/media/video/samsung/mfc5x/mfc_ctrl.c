@@ -183,4 +183,3 @@ int mfc_wakeup(struct mfc_dev *dev)
 	/* FIXME: ret = 0 */
 	return ret;
 }
-

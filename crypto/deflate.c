@@ -203,8 +203,8 @@ static struct crypto_alg alg = {
 	.cra_init		= deflate_init,
 	.cra_exit		= deflate_exit,
 	.cra_u			= { .compress = {
-	.coa_compress 		= deflate_compress,
-	.coa_decompress  	= deflate_decompress } }
+	.coa_compress		= deflate_compress,
+	.coa_decompress		= deflate_decompress } }
 };
 
 static int __init deflate_mod_init(void)
@@ -223,4 +223,3 @@ module_exit(deflate_mod_fini);
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Deflate Compression Algorithm for IPCOMP");
 MODULE_AUTHOR("James Morris <jmorris@intercode.com.au>");
-

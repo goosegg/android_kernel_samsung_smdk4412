@@ -286,4 +286,3 @@ void jpeg_clear_int(void __iomem *base)
 {
 	writel(S5P_JPEG_COM_INT_RELEASE, base + S5P_JPEG_COM_REG);
 }
-

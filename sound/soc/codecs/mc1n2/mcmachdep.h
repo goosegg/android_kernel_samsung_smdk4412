@@ -6,7 +6,7 @@
  *
  *		Description	: MC Driver machine dependent part header
  *
- *		Version		: 1.0.0 	2010.09.10
+ *		Version		: 1.0.0		2010.09.10
  *
  ****************************************************************************/
 

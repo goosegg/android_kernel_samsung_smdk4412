@@ -149,7 +149,7 @@ static inline void hlist_bl_unlock(struct hlist_bl_head *b)
  */
 #define hlist_bl_for_each_entry_safe(tpos, pos, n, head, member)	 \
 	for (pos = hlist_bl_first(head);				 \
-	     pos && ({ n = pos->next; 1; }) && 				 \
+	     pos && ({ n = pos->next; 1; }) &&				 \
 		({ tpos = hlist_bl_entry(pos, typeof(*tpos), member); 1;}); \
 	     pos = n)
 

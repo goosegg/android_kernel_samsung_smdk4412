@@ -128,4 +128,3 @@ void jpeg_set_frame_buf(unsigned int *fra_buf, unsigned int base)
 	*fra_buf = base + JPEG_S_BUF_SIZE;
 #endif
 }
-

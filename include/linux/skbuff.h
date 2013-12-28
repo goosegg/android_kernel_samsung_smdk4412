@@ -88,7 +88,7 @@
  *			  about CHECKSUM_UNNECESSARY. 8)
  *	NETIF_F_IPV6_CSUM about as dumb as the last one but does IPv6 instead.
  *
- *	Any questions? No questions, good. 		--ANK
+ *	Any questions? No questions, good.		--ANK
  */
 
 struct net_device;
@@ -266,7 +266,7 @@ typedef unsigned char *sk_buff_data_t;
 #define NET_SKBUFF_NF_DEFRAG_NEEDED 1
 #endif
 
-/** 
+/**
  *	struct sk_buff - socket buffer
  *	@next: Next buffer in list
  *	@prev: Previous buffer in list
@@ -295,7 +295,7 @@ typedef unsigned char *sk_buff_data_t;
  *	@priority: Packet queueing priority
  *	@users: User count - see {datagram,tcp}.c
  *	@protocol: Packet protocol from driver
- *	@truesize: Buffer size 
+ *	@truesize: Buffer size
  *	@head: Head of buffer
  *	@data: Data head pointer
  *	@tail: Tail pointer
@@ -449,7 +449,7 @@ struct sk_buff {
  */
 static inline struct dst_entry *skb_dst(const struct sk_buff *skb)
 {
-	/* If refdst was not refcounted, check we still are in a 
+	/* If refdst was not refcounted, check we still are in a
 	 * rcu_read_lock section
 	 */
 	WARN_ON((skb->_skb_refdst & SKB_DST_NOREF) &&
@@ -1123,8 +1123,8 @@ static inline void skb_fill_page_desc(struct sk_buff *skb, int i,
 extern void skb_add_rx_frag(struct sk_buff *skb, int i, struct page *page,
 			    int off, int size);
 
-#define SKB_PAGE_ASSERT(skb) 	BUG_ON(skb_shinfo(skb)->nr_frags)
-#define SKB_FRAG_ASSERT(skb) 	BUG_ON(skb_has_frag_list(skb))
+#define SKB_PAGE_ASSERT(skb)	BUG_ON(skb_shinfo(skb)->nr_frags)
+#define SKB_FRAG_ASSERT(skb)	BUG_ON(skb_has_frag_list(skb))
 #define SKB_LINEAR_ASSERT(skb)  BUG_ON(skb_is_nonlinear(skb))
 
 #ifdef NET_SKBUFF_DATA_USES_OFFSET
@@ -1587,9 +1587,9 @@ static inline struct sk_buff *netdev_alloc_skb_ip_align(struct net_device *dev,
  *	@dev: network device to receive on
  *	@gfp_mask: alloc_pages_node mask
  *
- * 	Allocate a new page. dev currently unused.
+ *	Allocate a new page. dev currently unused.
  *
- * 	%NULL is returned if there is no free memory.
+ *	%NULL is returned if there is no free memory.
  */
 static inline struct page *__netdev_alloc_page(struct net_device *dev, gfp_t gfp_mask)
 {
@@ -1600,9 +1600,9 @@ static inline struct page *__netdev_alloc_page(struct net_device *dev, gfp_t gfp
  *	netdev_alloc_page - allocate a page for ps-rx on a specific device
  *	@dev: network device to receive on
  *
- * 	Allocate a new page. dev currently unused.
+ *	Allocate a new page. dev currently unused.
  *
- * 	%NULL is returned if there is no free memory.
+ *	%NULL is returned if there is no free memory.
  */
 static inline struct page *netdev_alloc_page(struct net_device *dev)
 {
@@ -1690,7 +1690,7 @@ static inline int skb_cow_head(struct sk_buff *skb, unsigned int headroom)
  *	is untouched. Otherwise it is extended. Returns zero on
  *	success. The skb is freed on error.
  */
- 
+
 static inline int skb_padto(struct sk_buff *skb, unsigned int len)
 {
 	unsigned int size = skb->len;

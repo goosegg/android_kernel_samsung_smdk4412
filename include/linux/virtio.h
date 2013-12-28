@@ -59,8 +59,8 @@ struct virtqueue {
  *	to detect a possible race between the driver checking for more work,
  *	and enabling callbacks.
  * virtqueue_detach_unused_buf: detach first unused buffer
- * 	vq: the struct virtqueue we're talking about.
- * 	Returns NULL or the "data" token handed to add_buf
+ *	vq: the struct virtqueue we're talking about.
+ *	Returns NULL or the "data" token handed to add_buf
  *
  * Locking rules are straightforward: the driver is responsible for
  * locking.  No two operations may be invoked simultaneously, with the exception

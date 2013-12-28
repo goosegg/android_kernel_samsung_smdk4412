@@ -32,8 +32,8 @@
 #define VLAN_ETH_FRAME_LEN	1518	/* Max. octets in frame sans FCS */
 
 /*
- * 	struct vlan_hdr - vlan header
- * 	@h_vlan_TCI: priority and VLAN ID
+ *	struct vlan_hdr - vlan header
+ *	@h_vlan_TCI: priority and VLAN ID
  *	@h_vlan_encapsulated_proto: packet type ID or len
  */
 struct vlan_hdr {
@@ -438,7 +438,7 @@ struct vlan_ioctl_args {
 		unsigned int flag; /* Matches vlan_dev_info flags */
         } u;
 
-	short vlan_qos;   
+	short vlan_qos;
 };
 
 #endif /* !(_LINUX_IF_VLAN_H_) */

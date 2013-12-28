@@ -43,4 +43,3 @@ void s3cfb_set_lcd_info(struct s3cfb_global *ctrl)
 	tl2796.init_ldi = NULL;
 	ctrl->lcd = &tl2796;
 }
-

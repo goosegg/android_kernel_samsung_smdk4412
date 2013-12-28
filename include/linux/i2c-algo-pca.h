@@ -53,7 +53,7 @@
 #define I2C_PCA_CON_CR		0x07 /* Clock Rate (MASK) */
 
 struct i2c_algo_pca_data {
-	void 				*data;	/* private low level data */
+	void				*data;	/* private low level data */
 	void (*write_byte)		(void *data, int reg, int val);
 	int  (*read_byte)		(void *data, int reg);
 	int  (*wait_for_completion)	(void *data);

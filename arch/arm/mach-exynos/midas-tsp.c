@@ -2298,4 +2298,3 @@ void midas_tsp_request_qos(void *data)
 	schedule_delayed_work_on(0, &busqos_work, HZ / 5);
 }
 #endif
-

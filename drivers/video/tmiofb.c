@@ -211,9 +211,9 @@ struct tmiofb_par {
  * reasons for an interrupt:
  *	uis	bbisc	lcdis
  *	0100	0001	accelerator command completed
- * 	2000	0001	vsync start
- * 	2000	0002	display start
- * 	2000	0004	line number match(0x1ff mask???)
+ *	2000	0001	vsync start
+ *	2000	0002	display start
+ *	2000	0004	line number match(0x1ff mask???)
  */
 static irqreturn_t tmiofb_irq(int irq, void *__info)
 {

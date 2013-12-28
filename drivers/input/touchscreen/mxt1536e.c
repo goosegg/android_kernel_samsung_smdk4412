@@ -1363,7 +1363,7 @@ static int __devinit mxt_init_touch_driver(struct mxt_data *data)
 	dev_dbg(&data->client->dev, "matrix X size = %d\n", id[4]);
 	dev_dbg(&data->client->dev, "matrix Y size = %d\n", id[5]);
 	printk("matrix X size = %d, Y size = %d\n", id[4],id[5]);
-	
+
 	data->family_id = id[0];
 	data->tsp_variant = id[1];
 	data->tsp_version = id[2];
@@ -1532,7 +1532,7 @@ static void report_input_data(struct mxt_data *data)
 				i , data->fingers[i].x, data->fingers[i].y
 				, data->fingers[i].z, data->fingers[i].w
 				, data->fingers[i].mcount);
-	*/	
+	*/
 			break;
 
 		case MXT_STATE_RELEASE:
@@ -2581,18 +2581,18 @@ read_mem(data, 255, sizeof(msg), msg);
 	    printk("!");
 	    msleep(10);
 	}while (!gpio_get_value(data->gpio_read_done));
-	
-#endif	
+
+#endif
 	msleep(MXT_RESET_TIME);
 #if 0
 	do {
 	    printk(".");
 	    msleep(10);
-	    	write_mem(data, obj_address+(u16)object_register, (u8)size_one, &value);
+		write_mem(data, obj_address+(u16)object_register, (u8)size_one, &value);
 
 	}while (gpio_get_value(data->gpio_read_done));
-#endif	
-	
+#endif
+
 	printk("[TSP] obj_address = %x\n",obj_address);
 	/* Change to slave address of bootloader */
 	if (data->family_id == 0xA1)  {	/* : MXT-768E */
@@ -3837,7 +3837,7 @@ static int __devinit mxt_probe(struct i2c_client *client, const struct i2c_devic
 	if (data->family_id == 0xA1)  {	/* tsp_family_id - 0xA1 : MXT-1536E */
 		tsp_config = (u8 **)pdata->config_e;
 
-#if UPDATE	
+#if UPDATE
 		if ((data->tsp_version < firmware_latest[1]
 			|| (data->tsp_version == firmware_latest[1]
 				&& data->tsp_build != build_latest[1]))
@@ -3850,7 +3850,7 @@ static int __devinit mxt_probe(struct i2c_client *client, const struct i2c_devic
 				mxt_init_touch_driver(data);
 			}
 		}
-#endif		
+#endif
 	}
 
 #if 0
@@ -3923,7 +3923,7 @@ static int __devinit mxt_probe(struct i2c_client *client, const struct i2c_devic
 #endif
 	}
 #endif
-	
+
 	else  {
 		printk(KERN_ERR"ERROR : There is no valid TSP ID\n");
 		goto err_config;

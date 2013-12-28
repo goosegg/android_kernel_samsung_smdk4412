@@ -85,7 +85,7 @@ extern void midas_config_sleep_gpio_table(void);
 #define GPIO_WCN_PRIORITY				EXYNOS4_GPF2(3)
 #define GPIO_MDM_LTE_FRAME_SYNC		EXYNOS4_GPF2(4)
 #define GPIO_WLAN_WAKE				EXYNOS4_GPF2(5)
-#define GPIO_BT_NEW_WAKE    			EXYNOS4_GPF2(6)
+#define GPIO_BT_NEW_WAKE			EXYNOS4_GPF2(6)
 
 /* GPF3 */
 #if defined(CONFIG_QC_MODEM)

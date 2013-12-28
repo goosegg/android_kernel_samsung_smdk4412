@@ -18,7 +18,7 @@
 #ifndef _LINUX_MQUEUE_H
 #define _LINUX_MQUEUE_H
 
-#define MQ_PRIO_MAX 	32768
+#define MQ_PRIO_MAX	32768
 /* per-uid limit of kernel memory used by mqueue, in bytes */
 #define MQ_BYTES_MAX	819200
 

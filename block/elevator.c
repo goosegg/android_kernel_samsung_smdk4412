@@ -478,9 +478,9 @@ int elv_merge(struct request_queue *q, struct request **req, struct bio *bio)
 
 	/*
 	 * Levels of merges:
-	 * 	nomerges:  No merges at all attempted
-	 * 	noxmerges: Only simple one-hit cache try
-	 * 	merges:	   All merge tries attempted
+	 *	nomerges:  No merges at all attempted
+	 *	noxmerges: Only simple one-hit cache try
+	 *	merges:	   All merge tries attempted
 	 */
 	if (blk_queue_nomerges(q))
 		return ELEVATOR_NO_MERGE;

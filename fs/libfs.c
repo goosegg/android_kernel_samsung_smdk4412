@@ -172,9 +172,9 @@ int dcache_readdir(struct file * filp, void * dirent, filldir_t filldir)
 
 				spin_unlock(&next->d_lock);
 				spin_unlock(&dentry->d_lock);
-				if (filldir(dirent, next->d_name.name, 
-					    next->d_name.len, filp->f_pos, 
-					    next->d_inode->i_ino, 
+				if (filldir(dirent, next->d_name.name,
+					    next->d_name.len, filp->f_pos,
+					    next->d_inode->i_ino,
 					    dt_type(next->d_inode)) < 0)
 					return 0;
 				spin_lock(&dentry->d_lock);
@@ -409,13 +409,13 @@ int simple_write_begin(struct file *file, struct address_space *mapping,
 /**
  * simple_write_end - .write_end helper for non-block-device FSes
  * @available: See .write_end of address_space_operations
- * @file: 		"
- * @mapping: 		"
- * @pos: 		"
- * @len: 		"
- * @copied: 		"
- * @page: 		"
- * @fsdata: 		"
+ * @file:		"
+ * @mapping:		"
+ * @pos:		"
+ * @len:		"
+ * @copied:		"
+ * @page:		"
+ * @fsdata:		"
  *
  * simple_write_end does the minimum needed for updating a page after writing is
  * done. It has the same API signature as the .write_end of

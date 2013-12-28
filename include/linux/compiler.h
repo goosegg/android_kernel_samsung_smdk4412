@@ -173,7 +173,7 @@ void ftrace_likely_update(struct ftrace_branch_data *f, int val, int expect);
  * Allow us to mark functions as 'deprecated' and have gcc emit a nice
  * warning for each use, in hopes of speeding the functions removal.
  * Usage is:
- * 		int __deprecated foo(void)
+ *		int __deprecated foo(void)
  */
 #ifndef __deprecated
 # define __deprecated		/* unimplemented */

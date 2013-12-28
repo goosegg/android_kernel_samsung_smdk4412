@@ -625,4 +625,3 @@ module_exit(nt35560_exit);
 
 MODULE_DESCRIPTION("NT35560 TFT Panel Driver");
 MODULE_LICENSE("GPL");
-

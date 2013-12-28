@@ -19,7 +19,7 @@
  * Boston, MA 021110-1307, USA.
  *
  * Based on sysfs:
- * 	sysfs is Copyright (C) 2001, 2002, 2003 Patrick Mochel
+ *	sysfs is Copyright (C) 2001, 2002, 2003 Patrick Mochel
  *
  * Based on kobject.h:
  *      Copyright (c) 2002-2003	Patrick Mochel
@@ -93,7 +93,7 @@ struct config_item_type {
 struct config_group {
 	struct config_item		cg_item;
 	struct list_head		cg_children;
-	struct configfs_subsystem 	*cg_subsys;
+	struct configfs_subsystem	*cg_subsys;
 	struct config_group		**default_groups;
 };
 
@@ -123,7 +123,7 @@ extern struct config_item *config_group_find_item(struct config_group *,
 
 struct configfs_attribute {
 	const char		*ca_name;
-	struct module 		*ca_owner;
+	struct module		*ca_owner;
 	mode_t			ca_mode;
 };
 

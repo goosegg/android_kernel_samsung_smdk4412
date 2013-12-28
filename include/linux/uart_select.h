@@ -23,4 +23,3 @@ struct uart_select_platform_data {
 
 extern int uart_sel_get_state(void);
 #endif /* _UART_SELECT_H_ */
-

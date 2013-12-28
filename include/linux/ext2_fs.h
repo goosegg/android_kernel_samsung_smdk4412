@@ -48,7 +48,7 @@
 #	define ext2_debug(f, a...)	{ \
 					printk ("EXT2-fs DEBUG (%s, %d): %s:", \
 						__FILE__, __LINE__, __func__); \
-				  	printk (f, ## a); \
+					printk (f, ## a); \
 					}
 #else
 #	define ext2_debug(f, a...)	/**/
@@ -181,7 +181,7 @@ struct ext2_group_desc
 #define EXT2_COMPRBLK_FL		FS_COMPRBLK_FL	/* One or more compressed clusters */
 #define EXT2_NOCOMP_FL			FS_NOCOMP_FL	/* Don't compress */
 #define EXT2_ECOMPR_FL			FS_ECOMPR_FL	/* Compression error */
-/* End compression flags --- maybe not all used */	
+/* End compression flags --- maybe not all used */
 #define EXT2_BTREE_FL			FS_BTREE_FL	/* btree format dir */
 #define EXT2_INDEX_FL			FS_INDEX_FL	/* hash-indexed directory */
 #define EXT2_IMAGIC_FL			FS_IMAGIC_FL	/* AFS directory */
@@ -389,7 +389,7 @@ struct ext2_super_block {
 	__le16	s_magic;		/* Magic signature */
 	__le16	s_state;		/* File system state */
 	__le16	s_errors;		/* Behaviour when detecting errors */
-	__le16	s_minor_rev_level; 	/* minor revision level */
+	__le16	s_minor_rev_level;	/* minor revision level */
 	__le32	s_lastcheck;		/* time of last check */
 	__le32	s_checkinterval;	/* max. time between checks */
 	__le32	s_creator_os;		/* OS */
@@ -403,21 +403,21 @@ struct ext2_super_block {
 	 * the incompatible feature set is that if there is a bit set
 	 * in the incompatible feature set that the kernel doesn't
 	 * know about, it should refuse to mount the filesystem.
-	 * 
+	 *
 	 * e2fsck's requirements are more strict; if it doesn't know
 	 * about a feature in either the compatible or incompatible
 	 * feature set, it must abort and not try to meddle with
 	 * things it doesn't understand...
 	 */
-	__le32	s_first_ino; 		/* First non-reserved inode */
-	__le16   s_inode_size; 		/* size of inode structure */
-	__le16	s_block_group_nr; 	/* block group # of this superblock */
-	__le32	s_feature_compat; 	/* compatible feature set */
-	__le32	s_feature_incompat; 	/* incompatible feature set */
-	__le32	s_feature_ro_compat; 	/* readonly-compatible feature set */
+	__le32	s_first_ino;		/* First non-reserved inode */
+	__le16   s_inode_size;		/* size of inode structure */
+	__le16	s_block_group_nr;	/* block group # of this superblock */
+	__le32	s_feature_compat;	/* compatible feature set */
+	__le32	s_feature_incompat;	/* incompatible feature set */
+	__le32	s_feature_ro_compat;	/* readonly-compatible feature set */
 	__u8	s_uuid[16];		/* 128-bit uuid for volume */
-	char	s_volume_name[16]; 	/* volume name */
-	char	s_last_mounted[64]; 	/* directory where last mounted */
+	char	s_volume_name[16];	/* volume name */
+	char	s_last_mounted[64];	/* directory where last mounted */
 	__le32	s_algorithm_usage_bitmap; /* For compression */
 	/*
 	 * Performance hints.  Directory preallocation should only
@@ -438,7 +438,7 @@ struct ext2_super_block {
 	__u8	s_reserved_char_pad;
 	__u16	s_reserved_word_pad;
 	__le32	s_default_mount_opts;
- 	__le32	s_first_meta_bg; 	/* First metablock block group */
+	__le32	s_first_meta_bg;	/* First metablock block group */
 	__u32	s_reserved[190];	/* Padding to the end of the block */
 };
 
@@ -455,7 +455,7 @@ struct ext2_super_block {
  * Revision levels
  */
 #define EXT2_GOOD_OLD_REV	0	/* The good old (original) format */
-#define EXT2_DYNAMIC_REV	1 	/* V2 format w/ dynamic inode sizes */
+#define EXT2_DYNAMIC_REV	1	/* V2 format w/ dynamic inode sizes */
 
 #define EXT2_CURRENT_REV	EXT2_GOOD_OLD_REV
 #define EXT2_MAX_SUPP_REV	EXT2_DYNAMIC_REV
@@ -529,7 +529,7 @@ struct ext2_super_block {
 #define EXT2_DEFM_ACL		0x0008
 #define EXT2_DEFM_UID16		0x0010
     /* Not used by ext2, but reserved for use by ext3 */
-#define EXT3_DEFM_JMODE		0x0060 
+#define EXT3_DEFM_JMODE		0x0060
 #define EXT3_DEFM_JMODE_DATA	0x0020
 #define EXT3_DEFM_JMODE_ORDERED	0x0040
 #define EXT3_DEFM_JMODE_WBACK	0x0060
@@ -581,8 +581,8 @@ enum {
  *
  * NOTE: It must be a multiple of 4
  */
-#define EXT2_DIR_PAD		 	4
-#define EXT2_DIR_ROUND 			(EXT2_DIR_PAD - 1)
+#define EXT2_DIR_PAD			4
+#define EXT2_DIR_ROUND			(EXT2_DIR_PAD - 1)
 #define EXT2_DIR_REC_LEN(name_len)	(((name_len) + 8 + EXT2_DIR_ROUND) & \
 					 ~EXT2_DIR_ROUND)
 #define EXT2_MAX_REC_LEN		((1<<16)-1)

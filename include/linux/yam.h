@@ -30,9 +30,9 @@
 /*****************************************************************************/
 
 #define SIOCYAMRESERVED	(0)
-#define SIOCYAMSCFG 	(1)	/* Set configuration */
-#define SIOCYAMGCFG 	(2)	/* Get configuration */
-#define SIOCYAMSMCS 	(3)	/* Set mcs data */
+#define SIOCYAMSCFG	(1)	/* Set configuration */
+#define SIOCYAMGCFG	(2)	/* Get configuration */
+#define SIOCYAMSMCS	(3)	/* Set mcs data */
 
 #define YAM_IOBASE   (1 << 0)
 #define YAM_IRQ      (1 << 1)

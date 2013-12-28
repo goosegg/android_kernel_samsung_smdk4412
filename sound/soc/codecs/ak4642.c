@@ -70,7 +70,7 @@
 #define HP_MS		0x23
 #define SPK_MS		0x24
 
-#define AK4642_CACHEREGNUM 	0x25
+#define AK4642_CACHEREGNUM	0x25
 
 /* PW_MGMT1*/
 #define PMVCM		(1 << 6) /* VCOM Power Management */

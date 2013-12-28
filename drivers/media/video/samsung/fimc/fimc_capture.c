@@ -825,11 +825,11 @@ static int fimc_configure_subdev(struct fimc_control *ctrl)
 		if (ret < 0) {
 			fimc_err("%s: fail to initialize subdev\n", __func__);
 
-#ifndef CONFIG_MACH_GC1			
+#ifndef CONFIG_MACH_GC1
 			client = v4l2_get_subdevdata(sd);
 			i2c_unregister_device(client);
 			ctrl->cam->sd = NULL;
-#endif			
+#endif
 
 			return ret;
 		}
@@ -1942,7 +1942,7 @@ int fimc_reqbufs_capture_mmap(void *fh, struct v4l2_requestbuffers *b)
 		break;
 
 	case V4L2_PIX_FMT_NV12:
-	        
+
 		fimc_info1("%s : 2plane for NV12\n", __func__);
 		ret = fimc_alloc_buffers(ctrl, 2,
 			cap->fmt.width * cap->fmt.height, SZ_64K, bpp, cap->pktdata_enable, cap->pktdata_size);

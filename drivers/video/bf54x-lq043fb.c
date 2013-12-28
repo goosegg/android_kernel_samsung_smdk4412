@@ -101,28 +101,28 @@ MODULE_PARM_DESC(outp_rgb666, "Output 18-bit RGB666");
 #define LCD_BPP			24	/* Bit Per Pixel */
 #define	DMA_BUS_SIZE		32
 
-/* 	-- Horizontal synchronizing --
+/*	-- Horizontal synchronizing --
  *
  * Timing characteristics taken from the SHARP LQ043T1DG01 datasheet
  * (LCY-W-06602A Page 9 of 22)
  *
- * Clock Frequency 	1/Tc Min 7.83 Typ 9.00 Max 9.26 MHz
+ * Clock Frequency	1/Tc Min 7.83 Typ 9.00 Max 9.26 MHz
  *
- * Period 		TH - 525 - Clock
- * Pulse width 		THp - 41 - Clock
- * Horizontal period 	THd - 480 - Clock
- * Back porch 		THb - 2 - Clock
- * Front porch 		THf - 2 - Clock
+ * Period		TH - 525 - Clock
+ * Pulse width		THp - 41 - Clock
+ * Horizontal period	THd - 480 - Clock
+ * Back porch		THb - 2 - Clock
+ * Front porch		THf - 2 - Clock
  *
  * -- Vertical synchronizing --
- * Period 		TV - 286 - Line
- * Pulse width 		TVp - 10 - Line
- * Vertical period 	TVd - 272 - Line
- * Back porch 		TVb - 2 - Line
- * Front porch 		TVf - 2 - Line
+ * Period		TV - 286 - Line
+ * Pulse width		TVp - 10 - Line
+ * Vertical period	TVd - 272 - Line
+ * Back porch		TVb - 2 - Line
+ * Front porch		TVf - 2 - Line
  */
 
-#define	LCD_CLK         	(8*1000*1000)	/* 8MHz */
+#define	LCD_CLK			(8*1000*1000)	/* 8MHz */
 
 /* # active data to transfer after Horizontal Delay clock */
 #define EPPI_HCOUNT		LCD_X_RES

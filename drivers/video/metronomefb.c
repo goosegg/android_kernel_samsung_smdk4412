@@ -324,7 +324,7 @@ static int metronome_display_cmd(struct metronomefb_par *par)
 
 	/* set the args ( 2 bytes ) for display */
 	i = 0;
-	par->metromem_cmd->args[i] = 	1 << 3 /* border update */
+	par->metromem_cmd->args[i] =	1 << 3 /* border update */
 					| ((borderval++ % 4) & 0x0F) << 4
 					| (par->frame_count - 1) << 8;
 	cs += par->metromem_cmd->args[i++];

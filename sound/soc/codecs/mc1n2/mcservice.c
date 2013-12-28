@@ -6,7 +6,7 @@
  *
  *		Description	: MC Driver service routine
  *
- *		Version		: 1.0.0 	2010.09.10
+ *		Version		: 1.0.0		2010.09.10
  *
  ****************************************************************************/
 
@@ -362,4 +362,3 @@ void	McSrv_EnableIrq
 	McDebugLog_FuncOut("McSrv_EnableIrq", 0);
 #endif
 }
-

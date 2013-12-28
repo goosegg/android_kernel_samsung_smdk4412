@@ -45,7 +45,7 @@ struct flat_hdr {
 	unsigned long reloc_start;  /* Offset of relocation records from
 	                               beginning of file */
 	unsigned long reloc_count;  /* Number of relocation records */
-	unsigned long flags;       
+	unsigned long flags;
 	unsigned long build_date;   /* When the program/library was built */
 	unsigned long filler[5];    /* Reservered, set to zero */
 };
@@ -80,17 +80,17 @@ typedef union {
 # if defined(mc68000) && !defined(CONFIG_COLDFIRE)
 		signed long offset : 30;
 		unsigned long type : 2;
-#   	define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
+#	define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
 # elif defined(__BIG_ENDIAN_BITFIELD)
 		unsigned long type : 2;
 		signed long offset : 30;
-#   	define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
+#	define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
 # elif defined(__LITTLE_ENDIAN_BITFIELD)
 		signed long offset : 30;
 		unsigned long type : 2;
-#   	define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
+#	define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
 # else
-#   	error "Unknown bitfield order for flat files."
+#	error "Unknown bitfield order for flat files."
 # endif
 	} reloc;
 } flat_v2_reloc_t;

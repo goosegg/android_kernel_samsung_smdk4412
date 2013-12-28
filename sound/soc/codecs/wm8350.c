@@ -1367,7 +1367,7 @@ static void wm8350_hpr_work(struct work_struct *work)
 {
 	struct wm8350_data *priv =
 	    container_of(work, struct wm8350_data, hpr.work.work);
-	
+
 	wm8350_hp_work(priv, &priv->hpr, WM8350_JACK_R_LVL);
 }
 
@@ -1692,7 +1692,7 @@ static int  wm8350_codec_remove(struct snd_soc_codec *codec)
 static struct snd_soc_codec_driver soc_codec_dev_wm8350 = {
 	.probe =	wm8350_codec_probe,
 	.remove =	wm8350_codec_remove,
-	.suspend = 	wm8350_suspend,
+	.suspend =	wm8350_suspend,
 	.resume =	wm8350_resume,
 	.read = wm8350_codec_read,
 	.write = wm8350_codec_write,

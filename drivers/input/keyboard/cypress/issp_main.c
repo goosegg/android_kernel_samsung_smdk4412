@@ -119,7 +119,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //									. read security
 //									. checksum
 //
-//	05/28/08  3.01	    ptj    	TEST CODE - NOT COMPLETE
+//	05/28/08  3.01	    ptj		TEST CODE - NOT COMPLETE
 //								1. The sequence surrounding PROGRAM-AND-VERIFY was
 //								   improved and works according to spec.
 //								2. The sequence surroudning VERIFY-SETUP was devel-
@@ -694,7 +694,7 @@ int ISSP_main(void)
 		ErrorTrap(fIsError);
 		return fIsError;
 	}
-	//INTFREE();    
+	//INTFREE();
 #endif				/* RESET_MODE */
 
 #if 0				// issp_test_2010 block

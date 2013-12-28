@@ -59,9 +59,9 @@ typedef void dlm_lockspace_t;
 #define DLM_SBF_ALTMODE		0x04
 
 struct dlm_lksb {
-	int 	 sb_status;
+	int	 sb_status;
 	__u32	 sb_lkid;
-	char 	 sb_flags;
+	char	 sb_flags;
 	char *	 sb_lvbptr;
 };
 
@@ -69,8 +69,8 @@ struct dlm_lksb {
 
 #define DLM_LSFL_NODIR		0x00000001
 #define DLM_LSFL_TIMEWARN	0x00000002
-#define DLM_LSFL_FS     	0x00000004
-#define DLM_LSFL_NEWEXCL     	0x00000008
+#define DLM_LSFL_FS		0x00000004
+#define DLM_LSFL_NEWEXCL	0x00000008
 
 #ifdef __KERNEL__
 
@@ -169,4 +169,3 @@ int dlm_unlock(dlm_lockspace_t *lockspace,
 #endif				/* __KERNEL__ */
 
 #endif				/* __DLM_DOT_H__ */
-

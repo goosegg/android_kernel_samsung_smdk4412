@@ -59,9 +59,9 @@ struct s3c_pl330_xfer {
 
 /**
  * struct s3c_pl330_chan - Logical channel to communicate with
- * 	a Physical peripheral.
+ *	a Physical peripheral.
  * @pl330_chan_id: Token of a hardware channel thread of PL330 DMAC.
- * 	NULL if the channel is available to be acquired.
+ *	NULL if the channel is available to be acquired.
  * @id: ID of the peripheral that this channel can communicate with.
  * @options: Options specified by the client.
  * @sdaddr: Address provided via s3c2410_dma_devconfig.
@@ -73,9 +73,9 @@ struct s3c_pl330_xfer {
  * @rqcfg: Channel configuration for the xfers.
  * @xfer_head: Pointer to the xfer to be next executed.
  * @dmac: Pointer to the DMAC that manages this channel, NULL if the
- * 	channel is available to be acquired.
+ *	channel is available to be acquired.
  * @client: Client of this channel. NULL if the
- * 	channel is available to be acquired.
+ *	channel is available to be acquired.
  */
 struct s3c_pl330_chan {
 	void				*pl330_chan_id;

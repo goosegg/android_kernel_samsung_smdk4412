@@ -642,7 +642,7 @@ void release_pages(struct page **pages, int nr, int cold)
 			}
 			__pagevec_free(&pages_to_free);
 			pagevec_reinit(&pages_to_free);
-  		}
+		}
 	}
 	if (zone)
 		spin_unlock_irqrestore(&zone->lru_lock, flags);

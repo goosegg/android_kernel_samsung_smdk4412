@@ -16,7 +16,7 @@
 #include <linux/types.h>
 #include <linux/magic.h>
 
-/* You must include something which defines the C99 uintXX_t types. 
+/* You must include something which defines the C99 uintXX_t types.
    We don't do it from here because this file is used in too many
    different environments. */
 
@@ -193,15 +193,15 @@ struct jffs2_raw_xref
 struct jffs2_raw_summary
 {
 	jint16_t magic;
-	jint16_t nodetype; 	/* = JFFS2_NODETYPE_SUMMARY */
+	jint16_t nodetype;	/* = JFFS2_NODETYPE_SUMMARY */
 	jint32_t totlen;
 	jint32_t hdr_crc;
 	jint32_t sum_num;	/* number of sum entries*/
 	jint32_t cln_mkr;	/* clean marker size, 0 = no cleanmarker */
 	jint32_t padded;	/* sum of the size of padding nodes */
 	jint32_t sum_crc;	/* summary information crc */
-	jint32_t node_crc; 	/* node crc */
-	jint32_t sum[0]; 	/* inode summary info */
+	jint32_t node_crc;	/* node crc */
+	jint32_t sum[0];	/* inode summary info */
 };
 
 union jffs2_node_union

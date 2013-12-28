@@ -398,7 +398,7 @@ static void __init offb_init_fb(const char *name, const char *full_name,
 	}
 
 	info = framebuffer_alloc(sizeof(u32) * 16, NULL);
-	
+
 	if (info == 0) {
 		release_mem_region(res_start, res_size);
 		return;
@@ -606,7 +606,7 @@ static void __init offb_init_nodriver(struct device_node *dp, int no_real_node)
 		if (rsize > max_size) {
 			max_size = rsize;
 			address = OF_BAD_ADDR;
- 		}
+		}
 
 		if (address == OF_BAD_ADDR)
 			address = rstart;

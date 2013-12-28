@@ -3350,7 +3350,7 @@ out2:
  *
  * return > 0, number of of blocks already mapped/allocated
  *          if create == 0 and these are pre-allocated blocks
- *          	buffer head is unmapped
+ *		buffer head is unmapped
  *          otherwise blocks are mapped
  *
  * return = 0, if plain look up failed (blocks have not been allocated)

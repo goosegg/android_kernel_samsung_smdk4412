@@ -48,4 +48,3 @@ void __init grande_jack_init(void)
 
 	platform_device_register(&sec_device_jack);
 }
-

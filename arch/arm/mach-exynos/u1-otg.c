@@ -215,4 +215,3 @@ static int c210_change_usb_mode(struct s3c_udc *dev, int mode)
 	usb_status = mode;
 	return 0;
 }
-

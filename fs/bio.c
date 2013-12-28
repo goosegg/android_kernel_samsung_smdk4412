@@ -435,13 +435,13 @@ inline int bio_phys_segments(struct request_queue *q, struct bio *bio)
 EXPORT_SYMBOL(bio_phys_segments);
 
 /**
- * 	__bio_clone	-	clone a bio
- * 	@bio: destination bio
- * 	@bio_src: bio to clone
+ *	__bio_clone	-	clone a bio
+ *	@bio: destination bio
+ *	@bio_src: bio to clone
  *
  *	Clone a &bio. Caller will own the returned bio, but not
  *	the actual data it points to. Reference count of returned
- * 	bio will be one.
+ *	bio will be one.
  */
 void __bio_clone(struct bio *bio, struct bio *bio_src)
 {
@@ -467,7 +467,7 @@ EXPORT_SYMBOL(__bio_clone);
  *	@bio: bio to clone
  *	@gfp_mask: allocation priority
  *
- * 	Like __bio_clone, only also allocates the returned bio
+ *	Like __bio_clone, only also allocates the returned bio
  */
 struct bio *bio_clone(struct bio *bio, gfp_t gfp_mask)
 {
@@ -1025,7 +1025,7 @@ static struct bio *__bio_map_user_iov(struct request_queue *q,
 
 			if (len <= 0)
 				break;
-			
+
 			if (bytes > len)
 				bytes = len;
 

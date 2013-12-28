@@ -281,7 +281,7 @@ static void pixcir_ts_poscheck(struct work_struct *work)
 	oldtouching = Rdbuf[1];
 
 	if (touching == 1 && posy1 > 800) {
-		if (posx1 < 100) 		/* MENU KEY */
+		if (posx1 < 100)		/* MENU KEY */
 			pressed_keycode = 0;
 		else if (posx1 > (240 - 50) && posx1 < (240 + 50)) /* HOME KEY */
 			pressed_keycode = 1;

@@ -1298,8 +1298,8 @@ static int wm9081_resume(struct snd_soc_codec *codec)
 #endif
 
 static struct snd_soc_codec_driver soc_codec_dev_wm9081 = {
-	.probe = 	wm9081_probe,
-	.remove = 	wm9081_remove,
+	.probe =	wm9081_probe,
+	.remove =	wm9081_remove,
 	.suspend =	wm9081_suspend,
 	.resume =	wm9081_resume,
 

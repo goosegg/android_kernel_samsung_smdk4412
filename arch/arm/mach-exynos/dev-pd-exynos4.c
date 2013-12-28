@@ -214,7 +214,7 @@ struct platform_device exynos4_device_pd[] = {
 				},
 			},
 		},
-	}, 
+	},
 	[PD_ISP] = {
 		.name		= "samsung-pd",
 		.id		= PD_ISP,
@@ -232,7 +232,7 @@ struct platform_device exynos4_device_pd[] = {
 				},
 			},
 		},
-	}, 
+	},
 	[PD_MAUDIO] = {
 		.name		= "samsung-pd",
 		.id		= PD_MAUDIO,
@@ -250,5 +250,5 @@ struct platform_device exynos4_device_pd[] = {
 				},
 			},
 		},
-	}, 
+	},
 };

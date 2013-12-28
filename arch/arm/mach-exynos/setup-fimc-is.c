@@ -998,7 +998,7 @@ int exynos5_fimc_is_clk_off(struct platform_device *pdev)
 	clk_disable(cam_A_clk);
 	clk_put(cam_A_clk);
 
-   	cam_A_clk = clk_get(&pdev->dev, "sclk_cam0");
+	cam_A_clk = clk_get(&pdev->dev, "sclk_cam0");
 	if (IS_ERR(cam_A_clk)) {
 		printk(KERN_ERR "%s : clk_get(sclk_cam0) failed\n", __func__);
 		return PTR_ERR(cam_A_clk);
@@ -1034,7 +1034,7 @@ int exynos5_fimc_is_clk_off(struct platform_device *pdev)
 	clk_disable(mipi_ctrl);
 	clk_put(mipi_ctrl);
 
-   	isp_ctrl = clk_get(&pdev->dev, "isp1");
+	isp_ctrl = clk_get(&pdev->dev, "isp1");
 	if (IS_ERR(isp_ctrl)) {
 		printk(KERN_ERR "%s : clk_get(isp1) failed\n", __func__);
 		return PTR_ERR(isp_ctrl);

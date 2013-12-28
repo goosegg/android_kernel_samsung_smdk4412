@@ -69,8 +69,8 @@ ENTRY(cpu_arm1026_proc_init)
  */
 ENTRY(cpu_arm1026_proc_fin)
 	mrc	p15, 0, r0, c1, c0, 0		@ ctrl register
-	bic	r0, r0, #0x1000 		@ ...i............
-	bic	r0, r0, #0x000e 		@ ............wca.
+	bic	r0, r0, #0x1000			@ ...i............
+	bic	r0, r0, #0x000e			@ ............wca.
 	mcr	p15, 0, r0, c1, c0, 0		@ disable caches
 	mov	pc, lr
 
@@ -92,8 +92,8 @@ ENTRY(cpu_arm1026_reset)
 	mcr	p15, 0, ip, c8, c7, 0		@ invalidate I & D TLBs
 #endif
 	mrc	p15, 0, ip, c1, c0, 0		@ ctrl register
-	bic	ip, ip, #0x000f 		@ ............wcam
-	bic	ip, ip, #0x1100 		@ ...i...s........
+	bic	ip, ip, #0x000f			@ ............wcam
+	bic	ip, ip, #0x1100			@ ...i...s........
 	mcr	p15, 0, ip, c1, c0, 0		@ ctrl register
 	mov	pc, r0
 
@@ -372,7 +372,7 @@ ENTRY(cpu_arm1026_switch_mm)
 	mcr	p15, 0, r1, c8, c7, 0		@ invalidate I & D TLBs
 #endif
 	mov	pc, lr
-        
+
 /*
  * cpu_arm1026_set_pte_ext(ptep, pte, ext)
  *
@@ -411,7 +411,7 @@ __arm1026_setup:
 	bic	r0, r0, r5
 	orr	r0, r0, r6
 #ifdef CONFIG_CPU_CACHE_ROUND_ROBIN
-	orr	r0, r0, #0x4000 		@ .R.. .... .... ....
+	orr	r0, r0, #0x4000			@ .R.. .... .... ....
 #endif
 	mov	pc, lr
 	.size	__arm1026_setup, . - __arm1026_setup
@@ -420,7 +420,7 @@ __arm1026_setup:
 	 *  R
 	 * .RVI ZFRS BLDP WCAM
 	 * .011 1001 ..11 0101
-	 * 
+	 *
 	 */
 	.type	arm1026_crval, #object
 arm1026_crval:

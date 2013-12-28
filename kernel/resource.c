@@ -511,7 +511,7 @@ out:
 
 /**
  * allocate_resource - allocate empty slot in the resource tree given range & alignment.
- * 	The resource will be reallocated with a new size if it was already allocated
+ *	The resource will be reallocated with a new size if it was already allocated
  * @root: root resource descriptor
  * @new: resource descriptor desired by caller
  * @size: requested resource region size

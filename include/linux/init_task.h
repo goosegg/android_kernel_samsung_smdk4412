@@ -40,13 +40,13 @@ extern struct fs_struct init_fs;
 #define INIT_SIGNALS(sig) {						\
 	.nr_threads	= 1,						\
 	.wait_chldexit	= __WAIT_QUEUE_HEAD_INITIALIZER(sig.wait_chldexit),\
-	.shared_pending	= { 						\
+	.shared_pending	= {						\
 		.list = LIST_HEAD_INIT(sig.shared_pending.list),	\
 		.signal =  {{0}}},					\
 	.posix_timers	 = LIST_HEAD_INIT(sig.posix_timers),		\
 	.cpu_timers	= INIT_CPU_TIMERS(sig.cpu_timers),		\
 	.rlim		= INIT_RLIMITS,					\
-	.cputimer	= { 						\
+	.cputimer	= {						\
 		.cputime = INIT_CPUTIME,				\
 		.running = 0,						\
 		.lock = __SPIN_LOCK_UNLOCKED(sig.cputimer.lock),	\
@@ -59,7 +59,7 @@ extern struct fs_struct init_fs;
 extern struct nsproxy init_nsproxy;
 
 #define INIT_SIGHAND(sighand) {						\
-	.count		= ATOMIC_INIT(1), 				\
+	.count		= ATOMIC_INIT(1),				\
 	.action		= { { { .sa_handler = SIG_DFL, } }, },		\
 	.siglock	= __SPIN_LOCK_UNLOCKED(sighand.siglock),	\
 	.signalfd_wqh	= __WAIT_QUEUE_HEAD_INITIALIZER(sighand.signalfd_wqh),	\
@@ -68,7 +68,7 @@ extern struct nsproxy init_nsproxy;
 extern struct group_info init_groups;
 
 #define INIT_STRUCT_PID {						\
-	.count 		= ATOMIC_INIT(1),				\
+	.count		= ATOMIC_INIT(1),				\
 	.tasks		= {						\
 		{ .first = NULL },					\
 		{ .first = NULL },					\
@@ -82,7 +82,7 @@ extern struct group_info init_groups;
 	}, }								\
 }
 
-#define INIT_PID_LINK(type) 					\
+#define INIT_PID_LINK(type)					\
 {								\
 	.node = {						\
 		.next = NULL,					\
@@ -135,7 +135,7 @@ extern struct task_group root_task_group;
 
 #ifdef CONFIG_PERF_EVENTS
 # define INIT_PERF_EVENTS(tsk)						\
-	.perf_event_mutex = 						\
+	.perf_event_mutex =						\
 		 __MUTEX_INITIALIZER(tsk.perf_event_mutex),		\
 	.perf_event_list = LIST_HEAD_INIT(tsk.perf_event_list),
 #else
@@ -160,11 +160,11 @@ extern struct task_group root_task_group;
 	.mm		= NULL,						\
 	.active_mm	= &init_mm,					\
 	.se		= {						\
-		.group_node 	= LIST_HEAD_INIT(tsk.se.group_node),	\
+		.group_node	= LIST_HEAD_INIT(tsk.se.group_node),	\
 	},								\
 	.rt		= {						\
 		.run_list	= LIST_HEAD_INIT(tsk.rt.run_list),	\
-		.time_slice	= HZ, 					\
+		.time_slice	= HZ,					\
 		.nr_cpus_allowed = NR_CPUS,				\
 	},								\
 	.tasks		= LIST_HEAD_INIT(tsk.tasks),			\

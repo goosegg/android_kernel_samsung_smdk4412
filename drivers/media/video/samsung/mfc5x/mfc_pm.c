@@ -195,4 +195,3 @@ void mfc_pd_enable(void)
 		udelay(100);
 	}
 }
-

@@ -504,10 +504,10 @@ void mali_clk_set_rate(unsigned int clk, unsigned int mhz)
 	MALI_DEBUG_PRINT(3, ("Mali platform: Setting frequency to %d mhz\n", clk));
 
 	if (mali_clk_get() == MALI_FALSE) {
-  	_mali_osk_lock_signal(mali_dvfs_lock, _MALI_OSK_LOCKMODE_RW);
- 		return;
+	_mali_osk_lock_signal(mali_dvfs_lock, _MALI_OSK_LOCKMODE_RW);
+		return;
 	}
-	
+
 	if (bis_vpll)
 	{
 		clk_set_rate(fout_vpll_clock, (unsigned int)clk * GPU_MHZ);
@@ -526,7 +526,7 @@ void mali_clk_set_rate(unsigned int clk, unsigned int mhz)
 	if (atomic_read(&clk_active) == 0) {
 		if (clk_enable(mali_clock) < 0) {
 			_mali_osk_lock_signal(mali_dvfs_lock, _MALI_OSK_LOCKMODE_RW);
- 			return;
+			return;
 		}
 		atomic_set(&clk_active, 1);
 	}
@@ -943,12 +943,12 @@ static void mali_dvfs_work_handler(struct work_struct *w)
                 MALI_PRINT((":::step3_down change to %d %\n", step3_down));
                 mali_dvfs[3].downthreshold = step3_down;
         }
-        
+
     mali_dvfs[0].vol = step0_vol;
     mali_dvfs[1].vol = step1_vol;
     mali_dvfs[2].vol = step2_vol;
     mali_dvfs[3].vol = step3_vol;
- 
+
 	bMaliDvfsRun=1;
 
 	MALI_DEBUG_PRINT(3, ("=== mali_dvfs_work_handler\n"));

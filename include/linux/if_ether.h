@@ -78,7 +78,7 @@
 					 */
 #define ETH_P_PAE	0x888E		/* Port Access Entity (IEEE 802.1X) */
 #define ETH_P_AOE	0x88A2		/* ATA over Ethernet		*/
-#define ETH_P_TIPC	0x88CA		/* TIPC 			*/
+#define ETH_P_TIPC	0x88CA		/* TIPC				*/
 #define ETH_P_1588	0x88F7		/* IEEE 1588 Timesync */
 #define ETH_P_FCOE	0x8906		/* Fibre Channel over Ethernet  */
 #define ETH_P_FIP	0x8914		/* FCoE Initialization Protocol */
@@ -91,15 +91,15 @@
 #define ETH_P_802_3	0x0001		/* Dummy type for 802.3 frames  */
 #define ETH_P_AX25	0x0002		/* Dummy protocol id for AX.25  */
 #define ETH_P_ALL	0x0003		/* Every packet (be careful!!!) */
-#define ETH_P_802_2	0x0004		/* 802.2 frames 		*/
+#define ETH_P_802_2	0x0004		/* 802.2 frames			*/
 #define ETH_P_SNAP	0x0005		/* Internal only		*/
 #define ETH_P_DDCMP     0x0006          /* DEC DDCMP: Internal only     */
 #define ETH_P_WAN_PPP   0x0007          /* Dummy type for WAN PPP frames*/
 #define ETH_P_PPP_MP    0x0008          /* Dummy type for PPP MP frames */
-#define ETH_P_LOCALTALK 0x0009		/* Localtalk pseudo type 	*/
+#define ETH_P_LOCALTALK 0x0009		/* Localtalk pseudo type	*/
 #define ETH_P_CAN	0x000C		/* Controller Area Network      */
 #define ETH_P_PPPTALK	0x0010		/* Dummy type for Atalk over PPP*/
-#define ETH_P_TR_802_2	0x0011		/* 802.2 frames 		*/
+#define ETH_P_TR_802_2	0x0011		/* 802.2 frames			*/
 #define ETH_P_MOBITEX	0x0015		/* Mobitex (kaz@cafe.net)	*/
 #define ETH_P_CONTROL	0x0016		/* Card specific control frames */
 #define ETH_P_IRDA	0x0017		/* Linux-IrDA			*/

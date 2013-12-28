@@ -107,7 +107,7 @@ struct pxa3xx_gcu_priv {
 	wait_queue_head_t	  wait_idle;
 	wait_queue_head_t	  wait_free;
 	spinlock_t		  spinlock;
-	struct timeval 		  base_time;
+	struct timeval		  base_time;
 
 	struct pxa3xx_gcu_batch *free;
 

@@ -12,7 +12,7 @@
 /* WM8960 register space */
 
 
-#define WM8960_CACHEREGNUM 	56
+#define WM8960_CACHEREGNUM	56
 
 #define WM8960_LINVOL		0x0
 #define WM8960_RINVOL		0x1
@@ -71,7 +71,7 @@
 /*
  * WM8960 Clock dividers
  */
-#define WM8960_SYSCLKDIV 		0
+#define WM8960_SYSCLKDIV		0
 #define WM8960_DACDIV			1
 #define WM8960_OPCLKDIV			2
 #define WM8960_DCLKDIV			3

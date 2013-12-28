@@ -109,8 +109,8 @@ struct sem_queue {
 	struct list_head	list;	 /* queue of pending operations */
 	struct task_struct	*sleeper; /* this process */
 	struct sem_undo		*undo;	 /* undo structure */
-	int    			pid;	 /* process id of requesting process */
-	int    			status;	 /* completion status of operation */
+	int			pid;	 /* process id of requesting process */
+	int			status;	 /* completion status of operation */
 	struct sembuf		*sops;	 /* array of pending operations */
 	int			nsops;	 /* number of operations */
 	int			alter;   /* does the operation alter the array? */
@@ -131,7 +131,7 @@ struct sem_undo {
 
 /* sem_undo_list controls shared access to the list of sem_undo structures
  * that may be shared among all a CLONE_SYSVSEM task group.
- */ 
+ */
 struct sem_undo_list {
 	atomic_t		refcnt;
 	spinlock_t		lock;

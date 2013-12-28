@@ -708,7 +708,7 @@ do {									       \
 #define EXT4_EINODE_GET_XTIME(xtime, einode, raw_inode)			       \
 do {									       \
 	if (EXT4_FITS_IN_INODE(raw_inode, einode, xtime))		       \
-		(einode)->xtime.tv_sec = 				       \
+		(einode)->xtime.tv_sec =				       \
 			(signed)le32_to_cpu((raw_inode)->xtime);	       \
 	if (EXT4_FITS_IN_INODE(raw_inode, einode, xtime ## _extra))	       \
 		ext4_decode_extra_time(&(einode)->xtime,		       \
@@ -1033,7 +1033,7 @@ struct ext4_super_block {
 	__le32	s_r_blocks_count_hi;	/* Reserved blocks count */
 	__le32	s_free_blocks_count_hi;	/* Free blocks count */
 	__le16	s_min_extra_isize;	/* All inodes have at least # bytes */
-	__le16	s_want_extra_isize; 	/* New inodes should reserve # bytes */
+	__le16	s_want_extra_isize;	/* New inodes should reserve # bytes */
 	__le32	s_flags;		/* Miscellaneous flags */
 	__le16  s_raid_stride;		/* RAID stride */
 	__le16  s_mmp_update_interval;  /* # seconds to wait in MMP checking */

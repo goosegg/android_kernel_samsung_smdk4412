@@ -3,9 +3,9 @@
  *	Au1100 LCD Driver.
  *
  * Rewritten for 2.6 by Embedded Alley Solutions
- * 	<source@embeddedalley.com>, based on submissions by
- *  	Karl Lessard <klessard@sunrisetelecom.com>
- *  	<c.pellegrin@exadron.com>
+ *	<source@embeddedalley.com>, based on submissions by
+ *	Karl Lessard <klessard@sunrisetelecom.com>
+ *	<c.pellegrin@exadron.com>
  *
  * PM support added by Rodolfo Giometti <giometti@linux.it>
  * Cursor enable/disable by Rodolfo Giometti <giometti@linux.it>
@@ -84,7 +84,7 @@
  */
 struct fb_bitfield rgb_bitfields[][4] =
 {
-  	/*     Red, 	   Green, 	 Blue, 	     Transp   */
+	/*     Red,	   Green,	 Blue,	     Transp   */
 	{ { 10, 6, 0 }, { 5, 5, 0 }, { 0, 5, 0 }, { 0, 0, 0 } },
 	{ { 11, 5, 0 }, { 5, 6, 0 }, { 0, 5, 0 }, { 0, 0, 0 } },
 	{ { 11, 5, 0 }, { 6, 5, 0 }, { 0, 6, 0 }, { 0, 0, 0 } },
@@ -97,8 +97,8 @@ struct fb_bitfield rgb_bitfields[][4] =
 
 static struct fb_fix_screeninfo au1100fb_fix __devinitdata = {
 	.id		= "AU1100 FB",
-	.xpanstep 	= 1,
-	.ypanstep 	= 1,
+	.xpanstep	= 1,
+	.ypanstep	= 1,
 	.type		= FB_TYPE_PACKED_PIXELS,
 	.accel		= FB_ACCEL_NONE,
 };
@@ -149,7 +149,7 @@ static int au1100fb_fb_blank(int blank_mode, struct fb_info *fbi)
 #ifdef CONFIG_MIPS_PB1100
 			if (drv_info.panel_idx == 1) {
 				au_writew(au_readw(PB1100_G_CONTROL)
-				  	  & ~(PB1100_G_CONTROL_BL | PB1100_G_CONTROL_VDD),
+					  & ~(PB1100_G_CONTROL_BL | PB1100_G_CONTROL_VDD),
 			PB1100_G_CONTROL);
 			}
 #endif
@@ -292,7 +292,7 @@ int au1100fb_fb_setcolreg(unsigned regno, unsigned red, unsigned green, unsigned
 		green >>= (16 - fbi->var.green.length);
 		blue  >>= (16 - fbi->var.blue.length);
 
-		value = (red   << fbi->var.red.offset) 	|
+		value = (red   << fbi->var.red.offset)	|
 			(green << fbi->var.green.offset)|
 			(blue  << fbi->var.blue.offset);
 		value &= 0xFFFF;
@@ -504,7 +504,7 @@ static int __devinit au1100fb_drv_probe(struct platform_device *dev)
 
 	/* Allocate the framebuffer to the maximum screen size * nbr of video buffers */
 	fbdev->fb_len = fbdev->panel->xres * fbdev->panel->yres *
-		  	(fbdev->panel->bpp >> 3) * AU1100FB_NBR_VIDEO_BUFFERS;
+			(fbdev->panel->bpp >> 3) * AU1100FB_NBR_VIDEO_BUFFERS;
 
 	fbdev->fb_mem = dma_alloc_coherent(dev, PAGE_ALIGN(fbdev->fb_len),
 					&fbdev->fb_phys, GFP_KERNEL);
@@ -699,14 +699,14 @@ int au1100fb_setup(char *options)
 				this_opt += 6;
 				for (i = 0; i < num_panels; i++) {
 					if (!strncmp(this_opt,
-					      	     known_lcd_panels[i].name,
+						     known_lcd_panels[i].name,
 							strlen(this_opt))) {
 						panel_idx = i;
 						break;
 					}
 				}
 				if (i >= num_panels) {
- 					print_warn("Panel %s not supported!", this_opt);
+					print_warn("Panel %s not supported!", this_opt);
 				}
 			}
 			if (!strncmp(this_opt, "nocursor", 8)) {
@@ -734,7 +734,7 @@ int au1100fb_setup(char *options)
 
 	print_info("Panel=%s Mode=%s",
 			known_lcd_panels[drv_info.panel_idx].name,
-		      	drv_info.opt_mode ? drv_info.opt_mode : "default");
+			drv_info.opt_mode ? drv_info.opt_mode : "default");
 
 	return 0;
 }

@@ -26,4 +26,3 @@ void msm_set_restart_mode(int mode);
 extern int pmic_reset_irq;
 
 #endif
-

@@ -23,5 +23,3 @@ struct bcm47511_platform_data {
 };
 
 #endif /* _BCM47511_H */
-
-

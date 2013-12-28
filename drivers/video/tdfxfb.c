@@ -1185,8 +1185,8 @@ static struct fb_ops tdfxfb_ops = {
 
 static void tdfxfb_i2c_setscl(void *data, int val)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 	unsigned int r;
 
 	r = tdfx_inl(par, VIDSERPARPORT);
@@ -1200,8 +1200,8 @@ static void tdfxfb_i2c_setscl(void *data, int val)
 
 static void tdfxfb_i2c_setsda(void *data, int val)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 	unsigned int r;
 
 	r = tdfx_inl(par, VIDSERPARPORT);
@@ -1219,24 +1219,24 @@ static void tdfxfb_i2c_setsda(void *data, int val)
 
 static int tdfxfb_i2c_getscl(void *data)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 
 	return (0 != (tdfx_inl(par, VIDSERPARPORT) & I2C_SCL_IN));
 }
 
 static int tdfxfb_i2c_getsda(void *data)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 
 	return (0 != (tdfx_inl(par, VIDSERPARPORT) & I2C_SDA_IN));
 }
 
 static void tdfxfb_ddc_setscl(void *data, int val)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 	unsigned int r;
 
 	r = tdfx_inl(par, VIDSERPARPORT);
@@ -1250,8 +1250,8 @@ static void tdfxfb_ddc_setscl(void *data, int val)
 
 static void tdfxfb_ddc_setsda(void *data, int val)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 	unsigned int r;
 
 	r = tdfx_inl(par, VIDSERPARPORT);
@@ -1265,16 +1265,16 @@ static void tdfxfb_ddc_setsda(void *data, int val)
 
 static int tdfxfb_ddc_getscl(void *data)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 
 	return (0 != (tdfx_inl(par, VIDSERPARPORT) & DDC_SCL_IN));
 }
 
 static int tdfxfb_ddc_getsda(void *data)
 {
-	struct tdfxfb_i2c_chan 	*chan = data;
-	struct tdfx_par 	*par = chan->par;
+	struct tdfxfb_i2c_chan	*chan = data;
+	struct tdfx_par		*par = chan->par;
 
 	return (0 != (tdfx_inl(par, VIDSERPARPORT) & DDC_SDA_IN));
 }
@@ -1295,7 +1295,7 @@ static int __devinit tdfxfb_setup_ddc_bus(struct tdfxfb_i2c_chan *chan,
 	chan->algo.getscl		= tdfxfb_ddc_getscl;
 	chan->algo.udelay		= 10;
 	chan->algo.timeout		= msecs_to_jiffies(500);
-	chan->algo.data 		= chan;
+	chan->algo.data			= chan;
 
 	i2c_set_adapdata(&chan->adapter, chan);
 
@@ -1323,7 +1323,7 @@ static int __devinit tdfxfb_setup_i2c_bus(struct tdfxfb_i2c_chan *chan,
 	chan->algo.getscl		= tdfxfb_i2c_getscl;
 	chan->algo.udelay		= 10;
 	chan->algo.timeout		= msecs_to_jiffies(500);
-	chan->algo.data 		= chan;
+	chan->algo.data			= chan;
 
 	i2c_set_adapdata(&chan->adapter, chan);
 

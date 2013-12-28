@@ -38,4 +38,3 @@ void arm_mm_memblock_reserve(void);
 #ifdef CONFIG_DMA_CMA
 void dma_contiguous_remap(void);
 #endif
-

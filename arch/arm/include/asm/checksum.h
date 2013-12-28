@@ -40,7 +40,7 @@ __wsum
 csum_partial_copy_from_user(const void __user *src, void *dst, int len, __wsum sum, int *err_ptr);
 
 /*
- * 	Fold a partial checksum without adding pseudo headers
+ *	Fold a partial checksum without adding pseudo headers
  */
 static inline __sum16 csum_fold(__wsum sum)
 {
@@ -101,7 +101,7 @@ csum_tcpudp_nofold(__be32 saddr, __be32 daddr, unsigned short len,
 	: "r" (sum), "r" (daddr), "r" (saddr), "r" (len), "Ir" (htons(proto))
 	: "cc");
 	return sum;
-}	
+}
 /*
  * computes the checksum of the TCP/UDP pseudo-header
  * returns a 16-bit checksum, already complemented

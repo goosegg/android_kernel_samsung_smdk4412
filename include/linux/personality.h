@@ -23,7 +23,7 @@ extern int		__set_personality(unsigned int);
  */
 enum {
 	UNAME26	=               0x0020000,
-	ADDR_NO_RANDOMIZE = 	0x0040000,	/* disable randomization of VA space */
+	ADDR_NO_RANDOMIZE =	0x0040000,	/* disable randomization of VA space */
 	FDPIC_FUNCPTRS =	0x0080000,	/* userspace function ptrs point to descriptors
 						 * (signal handling)
 						 */
@@ -34,7 +34,7 @@ enum {
 	SHORT_INODE =		0x1000000,
 	WHOLE_SECONDS =		0x2000000,
 	STICKY_TIMEOUTS	=	0x4000000,
-	ADDR_LIMIT_3GB = 	0x8000000,
+	ADDR_LIMIT_3GB =	0x8000000,
 };
 
 /*
@@ -83,7 +83,7 @@ enum {
 
 /*
  * Description of an execution domain.
- * 
+ *
  * The first two members are refernced from assembly source
  * and should stay where they are unless explicitly needed.
  */

@@ -5878,4 +5878,3 @@ MACHINE_START(U1HD, "U1HD")
 	.timer		= &exynos4_timer,
 	.init_early	= &exynos_init_reserve,
 MACHINE_END
-

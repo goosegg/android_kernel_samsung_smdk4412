@@ -322,17 +322,17 @@ static void shmem_recalc_inode(struct inode *inode)
  * following layout (for SHMEM_NR_DIRECT == 16):
  *
  * i_indirect -> dir --> 16-19
- * 	      |	     +-> 20-23
- * 	      |
- * 	      +-->dir2 --> 24-27
- * 	      |	       +-> 28-31
- * 	      |	       +-> 32-35
- * 	      |	       +-> 36-39
- * 	      |
- * 	      +-->dir3 --> 40-43
- * 	       	       +-> 44-47
- * 	      	       +-> 48-51
- * 	      	       +-> 52-55
+ *	      |	     +-> 20-23
+ *	      |
+ *	      +-->dir2 --> 24-27
+ *	      |	       +-> 28-31
+ *	      |	       +-> 32-35
+ *	      |	       +-> 36-39
+ *	      |
+ *	      +-->dir3 --> 40-43
+ *		       +-> 44-47
+ *		       +-> 48-51
+ *		       +-> 52-55
  */
 static swp_entry_t *shmem_swp_entry(struct shmem_inode_info *info, unsigned long index, struct page **page)
 {

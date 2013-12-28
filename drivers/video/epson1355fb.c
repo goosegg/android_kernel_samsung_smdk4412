@@ -151,7 +151,7 @@ static void set_lut(struct epson1355_par *par, u8 index, u8 r, u8 g, u8 b)
 
 
 /**
- *  	epson1355fb_setcolreg - sets a color register.
+ *	epson1355fb_setcolreg - sets a color register.
  *      @regno: Which register in the CLUT we are programming
  *      @red: The red value which can be up to 16 bits wide
  *	@green: The green value which can be up to 16 bits wide
@@ -200,8 +200,8 @@ static int epson1355fb_setcolreg(unsigned regno, unsigned r, unsigned g,
  *      @info: frame buffer structure that represents a single frame buffer
  *
  *	Pan (or wrap, depending on the `vmode' field) the display using the
- *  	`xoffset' and `yoffset' fields of the `var' structure.
- *  	If the values don't fit, return -EINVAL.
+ *	`xoffset' and `yoffset' fields of the `var' structure.
+ *	If the values don't fit, return -EINVAL.
  *
  *      Returns negative errno on error, or zero on success.
  */
@@ -448,15 +448,15 @@ epson1355fb_write(struct fb_info *info, const char *buf,
 /* ------------------------------------------------------------------------- */
 
 static struct fb_ops epson1355fb_fbops = {
-	.owner 		= THIS_MODULE,
-	.fb_setcolreg 	= epson1355fb_setcolreg,
+	.owner		= THIS_MODULE,
+	.fb_setcolreg	= epson1355fb_setcolreg,
 	.fb_pan_display = epson1355fb_pan_display,
-	.fb_blank 	= epson1355fb_blank,
-	.fb_fillrect 	= cfb_fillrect,
-	.fb_copyarea 	= cfb_copyarea,
-	.fb_imageblit 	= cfb_imageblit,
-	.fb_read 	= epson1355fb_read,
-	.fb_write 	= epson1355fb_write,
+	.fb_blank	= epson1355fb_blank,
+	.fb_fillrect	= cfb_fillrect,
+	.fb_copyarea	= cfb_copyarea,
+	.fb_imageblit	= cfb_imageblit,
+	.fb_read	= epson1355fb_read,
+	.fb_write	= epson1355fb_write,
 };
 
 /* ------------------------------------------------------------------------- */
@@ -731,7 +731,7 @@ int __init epson1355fb_init(void)
 }
 
 module_init(epson1355fb_init);
-	
+
 #ifdef MODULE
 static void __exit epson1355fb_exit(void)
 {

@@ -70,10 +70,10 @@ Melfas touchkey register
 
 
 
-#define TOUCHKEY_KEYCODE_MENU 	KEY_MENU
-#define TOUCHKEY_KEYCODE_HOME 	KEY_HOME
-#define TOUCHKEY_KEYCODE_BACK 	KEY_BACK
-#define TOUCHKEY_KEYCODE_SEARCH 	KEY_END
+#define TOUCHKEY_KEYCODE_MENU	KEY_MENU
+#define TOUCHKEY_KEYCODE_HOME	KEY_HOME
+#define TOUCHKEY_KEYCODE_BACK	KEY_BACK
+#define TOUCHKEY_KEYCODE_SEARCH		KEY_END
 #define FLIP_CLOSE 0
 #define FLIP_OPEN 1
 
@@ -251,7 +251,7 @@ static irqreturn_t touchkey_interrupt(int irq, void *dummy)
 	printk("TKEY interrupt call\n");
 	disable_irq_nosync(IRQ_TOUCH_INT);
 	queue_work(touchkey_wq, &touchkey_driver->work);
-	
+
 	return IRQ_HANDLED;
 }
 
@@ -264,7 +264,7 @@ void samsung_switching_tkey(int flip)
 		return;
 
 	printk(KERN_ERR "[TKEY] samsung_switching_tkey, Flip_status : %d, flip : %d \n", Flip_status, flip);
-	
+
 	if (Flip_status != flip)
 	{
 		Flip_status=flip;
@@ -284,7 +284,7 @@ EXPORT_SYMBOL(samsung_switching_tkey);
 static void melfas_touchkey_switch_early_suspend(int FILP_STATE){
 
 	unsigned char data;
-	
+
 	if (touchkey_driver == NULL)
 		return;
 
@@ -325,7 +325,7 @@ static void melfas_touchkey_switch_early_resume(int FILP_STATE){
 	printk(KERN_ERR "%d\n", FILP_STATE);
 
 	i2c_touchkey_write(&data1, 1);
-	
+
 	init_hw();
 
 #ifdef USE_IRQ_FREE

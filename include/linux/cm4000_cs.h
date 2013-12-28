@@ -31,9 +31,9 @@ typedef struct atreq {
 
 typedef struct ptsreq {
 	__u32 protocol; /*T=0: 2^0, T=1:  2^1*/
- 	unsigned char flags;
- 	unsigned char pts1;
- 	unsigned char pts2;
+	unsigned char flags;
+	unsigned char pts1;
+	unsigned char pts2;
 	unsigned char pts3;
 } ptsreq_t;
 
@@ -52,7 +52,7 @@ typedef struct ptsreq {
 #define	CM_CARD_INSERTED		0x01
 #define	CM_CARD_POWERED			0x02
 #define	CM_ATR_PRESENT			0x04
-#define	CM_ATR_VALID	 		0x08
+#define	CM_ATR_VALID			0x08
 #define	CM_STATE_VALID			0x0f
 /* extra info only from CM4000 */
 #define	CM_NO_READER			0x10

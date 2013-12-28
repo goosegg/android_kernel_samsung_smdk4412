@@ -38,16 +38,16 @@ struct rtentry {
 	void		*rt_pad4;
 	short		rt_metric;	/* +1 for binary compatibility!	*/
 	char __user	*rt_dev;	/* forcing the device at add	*/
-	unsigned long	rt_mtu;		/* per route MTU/Window 	*/
+	unsigned long	rt_mtu;		/* per route MTU/Window		*/
 #ifndef __KERNEL__
 #define rt_mss	rt_mtu			/* Compatibility :-(            */
 #endif
-	unsigned long	rt_window;	/* Window clamping 		*/
+	unsigned long	rt_window;	/* Window clamping		*/
 	unsigned short	rt_irtt;	/* Initial RTT			*/
 };
 
 
-#define	RTF_UP		0x0001		/* route usable		  	*/
+#define	RTF_UP		0x0001		/* route usable			*/
 #define	RTF_GATEWAY	0x0002		/* destination is a gateway	*/
 #define	RTF_HOST	0x0004		/* host entry (net otherwise)	*/
 #define RTF_REINSTATE	0x0008		/* reinstate route after tmout	*/
@@ -66,4 +66,3 @@ struct rtentry {
 
 
 #endif	/* _LINUX_ROUTE_H */
-

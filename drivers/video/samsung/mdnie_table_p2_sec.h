@@ -1536,4 +1536,3 @@ struct mdnie_tuning_info tuning_table_sec[CABC_MAX][MODE_MAX][SCENARIO_MAX] = {
 };
 
 #endif /* __MDNIE_TABLE_P2_SEC_H__ */
-

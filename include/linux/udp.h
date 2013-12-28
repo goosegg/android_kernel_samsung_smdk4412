@@ -60,7 +60,7 @@ struct udp_sock {
 #define udp_portaddr_node	inet.sk.__sk_common.skc_portaddr_node
 	int		 pending;	/* Any pending frames ? */
 	unsigned int	 corkflag;	/* Cork is required */
-  	__u16		 encap_type;	/* Is this an Encapsulation socket? */
+	__u16		 encap_type;	/* Is this an Encapsulation socket? */
 	/*
 	 * Following member retains the information to create a UDP header
 	 * when the socket is uncorked.
@@ -72,8 +72,8 @@ struct udp_sock {
 	__u16		 pcslen;
 	__u16		 pcrlen;
 /* indicator bits used by pcflag: */
-#define UDPLITE_BIT      0x1  		/* set by udplite proto init function */
-#define UDPLITE_SEND_CC  0x2  		/* set via udplite setsockopt         */
+#define UDPLITE_BIT      0x1		/* set by udplite proto init function */
+#define UDPLITE_SEND_CC  0x2		/* set via udplite setsockopt         */
 #define UDPLITE_RECV_CC  0x4		/* set via udplite setsocktopt        */
 	__u8		 pcflag;        /* marks socket as UDP-Lite if > 0    */
 	__u8		 unused[3];

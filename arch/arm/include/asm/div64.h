@@ -9,9 +9,9 @@
  *
  * uint32_t do_div(uint64_t *n, uint32_t base)
  * {
- * 	uint32_t remainder = *n % base;
- * 	*n = *n / base;
- * 	return remainder;
+ *	uint32_t remainder = *n % base;
+ *	*n = *n / base;
+ *	return remainder;
  * }
  *
  * In other words, a 64-bit dividend with a 32-bit divisor producing

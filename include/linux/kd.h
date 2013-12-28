@@ -26,14 +26,14 @@ struct consolefontdesc {
 
 #define KDGETLED	0x4B31	/* return current led state */
 #define KDSETLED	0x4B32	/* set led state [lights, not flags] */
-#define 	LED_SCR		0x01	/* scroll lock led */
-#define 	LED_NUM		0x02	/* num lock led */
-#define 	LED_CAP		0x04	/* caps lock led */
+#define		LED_SCR		0x01	/* scroll lock led */
+#define		LED_NUM		0x02	/* num lock led */
+#define		LED_CAP		0x04	/* caps lock led */
 
 #define KDGKBTYPE	0x4B33	/* get keyboard type */
-#define 	KB_84		0x01
-#define 	KB_101		0x02 	/* this is what we always answer */
-#define 	KB_OTHER	0x03
+#define		KB_84		0x01
+#define		KB_101		0x02	/* this is what we always answer */
+#define		KB_OTHER	0x03
 
 #define KDADDIO		0x4B34	/* add i/o port as valid */
 #define KDDELIO		0x4B35	/* del i/o port as valid */
@@ -174,7 +174,7 @@ struct console_font {
 #define KD_FONT_OP_SET_DEFAULT	2	/* Set font to default, data points to name / NULL */
 #define KD_FONT_OP_COPY		3	/* Copy from another console */
 
-#define KD_FONT_FLAG_DONT_RECALC 	1	/* Don't recalculate hw charcell size [compat] */
+#define KD_FONT_FLAG_DONT_RECALC	1	/* Don't recalculate hw charcell size [compat] */
 #ifdef __KERNEL__
 #define KD_FONT_FLAG_OLD		0x80000000	/* Invoked via old interface [compat] */
 #endif

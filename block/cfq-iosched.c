@@ -1886,7 +1886,7 @@ static struct cfq_queue *cfqq_close(struct cfq_data *cfqd,
 /*
  * cfqd - obvious
  * cur_cfqq - passed in so that we don't decide that the current queue is
- * 	      closely cooperating with itself.
+ *	      closely cooperating with itself.
  *
  * So, basically we're assuming that that cur_cfqq has dispatched at least
  * one request, and that cfqd->last_position reflects a position on the disk
@@ -4214,7 +4214,7 @@ static struct elv_fs_entry cfq_attrs[] = {
 
 static struct elevator_type iosched_cfq = {
 	.ops = {
-		.elevator_merge_fn = 		cfq_merge,
+		.elevator_merge_fn =		cfq_merge,
 		.elevator_merged_fn =		cfq_merged_request,
 		.elevator_merge_req_fn =	cfq_merged_requests,
 		.elevator_allow_merge_fn =	cfq_allow_merge,

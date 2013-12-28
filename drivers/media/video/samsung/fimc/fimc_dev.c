@@ -158,7 +158,7 @@ static inline u32 fimc_irq_out_single_buf(struct fimc_control *ctrl,
 			int i, cfg;
 
 
-		    	ctx = &ctrl->out->ctx[ctx_num];
+			ctx = &ctrl->out->ctx[ctx_num];
 			ctrl->out->last_ctx = ctx->ctx_num;
 			fimc_outdev_set_ctx_param(ctrl, ctx);
 

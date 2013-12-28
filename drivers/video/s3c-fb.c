@@ -996,7 +996,7 @@ static int s3c_fb_blank(int blank_mode, struct fb_info *info)
 
 
 	 if (index == sfb->pdata->default_win)
-	 	s3c_fb_enable(sfb, 1);
+		s3c_fb_enable(sfb, 1);
 
 	/* we're stuck with this until we can do something about overriding
 	 * the power control using the blanking event for a single fb.

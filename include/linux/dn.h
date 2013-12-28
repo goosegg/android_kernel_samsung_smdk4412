@@ -9,8 +9,8 @@
 
 */
 
-/* 
- * DNPROTO_NSP can't be the same as SOL_SOCKET, 
+/*
+ * DNPROTO_NSP can't be the same as SOL_SOCKET,
  * so increment each by one (compared to ULTRIX)
  */
 #define DNPROTO_NSP     2                       /* NSP protocol number       */
@@ -30,7 +30,7 @@
 #define DN_MAXNODEL	256
 #define DNBUFSIZE	65023
 
-/* 
+/*
  * SET/GET Socket options  - must match the DSO_ numbers below
  */
 #define SO_CONDATA      1
@@ -102,9 +102,9 @@ struct optdata_dn {
 struct accessdata_dn {
 	__u8		acc_accl;
 	__u8		acc_acc[DN_MAXACCL];
-	__u8 		acc_passl;
+	__u8		acc_passl;
 	__u8		acc_pass[DN_MAXACCL];
-	__u8 		acc_userl;
+	__u8		acc_userl;
 	__u8		acc_user[DN_MAXACCL];
 };
 

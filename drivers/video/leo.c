@@ -103,7 +103,7 @@ struct leo_lx_krn {
 };
 
 struct leo_lc_ss0_krn {
-	u32 	misc;
+	u32	misc;
 	u8	xxx0[0x800-4];
 	u32	rev;
 };
@@ -111,7 +111,7 @@ struct leo_lc_ss0_krn {
 struct leo_lc_ss0_usr {
 	u32	csr;
 	u32	addrspace;
-	u32 	fontmsk;
+	u32	fontmsk;
 	u32	fontt;
 	u32	extent;
 	u32	src;

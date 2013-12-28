@@ -1238,10 +1238,10 @@ static int wm9713_soc_remove(struct snd_soc_codec *codec)
 }
 
 static struct snd_soc_codec_driver soc_codec_dev_wm9713 = {
-	.probe = 	wm9713_soc_probe,
-	.remove = 	wm9713_soc_remove,
+	.probe =	wm9713_soc_probe,
+	.remove =	wm9713_soc_remove,
 	.suspend =	wm9713_soc_suspend,
-	.resume = 	wm9713_soc_resume,
+	.resume =	wm9713_soc_resume,
 	.read = ac97_read,
 	.write = ac97_write,
 	.set_bias_level = wm9713_set_bias_level,

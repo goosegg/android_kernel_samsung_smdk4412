@@ -33,7 +33,7 @@ static ssize_t store_boostpulse(struct kobject *kobj, struct attribute *attr,
     dbs_tuners_ins.freq_boost_time = DEFAULT_FREQ_BOOST_TIME;
 
   dbs_tuners_ins.boosted = 1;
- 
+
   freq_boosted_time = ktime_to_us(ktime_get());
   return count;
 }

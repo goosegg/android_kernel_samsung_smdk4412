@@ -625,7 +625,7 @@ ecard_irqexp_handler(unsigned int irq, struct irq_desc *desc)
 			 * this ugly code is so that we can operate a
 			 * prioritorising system:
 			 *
-			 * Card 0 	highest priority
+			 * Card 0	highest priority
 			 * Card 1
 			 * Card 2
 			 * Card 3	lowest priority
@@ -973,7 +973,7 @@ void __iomem *ecardm_iomap(struct expansion_card *ec, unsigned int res,
 	start += offset;
 	if (maxsize && end - start > maxsize)
 		end = start + maxsize;
-	
+
 	return devm_ioremap(&ec->dev, start, end - start);
 }
 EXPORT_SYMBOL(ecardm_iomap);

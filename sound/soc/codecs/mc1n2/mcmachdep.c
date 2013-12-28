@@ -6,7 +6,7 @@
  *
  *		Description	: machine dependent part for MC Driver
  *
- *		Version		: 1.0.0 	2010.09.10
+ *		Version		: 1.0.0		2010.09.10
  *
  ****************************************************************************/
 
@@ -196,7 +196,7 @@ UINT8	machdep_ReadI2C
 #endif
 
 	/* Please implement register read procedure */
- 	bData = mc1n2_i2c_read_byte(McDrv_I2C_Client, dAddress);
+	bData = mc1n2_i2c_read_byte(McDrv_I2C_Client, dAddress);
 
 #if (MCDRV_DEBUG_LEVEL>=4)
 	sdRet	= (SINT32)bData;
@@ -315,4 +315,3 @@ void	machdep_DebugPrint
 	/* Please implement debug output procedure */
 	pr_debug("MCDRV: %s\n", pbLogString);
 }
-

@@ -1530,7 +1530,7 @@ static int write_reg_vol(struct snd_soc_codec *codec,
 			SINT16 db;
 			sw = (reg < MC1N2_AVOL_MIC1_GAIN) ? (v & 0x80) : 1;
 			vol = sw ? (v & 0x7f) : 0;
-			
+
 			switch (reg)
 			{
 			case MC1N2_DVOL_AD0:
@@ -1627,7 +1627,7 @@ static int write_reg_vol(struct snd_soc_codec *codec,
 				vol = caribrate_vol(reg, vol, mc1n2_carib_AVOL_HP_GAIN);
 				break;
 			}
-			
+
 			db = mc1n2_vreg_map[reg].volmap[vol];
 			//printk(KERN_DEBUG "[MCDRV] update_reg_vol name=%s : volindex=%d, db=%d", vol_name_tbl[reg], vol, db);
 			*vp = db | MCDRV_VOL_UPDATE;

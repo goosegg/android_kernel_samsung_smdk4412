@@ -90,7 +90,7 @@ static int aout_core_dump(struct coredump_params *cprm)
 	set_fs(KERNEL_DS);
 	has_dumped = 1;
 	current->flags |= PF_DUMPCORE;
-       	strncpy(dump.u_comm, current->comm, sizeof(dump.u_comm));
+	strncpy(dump.u_comm, current->comm, sizeof(dump.u_comm));
 	dump.u_ar0 = offsetof(struct user, regs);
 	dump.signal = cprm->signr;
 	aout_dump_thread(cprm->regs, &dump);
@@ -260,7 +260,7 @@ static int load_aout_binary(struct linux_binprm * bprm, struct pt_regs * regs)
 	current->mm->cached_hole_size = 0;
 
 	install_exec_creds(bprm);
- 	current->flags &= ~PF_FORKNOEXEC;
+	current->flags &= ~PF_FORKNOEXEC;
 
 	if (N_MAGIC(ex) == OMAGIC) {
 		unsigned long text_addr, map_size;
@@ -290,7 +290,7 @@ static int load_aout_binary(struct linux_binprm * bprm, struct pt_regs * regs)
 			send_sig(SIGKILL, current, 0);
 			return error;
 		}
-			 
+
 		flush_icache_range(text_addr, text_addr+ex.a_text+ex.a_data);
 	} else {
 		if ((ex.a_text & 0xfff || ex.a_data & 0xfff) &&
@@ -301,7 +301,7 @@ static int load_aout_binary(struct linux_binprm * bprm, struct pt_regs * regs)
 
 		if ((fd_offset & ~PAGE_MASK) != 0 && printk_ratelimit())
 		{
-			printk(KERN_WARNING 
+			printk(KERN_WARNING
 			       "fd_offset is not page aligned. Please convert program: %s\n",
 			       bprm->file->f_path.dentry->d_name.name);
 		}
@@ -333,7 +333,7 @@ static int load_aout_binary(struct linux_binprm * bprm, struct pt_regs * regs)
 		}
 
 		down_write(&current->mm->mmap_sem);
- 		error = do_mmap(bprm->file, N_DATADDR(ex), ex.a_data,
+		error = do_mmap(bprm->file, N_DATADDR(ex), ex.a_data,
 				PROT_READ | PROT_WRITE | PROT_EXEC,
 				MAP_FIXED | MAP_PRIVATE | MAP_DENYWRITE | MAP_EXECUTABLE,
 				fd_offset + ex.a_text);
@@ -353,9 +353,9 @@ beyond_if:
 	}
 
 	retval = setup_arg_pages(bprm, STACK_TOP, EXSTACK_DEFAULT);
-	if (retval < 0) { 
-		/* Someone check-me: is this error path enough? */ 
-		send_sig(SIGKILL, current, 0); 
+	if (retval < 0) {
+		/* Someone check-me: is this error path enough? */
+		send_sig(SIGKILL, current, 0);
 		return retval;
 	}
 
@@ -410,14 +410,14 @@ static int load_aout_library(struct file *file)
 
 		if (printk_ratelimit())
 		{
-			printk(KERN_WARNING 
+			printk(KERN_WARNING
 			       "N_TXTOFF is not page aligned. Please convert library: %s\n",
 			       file->f_path.dentry->d_name.name);
 		}
 		down_write(&current->mm->mmap_sem);
 		do_brk(start_addr, ex.a_text + ex.a_data + ex.a_bss);
 		up_write(&current->mm->mmap_sem);
-		
+
 		file->f_op->read(file, (char __user *)start_addr,
 			ex.a_text + ex.a_data, &pos);
 		flush_icache_range((unsigned long) start_addr,

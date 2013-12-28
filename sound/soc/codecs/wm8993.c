@@ -1281,7 +1281,7 @@ static int wm8993_set_tdm_slot(struct snd_soc_dai *dai, unsigned int tx_mask,
 		goto out;
 	}
 
-	/* Note that we allow configurations we can't handle ourselves - 
+	/* Note that we allow configurations we can't handle ourselves -
 	 * for example, we can generate clocks for slots 2 and up even if
 	 * we can't use those slots ourselves.
 	 */
@@ -1523,8 +1523,8 @@ static int wm8993_resume(struct snd_soc_codec *codec)
 #endif
 
 static struct snd_soc_codec_driver soc_codec_dev_wm8993 = {
-	.probe = 	wm8993_probe,
-	.remove = 	wm8993_remove,
+	.probe =	wm8993_probe,
+	.remove =	wm8993_remove,
 	.suspend =	wm8993_suspend,
 	.resume =	wm8993_resume,
 	.set_bias_level = wm8993_set_bias_level,

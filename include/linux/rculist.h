@@ -300,7 +300,7 @@ static inline void list_splice_init_rcu(struct list_head *list,
  * Continue to iterate over list of given type, continuing after
  * the current position.
  */
-#define list_for_each_entry_continue_rcu(pos, head, member) 		\
+#define list_for_each_entry_continue_rcu(pos, head, member)		\
 	for (pos = list_entry_rcu(pos->member.next, typeof(*pos), member); \
 	     &pos->member != (head);	\
 	     pos = list_entry_rcu(pos->member.next, typeof(*pos), member))

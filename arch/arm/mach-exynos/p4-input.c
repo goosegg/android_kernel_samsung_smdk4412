@@ -848,4 +848,3 @@ void __init p4_key_init(void)
 	platform_device_register(&p4_keypad);
 #endif
 }
-

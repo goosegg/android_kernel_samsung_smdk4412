@@ -636,9 +636,9 @@ static int wm8974_remove(struct snd_soc_codec *codec)
 }
 
 static struct snd_soc_codec_driver soc_codec_dev_wm8974 = {
-	.probe = 	wm8974_probe,
-	.remove = 	wm8974_remove,
-	.suspend = 	wm8974_suspend,
+	.probe =	wm8974_probe,
+	.remove =	wm8974_remove,
+	.suspend =	wm8974_suspend,
 	.resume =	wm8974_resume,
 	.set_bias_level = wm8974_set_bias_level,
 	.reg_cache_size = ARRAY_SIZE(wm8974_reg),

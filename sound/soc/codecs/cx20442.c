@@ -356,8 +356,8 @@ static int cx20442_codec_remove(struct snd_soc_codec *codec)
 static const u8 cx20442_reg;
 
 static struct snd_soc_codec_driver cx20442_codec_dev = {
-	.probe = 	cx20442_codec_probe,
-	.remove = 	cx20442_codec_remove,
+	.probe =	cx20442_codec_probe,
+	.remove =	cx20442_codec_remove,
 	.reg_cache_default = &cx20442_reg,
 	.reg_cache_size = 1,
 	.reg_word_size = sizeof(u8),

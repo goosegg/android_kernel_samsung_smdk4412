@@ -441,7 +441,7 @@ cache_on:	mov	r3, #8			@ cache_on function
 __armv4_mpu_cache_on:
 		mov	r0, #0x3f		@ 4G, the whole
 		mcr	p15, 0, r0, c6, c7, 0	@ PR7 Area Setting
-		mcr 	p15, 0, r0, c6, c7, 1
+		mcr	p15, 0, r0, c6, c7, 1
 
 		mov	r0, #0x80		@ PR7
 		mcr	p15, 0, r0, c2, c0, 0	@ D-cache on
@@ -726,7 +726,7 @@ proc_types:
 		W(b)	__armv3_mpu_cache_on
 		W(b)	__armv3_mpu_cache_off
 		W(b)	__armv3_mpu_cache_flush
-		
+
 		.word	0x41009400		@ ARM94x
 		.word	0xff00ff00
 		W(b)	__armv4_mpu_cache_on
@@ -946,14 +946,14 @@ __armv4_mpu_cache_flush:
 2:		mcr	p15, 0, r3, c7, c14, 2	@ clean & invalidate D index
 		subs	r3, r3, #1 << 26
 		bcs	2b			@ entries 63 to 0
-		subs 	r1, r1, #1 << 5
+		subs	r1, r1, #1 << 5
 		bcs	1b			@ segments 7 to 0
 
 		teq	r2, #0
 		mcrne	p15, 0, ip, c7, c5, 0	@ invalidate I cache
 		mcr	p15, 0, ip, c7, c10, 4	@ drain WB
 		mov	pc, lr
-		
+
 __fa526_cache_flush:
 		mov	r1, #0
 		mcr	p15, 0, r1, c7, c14, 0	@ clean and invalidate D cache

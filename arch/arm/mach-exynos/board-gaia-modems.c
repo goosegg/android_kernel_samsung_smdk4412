@@ -1366,4 +1366,3 @@ void set_host_states(struct platform_device *pdev, int type)
 	return;
 }
 #endif /* for CONFIG_USBHUB_USB3503 */
-

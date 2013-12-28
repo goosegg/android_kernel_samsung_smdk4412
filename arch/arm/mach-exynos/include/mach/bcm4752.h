@@ -22,5 +22,3 @@ struct bcm4752_platform_data {
 };
 
 #endif /* _BCM47511_H */
-
-

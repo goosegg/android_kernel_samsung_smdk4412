@@ -551,7 +551,7 @@ static int anubis_setkey(struct crypto_tfm *tfm, const u8 *in_key,
 
 	/*
 	 * generate inverse key schedule: K'^0 = K^R, K'^R =
-	 * 				  K^0, K'^r = theta(K^{R-r}):
+	 *				  K^0, K'^r = theta(K^{R-r}):
 	 */
 	for (i = 0; i < 4; i++) {
 		ctx->D[0][i] = ctx->E[R][i];
@@ -682,7 +682,7 @@ static struct crypto_alg anubis_alg = {
 	.cra_u			=	{ .cipher = {
 	.cia_min_keysize	=	ANUBIS_MIN_KEY_SIZE,
 	.cia_max_keysize	=	ANUBIS_MAX_KEY_SIZE,
-	.cia_setkey		= 	anubis_setkey,
+	.cia_setkey		=	anubis_setkey,
 	.cia_encrypt		=	anubis_encrypt,
 	.cia_decrypt		=	anubis_decrypt } }
 };

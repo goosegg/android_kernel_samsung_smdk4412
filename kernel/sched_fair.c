@@ -2341,7 +2341,7 @@ static int move_tasks(struct rq *this_rq, int this_cpu, struct rq *busiest,
 /********** Helpers for find_busiest_group ************************/
 /*
  * sd_lb_stats - Structure to store the statistics of a sched_domain
- * 		during load balancing.
+ *		during load balancing.
  */
 struct sd_lb_stats {
 	struct sched_group *busiest; /* Busiest group in this sd */
@@ -2460,7 +2460,7 @@ static inline void init_sd_power_savings_stats(struct sched_domain *sd,
  * @group: sched_group belonging to the sched_domain under consideration.
  * @sds: Variable containing the statistics of the sched_domain
  * @local_group: Does group contain the CPU for which we're performing
- * 		load balancing ?
+ *		load balancing ?
  * @sgs: Variable containing the statistics of the group.
  */
 static inline void update_sd_power_savings_stats(struct sched_group *group,

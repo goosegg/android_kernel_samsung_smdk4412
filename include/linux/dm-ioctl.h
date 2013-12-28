@@ -134,7 +134,7 @@ struct dm_ioctl {
 	 * variable with the uevents they issue.
 	 * For output, the ioctls return the event number, not the cookie.
 	 */
-	__u32 event_nr;      	/* in/out */
+	__u32 event_nr;		/* in/out */
 	__u32 padding;
 
 	__u64 dev;		/* in/out */

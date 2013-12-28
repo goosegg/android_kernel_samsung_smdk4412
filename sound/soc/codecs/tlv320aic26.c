@@ -406,7 +406,7 @@ static struct snd_soc_codec_driver aic26_soc_codec_dev = {
 
 /* ---------------------------------------------------------------------
  * SPI device portion of driver: probe and release routines and SPI
- * 				 driver registration.
+ *				 driver registration.
  */
 static int aic26_spi_probe(struct spi_device *spi)
 {

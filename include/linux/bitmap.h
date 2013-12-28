@@ -37,7 +37,7 @@
  * bitmap_andnot(dst, src1, src2, nbits)	*dst = *src1 & ~(*src2)
  * bitmap_complement(dst, src, nbits)		*dst = ~(*src)
  * bitmap_equal(src1, src2, nbits)		Are *src1 and *src2 equal?
- * bitmap_intersects(src1, src2, nbits) 	Do *src1 and *src2 overlap?
+ * bitmap_intersects(src1, src2, nbits)		Do *src1 and *src2 overlap?
  * bitmap_subset(src1, src2, nbits)		Is *src1 a subset of *src2?
  * bitmap_empty(src, nbits)			Are all bits zero in *src?
  * bitmap_full(src, nbits)			Are all bits set in *src?
@@ -92,7 +92,7 @@
 extern int __bitmap_empty(const unsigned long *bitmap, int bits);
 extern int __bitmap_full(const unsigned long *bitmap, int bits);
 extern int __bitmap_equal(const unsigned long *bitmap1,
-                	const unsigned long *bitmap2, int bits);
+			const unsigned long *bitmap2, int bits);
 extern void __bitmap_complement(unsigned long *dst, const unsigned long *src,
 			int bits);
 extern void __bitmap_shift_right(unsigned long *dst,

@@ -66,7 +66,7 @@
  * This macro cleans and invalidates the entire L1 D cache.
  */
 
- 	.macro  clean_d_cache rd, rs
+	.macro  clean_d_cache rd, rs
 	mov	\rd, #0x1f00
 	orr	\rd, \rd, #0x00e0
 1:	mcr	p15, 0, \rd, c7, c14, 2		@ clean/invalidate L1 D line
@@ -414,10 +414,10 @@ ENTRY(cpu_xsc3_do_suspend)
 	mrc	p14, 0, r4, c6, c0, 0	@ clock configuration, for turbo mode
 	mrc	p15, 0, r5, c15, c1, 0	@ CP access reg
 	mrc	p15, 0, r6, c13, c0, 0	@ PID
-	mrc 	p15, 0, r7, c3, c0, 0	@ domain ID
-	mrc 	p15, 0, r8, c2, c0, 0	@ translation table base addr
+	mrc	p15, 0, r7, c3, c0, 0	@ domain ID
+	mrc	p15, 0, r8, c2, c0, 0	@ translation table base addr
 	mrc	p15, 0, r9, c1, c0, 1	@ auxiliary control reg
-	mrc 	p15, 0, r10, c1, c0, 0	@ control reg
+	mrc	p15, 0, r10, c1, c0, 0	@ control reg
 	bic	r4, r4, #2		@ clear frequency change bit
 	stmia	r0, {r1, r4 - r10}	@ store v:p offset + cp regs
 	ldmia	sp!, {r4 - r10, pc}

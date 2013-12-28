@@ -17,7 +17,7 @@
  *	(port driver to new frambuffer infrastructure)
  * 01/2003 Helge Deller    <deller@gmx.de>
  *	(initial work on fb hardware acceleration for voodoo2)
- * 08/2006 Alan Cox 	   <alan@redhat.com>
+ * 08/2006 Alan Cox	   <alan@redhat.com>
  *	Remove never finished and bogus 24/32bit support
  *	Clean up macro abuse
  *	Minor tidying for format.
@@ -69,7 +69,7 @@
  *   1 : dumps display, fb_var
  *
  * sstfb specific ioctls:
- *   		toggle vga (0x46db) : toggle vga_pass_through
+ *		toggle vga (0x46db) : toggle vga_pass_through
  */
 
 #undef SST_DEBUG
@@ -363,7 +363,7 @@ static int sstfb_check_var(struct fb_var_screeninfo *var,
 		return -EINVAL;
 	}
 	var->pixclock = KHZ2PICOS(freq);
-	
+
 	if (var->vmode & FB_VMODE_INTERLACED)
 		vBackPorch += (vBackPorch % 2);
 	if (var->vmode & FB_VMODE_DOUBLE) {
@@ -381,7 +381,7 @@ static int sstfb_check_var(struct fb_var_screeninfo *var,
 		printk(KERN_ERR "sstfb: Unsupported bpp %d\n", var->bits_per_pixel);
 		return -EINVAL;
 	}
-	
+
 	/* validity tests */
 	if (var->xres <= 1 || yDim <= 0 || var->hsync_len <= 1  ||
 	    hSyncOff <= 1  || var->left_margin <= 2  || vSyncOn <= 0 ||
@@ -391,7 +391,7 @@ static int sstfb_check_var(struct fb_var_screeninfo *var,
 
 	if (IS_VOODOO2(par)) {
 		/* Voodoo 2 limits */
-		tiles_in_X = (var->xres + 63 ) / 64 * 2;		
+		tiles_in_X = (var->xres + 63 ) / 64 * 2;
 
 		if (var->xres  > POW2(11) || yDim >= POW2(11)) {
 			printk(KERN_ERR "sstfb: Unsupported resolution %dx%d\n",
@@ -483,8 +483,8 @@ static int sstfb_set_par(struct fb_info *info)
 
 	par->hSyncOff	= info->var.xres + info->var.right_margin + info->var.left_margin;
 
-	par->yDim 	= info->var.yres;
-	par->vSyncOn 	= info->var.vsync_len;
+	par->yDim	= info->var.yres;
+	par->vSyncOn	= info->var.vsync_len;
 	par->vSyncOff	= info->var.yres + info->var.lower_margin + info->var.upper_margin;
 	par->vBackPorch = info->var.upper_margin;
 
@@ -630,7 +630,7 @@ static int sstfb_set_par(struct fb_info *info)
 	lfbmode |= ( LFB_WORD_SWIZZLE_WR | LFB_BYTE_SWIZZLE_WR |
 		     LFB_WORD_SWIZZLE_RD | LFB_BYTE_SWIZZLE_RD );
 #endif
-	
+
 	if (clipping) {
 		sst_write(LFBMODE, lfbmode | EN_PXL_PIPELINE);
 	/*
@@ -683,7 +683,7 @@ static int sstfb_setcolreg(u_int regno, u_int red, u_int green, u_int blue,
 	    | (green << info->var.green.offset)
 	    | (blue  << info->var.blue.offset)
 	    | (transp << info->var.transp.offset);
-	
+
 	par->palette[regno] = col;
 
 	return 0;
@@ -772,7 +772,7 @@ static void sstfb_copyarea(struct fb_info *info, const struct fb_copyarea *area)
 {
 	struct sstfb_par *par = info->par;
 	u32 stride = info->fix.line_length;
-   
+
 	if (!IS_VOODOO2(par))
 		return;
 
@@ -794,17 +794,17 @@ static void sstfb_copyarea(struct fb_info *info, const struct fb_copyarea *area)
  * FillRect 2D command (solidfill or invert (via ROP_XOR)) - Voodoo2 only
  */
 #if 0
-static void sstfb_fillrect(struct fb_info *info, const struct fb_fillrect *rect) 
+static void sstfb_fillrect(struct fb_info *info, const struct fb_fillrect *rect)
 {
 	struct sstfb_par *par = info->par;
 	u32 stride = info->fix.line_length;
 
 	if (!IS_VOODOO2(par))
 		return;
-   	
+
 	sst_write(BLTCLIPX, info->var.xres);
 	sst_write(BLTCLIPY, info->var.yres);
-	
+
 	sst_write(BLTDSTBASEADDR, 0);
 	sst_write(BLTCOLOR, rect->color);
 	sst_write(BLTROP, rect->rop == ROP_COPY ? BLTROP_COPY : BLTROP_XOR);
@@ -819,8 +819,8 @@ static void sstfb_fillrect(struct fb_info *info, const struct fb_fillrect *rect)
 
 
 
-/* 
- * get lfb size 
+/*
+ * get lfb size
  */
 static int __devinit sst_get_memsize(struct fb_info *info, __u32 *memsize)
 {
@@ -858,8 +858,8 @@ static int __devinit sst_get_memsize(struct fb_info *info, __u32 *memsize)
 }
 
 
-/* 
- * DAC detection routines 
+/*
+ * DAC detection routines
  */
 
 /* fbi should be idle, and fifo emty and mem disabled */
@@ -871,7 +871,7 @@ static int __devinit sst_detect_att(struct fb_info *info)
 	int i, mir, dir;
 
 	for (i = 0; i < 3; i++) {
-		sst_dac_write(DACREG_WMA, 0); 	/* backdoor */
+		sst_dac_write(DACREG_WMA, 0);	/* backdoor */
 		sst_dac_read(DACREG_RMR);	/* read 4 times RMR */
 		sst_dac_read(DACREG_RMR);
 		sst_dac_read(DACREG_RMR);
@@ -896,7 +896,7 @@ static int __devinit sst_detect_ti(struct fb_info *info)
 	int i, mir, dir;
 
 	for (i = 0; i<3; i++) {
-		sst_dac_write(DACREG_WMA, 0); 	/* backdoor */
+		sst_dac_write(DACREG_WMA, 0);	/* backdoor */
 		sst_dac_read(DACREG_RMR);	/* read 4 times RMR */
 		sst_dac_read(DACREG_RMR);
 		sst_dac_read(DACREG_RMR);
@@ -962,14 +962,14 @@ static int __devinit sst_detect_ics(struct fb_info *info)
  * see detect_dac
  */
 
-static int sst_set_pll_att_ti(struct fb_info *info, 
+static int sst_set_pll_att_ti(struct fb_info *info,
 		const struct pll_timing *t, const int clock)
 {
 	struct sstfb_par *par = info->par;
 	u8 cr0, cc;
 
 	/* enable indexed mode */
-	sst_dac_write(DACREG_WMA, 0); 	/* backdoor */
+	sst_dac_write(DACREG_WMA, 0);	/* backdoor */
 	sst_dac_read(DACREG_RMR);	/* 1 time:  RMR */
 	sst_dac_read(DACREG_RMR);	/* 2 RMR */
 	sst_dac_read(DACREG_RMR);	/* 3 //  */
@@ -1059,7 +1059,7 @@ static void sst_set_vidmod_att_ti(struct fb_info *info, const int bpp)
 	struct sstfb_par *par = info->par;
 	u8 cr0;
 
-	sst_dac_write(DACREG_WMA, 0); 	/* backdoor */
+	sst_dac_write(DACREG_WMA, 0);	/* backdoor */
 	sst_dac_read(DACREG_RMR);	/* read 4 times RMR */
 	sst_dac_read(DACREG_RMR);
 	sst_dac_read(DACREG_RMR);
@@ -1067,7 +1067,7 @@ static void sst_set_vidmod_att_ti(struct fb_info *info, const int bpp)
 	/* the fifth time,  CR0 is read */
 	cr0 = sst_dac_read(DACREG_RMR);
 
-	sst_dac_write(DACREG_WMA, 0); 	/* backdoor */
+	sst_dac_write(DACREG_WMA, 0);	/* backdoor */
 	sst_dac_read(DACREG_RMR);	/* read 4 times RMR */
 	sst_dac_read(DACREG_RMR);
 	sst_dac_read(DACREG_RMR);
@@ -1338,10 +1338,10 @@ static int __devinit sstfb_probe(struct pci_dev *pdev,
 		return -ENOMEM;
 
 	pci_set_drvdata(pdev, info);
-	
+
 	par  = info->par;
 	fix  = &info->fix;
-	
+
 	par->type = id->driver_data;
 	spec = &voodoo_spec[par->type];
 	f_ddprintk("found device : %s\n", spec->name);
@@ -1407,7 +1407,7 @@ static int __devinit sstfb_probe(struct pci_dev *pdev,
 	 * fact dithered to 16bit).
 	 */
 	fix->line_length = 2048; /* default value, for 24 or 32bit: 4096 */
-	
+
 	fb_find_mode(&info->var, info, mode_option, NULL, 0, NULL, 16);
 
 	if (sstfb_check_var(&info->var, info)) {
@@ -1419,7 +1419,7 @@ static int __devinit sstfb_probe(struct pci_dev *pdev,
 		printk(KERN_ERR "sstfb: can't set default video mode.\n");
 		goto fail;
 	}
-	
+
 	if (fb_alloc_cmap(&info->cmap, 256, 0)) {
 		printk(KERN_ERR "sstfb: can't alloc cmap memory.\n");
 		goto fail;
@@ -1455,7 +1455,7 @@ fail_fb_mem:
 	release_mem_region(fix->mmio_start, info->fix.mmio_len);
 fail_mmio_mem:
 	framebuffer_release(info);
-	return -ENXIO; 	/* no voodoo detected */
+	return -ENXIO;	/* no voodoo detected */
 }
 
 static void __devexit sstfb_remove(struct pci_dev *pdev)
@@ -1465,7 +1465,7 @@ static void __devexit sstfb_remove(struct pci_dev *pdev)
 
 	info = pci_get_drvdata(pdev);
 	par = info->par;
-	
+
 	device_remove_file(info->dev, &device_attrs[0]);
 	sst_shutdown(info);
 	iounmap(info->screen_base);
@@ -1530,4 +1530,3 @@ module_param(slowpci, bool, 0);
 MODULE_PARM_DESC(slowpci, "Uses slow PCI settings (0 or 1) (default=0)");
 module_param(mode_option, charp, 0);
 MODULE_PARM_DESC(mode_option, "Initial video mode (default=" DEFAULT_VIDEO_MODE ")");
-

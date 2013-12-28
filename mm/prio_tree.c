@@ -64,8 +64,8 @@
  *      vma->shared.vm_set.head == NULL ==> no others map the same range
  *
  * vma->shared.vm_set.parent == NULL
- * 	vma->shared.vm_set.head != NULL ==> list head of vmas mapping same range
- * 	vma->shared.vm_set.head == NULL ==> a list node
+ *	vma->shared.vm_set.head != NULL ==> list head of vmas mapping same range
+ *	vma->shared.vm_set.head == NULL ==> a list node
  */
 
 /*

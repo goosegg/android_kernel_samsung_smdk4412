@@ -35,4 +35,3 @@ static inline int exynos_gpufreq_unlock(void)
 	return 0;
 }
 #endif
-

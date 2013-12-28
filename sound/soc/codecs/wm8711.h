@@ -27,7 +27,7 @@
 #define WM8711_ACTIVE   0x09
 #define WM8711_RESET	0x0f
 
-#define WM8711_CACHEREGNUM 	8
+#define WM8711_CACHEREGNUM	8
 
 #define WM8711_SYSCLK	0
 #define WM8711_DAI		0

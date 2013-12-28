@@ -292,7 +292,7 @@ config FB_S5P_GD2EVF
 	depends on MACH_GD2
 	default n
 	help
-	  This enables support for Samsung GD2EVF LCD panel	
+	  This enables support for Samsung GD2EVF LCD panel
 
 choice
 	prompt "Select PANEL Type"

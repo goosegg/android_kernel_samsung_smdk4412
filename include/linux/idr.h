@@ -1,6 +1,6 @@
 /*
  * include/linux/idr.h
- * 
+ *
  * 2002-10-18  written by Jim Houston jim.houston@ccur.com
  *	Copyright (C) 2002 by Concurrent Computer Corporation
  *	Distributed under the GNU GPL license version 2.
@@ -68,7 +68,7 @@ struct idr {
 {								\
 	.top		= NULL,					\
 	.id_free	= NULL,					\
-	.layers 	= 0,					\
+	.layers		= 0,					\
 	.id_free_cnt	= 0,					\
 	.lock		= __SPIN_LOCK_UNLOCKED(name.lock),	\
 }
@@ -124,7 +124,7 @@ void idr_init(struct idr *idp);
  */
 #define IDA_CHUNK_SIZE		128	/* 128 bytes per chunk */
 #define IDA_BITMAP_LONGS	(IDA_CHUNK_SIZE / sizeof(long) - 1)
-#define IDA_BITMAP_BITS 	(IDA_BITMAP_LONGS * sizeof(long) * 8)
+#define IDA_BITMAP_BITS		(IDA_BITMAP_LONGS * sizeof(long) * 8)
 
 struct ida_bitmap {
 	long			nr_busy;

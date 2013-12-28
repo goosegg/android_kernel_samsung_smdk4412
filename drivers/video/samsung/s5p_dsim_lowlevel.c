@@ -638,4 +638,3 @@ int s5p_dsim_rd_rx_data(unsigned int dsim_base)
 {
 	return readl(dsim_base + S5P_DSIM_RXFIFO);
 }
-

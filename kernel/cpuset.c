@@ -614,7 +614,7 @@ static int generate_sched_domains(cpumask_var_t **domains,
 			child = cgroup_cs(cont);
 			list_add_tail(&child->stack_list, &q);
 		}
-  	}
+	}
 
 	for (i = 0; i < csn; i++)
 		csa[i]->pn = i;
@@ -1212,7 +1212,7 @@ static void update_tasks_flags(struct cpuset *cs, struct ptr_heap *heap)
  * update_flag - read a 0 or a 1 in a file and update associated flag
  * bit:		the bit to update (see cpuset_flagbits_t)
  * cs:		the cpuset to update
- * turning_on: 	whether the flag is being set or cleared
+ * turning_on:	whether the flag is being set or cleared
  *
  * Call with cgroup_mutex held.
  */

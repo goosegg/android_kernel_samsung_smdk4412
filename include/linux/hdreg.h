@@ -227,7 +227,7 @@ typedef struct hd_drive_hob_hdr {
 #define WIN_GETMEDIASTATUS		0xDA
 #define WIN_ACKMEDIACHANGE		0xDB /* ATA-1, ATA-2 vendor */
 #define WIN_POSTBOOT			0xDC
-#define WIN_PREBOOT 			0xDD
+#define WIN_PREBOOT			0xDD
 #define WIN_DOORLOCK			0xDE /* lock door on removable drives */
 #define WIN_DOORUNLOCK			0xDF /* unlock door on removable drives */
 #define WIN_STANDBYNOW1			0xE0

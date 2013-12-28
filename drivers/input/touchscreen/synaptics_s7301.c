@@ -284,7 +284,7 @@ static int synaptics_ts_set_func_info(struct synaptics_drv_data *data)
 				SET_FUNC_ADDR(1a, i);
 				break;
 #endif
-				
+
 			case 0x34:
 				SET_FUNC_ADDR(34, i);
 				break;
@@ -390,12 +390,12 @@ static int synaptics_ts_set_func(struct synaptics_drv_data *data)
 	int i = 0;
 	int retry_count = 10;
 	int ret = 0;
-	
+
 	printk(KERN_DEBUG "[TSP] %s\n", __func__);
-	
+
 	while(retry_count--) {
 		ret = synaptics_ts_set_func_info(data);
-		
+
 		if (ret) {
 			pr_err("[TSP] failed to get function info retry_count = %d \n",retry_count);
 			continue;
@@ -403,7 +403,7 @@ static int synaptics_ts_set_func(struct synaptics_drv_data *data)
 			break;
 		}
 	}
-	
+
 	if (ret) {
 		pr_err("[TSP] failed to get function info.\n");
 		forced_fw_update(data);
@@ -591,7 +591,7 @@ static void synaptics_ts_read_points(struct synaptics_drv_data *data,
 #endif
 	u16 addr = data->f11.data_base_addr + 3;
 	u16 x = 0, y = 0;
-	
+
 #if defined(CONFIG_SEC_TOUCHSCREEN_SURFACE_TOUCH)
 	ret = synaptics_ts_read_block(data,
 		palm_addr, &palm, 1);
@@ -694,7 +694,7 @@ static void synaptics_ts_read_points(struct synaptics_drv_data *data,
             data->finger[id].angle = angle;
             data->finger[id].width = surface_data[0];
 #endif
-	    
+
 			data->finger[id].z = buf.z;
 			if (data->finger[id].z) {
 				if (MT_STATUS_INACTIVE ==
@@ -847,7 +847,7 @@ static void synaptics_ts_early_suspend(struct early_suspend *h)
 	forced_release_fingers(data);
 	if (!wake_lock_active(&data->wakelock)) {
 		data->pdata->set_power(0);
-	}	
+	}
 #else
 	printk(KERN_DEBUG "[TSP] %s\n", __func__);
 	cancel_delayed_work_sync(&data->resume_dwork);
@@ -981,7 +981,7 @@ static void synaptics_reset_ts_dwork(struct work_struct *work)
 	struct synaptics_drv_data *data =
 		container_of(work, struct synaptics_drv_data,
 		reset_dwork.work);
-	
+
 	if (data->firmware_update_check != true) {
 		data->pdata->hw_reset();
 	}
@@ -1076,7 +1076,7 @@ static int __init synaptics_ts_probe(struct i2c_client *client,
 	__set_bit(EV_KEY, input->evbit);
 	__set_bit(MT_TOOL_FINGER, input->keybit);
 	__set_bit(INPUT_PROP_DIRECT, input->propbit);
-	
+
 #if defined(CONFIG_TOUCHSCREEN_SYNAPTICS_S7301_KEYLED)
 	if (pdata->led_event) {
 		__set_bit(EV_LED, input->evbit);
@@ -1135,7 +1135,7 @@ static int __init synaptics_ts_probe(struct i2c_client *client,
 	INIT_DELAYED_WORK(&ddata->noti_dwork, synaptics_ts_noti_dwork);
 #endif
 	schedule_delayed_work(&ddata->init_dwork, HZ);
-	
+
 #if defined(CONFIG_TOUCHSCREEN_SYNAPTICS_S7301_WORKAROUND)
     pdata->hw_reset();
 //	INIT_DELAYED_WORK(&ddata->reset_dwork, synaptics_reset_ts_dwork);
@@ -1205,4 +1205,3 @@ module_exit(synaptics_ts_exit);
 MODULE_AUTHOR("junki671.min@samsung.com");
 MODULE_DESCRIPTION("Driver for Synaptics S7301 Touchscreen Controller");
 MODULE_LICENSE("GPL");
-

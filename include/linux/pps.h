@@ -48,7 +48,7 @@
  * alignment.
  *
  * The simple fix is probably to add an explicit padding.
- *					 		[David Woodhouse]
+ *							[David Woodhouse]
  */
 struct pps_ktime {
 	__s64 sec;
@@ -59,7 +59,7 @@ struct pps_ktime {
 
 struct pps_kinfo {
 	__u32 assert_sequence;		/* seq. num. of assert event */
-	__u32 clear_sequence; 		/* seq. num. of clear event */
+	__u32 clear_sequence;		/* seq. num. of clear event */
 	struct pps_ktime assert_tu;	/* time of assert event */
 	struct pps_ktime clear_tu;	/* time of clear event */
 	int current_mode;		/* current mode bits */

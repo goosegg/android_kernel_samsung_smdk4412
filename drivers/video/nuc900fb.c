@@ -151,9 +151,9 @@ static int nuc900fb_check_var(struct fb_var_screeninfo *var,
 	case 4:
 	case 8:
 	default:
-		var->red.offset 	= 0;
-		var->red.length 	= var->bits_per_pixel;
-		var->green 		= var->red;
+		var->red.offset		= 0;
+		var->red.length		= var->bits_per_pixel;
+		var->green		= var->red;
 		var->blue		= var->red;
 		break;
 	case 12:

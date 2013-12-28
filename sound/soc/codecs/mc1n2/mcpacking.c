@@ -6,7 +6,7 @@
  *
  *		Description	: MC Driver packet packing control
  *
- *		Version		: 1.0.0 	2010.09.10
+ *		Version		: 1.0.0		2010.09.10
  *
  ****************************************************************************/
 
@@ -2843,10 +2843,10 @@ SINT32	McPacket_AddDigitalIO
 
 			/*	unused path power down	*/
 			sPowerUpdate.dDigital		= MCDRV_POWUPDATE_DIGITAL_ALL;
-			sPowerUpdate.abAnalog[0]	= 
-			sPowerUpdate.abAnalog[1]	= 
-			sPowerUpdate.abAnalog[2]	= 
-			sPowerUpdate.abAnalog[3]	= 
+			sPowerUpdate.abAnalog[0]	=
+			sPowerUpdate.abAnalog[1]	=
+			sPowerUpdate.abAnalog[2]	=
+			sPowerUpdate.abAnalog[3]	=
 			sPowerUpdate.abAnalog[4]	= 0;
 			sdRet	= McPacket_AddPowerDown(&sPowerInfo, &sPowerUpdate);
 		}
@@ -3659,10 +3659,10 @@ SINT32	McPacket_AddDAC
 
 			/*	unused path power down	*/
 			sPowerUpdate.dDigital		= MCDRV_POWUPDATE_DIGITAL_ALL;
-			sPowerUpdate.abAnalog[0]	= 
-			sPowerUpdate.abAnalog[1]	= 
-			sPowerUpdate.abAnalog[2]	= 
-			sPowerUpdate.abAnalog[3]	= 
+			sPowerUpdate.abAnalog[0]	=
+			sPowerUpdate.abAnalog[1]	=
+			sPowerUpdate.abAnalog[2]	=
+			sPowerUpdate.abAnalog[3]	=
 			sPowerUpdate.abAnalog[4]	= 0;
 			sdRet	= McPacket_AddPowerDown(&sPowerInfo, &sPowerUpdate);
 		}
@@ -3759,10 +3759,10 @@ SINT32	McPacket_AddADC
 				{
 					/*	unused path power down	*/
 					sPowerUpdate.dDigital		= MCDRV_POWUPDATE_DIGITAL_ALL;
-					sPowerUpdate.abAnalog[0]	= 
-					sPowerUpdate.abAnalog[1]	= 
-					sPowerUpdate.abAnalog[2]	= 
-					sPowerUpdate.abAnalog[3]	= 
+					sPowerUpdate.abAnalog[0]	=
+					sPowerUpdate.abAnalog[1]	=
+					sPowerUpdate.abAnalog[2]	=
+					sPowerUpdate.abAnalog[3]	=
 					sPowerUpdate.abAnalog[4]	= 0;
 					sdRet	= McPacket_AddPowerDown(&sPowerInfo, &sPowerUpdate);
 					if(sdRet == MCDRV_SUCCESS)
@@ -4045,10 +4045,10 @@ SINT32	McPacket_AddAE
 			sPowerInfo.dDigital	&= ~MCDRV_POWINFO_DIGITAL_DPBDSP;
 			sPowerInfo.dDigital	&= ~MCDRV_POWINFO_DIGITAL_PLLRST0;
 			sPowerUpdate.dDigital	= MCDRV_POWUPDATE_DIGITAL_ALL;
-			sPowerUpdate.abAnalog[0]	= 
-			sPowerUpdate.abAnalog[1]	= 
-			sPowerUpdate.abAnalog[2]	= 
-			sPowerUpdate.abAnalog[3]	= 
+			sPowerUpdate.abAnalog[0]	=
+			sPowerUpdate.abAnalog[1]	=
+			sPowerUpdate.abAnalog[2]	=
+			sPowerUpdate.abAnalog[3]	=
 			sPowerUpdate.abAnalog[4]	= 0;
 			sdRet	= McPacket_AddPowerUp(&sPowerInfo, &sPowerUpdate);
 			if(MCDRV_SUCCESS == sdRet)
@@ -4197,10 +4197,10 @@ SINT32	McPacket_AddPDM
 
 			/*	unused path power down	*/
 			sPowerUpdate.dDigital		= MCDRV_POWUPDATE_DIGITAL_ALL;
-			sPowerUpdate.abAnalog[0]	= 
-			sPowerUpdate.abAnalog[1]	= 
-			sPowerUpdate.abAnalog[2]	= 
-			sPowerUpdate.abAnalog[3]	= 
+			sPowerUpdate.abAnalog[0]	=
+			sPowerUpdate.abAnalog[1]	=
+			sPowerUpdate.abAnalog[2]	=
+			sPowerUpdate.abAnalog[3]	=
 			sPowerUpdate.abAnalog[4]	= 0;
 			sdRet	= McPacket_AddPowerDown(&sPowerInfo, &sPowerUpdate);
 			if(sdRet == MCDRV_SUCCESS)
@@ -4707,4 +4707,3 @@ static UINT32	GetMaxWait
 
 	return dWaitTimeMax;
 }
-

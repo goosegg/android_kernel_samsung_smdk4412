@@ -484,9 +484,9 @@ static struct crypto_alg serpent_alg = {
 	.cra_u			=	{ .cipher = {
 	.cia_min_keysize	=	SERPENT_MIN_KEY_SIZE,
 	.cia_max_keysize	=	SERPENT_MAX_KEY_SIZE,
-	.cia_setkey   		= 	serpent_setkey,
-	.cia_encrypt 		=	serpent_encrypt,
-	.cia_decrypt  		=	serpent_decrypt } }
+	.cia_setkey		=	serpent_setkey,
+	.cia_encrypt		=	serpent_encrypt,
+	.cia_decrypt		=	serpent_decrypt } }
 };
 
 static int tnepres_setkey(struct crypto_tfm *tfm, const u8 *key,
@@ -497,7 +497,7 @@ static int tnepres_setkey(struct crypto_tfm *tfm, const u8 *key,
 
 	for (i = 0; i < keylen; ++i)
 		rev_key[keylen - i - 1] = key[i];
- 
+
 	return serpent_setkey(tfm, rev_key, keylen);
 }
 
@@ -552,9 +552,9 @@ static struct crypto_alg tnepres_alg = {
 	.cra_u			=	{ .cipher = {
 	.cia_min_keysize	=	SERPENT_MIN_KEY_SIZE,
 	.cia_max_keysize	=	SERPENT_MAX_KEY_SIZE,
-	.cia_setkey   		= 	tnepres_setkey,
-	.cia_encrypt 		=	tnepres_encrypt,
-	.cia_decrypt  		=	tnepres_decrypt } }
+	.cia_setkey		=	tnepres_setkey,
+	.cia_encrypt		=	tnepres_encrypt,
+	.cia_decrypt		=	tnepres_decrypt } }
 };
 
 static int __init serpent_mod_init(void)

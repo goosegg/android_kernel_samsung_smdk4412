@@ -2,14 +2,14 @@
  * Platform information definitions for the
  * universal Freescale Ethernet driver.
  *
- * Copyright (c) 2003 Intracom S.A. 
+ * Copyright (c) 2003 Intracom S.A.
  *  by Pantelis Antoniou <panto@intracom.gr>
  *
- * 2005 (c) MontaVista Software, Inc. 
+ * 2005 (c) MontaVista Software, Inc.
  * Vitaly Bordug <vbordug@ru.mvista.com>
  *
- * This file is licensed under the terms of the GNU General Public License 
- * version 2. This program is licensed "as is" without any warranty of any 
+ * This file is licensed under the terms of the GNU General Public License
+ * version 2. This program is licensed "as is" without any warranty of any
  * kind, whether express or implied.
  */
 
@@ -101,11 +101,11 @@ struct fs_mii_bit {
 	u8 polarity;
 };
 struct fs_mii_bb_platform_info {
-	struct fs_mii_bit 	mdio_dir;
-	struct fs_mii_bit 	mdio_dat;
+	struct fs_mii_bit	mdio_dir;
+	struct fs_mii_bit	mdio_dat;
 	struct fs_mii_bit	mdc_dat;
 	int delay;	/* delay in us         */
-	int irq[32]; 	/* irqs per phy's */
+	int irq[32];	/* irqs per phy's */
 };
 
 struct fs_platform_info {
@@ -128,7 +128,7 @@ struct fs_platform_info {
 	u32 mem_offset;
 	u32 dpram_offset;
 	u32 fcc_regs_c;
-	
+
 	u32 device_flags;
 
 	struct device_node *phy_node;
@@ -140,7 +140,7 @@ struct fs_platform_info {
 	int use_napi;		/* use NAPI                    */
 	int napi_weight;	/* NAPI weight                 */
 
-	int use_rmii;		/* use RMII mode 	       */
+	int use_rmii;		/* use RMII mode	       */
 	int has_phy;            /* if the network is phy container as well...*/
 };
 struct fs_mii_fec_platform_info {

@@ -41,7 +41,7 @@
  * @active: Status of the wakeup source.
  */
 struct wakeup_source {
-	char 			*name;
+	char			*name;
 	struct list_head	entry;
 	spinlock_t		lock;
 	struct timer_list	timer;

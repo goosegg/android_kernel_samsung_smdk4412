@@ -1343,31 +1343,31 @@ static inline void security_free_mnt_opts(struct security_mnt_opts *opts)
  *	value provided by the server for the file when the server returned the
  *	file's attributes to the client.
  *
- * 	Must be called with inode->i_mutex locked.
+ *	Must be called with inode->i_mutex locked.
  *
- * 	@inode we wish to set the security context of.
- * 	@ctx contains the string which we wish to set in the inode.
- * 	@ctxlen contains the length of @ctx.
+ *	@inode we wish to set the security context of.
+ *	@ctx contains the string which we wish to set in the inode.
+ *	@ctxlen contains the length of @ctx.
  *
  * @inode_setsecctx:
- * 	Change the security context of an inode.  Updates the
- * 	incore security context managed by the security module and invokes the
- * 	fs code as needed (via __vfs_setxattr_noperm) to update any backing
- * 	xattrs that represent the context.  Example usage:  NFS server invokes
- * 	this hook to change the security context in its incore inode and on the
- * 	backing filesystem to a value provided by the client on a SETATTR
- * 	operation.
+ *	Change the security context of an inode.  Updates the
+ *	incore security context managed by the security module and invokes the
+ *	fs code as needed (via __vfs_setxattr_noperm) to update any backing
+ *	xattrs that represent the context.  Example usage:  NFS server invokes
+ *	this hook to change the security context in its incore inode and on the
+ *	backing filesystem to a value provided by the client on a SETATTR
+ *	operation.
  *
- * 	Must be called with inode->i_mutex locked.
+ *	Must be called with inode->i_mutex locked.
  *
- * 	@dentry contains the inode we wish to set the security context of.
- * 	@ctx contains the string which we wish to set in the inode.
- * 	@ctxlen contains the length of @ctx.
+ *	@dentry contains the inode we wish to set the security context of.
+ *	@ctx contains the string which we wish to set in the inode.
+ *	@ctxlen contains the length of @ctx.
  *
  * @inode_getsecctx:
- * 	Returns a string containing all relavent security context information
+ *	Returns a string containing all relavent security context information
  *
- * 	@inode we wish to set the security context of.
+ *	@inode we wish to set the security context of.
  *	@ctx is a pointer in which to place the allocated security context.
  *	@ctxlen points to the place to put the length of @ctx.
  * This is the main security structure.
@@ -3051,4 +3051,3 @@ static inline void free_secdata(void *secdata)
 #endif /* CONFIG_SECURITY */
 
 #endif /* ! __LINUX_SECURITY_H */
-

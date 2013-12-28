@@ -1,6 +1,6 @@
 /***************************************************************************
  * Linux PPP over X - Generic PPP transport layer sockets
- * Linux PPP over Ethernet (PPPoE) Socket Implementation (RFC 2516) 
+ * Linux PPP over Ethernet (PPPoE) Socket Implementation (RFC 2516)
  *
  * This file supplies definitions required by the PPP over Ethernet driver
  * (pppox.c).  All version information wrt this file is located in pppox.c
@@ -38,17 +38,17 @@
 #define PF_PPPOX	AF_PPPOX
 #endif /* !(AF_PPPOX) */
 
-/************************************************************************ 
- * PPPoE addressing definition 
- */ 
+/************************************************************************
+ * PPPoE addressing definition
+ */
 typedef __be16 sid_t;
 struct pppoe_addr {
 	sid_t         sid;                    /* Session identifier */
 	unsigned char remote[ETH_ALEN];       /* Remote address */
 	char          dev[IFNAMSIZ];          /* Local device to use */
-}; 
- 
-/************************************************************************ 
+};
+
+/************************************************************************
  * PPTP addressing definition
  */
 struct pptp_addr {
@@ -123,11 +123,11 @@ struct pppoe_tag {
 #define PTT_AC_NAME	__cpu_to_be16(0x0102)
 #define PTT_HOST_UNIQ	__cpu_to_be16(0x0103)
 #define PTT_AC_COOKIE	__cpu_to_be16(0x0104)
-#define PTT_VENDOR 	__cpu_to_be16(0x0105)
+#define PTT_VENDOR	__cpu_to_be16(0x0105)
 #define PTT_RELAY_SID	__cpu_to_be16(0x0110)
 #define PTT_SRV_ERR     __cpu_to_be16(0x0201)
-#define PTT_SYS_ERR  	__cpu_to_be16(0x0202)
-#define PTT_GEN_ERR  	__cpu_to_be16(0x0203)
+#define PTT_SYS_ERR	__cpu_to_be16(0x0202)
+#define PTT_GEN_ERR	__cpu_to_be16(0x0203)
 
 struct pppoe_hdr {
 #if defined(__LITTLE_ENDIAN_BITFIELD)

@@ -153,9 +153,9 @@ struct au1200fb_device {
 	struct fb_info fb_info;			/* FB driver info record */
 
 	int					plane;
-	unsigned char* 		fb_mem;		/* FrameBuffer memory map */
+	unsigned char*		fb_mem;		/* FrameBuffer memory map */
 	unsigned int		fb_len;
-	dma_addr_t    		fb_phys;
+	dma_addr_t		fb_phys;
 };
 
 static struct au1200fb_device _au1200fb_devices[CONFIG_FB_AU1200_DEVS];
@@ -327,7 +327,7 @@ struct panel_settings
 {
 	const char name[25];		/* Full name <vendor>_<model> */
 
-	struct 	fb_monspecs monspecs; 	/* FB monitor specs */
+	struct	fb_monspecs monspecs;	/* FB monitor specs */
 
 	/* panel timings */
 	uint32 mode_screen;
@@ -347,8 +347,8 @@ struct panel_settings
 #define Yres min_yres
 	u32	min_xres;		/* Minimum horizontal resolution */
 	u32	max_xres;		/* Maximum horizontal resolution */
-	u32 	min_yres;		/* Minimum vertical resolution */
-	u32 	max_yres;		/* Maximum vertical resolution */
+	u32	min_yres;		/* Minimum vertical resolution */
+	u32	max_yres;		/* Maximum vertical resolution */
 };
 
 /********************************************************************/
@@ -980,7 +980,7 @@ static void au1200_setmode(struct au1200fb_device *fbdev)
 
 /* Bitfields format supported by the controller. */
 static struct fb_bitfield rgb_bitfields[][4] = {
-  	/*     Red, 	   Green, 	 Blue, 	     Transp   */
+	/*     Red,	   Green,	 Blue,	     Transp   */
 	[LCD_WINCTRL1_FRM_16BPP655 >> 25] =
 		{ { 10, 6, 0 }, { 5, 5, 0 }, { 0, 5, 0 }, { 0, 0, 0 } },
 
@@ -1179,7 +1179,7 @@ static int au1200fb_fb_setcolreg(unsigned regno, unsigned red, unsigned green,
 		green >>= (16 - fbi->var.green.length);
 		blue  >>= (16 - fbi->var.blue.length);
 
-		value = (red   << fbi->var.red.offset) 	|
+		value = (red   << fbi->var.red.offset)	|
 			(green << fbi->var.green.offset)|
 			(blue  << fbi->var.blue.offset);
 		value &= 0xFFFF;
@@ -1694,7 +1694,7 @@ static int au1200fb_drv_probe(struct platform_device *dev)
 
 	/* Now hook interrupt too */
 	if ((ret = request_irq(AU1200_LCD_INT, au1200fb_handle_irq,
-		 	  IRQF_DISABLED | IRQF_SHARED, "lcd", (void *)dev)) < 0) {
+			  IRQF_DISABLED | IRQF_SHARED, "lcd", (void *)dev)) < 0) {
 		print_err("fail to request interrupt line %d (err: %d)",
 			  AU1200_LCD_INT, ret);
 		goto failed;
@@ -1850,7 +1850,7 @@ static int au1200fb_pm_callback(au1xxx_power_dev_t *dev,
 		{
 			int plane;
 			au1200_setpanel(panel);
-			for (plane = 0; plane < CONFIG_FB_AU1200_DEVS; ++plane) 	{
+			for (plane = 0; plane < CONFIG_FB_AU1200_DEVS; ++plane)		{
 				struct au1200fb_device *fbdev;
 				fbdev = &_au1200fb_devices[plane];
 				au1200fb_fb_set_par(&fbdev->fb_info);

@@ -67,7 +67,7 @@
 
 	.macro test_for_ltirq, irqnr, irqstat, base, tmp
 	bic	\irqnr, \irqstat, #0x1c00
-	mov 	\tmp, #0
+	mov	\tmp, #0
 	cmp	\irqnr, #29
 	moveq	\tmp, #1
 	streq	\irqstat, [\base, #GIC_CPU_EOI]

@@ -1,10 +1,10 @@
 /*
  * $Id: kernelcapi.h,v 1.8.6.2 2001/02/07 11:31:31 kai Exp $
- * 
+ *
  * Kernel CAPI 2.0 Interface for Linux
- * 
+ *
  * (c) Copyright 1997 by Carsten Paeth (calle@calle.in-berlin.de)
- * 
+ *
  */
 
 #ifndef __KERNELCAPI_H__
@@ -32,7 +32,7 @@ typedef struct kcapi_carddef {
 #define KCAPI_CMD_TRACE		10
 #define KCAPI_CMD_ADDCARD	11	/* OBSOLETE */
 
-/* 
+/*
  * flag > 2 => trace also data
  * flag & 1 => show trace
  */
@@ -87,13 +87,13 @@ int unregister_capictr_notifier(struct notifier_block *nb);
 
 #define CAPI_TOOMANYAPPLS		  0x1001
 #define CAPI_LOGBLKSIZETOSMALL	          0x1002
-#define CAPI_BUFFEXECEEDS64K 	          0x1003
+#define CAPI_BUFFEXECEEDS64K	          0x1003
 #define CAPI_MSGBUFSIZETOOSMALL	          0x1004
 #define CAPI_ANZLOGCONNNOTSUPPORTED	  0x1005
 #define CAPI_REGRESERVED		  0x1006
-#define CAPI_REGBUSY 		          0x1007
+#define CAPI_REGBUSY		          0x1007
 #define CAPI_REGOSRESOURCEERR	          0x1008
-#define CAPI_REGNOTINSTALLED 	          0x1009
+#define CAPI_REGNOTINSTALLED	          0x1009
 #define CAPI_REGCTRLERNOTSUPPORTEXTEQUIP  0x100a
 #define CAPI_REGCTRLERONLYSUPPORTEXTEQUIP 0x100b
 
@@ -101,11 +101,11 @@ int unregister_capictr_notifier(struct notifier_block *nb);
 #define CAPI_ILLCMDORSUBCMDORMSGTOSMALL   0x1102
 #define CAPI_SENDQUEUEFULL		  0x1103
 #define CAPI_RECEIVEQUEUEEMPTY	          0x1104
-#define CAPI_RECEIVEOVERFLOW 	          0x1105
+#define CAPI_RECEIVEOVERFLOW	          0x1105
 #define CAPI_UNKNOWNNOTPAR		  0x1106
-#define CAPI_MSGBUSY 		          0x1107
+#define CAPI_MSGBUSY		          0x1107
 #define CAPI_MSGOSRESOURCEERR	          0x1108
-#define CAPI_MSGNOTINSTALLED 	          0x1109
+#define CAPI_MSGNOTINSTALLED	          0x1109
 #define CAPI_MSGCTRLERNOTSUPPORTEXTEQUIP  0x110a
 #define CAPI_MSGCTRLERONLYSUPPORTEXTEQUIP 0x110b
 

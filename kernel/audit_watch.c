@@ -36,12 +36,12 @@
  * Reference counting:
  *
  * audit_parent: lifetime is from audit_init_parent() to receipt of an FS_IGNORED
- * 	event.  Each audit_watch holds a reference to its associated parent.
+ *	event.  Each audit_watch holds a reference to its associated parent.
  *
  * audit_watch: if added to lists, lifetime is from audit_init_watch() to
- * 	audit_remove_watch().  Additionally, an audit_watch may exist
- * 	temporarily to assist in searching existing filter data.  Each
- * 	audit_krule holds a reference to its associated watch.
+ *	audit_remove_watch().  Additionally, an audit_watch may exist
+ *	temporarily to assist in searching existing filter data.  Each
+ *	audit_krule holds a reference to its associated watch.
  */
 
 struct audit_watch {
@@ -528,11 +528,11 @@ static int audit_watch_handle_event(struct fsnotify_group *group,
 }
 
 static const struct fsnotify_ops audit_watch_fsnotify_ops = {
-	.should_send_event = 	audit_watch_should_send_event,
-	.handle_event = 	audit_watch_handle_event,
-	.free_group_priv = 	NULL,
-	.freeing_mark = 	NULL,
-	.free_event_priv = 	NULL,
+	.should_send_event =	audit_watch_should_send_event,
+	.handle_event =		audit_watch_handle_event,
+	.free_group_priv =	NULL,
+	.freeing_mark =		NULL,
+	.free_event_priv =	NULL,
 };
 
 static int __init audit_watch_init(void)

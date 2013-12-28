@@ -1502,4 +1502,3 @@ struct mdnie_tuning_info tuning_table_boe[CABC_MAX][MODE_MAX][SCENARIO_MAX] = {
 };
 
 #endif /* __MDNIE_TABLE_P2_BOE_H__ */
-

@@ -7202,7 +7202,7 @@ static void init_sched_groups_power(int cpu, struct sched_domain *sd)
 
 #define SD_INIT_FUNC(type)						\
 static noinline struct sched_domain *					\
-sd_init_##type(struct sched_domain_topology_level *tl, int cpu) 	\
+sd_init_##type(struct sched_domain_topology_level *tl, int cpu)		\
 {									\
 	struct sched_domain *sd = *per_cpu_ptr(tl->data.sd, cpu);	\
 	*sd = SD_##type##_INIT;						\
@@ -7368,7 +7368,7 @@ static int __sdt_alloc(const struct cpumask *cpu_map)
 			struct sched_group *sg;
 			struct sched_group_power *sgp;
 
-		       	sd = kzalloc_node(sizeof(struct sched_domain) + cpumask_size(),
+			sd = kzalloc_node(sizeof(struct sched_domain) + cpumask_size(),
 					GFP_KERNEL, cpu_to_node(j));
 			if (!sd)
 				return -ENOMEM;
@@ -9463,4 +9463,3 @@ struct cgroup_subsys cpuacct_subsys = {
 	.subsys_id = cpuacct_subsys_id,
 };
 #endif	/* CONFIG_CGROUP_CPUACCT */
-

@@ -176,7 +176,7 @@ static int ep93xxfb_set_pixelmode(struct fb_info *info)
 		info->var.green.length	= 8;
 		info->var.blue.offset	= 0;
 		info->var.blue.length	= 8;
-		info->fix.visual 	= FB_VISUAL_PSEUDOCOLOR;
+		info->fix.visual	= FB_VISUAL_PSEUDOCOLOR;
 		break;
 
 	case 16:
@@ -189,7 +189,7 @@ static int ep93xxfb_set_pixelmode(struct fb_info *info)
 		info->var.green.length	= 6;
 		info->var.blue.offset	= 0;
 		info->var.blue.length	= 5;
-		info->fix.visual 	= FB_VISUAL_TRUECOLOR;
+		info->fix.visual	= FB_VISUAL_TRUECOLOR;
 		break;
 
 	case 24:
@@ -202,7 +202,7 @@ static int ep93xxfb_set_pixelmode(struct fb_info *info)
 		info->var.green.length	= 8;
 		info->var.blue.offset	= 0;
 		info->var.blue.length	= 8;
-		info->fix.visual 	= FB_VISUAL_TRUECOLOR;
+		info->fix.visual	= FB_VISUAL_TRUECOLOR;
 		break;
 
 	case 32:
@@ -215,7 +215,7 @@ static int ep93xxfb_set_pixelmode(struct fb_info *info)
 		info->var.green.length	= 8;
 		info->var.blue.offset	= 0;
 		info->var.blue.length	= 8;
-		info->fix.visual 	= FB_VISUAL_TRUECOLOR;
+		info->fix.visual	= FB_VISUAL_TRUECOLOR;
 		break;
 
 	default:

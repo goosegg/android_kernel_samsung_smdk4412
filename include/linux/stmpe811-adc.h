@@ -49,4 +49,3 @@ u16 stmpe811_get_adc_data(u8 channel);
 int stmpe811_get_adc_value(u8 channel);
 
 #endif
-

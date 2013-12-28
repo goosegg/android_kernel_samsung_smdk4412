@@ -62,7 +62,7 @@ struct page {
 	union {
 	    struct {
 		unsigned long private;		/* Mapping-private opaque data:
-					 	 * usually used for buffer_heads
+						 * usually used for buffer_heads
 						 * if PagePrivate set; used for
 						 * swp_entry_t if PageSwapCache;
 						 * indicates order in the buddy
@@ -246,7 +246,7 @@ struct mm_struct {
 #endif
 	unsigned long mmap_base;		/* base of mmap area */
 	unsigned long task_size;		/* size of task vm space */
-	unsigned long cached_hole_size; 	/* if non-zero, the largest hole below free_area_cache */
+	unsigned long cached_hole_size;		/* if non-zero, the largest hole below free_area_cache */
 	unsigned long free_area_cache;		/* first hole of size cached_hole_size or larger */
 	pgd_t * pgd;
 	atomic_t mm_users;			/* How many users with user space? */

@@ -9,7 +9,7 @@
  *	(c) 2000 Manfred Spraul
  *
  * Cleanup, make the head arrays unconditional, preparation for NUMA
- * 	(c) 2002 Manfred Spraul
+ *	(c) 2002 Manfred Spraul
  *
  * An implementation of the Slab Allocator as described in outline in;
  *	UNIX Internals: The New Frontiers by Uresh Vahalia
@@ -58,7 +58,7 @@
  *  Several members in struct kmem_cache and struct slab never change, they
  *	are accessed without any locking.
  *  The per-cpu arrays are never accessed from the wrong cpu, no locking,
- *  	and local interrupts are disabled so slab code is preempt-safe.
+ *	and local interrupts are disabled so slab code is preempt-safe.
  *  The non-constant members are protected with a per-cache irq spinlock.
  *
  * Many thanks to Mark Hemment, who wrote another per-cpu slab patch
@@ -417,10 +417,10 @@ static void kmem_list3_init(struct kmem_list3 *parent)
  * memory layout of objects:
  * 0		: objp
  * 0 .. cachep->obj_offset - BYTES_PER_WORD - 1: padding. This ensures that
- * 		the end of an object is aligned with the end of the real
- * 		allocation. Catches writes behind the end of the allocation.
+ *		the end of an object is aligned with the end of the real
+ *		allocation. Catches writes behind the end of the allocation.
  * cachep->obj_offset - BYTES_PER_WORD .. cachep->obj_offset - 1:
- * 		redzone word.
+ *		redzone word.
  * cachep->obj_offset: The real object.
  * cachep->buffer_size - 2* BYTES_PER_WORD: redzone word [BYTES_PER_WORD long]
  * cachep->buffer_size - 1* BYTES_PER_WORD: last caller address
@@ -1289,8 +1289,8 @@ static int __cpuinit cpuup_callback(struct notifier_block *nfb,
 		start_cpu_timer(cpu);
 		break;
 #ifdef CONFIG_HOTPLUG_CPU
-  	case CPU_DOWN_PREPARE:
-  	case CPU_DOWN_PREPARE_FROZEN:
+	case CPU_DOWN_PREPARE:
+	case CPU_DOWN_PREPARE_FROZEN:
 		/*
 		 * Shutdown cache reaper. Note that the cache_chain_mutex is
 		 * held so that if cache_reap() is invoked it cannot do
@@ -1300,11 +1300,11 @@ static int __cpuinit cpuup_callback(struct notifier_block *nfb,
 		cancel_delayed_work_sync(&per_cpu(slab_reap_work, cpu));
 		/* Now the cache_reaper is guaranteed to be not running. */
 		per_cpu(slab_reap_work, cpu).work.func = NULL;
-  		break;
-  	case CPU_DOWN_FAILED:
-  	case CPU_DOWN_FAILED_FROZEN:
+		break;
+	case CPU_DOWN_FAILED:
+	case CPU_DOWN_FAILED_FROZEN:
 		start_cpu_timer(cpu);
-  		break;
+		break;
 	case CPU_DEAD:
 	case CPU_DEAD_FROZEN:
 		/*
@@ -2050,7 +2050,7 @@ static size_t calculate_slab_order(struct kmem_cache *cachep,
 			offslab_limit = size - sizeof(struct slab);
 			offslab_limit /= sizeof(kmem_bufctl_t);
 
- 			if (num > offslab_limit)
+			if (num > offslab_limit)
 				break;
 		}
 

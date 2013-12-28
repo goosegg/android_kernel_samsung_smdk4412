@@ -568,7 +568,7 @@ static void gpio_keys_report_event(struct gpio_button_data *bdata)
 #ifdef CONFIG_SENSORS_HALL
 	      if(!flip_cover_open && button->code == KEY_POWER){
 	        printk(KERN_DEBUG" cover closed...ignoring PWR button");
-	      }else{ 
+	      }else{
 #endif
 		input_event(input, type, button->code, !!state);
 		input_sync(input);
@@ -695,7 +695,7 @@ fail2:
 
 #ifdef CONFIG_SENSORS_HALL
 static void flip_cover_work(struct work_struct *work)
-{  
+{
 	struct gpio_keys_drvdata *ddata =
 		container_of(work, struct gpio_keys_drvdata,
 				flip_cover_dwork.work);
@@ -707,14 +707,14 @@ static void flip_cover_work(struct work_struct *work)
 
  /*       input_report_switch(ddata->input, SW_FLIP, ddata->flip_cover);
 	input_sync(ddata->input);*/
-	
+
 	flip_cover_open = ddata->flip_cover;
-	
+
 	if(!ts_powered_on && !ddata->flip_cover){
 	  printk("screen already off\n");
 	}else{
           input_report_key(ddata->input, KEY_POWER, 1);
- 	  input_sync(ddata->input);
+	  input_sync(ddata->input);
           input_report_key(ddata->input, KEY_POWER, 0);
 	  input_sync(ddata->input);
 	}
@@ -733,7 +733,7 @@ static irqreturn_t flip_cover_detect(int irq, void *dev_id)
 static int gpio_keys_open(struct input_dev *input)
 {
 	struct gpio_keys_drvdata *ddata = input_get_drvdata(input);
-	
+
 #ifdef CONFIG_SENSORS_HALL
 	int ret = 0;
 	int irq = gpio_to_irq(ddata->gpio_flip_cover);

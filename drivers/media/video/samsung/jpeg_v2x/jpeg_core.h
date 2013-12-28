@@ -275,4 +275,3 @@ const struct v4l2_ioctl_ops *get_jpeg_enc_v4l2_ioctl_ops(void);
 int jpeg_int_pending(struct jpeg_dev *ctrl);
 
 #endif /*__JPEG_CORE_H__*/
-

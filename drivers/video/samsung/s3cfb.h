@@ -506,4 +506,3 @@ extern void lms501kf03_ldi_disable(void);
 #endif
 
 #endif /* _S3CFB_H */
-

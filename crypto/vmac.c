@@ -300,7 +300,7 @@ static void poly_step_func(u64 *ahi, u64 *alo,
 /* At least nh_16 is defined. Defined others as needed here */
 #ifndef nh_16_2
 #define nh_16_2(mp, kp, nw, rh, rl, rh2, rl2)				\
-	do { 								\
+	do {								\
 		nh_16(mp, kp, nw, rh, rl);				\
 		nh_16(mp, ((kp)+2), nw, rh2, rl2);			\
 	} while (0)
@@ -672,4 +672,3 @@ module_exit(vmac_module_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("VMAC hash algorithm");
-

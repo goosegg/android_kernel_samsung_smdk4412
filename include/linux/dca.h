@@ -35,7 +35,7 @@ void dca_unregister_notify(struct notifier_block *nb);
 struct dca_provider {
 	struct list_head	node;
 	struct dca_ops		*ops;
-	struct device 		*cd;
+	struct device		*cd;
 	int			 id;
 };
 

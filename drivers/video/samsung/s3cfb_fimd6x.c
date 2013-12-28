@@ -1064,4 +1064,3 @@ int s3cfb_set_dualrgb(struct s3cfb_global *ctrl, int mode)
 
 	return 0;
 }
-

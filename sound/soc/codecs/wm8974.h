@@ -52,7 +52,7 @@
 #define WM8974_SPKVOL		0x36
 #define WM8974_MONOMIX		0x38
 
-#define WM8974_CACHEREGNUM 	57
+#define WM8974_CACHEREGNUM	57
 
 /* Clock divider Id's */
 #define WM8974_OPCLKDIV		0

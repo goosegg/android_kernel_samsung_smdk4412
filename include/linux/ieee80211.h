@@ -539,7 +539,7 @@ struct ieee80211s_hdr {
 } __attribute__ ((packed));
 
 /* Mesh flags */
-#define MESH_FLAGS_AE_A4 	0x1
+#define MESH_FLAGS_AE_A4	0x1
 #define MESH_FLAGS_AE_A5_A6	0x2
 #define MESH_FLAGS_AE		0x3
 #define MESH_FLAGS_PS_DEEP	0x4
@@ -1431,7 +1431,7 @@ enum ieee80211_sa_query_action {
 #define WLAN_CIPHER_SUITE_USE_GROUP	0x000FAC00
 #define WLAN_CIPHER_SUITE_WEP40		0x000FAC01
 #define WLAN_CIPHER_SUITE_TKIP		0x000FAC02
-/* reserved: 				0x000FAC03 */
+/* reserved:				0x000FAC03 */
 #define WLAN_CIPHER_SUITE_CCMP		0x000FAC04
 #define WLAN_CIPHER_SUITE_WEP104	0x000FAC05
 #define WLAN_CIPHER_SUITE_AES_CMAC	0x000FAC06

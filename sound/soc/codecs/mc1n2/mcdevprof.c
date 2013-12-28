@@ -6,7 +6,7 @@
  *
  *		Description	: MC Driver device profile
  *
- *		Version		: 1.0.0 	2010.09.10
+ *		Version		: 1.0.0		2010.09.10
  *
  ****************************************************************************/
 
@@ -128,4 +128,3 @@ UINT8	McDevProf_GetSlaveAddr
 
 	return bData;
 }
-

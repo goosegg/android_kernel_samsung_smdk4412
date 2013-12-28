@@ -117,7 +117,7 @@ struct scc_stat {
         long rxframes;          /* Number of Frames Actually Received */
         long rxerrs;            /* CRC Errors */
         long txerrs;		/* KISS errors */
-        
+
 	unsigned int nospace;	/* "Out of buffers" */
 	unsigned int rx_over;	/* Receiver Overruns */
 	unsigned int tx_under;	/* Transmitter Underruns */
@@ -132,11 +132,11 @@ struct scc_stat {
 struct scc_modem {
 	long speed;		/* Line speed, bps */
 	char clocksrc;		/* 0 = DPLL, 1 = external, 2 = divider */
-	char nrz;		/* NRZ instead of NRZI */	
+	char nrz;		/* NRZ instead of NRZI */
 };
 
 struct scc_kiss_cmd {
-	int  	 command;	/* one of the KISS-Commands defined above */
+	int	 command;	/* one of the KISS-Commands defined above */
 	unsigned param;		/* KISS-Param */
 };
 
@@ -202,7 +202,7 @@ struct scc_kiss {
 	unsigned int  mintime;		/* Minimal offtime after MAXKEYUP timeout (seconds) */
 	unsigned int  idletime;		/* Maximum idle time in ALWAYS KEYED mode (seconds) */
 	unsigned int  maxdefer;		/* Timer for CSMA channel busy limit */
-	unsigned char tx_inhibit;	/* Transmit is not allowed when set */	
+	unsigned char tx_inhibit;	/* Transmit is not allowed when set */
 	unsigned char group;		/* Group ID for AX.25 TX interlocking */
 	unsigned char mode;		/* 'normal' or 'hwctrl' mode (unused) */
 	unsigned char softdcd;		/* Use DPLL instead of DCD pin for carrier detect */
@@ -228,13 +228,13 @@ struct scc_channel {
 	char option;
 	char enhanced;			/* Enhanced SCC support */
 
-	unsigned char wreg[16]; 	/* Copy of last written value in WRx */
+	unsigned char wreg[16];		/* Copy of last written value in WRx */
 	unsigned char status;		/* Copy of R0 at last external interrupt */
 	unsigned char dcd;		/* DCD status */
 
         struct scc_kiss kiss;		/* control structure for KISS params */
         struct scc_stat stat;		/* statistical information */
-        struct scc_modem modem; 	/* modem information */
+        struct scc_modem modem;		/* modem information */
 
         struct sk_buff_head tx_queue;	/* next tx buffer */
         struct sk_buff *rx_buff;	/* pointer to frame currently received */
@@ -243,7 +243,7 @@ struct scc_channel {
 	/* Timer */
 	struct timer_list tx_t;		/* tx timer for this channel */
 	struct timer_list tx_wdog;	/* tx watchdogs */
-	
+
 	/* Channel lock */
 	spinlock_t	lock;		/* Channel guard lock */
 };

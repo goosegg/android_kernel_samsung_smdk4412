@@ -986,7 +986,7 @@ static struct buffer_head * ext4_dx_find_entry(struct inode *dir, const struct q
 		retval = search_dirblock(bh, dir, d_name,
 					 block << EXT4_BLOCK_SIZE_BITS(sb),
 					 res_dir);
-		if (retval == 1) { 	/* Success! */
+		if (retval == 1) {	/* Success! */
 			dx_release(frames);
 			return bh;
 		}
@@ -2307,7 +2307,7 @@ retry:
 		 * for transaction commit if we are running out of space
 		 * and thus we deadlock. So we have to stop transaction now
 		 * and restart it when symlink contents is written.
-		 * 
+		 *
 		 * To keep fs consistent in case of crash, we have to put inode
 		 * to orphan list in the mean time.
 		 */

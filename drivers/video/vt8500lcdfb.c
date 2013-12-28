@@ -218,7 +218,7 @@ static int vt8500lcd_pan_display(struct fb_var_screeninfo *var,
 /*
  * vt8500lcd_blank():
  *	Blank the display by setting all palette values to zero.  Note,
- * 	True Color modes do not really use the palette, so this will not
+ *	True Color modes do not really use the palette, so this will not
  *      blank the display in all modes.
  */
 static int vt8500lcd_blank(int blank, struct fb_info *info)

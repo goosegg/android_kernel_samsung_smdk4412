@@ -128,9 +128,9 @@ static const struct mempolicy_operations {
 	 * rebind directly.
 	 *
 	 * step:
-	 * 	MPOL_REBIND_ONCE - do rebind work at once
-	 * 	MPOL_REBIND_STEP1 - set all the newly nodes
-	 * 	MPOL_REBIND_STEP2 - clean all the disallowed nodes
+	 *	MPOL_REBIND_ONCE - do rebind work at once
+	 *	MPOL_REBIND_STEP1 - set all the newly nodes
+	 *	MPOL_REBIND_STEP2 - clean all the disallowed nodes
 	 */
 	void (*rebind)(struct mempolicy *pol, const nodemask_t *nodes,
 			enum mpol_rebind_step step);
@@ -295,9 +295,9 @@ static void mpol_rebind_default(struct mempolicy *pol, const nodemask_t *nodes,
 
 /*
  * step:
- * 	MPOL_REBIND_ONCE  - do rebind work at once
- * 	MPOL_REBIND_STEP1 - set all the newly nodes
- * 	MPOL_REBIND_STEP2 - clean all the disallowed nodes
+ *	MPOL_REBIND_ONCE  - do rebind work at once
+ *	MPOL_REBIND_STEP1 - set all the newly nodes
+ *	MPOL_REBIND_STEP2 - clean all the disallowed nodes
  */
 static void mpol_rebind_nodemask(struct mempolicy *pol, const nodemask_t *nodes,
 				 enum mpol_rebind_step step)
@@ -380,9 +380,9 @@ static void mpol_rebind_preferred(struct mempolicy *pol,
  * rebind directly.
  *
  * step:
- * 	MPOL_REBIND_ONCE  - do rebind work at once
- * 	MPOL_REBIND_STEP1 - set all the newly nodes
- * 	MPOL_REBIND_STEP2 - clean all the disallowed nodes
+ *	MPOL_REBIND_ONCE  - do rebind work at once
+ *	MPOL_REBIND_STEP1 - set all the newly nodes
+ *	MPOL_REBIND_STEP2 - clean all the disallowed nodes
  */
 static void mpol_rebind_policy(struct mempolicy *pol, const nodemask_t *newmask,
 				enum mpol_rebind_step step)
@@ -1827,9 +1827,9 @@ static struct page *alloc_page_interleave(gfp_t gfp, unsigned order,
 }
 
 /**
- * 	alloc_pages_vma	- Allocate a page for a VMA.
+ *	alloc_pages_vma	- Allocate a page for a VMA.
  *
- * 	@gfp:
+ *	@gfp:
  *      %GFP_USER    user allocation.
  *      %GFP_KERNEL  kernel allocations,
  *      %GFP_HIGHMEM highmem/user allocations,
@@ -1837,15 +1837,15 @@ static struct page *alloc_page_interleave(gfp_t gfp, unsigned order,
  *      %GFP_ATOMIC  don't sleep.
  *
  *	@order:Order of the GFP allocation.
- * 	@vma:  Pointer to VMA or NULL if not available.
+ *	@vma:  Pointer to VMA or NULL if not available.
  *	@addr: Virtual Address of the allocation. Must be inside the VMA.
  *
- * 	This function allocates a page from the kernel page pool and applies
+ *	This function allocates a page from the kernel page pool and applies
  *	a NUMA policy associated with the VMA or the current process.
  *	When VMA is not NULL caller must hold down_read on the mmap_sem of the
  *	mm_struct of the VMA to prevent it from going away. Should be used for
  *	all allocations for pages that will be mapped into
- * 	user space. Returns NULL when no page can be allocated.
+ *	user space. Returns NULL when no page can be allocated.
  *
  *	Should be called with the mm_sem of the vma hold.
  */
@@ -1896,14 +1896,14 @@ retry_cpuset:
 }
 
 /**
- * 	alloc_pages_current - Allocate pages.
+ *	alloc_pages_current - Allocate pages.
  *
  *	@gfp:
  *		%GFP_USER   user allocation,
- *      	%GFP_KERNEL kernel allocation,
- *      	%GFP_HIGHMEM highmem allocation,
- *      	%GFP_FS     don't call back into a file system.
- *      	%GFP_ATOMIC don't sleep.
+ *		%GFP_KERNEL kernel allocation,
+ *		%GFP_HIGHMEM highmem allocation,
+ *		%GFP_FS     don't call back into a file system.
+ *		%GFP_ATOMIC don't sleep.
  *	@order: Power of two of allocation size in pages. 0 is a single page.
  *
  *	Allocate a page from the kernel page pool.  When not in
@@ -2544,7 +2544,7 @@ int mpol_to_str(char *buffer, int maxlen, struct mempolicy *pol, int unused)
 		if (buffer + maxlen < p + 2)
 			return -ENOSPC;
 		*p++ = ':';
-	 	p += nodelist_scnprintf(p, buffer + maxlen - p, nodes);
+		p += nodelist_scnprintf(p, buffer + maxlen - p, nodes);
 	}
 	return p - buffer;
 }

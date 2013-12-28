@@ -87,25 +87,25 @@
  *
  * Overloading of page flags that are otherwise used for LRU management.
  *
- * PageActive 		The slab is frozen and exempt from list processing.
- * 			This means that the slab is dedicated to a purpose
- * 			such as satisfying allocations for a specific
- * 			processor. Objects may be freed in the slab while
- * 			it is frozen but slab_free will then skip the usual
- * 			list operations. It is up to the processor holding
- * 			the slab to integrate the slab into the slab lists
- * 			when the slab is no longer needed.
+ * PageActive		The slab is frozen and exempt from list processing.
+ *			This means that the slab is dedicated to a purpose
+ *			such as satisfying allocations for a specific
+ *			processor. Objects may be freed in the slab while
+ *			it is frozen but slab_free will then skip the usual
+ *			list operations. It is up to the processor holding
+ *			the slab to integrate the slab into the slab lists
+ *			when the slab is no longer needed.
  *
- * 			One use of this flag is to mark slabs that are
- * 			used for allocations. Then such a slab becomes a cpu
- * 			slab. The cpu slab may be equipped with an additional
- * 			freelist that allows lockless access to
- * 			free objects in addition to the regular freelist
- * 			that requires the slab lock.
+ *			One use of this flag is to mark slabs that are
+ *			used for allocations. Then such a slab becomes a cpu
+ *			slab. The cpu slab may be equipped with an additional
+ *			freelist that allows lockless access to
+ *			free objects in addition to the regular freelist
+ *			that requires the slab lock.
  *
  * PageError		Slab requires special handling due to debug
- * 			options set. This moves	slab handling out of
- * 			the fast path and disables lockless freelists.
+ *			options set. This moves	slab handling out of
+ *			the fast path and disables lockless freelists.
  */
 
 #define SLAB_DEBUG_FLAGS (SLAB_RED_ZONE | SLAB_POISON | SLAB_STORE_USER | \
@@ -225,7 +225,7 @@ static inline void stat(const struct kmem_cache *s, enum stat_item si)
 }
 
 /********************************************************************
- * 			Core slab cache functions
+ *			Core slab cache functions
  *******************************************************************/
 
 int slab_is_available(void)
@@ -613,34 +613,34 @@ static int check_bytes_and_report(struct kmem_cache *s, struct page *page,
  * Object layout:
  *
  * object address
- * 	Bytes of the object to be managed.
- * 	If the freepointer may overlay the object then the free
- * 	pointer is the first word of the object.
+ *	Bytes of the object to be managed.
+ *	If the freepointer may overlay the object then the free
+ *	pointer is the first word of the object.
  *
- * 	Poisoning uses 0x6b (POISON_FREE) and the last byte is
- * 	0xa5 (POISON_END)
+ *	Poisoning uses 0x6b (POISON_FREE) and the last byte is
+ *	0xa5 (POISON_END)
  *
  * object + s->objsize
- * 	Padding to reach word boundary. This is also used for Redzoning.
- * 	Padding is extended by another word if Redzoning is enabled and
- * 	objsize == inuse.
+ *	Padding to reach word boundary. This is also used for Redzoning.
+ *	Padding is extended by another word if Redzoning is enabled and
+ *	objsize == inuse.
  *
- * 	We fill with 0xbb (RED_INACTIVE) for inactive objects and with
- * 	0xcc (RED_ACTIVE) for objects in use.
+ *	We fill with 0xbb (RED_INACTIVE) for inactive objects and with
+ *	0xcc (RED_ACTIVE) for objects in use.
  *
  * object + s->inuse
- * 	Meta data starts here.
+ *	Meta data starts here.
  *
- * 	A. Free pointer (if we cannot overwrite object on free)
- * 	B. Tracking data for SLAB_STORE_USER
- * 	C. Padding to reach required alignment boundary or at mininum
- * 		one word if debugging is on to be able to detect writes
- * 		before the word boundary.
+ *	A. Free pointer (if we cannot overwrite object on free)
+ *	B. Tracking data for SLAB_STORE_USER
+ *	C. Padding to reach required alignment boundary or at mininum
+ *		one word if debugging is on to be able to detect writes
+ *		before the word boundary.
  *
  *	Padding is done using 0x5a (POISON_INUSE)
  *
  * object + s->size
- * 	Nothing is used beyond s->size.
+ *	Nothing is used beyond s->size.
  *
  * If slabcaches are merged then the objsize and inuse boundaries are mostly
  * ignored. And therefore no slab options that rely on these boundaries
@@ -4480,7 +4480,7 @@ static void clear_stat(struct kmem_cache *s, enum stat_item si)
 		per_cpu_ptr(s->cpu_slab, cpu)->stat[si] = 0;
 }
 
-#define STAT_ATTR(si, text) 					\
+#define STAT_ATTR(si, text)					\
 static ssize_t text##_show(struct kmem_cache *s, char *buf)	\
 {								\
 	return show_stat(s, buf, si);				\

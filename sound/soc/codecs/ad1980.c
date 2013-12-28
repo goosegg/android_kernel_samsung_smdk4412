@@ -3,7 +3,7 @@
  *
  * Copyright:	Analog Device Inc.
  * Author:	Roy Huang <roy.huang@analog.com>
- * 		Cliff Cai <cliff.cai@analog.com>
+ *		Cliff Cai <cliff.cai@analog.com>
  *
  *  This program is free software; you can redistribute  it and/or modify it
  *  under  the terms of  the GNU General  Public License as published by the
@@ -242,8 +242,8 @@ static int ad1980_soc_remove(struct snd_soc_codec *codec)
 }
 
 static struct snd_soc_codec_driver soc_codec_dev_ad1980 = {
-	.probe = 	ad1980_soc_probe,
-	.remove = 	ad1980_soc_remove,
+	.probe =	ad1980_soc_probe,
+	.remove =	ad1980_soc_remove,
 	.reg_cache_size = ARRAY_SIZE(ad1980_reg),
 	.reg_word_size = sizeof(u16),
 	.reg_cache_default = ad1980_reg,

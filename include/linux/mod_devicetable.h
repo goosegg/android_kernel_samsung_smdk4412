@@ -240,17 +240,17 @@ struct pcmcia_device_id {
 	__u16		match_flags;
 
 	__u16		manf_id;
-	__u16 		card_id;
+	__u16		card_id;
 
-	__u8  		func_id;
+	__u8		func_id;
 
 	/* for real multi-function devices */
-	__u8  		function;
+	__u8		function;
 
 	/* for pseudo multi-function devices */
-	__u8  		device_no;
+	__u8		device_no;
 
-	__u32 		prod_id_hash[4]
+	__u32		prod_id_hash[4]
 		__attribute__((aligned(sizeof(__u32))));
 
 	/* not matched against in kernelspace*/

@@ -29,8 +29,8 @@ not_thumb:
  *   [7:4] == 1101
  *    [20] == 0
  */
- 	.macro	do_ldrd_abort
- 	tst	r3, #0x0e000000			@ [27:25] == 0
+	.macro	do_ldrd_abort
+	tst	r3, #0x0e000000			@ [27:25] == 0
 	bne	not_ldrd
 	and	r2, r3, #0x000000f0		@ [7:4] == 1101
 	cmp	r2, #0x000000d0
@@ -39,4 +39,3 @@ not_thumb:
 	moveq	pc, lr
 not_ldrd:
 	.endm
-

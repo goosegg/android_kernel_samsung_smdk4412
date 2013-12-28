@@ -157,7 +157,7 @@ struct dw_mci_board exynos_dwmci##_channel##_def_platdata = {	\
 	.init			= exynos_dwmci_init,		\
 	.get_bus_wd		= exynos_dwmci_get_bus_wd,	\
 	.set_io_timing		= exynos_dwmci_set_io_timing,	\
-	.cd_type 		= DW_MCI_CD_INTERNAL 		\
+	.cd_type		= DW_MCI_CD_INTERNAL		\
 };
 
 EXYNOS_DWMCI_DEF_PLATDATA(0)
@@ -171,7 +171,7 @@ struct platform_device exynos_device_dwmci##_channel =		\
 	.name		= "dw_mmc",				\
 	.id		= _channel,				\
 	.num_resources	=					\
-	ARRAY_SIZE(exynos5_dwmci##_channel##_resource), 	\
+	ARRAY_SIZE(exynos5_dwmci##_channel##_resource),		\
 	.resource	= exynos5_dwmci##_channel##_resource,	\
 	.dev		= {					\
 		.dma_mask		= &exynos_dwmci_dmamask,\

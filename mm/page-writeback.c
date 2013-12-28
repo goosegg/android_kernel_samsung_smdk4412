@@ -668,7 +668,7 @@ void throttle_vm_writeout(gfp_t gfp_mask)
 
                 if (global_page_state(NR_UNSTABLE_NFS) +
 			global_page_state(NR_WRITEBACK) <= dirty_thresh)
-                        	break;
+				break;
                 congestion_wait(BLK_RW_ASYNC, HZ/10);
 
 		/*

@@ -260,7 +260,7 @@ enum nfs_opnum4 {
 Needs to be updated if more operations are defined in future.*/
 
 #define FIRST_NFS4_OP	OP_ACCESS
-#define LAST_NFS4_OP 	OP_RECLAIM_COMPLETE
+#define LAST_NFS4_OP	OP_RECLAIM_COMPLETE
 
 enum nfsstat4 {
 	NFS4_OK = 0,
@@ -346,7 +346,7 @@ enum nfsstat4 {
 	NFS4ERR_NOMATCHING_LAYOUT = 10060,
 	NFS4ERR_RECALLCONFLICT	= 10061,
 	NFS4ERR_UNKNOWN_LAYOUTTYPE = 10062,
-	NFS4ERR_SEQ_MISORDERED = 10063, 	/* unexpected seq.id in req */
+	NFS4ERR_SEQ_MISORDERED = 10063,		/* unexpected seq.id in req */
 	NFS4ERR_SEQUENCE_POS	= 10064,	/* [CB_]SEQ. op not 1st op */
 	NFS4ERR_REQ_TOO_BIG	= 10065,	/* request too big */
 	NFS4ERR_REP_TOO_BIG	= 10066,	/* reply too big */

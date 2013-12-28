@@ -607,7 +607,7 @@ static int __devinit al3201_probe(struct i2c_client *client,
 		       dev_attr_name.attr.name);
 		goto err_light_device_create_file3;
 	}
-	
+
 #if defined(CONFIG_MACH_KONA)
 	if (device_create_file(data->light_dev, &dev_attr_lux) < 0) {
 		pr_err("%s: could not create device file(%s)!\n", __func__,

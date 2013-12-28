@@ -1,7 +1,7 @@
 /* atmdev.h - ATM device driver declarations and various related items */
- 
+
 /* Written 1995-2000 by Werner Almesberger, EPFL LRC/ICA */
- 
+
 
 #ifndef LINUX_ATMDEV_H
 #define LINUX_ATMDEV_H
@@ -98,13 +98,13 @@ struct atm_dev_stats {
 					/* set backend handler */
 #define ATM_NEWBACKENDIF _IOW('a',ATMIOC_SPECIAL+3,atm_backend_t)
 					/* use backend to make new if */
-#define ATM_ADDPARTY  	_IOW('a', ATMIOC_SPECIAL+4,struct atm_iobuf)
- 					/* add party to p2mp call */
+#define ATM_ADDPARTY	_IOW('a', ATMIOC_SPECIAL+4,struct atm_iobuf)
+					/* add party to p2mp call */
 #ifdef CONFIG_COMPAT
 /* It actually takes struct sockaddr_atmsvc, not struct atm_iobuf */
-#define COMPAT_ATM_ADDPARTY  	_IOW('a', ATMIOC_SPECIAL+4,struct compat_atm_iobuf)
+#define COMPAT_ATM_ADDPARTY	_IOW('a', ATMIOC_SPECIAL+4,struct compat_atm_iobuf)
 #endif
-#define ATM_DROPPARTY 	_IOW('a', ATMIOC_SPECIAL+5,int)
+#define ATM_DROPPARTY	_IOW('a', ATMIOC_SPECIAL+5,int)
 					/* drop party from p2mp call */
 
 /*
@@ -112,7 +112,7 @@ struct atm_dev_stats {
  * above.  In the future we may support dynamic loading of these - for now,
  * they're just being used to share the ATMIOC_BACKEND ioctls
  */
-#define ATM_BACKEND_RAW		0	
+#define ATM_BACKEND_RAW		0
 #define ATM_BACKEND_PPP		1	/* PPPoATM - RFC2364 */
 #define ATM_BACKEND_BR2684	2	/* Bridged RFC1483/2684 */
 
@@ -164,7 +164,7 @@ struct atm_iobuf {
 /* for ATM_GETCIRANGE / ATM_SETCIRANGE */
 
 #define ATM_CI_MAX      -1              /* use maximum range of VPI/VCI */
- 
+
 struct atm_cirange {
 	signed char	vpi_bits;	/* 1..8, ATM_CI_MAX (-1) for maximum */
 	signed char	vci_bits;	/* 1..16, ATM_CI_MAX (-1) for maximum */
@@ -301,7 +301,7 @@ struct atm_vcc {
 	unsigned long	flags;		/* VCC flags (ATM_VF_*) */
 	short		vpi;		/* VPI and VCI (types must be equal */
 					/* with sockaddr) */
-	int 		vci;
+	int		vci;
 	unsigned long	aal_options;	/* AAL layer options */
 	unsigned long	atm_options;	/* ATM layer options */
 	struct atm_dev	*dev;		/* device back pointer */
@@ -374,7 +374,7 @@ struct atm_dev {
 	struct list_head dev_list;	/* linkage */
 };
 
- 
+
 /* OF: send_Oam Flags */
 
 #define ATM_OF_IMMED  1		/* Attempt immediate delivery */

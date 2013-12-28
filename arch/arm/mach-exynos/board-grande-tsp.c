@@ -302,5 +302,3 @@ void __init midas_tsp_init(void)
 
 	i2c_register_board_info(3, i2c_devs3, ARRAY_SIZE(i2c_devs3));
 }
-
-

@@ -843,7 +843,7 @@ unsigned int get_next_ino(void)
 EXPORT_SYMBOL(get_next_ino);
 
 /**
- *	new_inode 	- obtain an inode
+ *	new_inode	- obtain an inode
  *	@sb: superblock
  *
  *	Allocates a new inode for given superblock. The default gfp_mask

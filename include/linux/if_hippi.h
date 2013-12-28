@@ -18,7 +18,7 @@
  *		as published by the Free Software Foundation; either version
  *		2 of the License, or (at your option) any later version.
  */
- 
+
 #ifndef _LINUX_IF_HIPPI_H
 #define _LINUX_IF_HIPPI_H
 
@@ -48,9 +48,9 @@
  */
 
 /*
- *	HIPPI statistics collection data. 
+ *	HIPPI statistics collection data.
  */
- 
+
 struct hipnet_statistics {
 	int	rx_packets;		/* total packets received	*/
 	int	tx_packets;		/* total packets transmitted	*/
@@ -90,7 +90,7 @@ struct hippi_fp_hdr {
 #endif
 #elif defined(__LITTLE_ENDIAN_BITFIELD)
 	__u8		reserved:6;			/* must be zero */
-	__u8	 	start_d2_burst_boundary:1;	/* must be zero */
+	__u8		start_d2_burst_boundary:1;	/* must be zero */
 	__u8		d1_data_present:1;		/* must be 1 */
 #if 0
 	__u16		d2_offset:3;			/* must be zero */

@@ -18,10 +18,10 @@
  *	Private events for Gravis Ultrasound (GUS)
  *
  *	Format:
- *		byte 0 		- SEQ_PRIVATE (0xfe)
- *		byte 1 		- Synthesizer device number (0-N)
- *		byte 2 		- Command (see below)
- *		byte 3 		- Voice number (0-31)
+ *		byte 0		- SEQ_PRIVATE (0xfe)
+ *		byte 1		- Synthesizer device number (0-N)
+ *		byte 2		- Command (see below)
+ *		byte 3		- Voice number (0-31)
  *		bytes 4 and 5	- parameter P1 (unsigned short)
  *		bytes 6 and 7	- parameter P2 (unsigned short)
  *

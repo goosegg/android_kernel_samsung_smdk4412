@@ -6,7 +6,7 @@
 
 #define NETLINK_ROUTE		0	/* Routing/device hook				*/
 #define NETLINK_UNUSED		1	/* Unused number				*/
-#define NETLINK_USERSOCK	2	/* Reserved for user mode socket protocols 	*/
+#define NETLINK_USERSOCK	2	/* Reserved for user mode socket protocols	*/
 #define NETLINK_FIREWALL	3	/* Firewalling hook				*/
 #define NETLINK_INET_DIAG	4	/* INET socket monitoring			*/
 #define NETLINK_NFLOG		5	/* netfilter/iptables ULOG */
@@ -14,7 +14,7 @@
 #define NETLINK_SELINUX		7	/* SELinux event notifications */
 #define NETLINK_ISCSI		8	/* Open-iSCSI */
 #define NETLINK_AUDIT		9	/* auditing */
-#define NETLINK_FIB_LOOKUP	10	
+#define NETLINK_FIB_LOOKUP	10
 #define NETLINK_CONNECTOR	11
 #define NETLINK_NETFILTER	12	/* netfilter subsystem */
 #define NETLINK_IP6_FW		13
@@ -27,13 +27,13 @@
 #define NETLINK_RDMA		20
 
 
-#define MAX_LINKS 32		
+#define MAX_LINKS 32
 
 struct sockaddr_nl {
 	sa_family_t	nl_family;	/* AF_NETLINK	*/
 	unsigned short	nl_pad;		/* zero		*/
 	__u32		nl_pid;		/* port ID	*/
-       	__u32		nl_groups;	/* multicast groups mask */
+	__u32		nl_groups;	/* multicast groups mask */
 };
 
 struct nlmsghdr {
@@ -46,10 +46,10 @@ struct nlmsghdr {
 
 /* Flags values */
 
-#define NLM_F_REQUEST		1	/* It is request message. 	*/
+#define NLM_F_REQUEST		1	/* It is request message.	*/
 #define NLM_F_MULTI		2	/* Multipart message, terminated by NLMSG_DONE */
 #define NLM_F_ACK		4	/* Reply with ack, with zero or error code */
-#define NLM_F_ECHO		8	/* Echo this request 		*/
+#define NLM_F_ECHO		8	/* Echo this request		*/
 #define NLM_F_DUMP_INTR		16	/* Dump was inconsistent due to sequence change */
 
 /* Modifiers to GET request */
@@ -108,7 +108,7 @@ struct nl_pktinfo {
 	__u32	group;
 };
 
-#define NET_MAJOR 36		/* Major 36 is reserved for networking 						*/
+#define NET_MAJOR 36		/* Major 36 is reserved for networking						*/
 
 enum {
 	NETLINK_UNCONNECTED = 0,

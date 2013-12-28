@@ -189,7 +189,7 @@ wait_queue_head_t *bit_waitqueue(void *, int);
 #define wake_up_interruptible_sync_poll(x, m)				\
 	__wake_up_sync_key((x), TASK_INTERRUPTIBLE, 1, (void *) (m))
 
-#define __wait_event(wq, condition) 					\
+#define __wait_event(wq, condition)					\
 do {									\
 	DEFINE_WAIT(__wait);						\
 									\
@@ -214,9 +214,9 @@ do {									\
  * wake_up() has to be called after changing any variable that could
  * change the result of the wait condition.
  */
-#define wait_event(wq, condition) 					\
+#define wait_event(wq, condition)					\
 do {									\
-	if (condition)	 						\
+	if (condition)							\
 		break;							\
 	__wait_event(wq, condition);					\
 } while (0)
@@ -258,7 +258,7 @@ do {									\
 #define wait_event_timeout(wq, condition, timeout)			\
 ({									\
 	long __ret = timeout;						\
-	if (!(condition)) 						\
+	if (!(condition))						\
 		__wait_event_timeout(wq, condition, __ret);		\
 	__ret;								\
 })
@@ -368,7 +368,7 @@ do {									\
 			continue;					\
 		}							\
 		ret = -ERESTARTSYS;					\
-		abort_exclusive_wait(&wq, &__wait, 			\
+		abort_exclusive_wait(&wq, &__wait,			\
 				TASK_INTERRUPTIBLE, NULL);		\
 		break;							\
 	}								\
@@ -725,7 +725,7 @@ static inline int wait_on_bit_lock(void *word, int bit,
 		return 0;
 	return out_of_line_wait_on_bit_lock(word, bit, action, mode);
 }
-	
+
 #endif /* __KERNEL__ */
 
 #endif

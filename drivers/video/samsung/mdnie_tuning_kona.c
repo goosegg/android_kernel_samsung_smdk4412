@@ -291,4 +291,3 @@ int mdnie_request_firmware(const char *path, u16 **buf, char *name)
 
 	return i;
 }
-

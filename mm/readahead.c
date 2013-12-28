@@ -339,8 +339,8 @@ static unsigned long get_next_ra_size(struct file_ra_state *ra,
 /*
  * Count contiguously cached pages from @offset-1 to @offset-@max,
  * this count is a conservative estimation of
- * 	- length of the sequential read sequence, or
- * 	- thrashing threshold in memory tight systems
+ *	- length of the sequential read sequence, or
+ *	- thrashing threshold in memory tight systems
  */
 static pgoff_t count_history_pages(struct address_space *mapping,
 				   struct file_ra_state *ra,

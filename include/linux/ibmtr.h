@@ -33,7 +33,7 @@
 
 #define ADAPTRESET      0x1     /* Control Adapter reset (add to base) */
 #define ADAPTRESETREL   0x2     /* Release Adapter from reset ( """)  */
-#define ADAPTINTREL	0x3 	/* Adapter interrupt release */
+#define ADAPTINTREL	0x3	/* Adapter interrupt release */
 
 #define GLOBAL_INT_ENABLE 0x02f0
 
@@ -221,20 +221,20 @@ struct tok_info {
 };
 
 /* token ring adapter commands */
-#define DIR_INTERRUPT 		0x00 /* struct srb_interrupt */
-#define DIR_MOD_OPEN_PARAMS 	0x01
-#define DIR_OPEN_ADAPTER 	0x03 /* struct dir_open_adapter */
-#define DIR_CLOSE_ADAPTER   	0x04
-#define DIR_SET_GRP_ADDR    	0x06
-#define DIR_SET_FUNC_ADDR   	0x07 /* struct srb_set_funct_addr */
-#define DIR_READ_LOG 		0x08 /* struct srb_read_log */
-#define DLC_OPEN_SAP 		0x15 /* struct dlc_open_sap */
-#define DLC_CLOSE_SAP       	0x16
-#define DATA_LOST 		0x20 /* struct asb_rec */
-#define REC_DATA 		0x81 /* struct arb_rec_req */
-#define XMIT_DATA_REQ 		0x82 /* struct arb_xmit_req */
-#define DLC_STATUS 		0x83 /* struct arb_dlc_status */
-#define RING_STAT_CHANGE    	0x84 /* struct dlc_open_sap ??? */
+#define DIR_INTERRUPT		0x00 /* struct srb_interrupt */
+#define DIR_MOD_OPEN_PARAMS	0x01
+#define DIR_OPEN_ADAPTER	0x03 /* struct dir_open_adapter */
+#define DIR_CLOSE_ADAPTER	0x04
+#define DIR_SET_GRP_ADDR	0x06
+#define DIR_SET_FUNC_ADDR	0x07 /* struct srb_set_funct_addr */
+#define DIR_READ_LOG		0x08 /* struct srb_read_log */
+#define DLC_OPEN_SAP		0x15 /* struct dlc_open_sap */
+#define DLC_CLOSE_SAP		0x16
+#define DATA_LOST		0x20 /* struct asb_rec */
+#define REC_DATA		0x81 /* struct arb_rec_req */
+#define XMIT_DATA_REQ		0x82 /* struct arb_xmit_req */
+#define DLC_STATUS		0x83 /* struct arb_dlc_status */
+#define RING_STAT_CHANGE	0x84 /* struct dlc_open_sap ??? */
 
 /* DIR_OPEN_ADAPTER options */
 #define OPEN_PASS_BCON_MAC 0x0100
@@ -354,7 +354,7 @@ struct asb_rec {
 };
 
 struct rec_buf {
-  	unsigned char reserved1[2];
+	unsigned char reserved1[2];
 	__u16 buf_ptr;
 	unsigned char reserved2;
 	unsigned char receive_fs;

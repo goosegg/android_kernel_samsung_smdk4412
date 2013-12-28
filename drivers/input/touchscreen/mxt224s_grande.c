@@ -105,7 +105,7 @@ struct mxt_info {
 #define MXT_STATE_PRESS			1
 #define MXT_STATE_MOVE			2
 
-#define MAX_USING_FINGER_NUM 	10
+#define MAX_USING_FINGER_NUM	10
 
 #define MXT_SW_RESET_TIME		300
 
@@ -351,8 +351,8 @@ static int read_mem(struct mxt_data *data, u16 reg, u8 len, u8 *buf)
 		},
 	};
 #if DUAL_TSP
-		msg[0].addr=Tsp_current_addr; 
-		msg[1].addr=Tsp_current_addr; 
+		msg[0].addr=Tsp_current_addr;
+		msg[1].addr=Tsp_current_addr;
 #endif
 
 	ret = i2c_transfer(data->client->adapter, msg, 2);
@@ -372,7 +372,7 @@ static int write_mem(struct mxt_data *data, u16 reg, u8 len, const u8 *buf)
 	memcpy(tmp + 2, buf, len);
 
 #if DUAL_TSP
-	data->client->addr =Tsp_current_addr; 
+	data->client->addr =Tsp_current_addr;
 #endif
 	ret = i2c_master_send(data->client, tmp, sizeof(tmp));
 	if (ret < 0){
@@ -758,7 +758,7 @@ static void mxt_ta_probe(int ta_status)
 		mxt_download_config(data, MXT_TA_CFG_NAME);
 	else
 		mxt_download_config(data, MXT_BATT_CFG_NAME);
-#else	
+#else
 #if 1//!(FOR_BRINGUP)
 	u16 obj_address = 0;
 	u16 size;
@@ -789,7 +789,7 @@ static void mxt_ta_probe(int ta_status)
 	}
 #endif
     get_object_info(data, PROCG_NOISESUPPRESSION_T62,
-    	&size, &obj_address);
+	&size, &obj_address);
 
 	//Read CALCFG1 for Setting CHRGON
 	read_mem(data, obj_address+1, 1, &value);
@@ -1137,7 +1137,7 @@ static irqreturn_t mxt_irq_thread(int irq, void *ptr)
 			if ((msg[1]&0x10) == 0x10) {
 				/* calibration */
 				pr_info("calibration is"
-					" on going !!\n");			
+					" on going !!\n");
 
 #if CHECK_ANTITOUCH
 			/* After Calibration */
@@ -1359,8 +1359,8 @@ void samsung_switching_tsp_suspend(void)
 {
 	static const u8 sleep_power_cfg[3]={0,0,0};
 	int ret;
-	int i=0; 
-			
+	int i=0;
+
 	/******************************************************/
 	/*	  One TSP has to enter suspend mode					*/
 	/******************************************************/
@@ -1400,7 +1400,7 @@ void samsung_switching_tsp_resume(void)
 	int ret;
 	int i=0;
 	struct mxt_data *data = copy_data;
-	
+
 	printk("[TSP]%s : addr:%02x, tspsel :%d\n", __FUNCTION__, Tsp_current_addr, gpio_get_value(GPIO_TSP_SEL));
 
 	if (Tsp_main_initialized == 0) {
@@ -3870,18 +3870,18 @@ int mxt_download_config(struct mxt_data *data, const char *fn)
 	long cfg_size = 0;
 	unsigned char *cfg_data;
 	mm_segment_t oldfs;
-	
+
 	oldfs = get_fs();
-	set_fs(get_ds());	
-	
+	set_fs(get_ds());
+
 	printk("[TSP] mxt_download_config %s\n", fn);
-	
+
 	filp = filp_open(fn, O_RDONLY, 0);
 	if (IS_ERR(filp)) {
 		pr_err("file open error:%d\n", (s32)filp);
 		return -1;
 	}
-	
+
 	cfg_size = filp->f_path.dentry->d_inode->i_size;
 	pr_info("Size of the Cfg file : %ld(bytes)\n", cfg_size);
 
@@ -3902,18 +3902,18 @@ int mxt_download_config(struct mxt_data *data, const char *fn)
 	filp_close(filp, current->files);
 
 	set_fs(oldfs);
-	
+
 	//firmware struct
 	cfg = kzalloc(sizeof(struct firmware), GFP_KERNEL);
 	cfg->data = cfg_data;
-	cfg->size = cfg_size;		
+	cfg->size = cfg_size;
 #else
 	ret = request_firmware(&cfg, fn, dev);
 	if (ret < 0) {
 		dev_err(dev, "Failure to request config file %s\n", fn);
 		return 0;
 	}
-#endif		
+#endif
 
 	if (strncmp(cfg->data, MXT_CFG_MAGIC, strlen(MXT_CFG_MAGIC))) {
 		dev_err(dev, "Unrecognised config file\n");
@@ -4040,13 +4040,13 @@ int mxt_download_config(struct mxt_data *data, const char *fn)
 	}
 
 release:
-	
+
 #ifdef CONFIG_READ_FROM_SDCARD
-	kfree(cfg);	
+	kfree(cfg);
 	kfree(cfg_data);
 #else
 	release_firmware(cfg);
-#endif	
+#endif
 	return ret;
 }
 

@@ -30,7 +30,7 @@
 
 /*
  * 05.04.94  -  Multi-page memory management added for v1.1.
- * 		Idea by Alex Bligh (alex@cconcepts.co.uk)
+ *		Idea by Alex Bligh (alex@cconcepts.co.uk)
  *
  * 16.07.99  -  Support of BIGMEM added by Gerhard Wichert, Siemens AG
  *		(Gerhard.Wichert@pdb.siemens.de)
@@ -1429,7 +1429,7 @@ int zap_vma_ptes(struct vm_area_struct *vma, unsigned long address,
 		unsigned long size)
 {
 	if (address < vma->vm_start || address + size > vma->vm_end ||
-	    		!(vma->vm_flags & VM_PFNMAP))
+			!(vma->vm_flags & VM_PFNMAP))
 		return -1;
 	zap_page_range(vma, address, size, NULL);
 	return 0;
@@ -1680,7 +1680,7 @@ int __get_user_pages(struct task_struct *tsk, struct mm_struct *mm,
 
 	VM_BUG_ON(!!pages != !!(gup_flags & FOLL_GET));
 
-	/* 
+	/*
 	 * Require read or write permissions.
 	 * If FOLL_FORCE is set, we only require the "MAY" flags.
 	 */
@@ -2327,7 +2327,7 @@ int remap_pfn_range(struct vm_area_struct *vma, unsigned long addr,
 	 *	in 2.4 it kept swapout's vma scan off this vma; but
 	 *	in 2.6 the LRU scan won't even find its pages, so this
 	 *	flag means no more than count its pages in reserved_vm,
-	 * 	and omit it from core dump, even when VM_IO turned off.
+	 *	and omit it from core dump, even when VM_IO turned off.
 	 *   VM_PFNMAP tells the core MM that the base pages are just
 	 *	raw PFN mappings, and do not have a "struct page" associated
 	 *	with them.

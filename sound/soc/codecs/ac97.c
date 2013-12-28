@@ -119,8 +119,8 @@ static int ac97_soc_resume(struct snd_soc_codec *codec)
 static struct snd_soc_codec_driver soc_codec_dev_ac97 = {
 	.write =	ac97_write,
 	.read =		ac97_read,
-	.probe = 	ac97_soc_probe,
-	.remove = 	ac97_soc_remove,
+	.probe =	ac97_soc_probe,
+	.remove =	ac97_soc_remove,
 	.suspend =	ac97_soc_suspend,
 	.resume =	ac97_soc_resume,
 };

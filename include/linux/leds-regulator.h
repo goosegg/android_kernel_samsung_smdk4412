@@ -16,7 +16,7 @@
  * Use "vled" as supply id when declaring the regulator consumer:
  *
  * static struct regulator_consumer_supply pcap_regulator_VVIB_consumers [] = {
- * 	{ .dev_name = "leds-regulator.0", .supply = "vled" },
+ *	{ .dev_name = "leds-regulator.0", .supply = "vled" },
  * };
  *
  * If you have several regulator driven LEDs, you can append a numerical id to
@@ -24,15 +24,15 @@
  * device:
  *
  * static struct led_regulator_platform_data a780_vibrator_data = {
- * 	.name   = "a780::vibrator",
+ *	.name   = "a780::vibrator",
  * };
  *
  * static struct platform_device a780_vibrator = {
- * 	.name = "leds-regulator",
- * 	.id   = 0,
- * 	.dev  = {
- * 		.platform_data = &a780_vibrator_data,
- * 	},
+ *	.name = "leds-regulator",
+ *	.id   = 0,
+ *	.dev  = {
+ *		.platform_data = &a780_vibrator_data,
+ *	},
  * };
  */
 

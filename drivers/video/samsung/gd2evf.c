@@ -560,4 +560,3 @@ module_exit(gd2evf_exit);
 
 MODULE_DESCRIPTION("GD2 EVF LCD Driver");
 MODULE_LICENSE("GPL");
-

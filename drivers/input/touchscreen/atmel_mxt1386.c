@@ -3598,4 +3598,3 @@ module_exit(mxt_cleanup);
 MODULE_AUTHOR("Samsung");
 MODULE_DESCRIPTION("Driver for Atmel mXT1386 Touchscreen Controller");
 MODULE_LICENSE("GPL");
-

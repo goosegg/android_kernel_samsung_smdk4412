@@ -371,9 +371,9 @@ __arm946_setup:
  *  Access Permission Settings for future permission control by PU.
  *
  *				priv.	user
- * 	region 0 (whole)	rw	--	: b0001
- * 	region 1 (RAM)		rw	rw	: b0011
- * 	region 2 (FLASH)	rw	r-	: b0010
+ *	region 0 (whole)	rw	--	: b0001
+ *	region 1 (RAM)		rw	rw	: b0011
+ *	region 2 (FLASH)	rw	r-	: b0010
  *	region 3~7 (none)	--	--	: b0000
  */
 	mov	r0, #0x00000031
@@ -420,4 +420,3 @@ __arm946_proc_info:
 	.long	0
 	.long	arm940_cache_fns
 	.size	__arm946_proc_info, . - __arm946_proc_info
-

@@ -56,7 +56,7 @@ static inline int cpuset_zone_allowed_hardwall(struct zone *z, gfp_t gfp_mask)
 extern int cpuset_mems_allowed_intersects(const struct task_struct *tsk1,
 					  const struct task_struct *tsk2);
 
-#define cpuset_memory_pressure_bump() 				\
+#define cpuset_memory_pressure_bump()				\
 	do {							\
 		if (cpuset_memory_pressure_enabled)		\
 			__cpuset_memory_pressure_bump();	\

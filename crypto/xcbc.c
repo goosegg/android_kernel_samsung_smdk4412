@@ -16,7 +16,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * Author:
- * 	Kazunori Miyazawa <miyazawa@linux-ipv6.org>
+ *	Kazunori Miyazawa <miyazawa@linux-ipv6.org>
  */
 
 #include <crypto/internal/hash.h>

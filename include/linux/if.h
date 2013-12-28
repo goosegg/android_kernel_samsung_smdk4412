@@ -39,7 +39,7 @@
 #define	IFF_PROMISC	0x100		/* receive all packets		*/
 #define	IFF_ALLMULTI	0x200		/* receive all multicast packets*/
 
-#define IFF_MASTER	0x400		/* master of a load balancer 	*/
+#define IFF_MASTER	0x400		/* master of a load balancer	*/
 #define IFF_SLAVE	0x800		/* slave of a load balancer	*/
 
 #define IFF_MULTICAST	0x1000		/* Supports multicast		*/
@@ -60,7 +60,7 @@
 #define IFF_802_1Q_VLAN 0x1             /* 802.1Q VLAN device.          */
 #define IFF_EBRIDGE	0x2		/* Ethernet bridging device.	*/
 #define IFF_SLAVE_INACTIVE	0x4	/* bonding slave not the curr. active */
-#define IFF_MASTER_8023AD	0x8	/* bonding master, 802.3ad. 	*/
+#define IFF_MASTER_8023AD	0x8	/* bonding master, 802.3ad.	*/
 #define IFF_MASTER_ALB	0x10		/* bonding master, balance-alb.	*/
 #define IFF_BONDING	0x20		/* bonding master or slave	*/
 #define IFF_SLAVE_NEEDARP 0x40		/* need ARPs for validation	*/
@@ -124,7 +124,7 @@ enum {
 };
 
 /*
- *	Device mapping structure. I'd just gone off and designed a 
+ *	Device mapping structure. I'd just gone off and designed a
  *	beautiful scheme using only loadable modules with arguments
  *	for driver options and along come the PCMCIA people 8)
  *
@@ -136,7 +136,7 @@ enum {
 struct ifmap {
 	unsigned long mem_start;
 	unsigned long mem_end;
-	unsigned short base_addr; 
+	unsigned short base_addr;
 	unsigned char irq;
 	unsigned char dma;
 	unsigned char port;
@@ -173,7 +173,7 @@ struct ifreq {
 	{
 		char	ifrn_name[IFNAMSIZ];		/* if name, e.g. "en0" */
 	} ifr_ifrn;
-	
+
 	union {
 		struct	sockaddr ifru_addr;
 		struct	sockaddr ifru_dstaddr;
@@ -191,8 +191,8 @@ struct ifreq {
 	} ifr_ifru;
 };
 
-#define ifr_name	ifr_ifrn.ifrn_name	/* interface name 	*/
-#define ifr_hwaddr	ifr_ifru.ifru_hwaddr	/* MAC address 		*/
+#define ifr_name	ifr_ifrn.ifrn_name	/* interface name	*/
+#define ifr_hwaddr	ifr_ifru.ifru_hwaddr	/* MAC address		*/
 #define	ifr_addr	ifr_ifru.ifru_addr	/* address		*/
 #define	ifr_dstaddr	ifr_ifru.ifru_dstaddr	/* other end of p-p lnk	*/
 #define	ifr_broadaddr	ifr_ifru.ifru_broadaddr	/* broadcast address	*/
@@ -205,7 +205,7 @@ struct ifreq {
 #define	ifr_data	ifr_ifru.ifru_data	/* for use by interface	*/
 #define ifr_ifindex	ifr_ifru.ifru_ivalue	/* interface index	*/
 #define ifr_bandwidth	ifr_ifru.ifru_ivalue    /* link bandwidth	*/
-#define ifr_qlen	ifr_ifru.ifru_ivalue	/* Queue length 	*/
+#define ifr_qlen	ifr_ifru.ifru_ivalue	/* Queue length		*/
 #define ifr_newname	ifr_ifru.ifru_newname	/* New name		*/
 #define ifr_settings	ifr_ifru.ifru_settings	/* Device/proto settings*/
 

@@ -3369,7 +3369,7 @@ static void ext4_mb_put_pa(struct ext4_allocation_context *ac,
 	 *  P1 (buddy init)			P2 (regular allocation)
 	 *					find block B in PA
 	 *  copy on-disk bitmap to buddy
-	 *  					mark B in on-disk bitmap
+	 *					mark B in on-disk bitmap
 	 *					drop PA from group
 	 *  mark all PAs in buddy
 	 *

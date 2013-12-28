@@ -528,7 +528,7 @@ static const struct bin_table bin_net_ipv6_conf_var_table[] = {
 
 static const struct bin_table bin_net_ipv6_conf_table[] = {
 	{ CTL_DIR,	NET_PROTO_CONF_ALL,		"all",	bin_net_ipv6_conf_var_table },
-	{ CTL_DIR,	NET_PROTO_CONF_DEFAULT, 	"default", bin_net_ipv6_conf_var_table },
+	{ CTL_DIR,	NET_PROTO_CONF_DEFAULT,		"default", bin_net_ipv6_conf_var_table },
 	{ CTL_DIR,	0, NULL, bin_net_ipv6_conf_var_table },
 	{}
 };
@@ -1003,7 +1003,7 @@ static ssize_t bin_intvec(struct file *file,
 			value = simple_strtoul(str, &str, 10);
 			while (isspace(*str))
 				str++;
-			
+
 			result = -EFAULT;
 			if (put_user(value, vec + i))
 				goto out_kfree;
@@ -1081,7 +1081,7 @@ static ssize_t bin_ulongvec(struct file *file,
 			value = simple_strtoul(str, &str, 10);
 			while (isspace(*str))
 				str++;
-			
+
 			result = -EFAULT;
 			if (put_user(value, vec + i))
 				goto out_kfree;

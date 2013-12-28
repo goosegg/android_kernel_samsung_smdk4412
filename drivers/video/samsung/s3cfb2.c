@@ -1229,4 +1229,3 @@ module_exit(s3cfb_unregister);
 MODULE_AUTHOR("Jinsung, Yang <jsgood.yang@samsung.com>");
 MODULE_DESCRIPTION("Samsung Display Controller (FIMD) driver");
 MODULE_LICENSE("GPL");
-

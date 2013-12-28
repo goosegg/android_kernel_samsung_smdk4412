@@ -209,9 +209,9 @@
 #define ISDN_P_NONE		0
 #define ISDN_P_BASE		0
 #define ISDN_P_TE_S0		0x01
-#define ISDN_P_NT_S0  		0x02
+#define ISDN_P_NT_S0		0x02
 #define ISDN_P_TE_E1		0x03
-#define ISDN_P_NT_E1  		0x04
+#define ISDN_P_NT_E1		0x04
 #define ISDN_P_TE_UP0		0x05
 #define ISDN_P_NT_UP0		0x06
 
@@ -376,8 +376,8 @@ clear_channelmap(u_int nr, u_char *map)
 #define MISDN_CTRL_HFC_CONF_SPLIT	0x4004
 #define MISDN_CTRL_HFC_RECEIVE_OFF	0x4005
 #define MISDN_CTRL_HFC_RECEIVE_ON	0x4006
-#define MISDN_CTRL_HFC_ECHOCAN_ON 	0x4007
-#define MISDN_CTRL_HFC_ECHOCAN_OFF 	0x4008
+#define MISDN_CTRL_HFC_ECHOCAN_ON	0x4007
+#define MISDN_CTRL_HFC_ECHOCAN_OFF	0x4008
 #define MISDN_CTRL_HFC_WD_INIT		0x4009
 #define MISDN_CTRL_HFC_WD_RESET		0x400A
 

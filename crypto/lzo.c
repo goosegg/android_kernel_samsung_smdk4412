@@ -85,8 +85,8 @@ static struct crypto_alg alg = {
 	.cra_init		= lzo_init,
 	.cra_exit		= lzo_exit,
 	.cra_u			= { .compress = {
-	.coa_compress 		= lzo_compress,
-	.coa_decompress  	= lzo_decompress } }
+	.coa_compress		= lzo_compress,
+	.coa_decompress		= lzo_decompress } }
 };
 
 static int __init lzo_mod_init(void)

@@ -1,6 +1,6 @@
 /* drivers/media/video/samsung/fimg2d3x/fimg2d3x_regs.c
  *
- * Copyright  2010 Samsung Electronics Co, Ltd. All Rights Reserved. 
+ * Copyright  2010 Samsung Electronics Co, Ltd. All Rights Reserved.
  *		      http://www.samsungsemi.com/
  *
  * This program is free software; you can redistribute it and/or modify
@@ -20,43 +20,43 @@
 void get_rot_config(unsigned int rotate_value, u32 *rot, u32 *src_dir, u32 *dst_dir)
 {
 	switch(rotate_value) {
-	case G2D_ROT_90: 
-		*rot = 1;   	/* rotation = 1, src_y_dir == dst_y_dir, src_x_dir == dst_x_dir */
-		*src_dir = 0;		
-		*dst_dir = 0;		
+	case G2D_ROT_90:
+		*rot = 1;	/* rotation = 1, src_y_dir == dst_y_dir, src_x_dir == dst_x_dir */
+		*src_dir = 0;
+		*dst_dir = 0;
 		break;
 
-	case G2D_ROT_270: 
-		*rot = 1;   	/* rotation = 1, src_y_dir != dst_y_dir, src_x_dir != dst_x_dir */
-		*src_dir = 0;
-		*dst_dir = 0x3;
-		break;			
-
-	case G2D_ROT_180: 
-		*rot = 0;    	/* rotation = 0, src_y_dir != dst_y_dir, src_x_dir != dst_x_dir */
+	case G2D_ROT_270:
+		*rot = 1;	/* rotation = 1, src_y_dir != dst_y_dir, src_x_dir != dst_x_dir */
 		*src_dir = 0;
 		*dst_dir = 0x3;
 		break;
 
-	case G2D_ROT_X_FLIP: 
-		*rot = 0;    	/* rotation = 0, src_y_dir != dst_y_dir */
+	case G2D_ROT_180:
+		*rot = 0;	/* rotation = 0, src_y_dir != dst_y_dir, src_x_dir != dst_x_dir */
+		*src_dir = 0;
+		*dst_dir = 0x3;
+		break;
+
+	case G2D_ROT_X_FLIP:
+		*rot = 0;	/* rotation = 0, src_y_dir != dst_y_dir */
 		*src_dir = 0;
 		*dst_dir = 0x2;
 		break;
 
-	case G2D_ROT_Y_FLIP: 
-		*rot = 0;    	/* rotation = 0, src_x_dir != dst_y_dir */
+	case G2D_ROT_Y_FLIP:
+		*rot = 0;	/* rotation = 0, src_x_dir != dst_y_dir */
 		*src_dir = 0;
 		*dst_dir = 0x1;
 		break;
 
 	default :
-		*rot = 0;   	/* rotation = 0; */
+		*rot = 0;	/* rotation = 0; */
 		*src_dir = 0;
 		*dst_dir = 0;
 		break;
 	}
-	
+
 	return ;
 }
 
@@ -93,7 +93,7 @@ int g2d_check_params(g2d_params *params)
 	}
 
 	if (flag->alpha_val > G2D_ALPHA_BLENDING_OPAQUE) {
-		return -1; 
+		return -1;
 	}
 
 	return 0;
@@ -121,8 +121,8 @@ u32 g2d_set_src_img(struct g2d_global *g2d_dev, g2d_rect * rect, g2d_flag * flag
 		writel(G2D_SRC_SELECT_R_USE_FG_COLOR, g2d_dev->base + SRC_SELECT_REG);
 
 		/* foreground color */
-		// writel(flag->src_color, g2d_dev->base + FG_COLOR_REG);		
-		writel(0, g2d_dev->base + FG_COLOR_REG);	
+		// writel(flag->src_color, g2d_dev->base + FG_COLOR_REG);
+		writel(0, g2d_dev->base + FG_COLOR_REG);
 	} else {
 		/* select source */
 		writel(G2D_SRC_SELECT_R_NORMAL, g2d_dev->base + SRC_SELECT_REG);
@@ -142,7 +142,7 @@ u32 g2d_set_src_img(struct g2d_global *g2d_dev, g2d_rect * rect, g2d_flag * flag
 
 		data = ((rect->y + rect->h) << 16) | (rect->x + rect->w);
 		writel(data, g2d_dev->base + SRC_RIGHT_BOTTOM_REG);
-        
+
 	}
 
 	return blt_cmd;
@@ -152,7 +152,7 @@ u32 g2d_set_dst_img(struct g2d_global *g2d_dev, g2d_rect * rect)
 {
 	u32 data    = 0;
 	u32 blt_cmd = 0;
-	
+
 	/* select destination */
 	writel(G2D_DST_SELECT_R_NORMAL, g2d_dev->base + DST_SELECT_REG);
 
@@ -236,7 +236,7 @@ u32 g2d_set_pattern(struct g2d_global *g2d_dev, g2d_rect * rect, g2d_flag * flag
 	u32 blt_cmd = 0;
 
 	/* Third Operand Selection */
-	switch(flag->third_op_mode) {	
+	switch(flag->third_op_mode) {
 	case G2D_THIRD_OP_PATTERN :
 		/* set base address of pattern image */
 		writel((u32)rect->addr, g2d_dev->base + PAT_BASE_ADDR_REG);
@@ -269,11 +269,11 @@ u32 g2d_set_pattern(struct g2d_global *g2d_dev, g2d_rect * rect, g2d_flag * flag
 	}
 
 	writel(data, g2d_dev->base + THIRD_OPERAND_REG);
-	
+
 	if(flag->third_op_mode == G2D_THIRD_OP_NONE) {
 		data = ((G2D_ROP_REG_SRC << 8) | G2D_ROP_REG_SRC);
 	} else {
-		switch(flag->rop_mode) {	
+		switch(flag->rop_mode) {
 		case G2D_ROP_DST:
 			data = ((G2D_ROP_REG_DST << 8) | G2D_ROP_REG_DST);
 			break;
@@ -341,8 +341,8 @@ void g2d_set_bitblt_cmd(struct g2d_global *g2d_dev, g2d_rect * src_rect, g2d_rec
 		|| (src_rect->h  != dst_rect->h)) {
 		blt_cmd |= G2D_BLT_CMD_R_STRETCH_ENABLE;
 	}
-	
-	if ((clip->t != dst_rect->y) || (clip->b != dst_rect->y + dst_rect->h) 
+
+	if ((clip->t != dst_rect->y) || (clip->b != dst_rect->y + dst_rect->h)
 		|| (clip->l != dst_rect->x) || (clip->r != dst_rect->x + dst_rect->w)) {
 		blt_cmd |= G2D_BLT_CMD_R_CW_ENABLE;
 	}
@@ -373,4 +373,3 @@ void g2d_start_bitblt(struct g2d_global *g2d_dev, g2d_params *params)
 
 	writel(G2D_BITBLT_R_START, g2d_dev->base + BITBLT_START_REG);
 }
-

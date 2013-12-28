@@ -39,7 +39,7 @@ static int setup_bootmode(char *str)
 			c1_is_bootmode_recovery = 1;
 
 	printk(KERN_INFO "c1_is_bootmode_recovery = %d\n", c1_is_bootmode_recovery);
-	
+
 	return c1_is_bootmode_recovery;
 }
 

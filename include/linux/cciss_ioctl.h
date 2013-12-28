@@ -10,11 +10,11 @@
 
 typedef struct _cciss_pci_info_struct
 {
-	unsigned char 	bus;
-	unsigned char 	dev_fn;
+	unsigned char	bus;
+	unsigned char	dev_fn;
 	unsigned short	domain;
-	__u32 		board_id;
-} cciss_pci_info_struct; 
+	__u32		board_id;
+} cciss_pci_info_struct;
 
 typedef struct _cciss_coalint_struct
 {
@@ -26,8 +26,8 @@ typedef char NodeName_type[16];
 
 typedef __u32 Heartbeat_type;
 
-#define CISS_PARSCSIU2 	0x0001
-#define CISS_PARCSCIU3 	0x0002
+#define CISS_PARSCSIU2	0x0001
+#define CISS_PARCSCIU3	0x0002
 #define CISS_FIBRE1G	0x0100
 #define CISS_FIBRE2G	0x0200
 typedef __u32 BusTypes_type;
@@ -40,7 +40,7 @@ typedef __u32 DriverVer_type;
 typedef struct _IOCTL_Command_struct {
   LUNAddr_struct	   LUN_info;
   RequestBlock_struct      Request;
-  ErrorInfo_struct  	   error_info; 
+  ErrorInfo_struct	   error_info;
   WORD			   buf_size;  /* size in bytes of the buf */
   BYTE			   __user *buf;
 } IOCTL_Command_struct;
@@ -48,10 +48,10 @@ typedef struct _IOCTL_Command_struct {
 typedef struct _BIG_IOCTL_Command_struct {
   LUNAddr_struct	   LUN_info;
   RequestBlock_struct      Request;
-  ErrorInfo_struct  	   error_info;
+  ErrorInfo_struct	   error_info;
   DWORD			   malloc_size; /* < MAX_KMALLOC_SIZE in cciss.c */
   DWORD			   buf_size;    /* size in bytes of the buf */
-  				        /* < malloc_size * MAXSGENTRIES */
+				        /* < malloc_size * MAXSGENTRIES */
   BYTE			   __user *buf;
 } BIG_IOCTL_Command_struct;
 
@@ -77,7 +77,7 @@ typedef struct _LogvolInfo_struct{
 #define CCISS_PASSTHRU	   _IOWR(CCISS_IOC_MAGIC, 11, IOCTL_Command_struct)
 #define CCISS_DEREGDISK	   _IO(CCISS_IOC_MAGIC, 12)
 
-/* no longer used... use REGNEWD instead */ 
+/* no longer used... use REGNEWD instead */
 #define CCISS_REGNEWDISK  _IOW(CCISS_IOC_MAGIC, 13, int)
 
 #define CCISS_REGNEWD	   _IO(CCISS_IOC_MAGIC, 14)
@@ -92,7 +92,7 @@ typedef struct _LogvolInfo_struct{
 typedef struct _IOCTL32_Command_struct {
   LUNAddr_struct	   LUN_info;
   RequestBlock_struct      Request;
-  ErrorInfo_struct  	   error_info;
+  ErrorInfo_struct	   error_info;
   WORD			   buf_size;  /* size in bytes of the buf */
   __u32			   buf; /* 32 bit pointer to data buffer */
 } IOCTL32_Command_struct;
@@ -100,11 +100,11 @@ typedef struct _IOCTL32_Command_struct {
 typedef struct _BIG_IOCTL32_Command_struct {
   LUNAddr_struct	   LUN_info;
   RequestBlock_struct      Request;
-  ErrorInfo_struct  	   error_info;
+  ErrorInfo_struct	   error_info;
   DWORD			   malloc_size; /* < MAX_KMALLOC_SIZE in cciss.c */
   DWORD			   buf_size;    /* size in bytes of the buf */
-  				        /* < malloc_size * MAXSGENTRIES */
-  __u32 		buf;	/* 32 bit pointer to data buffer */
+				        /* < malloc_size * MAXSGENTRIES */
+  __u32			buf;	/* 32 bit pointer to data buffer */
 } BIG_IOCTL32_Command_struct;
 
 #define CCISS_PASSTHRU32   _IOWR(CCISS_IOC_MAGIC, 11, IOCTL32_Command_struct)
@@ -112,4 +112,4 @@ typedef struct _BIG_IOCTL32_Command_struct {
 
 #endif /* CONFIG_COMPAT */
 #endif /* __KERNEL__ */
-#endif  
+#endif

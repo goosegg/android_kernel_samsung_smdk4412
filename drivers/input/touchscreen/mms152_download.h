@@ -180,4 +180,3 @@ extern const UINT16 MELFAS_binary_nLength_3;
 extern const  UINT8 MELFAS_binary_3[];
 extern const UINT16 MELFAS_binary_nLength_4;
 extern const  UINT8 MELFAS_binary_4[];
-

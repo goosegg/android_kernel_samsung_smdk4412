@@ -31,21 +31,21 @@
  *
  * int  (*open)(struct tty_struct * tty, struct file * filp);
  *
- * 	This routine is called when a particular tty device is opened.
- * 	This routine is mandatory; if this routine is not filled in,
- * 	the attempted open will fail with ENODEV.
+ *	This routine is called when a particular tty device is opened.
+ *	This routine is mandatory; if this routine is not filled in,
+ *	the attempted open will fail with ENODEV.
  *
  *	Required method.
- *     
+ *
  * void (*close)(struct tty_struct * tty, struct file * filp);
  *
- * 	This routine is called when a particular tty device is closed.
+ *	This routine is called when a particular tty device is closed.
  *
  *	Required method.
  *
  * void (*shutdown)(struct tty_struct * tty);
  *
- * 	This routine is called synchronously when a particular tty device
+ *	This routine is called synchronously when a particular tty device
  *	is closed for the last time freeing up the resources.
  *	Note that tty_shutdown() is not called if ops->shutdown is defined.
  *	This means one is responsible to take care of calling ops->remove (e.g.
@@ -60,22 +60,22 @@
  *
  *
  * int (*write)(struct tty_struct * tty,
- * 		 const unsigned char *buf, int count);
+ *		 const unsigned char *buf, int count);
  *
- * 	This routine is called by the kernel to write a series of
- * 	characters to the tty device.  The characters may come from
- * 	user space or kernel space.  This routine will return the
+ *	This routine is called by the kernel to write a series of
+ *	characters to the tty device.  The characters may come from
+ *	user space or kernel space.  This routine will return the
  *	number of characters actually accepted for writing.
  *
  *	Optional: Required for writable devices.
  *
  * int (*put_char)(struct tty_struct *tty, unsigned char ch);
  *
- * 	This routine is called by the kernel to write a single
- * 	character to the tty device.  If the kernel uses this routine,
- * 	it must call the flush_chars() routine (if defined) when it is
- * 	done stuffing characters into the driver.  If there is no room
- * 	in the queue, the character is ignored.
+ *	This routine is called by the kernel to write a single
+ *	character to the tty device.  If the kernel uses this routine,
+ *	it must call the flush_chars() routine (if defined) when it is
+ *	done stuffing characters into the driver.  If there is no room
+ *	in the queue, the character is ignored.
  *
  *	Optional: Kernel will use the write method if not provided.
  *
@@ -83,107 +83,107 @@
  *
  * void (*flush_chars)(struct tty_struct *tty);
  *
- * 	This routine is called by the kernel after it has written a
- * 	series of characters to the tty device using put_char().  
+ *	This routine is called by the kernel after it has written a
+ *	series of characters to the tty device using put_char().
  *
  *	Optional:
  *
  *	Note: Do not call this function directly, call tty_driver_flush_chars
- * 
+ *
  * int  (*write_room)(struct tty_struct *tty);
  *
- * 	This routine returns the numbers of characters the tty driver
- * 	will accept for queuing to be written.  This number is subject
- * 	to change as output buffers get emptied, or if the output flow
+ *	This routine returns the numbers of characters the tty driver
+ *	will accept for queuing to be written.  This number is subject
+ *	to change as output buffers get emptied, or if the output flow
  *	control is acted.
  *
  *	Required if write method is provided else not needed.
  *
  *	Note: Do not call this function directly, call tty_write_room
- * 
+ *
  * int  (*ioctl)(struct tty_struct *tty, unsigned int cmd, unsigned long arg);
  *
- * 	This routine allows the tty driver to implement
+ *	This routine allows the tty driver to implement
  *	device-specific ioctls.  If the ioctl number passed in cmd
- * 	is not recognized by the driver, it should return ENOIOCTLCMD.
+ *	is not recognized by the driver, it should return ENOIOCTLCMD.
  *
  *	Optional
  *
  * long (*compat_ioctl)(struct tty_struct *tty,,
- * 	                unsigned int cmd, unsigned long arg);
+ *	                unsigned int cmd, unsigned long arg);
  *
- * 	implement ioctl processing for 32 bit process on 64 bit system
+ *	implement ioctl processing for 32 bit process on 64 bit system
  *
  *	Optional
- * 
+ *
  * void (*set_termios)(struct tty_struct *tty, struct ktermios * old);
  *
- * 	This routine allows the tty driver to be notified when
- * 	device's termios settings have changed.
+ *	This routine allows the tty driver to be notified when
+ *	device's termios settings have changed.
  *
  *	Optional: Called under the termios lock
  *
  *
  * void (*set_ldisc)(struct tty_struct *tty);
  *
- * 	This routine allows the tty driver to be notified when the
- * 	device's termios settings have changed.
+ *	This routine allows the tty driver to be notified when the
+ *	device's termios settings have changed.
  *
  *	Optional: Called under BKL (currently)
- * 
+ *
  * void (*throttle)(struct tty_struct * tty);
  *
- * 	This routine notifies the tty driver that input buffers for
- * 	the line discipline are close to full, and it should somehow
- * 	signal that no more characters should be sent to the tty.
+ *	This routine notifies the tty driver that input buffers for
+ *	the line discipline are close to full, and it should somehow
+ *	signal that no more characters should be sent to the tty.
  *
  *	Optional: Always invoke via tty_throttle(), called under the
  *	termios lock.
- * 
+ *
  * void (*unthrottle)(struct tty_struct * tty);
  *
- * 	This routine notifies the tty drivers that it should signals
- * 	that characters can now be sent to the tty without fear of
- * 	overrunning the input buffers of the line disciplines.
- * 
+ *	This routine notifies the tty drivers that it should signals
+ *	that characters can now be sent to the tty without fear of
+ *	overrunning the input buffers of the line disciplines.
+ *
  *	Optional: Always invoke via tty_unthrottle(), called under the
  *	termios lock.
  *
  * void (*stop)(struct tty_struct *tty);
  *
- * 	This routine notifies the tty driver that it should stop
- * 	outputting characters to the tty device.  
+ *	This routine notifies the tty driver that it should stop
+ *	outputting characters to the tty device.
  *
  *	Optional:
  *
  *	Note: Call stop_tty not this method.
- * 
+ *
  * void (*start)(struct tty_struct *tty);
  *
- * 	This routine notifies the tty driver that it resume sending
+ *	This routine notifies the tty driver that it resume sending
  *	characters to the tty device.
  *
  *	Optional:
  *
  *	Note: Call start_tty not this method.
- * 
+ *
  * void (*hangup)(struct tty_struct *tty);
  *
- * 	This routine notifies the tty driver that it should hang up the
- * 	tty device.
+ *	This routine notifies the tty driver that it should hang up the
+ *	tty device.
  *
  *	Optional:
  *
  * int (*break_ctl)(struct tty_struct *tty, int state);
  *
- * 	This optional routine requests the tty driver to turn on or
- * 	off BREAK status on the RS-232 port.  If state is -1,
- * 	then the BREAK status should be turned on; if state is 0, then
- * 	BREAK should be turned off.
+ *	This optional routine requests the tty driver to turn on or
+ *	off BREAK status on the RS-232 port.  If state is -1,
+ *	then the BREAK status should be turned on; if state is 0, then
+ *	BREAK should be turned off.
  *
- * 	If this routine is implemented, the high-level tty driver will
- * 	handle the following ioctls: TCSBRK, TCSBRKP, TIOCSBRK,
- * 	TIOCCBRK.
+ *	If this routine is implemented, the high-level tty driver will
+ *	handle the following ioctls: TCSBRK, TCSBRKP, TIOCSBRK,
+ *	TIOCCBRK.
  *
  *	If the driver sets TTY_DRIVER_HARDWARE_BREAK then the interface
  *	will also be called with actual times and the hardware is expected
@@ -192,9 +192,9 @@
  *	Optional: Required for TCSBRK/BRKP/etc handling.
  *
  * void (*wait_until_sent)(struct tty_struct *tty, int timeout);
- * 
- * 	This routine waits until the device has written out all of the
- * 	characters in its transmitter FIFO.
+ *
+ *	This routine waits until the device has written out all of the
+ *	characters in its transmitter FIFO.
  *
  *	Optional: If not provided the device is assumed to have no FIFO
  *
@@ -202,8 +202,8 @@
  *
  * void (*send_xchar)(struct tty_struct *tty, char ch);
  *
- * 	This routine is used to send a high-priority XON/XOFF
- * 	character to the device.
+ *	This routine is used to send a high-priority XON/XOFF
+ *	character to the device.
  *
  *	Optional: If not provided then the write method is called under
  *	the atomic write lock to keep it serialized with the ldisc.
@@ -344,20 +344,20 @@ static inline struct tty_driver *tty_driver_kref_get(struct tty_driver *d)
 
 /*
  * tty driver flags
- * 
+ *
  * TTY_DRIVER_RESET_TERMIOS --- requests the tty layer to reset the
- * 	termios setting when the last process has closed the device.
- * 	Used for PTY's, in particular.
- * 
+ *	termios setting when the last process has closed the device.
+ *	Used for PTY's, in particular.
+ *
  * TTY_DRIVER_REAL_RAW --- if set, indicates that the driver will
- * 	guarantee never not to set any special character handling
- * 	flags if ((IGNBRK || (!BRKINT && !PARMRK)) && (IGNPAR ||
- * 	!INPCK)).  That is, if there is no reason for the driver to
- * 	send notifications of parity and break characters up to the
- * 	line driver, it won't do so.  This allows the line driver to
+ *	guarantee never not to set any special character handling
+ *	flags if ((IGNBRK || (!BRKINT && !PARMRK)) && (IGNPAR ||
+ *	!INPCK)).  That is, if there is no reason for the driver to
+ *	send notifications of parity and break characters up to the
+ *	line driver, it won't do so.  This allows the line driver to
  *	optimize for this case if this flag is set.  (Note that there
- * 	is also a promise, if the above case is true, not to signal
- * 	overruns, either.)
+ *	is also a promise, if the above case is true, not to signal
+ *	overruns, either.)
  *
  * TTY_DRIVER_DYNAMIC_DEV --- if set, the individual tty devices need
  *	to be registered with a call to tty_register_device() when the

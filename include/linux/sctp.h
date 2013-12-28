@@ -460,9 +460,9 @@ typedef enum {
 
 	SCTP_ERROR_NO_ERROR	   = cpu_to_be16(0x00),
 	SCTP_ERROR_INV_STRM	   = cpu_to_be16(0x01),
-	SCTP_ERROR_MISS_PARAM 	   = cpu_to_be16(0x02),
+	SCTP_ERROR_MISS_PARAM	   = cpu_to_be16(0x02),
 	SCTP_ERROR_STALE_COOKIE	   = cpu_to_be16(0x03),
-	SCTP_ERROR_NO_RESOURCE 	   = cpu_to_be16(0x04),
+	SCTP_ERROR_NO_RESOURCE	   = cpu_to_be16(0x04),
 	SCTP_ERROR_DNS_FAILED      = cpu_to_be16(0x05),
 	SCTP_ERROR_UNKNOWN_CHUNK   = cpu_to_be16(0x06),
 	SCTP_ERROR_INV_PARAM       = cpu_to_be16(0x07),
@@ -604,7 +604,7 @@ struct sctp_fwdtsn_chunk {
 /* ADDIP
  * Section 3.1.1 Address Configuration Change Chunk (ASCONF)
  *
- * 	Serial Number: 32 bits (unsigned integer)
+ *	Serial Number: 32 bits (unsigned integer)
  *	This value represents a Serial Number for the ASCONF Chunk. The
  *	valid range of Serial Number is from 0 to 2^32-1.
  *	Serial Numbers wrap back to 0 after reaching 2^32 -1.
@@ -612,7 +612,7 @@ struct sctp_fwdtsn_chunk {
  *	Address Parameter: 8 or 20 bytes (depending on type)
  *	The address is an address of the sender of the ASCONF chunk,
  *	the address MUST be considered part of the association by the
- *	peer endpoint. This field may be used by the receiver of the 
+ *	peer endpoint. This field may be used by the receiver of the
  *	ASCONF to help in finding the association. This parameter MUST
  *	be present in every ASCONF message i.e. it is a mandatory TLV
  *	parameter.
@@ -623,11 +623,11 @@ struct sctp_fwdtsn_chunk {
  *	be present in an ASCONF Chunk.
  *
  * Section 3.1.2 Address Configuration Acknowledgement Chunk (ASCONF-ACK)
- * 
+ *
  *	Serial Number: 32 bits (unsigned integer)
  *	This value represents the Serial Number for the received ASCONF
  *	Chunk that is acknowledged by this chunk. This value is copied
- *	from the received ASCONF Chunk. 
+ *	from the received ASCONF Chunk.
  *
  *	ASCONF Parameter Response: TLV format
  *	The ASCONF Parameter Response is used in the ASCONF-ACK to
@@ -666,19 +666,19 @@ typedef struct sctp_addip_chunk {
  *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
  *
  *   Type: 1 byte (unsigned integer)
- *   	This value MUST be set to 0x0F for  all AUTH-chunks.
+ *	This value MUST be set to 0x0F for  all AUTH-chunks.
  *
  *   Flags: 1 byte (unsigned integer)
  *	Set to zero on transmit and ignored on receipt.
  *
  *   Length: 2 bytes (unsigned integer)
- *   	This value holds the length of the HMAC in bytes plus 8.
+ *	This value holds the length of the HMAC in bytes plus 8.
  *
  *  Shared Key Identifier: 2 bytes (unsigned integer)
  *	This value describes which endpoint pair shared key is used.
  *
  *   HMAC Identifier: 2 bytes (unsigned integer)
- *   	This value describes which message digest is being used.  Table 2
+ *	This value describes which message digest is being used.  Table 2
  *	shows the currently defined values.
  *
  *    The following Table 2 shows the currently defined values for HMAC

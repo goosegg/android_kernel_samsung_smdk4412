@@ -4,8 +4,8 @@
 * Derived from GnuPG implementation of cast5.
 *
 * Major Changes.
-* 	Complete conformance to rfc2144.
-* 	Supports key size from 40 to 128 bits.
+*	Complete conformance to rfc2144.
+*	Supports key size from 40 to 128 bits.
 *
 * Copyright (C) 1998, 1999, 2000, 2001 Free Software Foundation, Inc.
 * Copyright (C) 2003 Kartikey Mahendra Bhatt <kartik_me@hotmail.com>.
@@ -773,14 +773,14 @@ static int cast5_setkey(struct crypto_tfm *tfm, const u8 *key, unsigned key_len)
 }
 
 static struct crypto_alg alg = {
-	.cra_name 	= "cast5",
-	.cra_flags 	= CRYPTO_ALG_TYPE_CIPHER,
-	.cra_blocksize 	= CAST5_BLOCK_SIZE,
-	.cra_ctxsize 	= sizeof(struct cast5_ctx),
+	.cra_name	= "cast5",
+	.cra_flags	= CRYPTO_ALG_TYPE_CIPHER,
+	.cra_blocksize	= CAST5_BLOCK_SIZE,
+	.cra_ctxsize	= sizeof(struct cast5_ctx),
 	.cra_alignmask	= 3,
-	.cra_module 	= THIS_MODULE,
-	.cra_list 	= LIST_HEAD_INIT(alg.cra_list),
-	.cra_u 		= {
+	.cra_module	= THIS_MODULE,
+	.cra_list	= LIST_HEAD_INIT(alg.cra_list),
+	.cra_u		= {
 		.cipher = {
 			.cia_min_keysize = CAST5_MIN_KEY_SIZE,
 			.cia_max_keysize = CAST5_MAX_KEY_SIZE,
@@ -806,4 +806,3 @@ module_exit(cast5_mod_fini);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Cast5 Cipher Algorithm");
-

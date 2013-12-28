@@ -3,7 +3,7 @@
  *
  *	This work is derived from NET2Debugged, which is in turn derived
  *	from NET2D which was written by:
- * 		Fred N. van Kempen, <waltje@uWalt.NL.Mugnet.ORG>
+ *		Fred N. van Kempen, <waltje@uWalt.NL.Mugnet.ORG>
  *
  *		This work was derived from Ross Biro's inspirational work
  *		for the LINUX operating system.  His version numbers were:
@@ -17,10 +17,10 @@
  *		$Id: eth.h,v       0.8.4.1  1992/11/10 00:17:18 bir7 Exp $
  *		$Id: icmp.c,v      0.8.4.9  1993/01/23 18:00:11 bir7 Exp $
  *		$Id: icmp.h,v      0.8.4.2  1992/11/15 14:55:30 bir7 Exp $
- * 		$Id: ip.c,v        0.8.4.8  1992/12/12 19:25:04 bir7 Exp $
- * 		$Id: ip.h,v        0.8.4.2  1993/01/23 18:00:11 bir7 Exp $
- * 		$Id: loopback.c,v  0.8.4.8  1993/01/23 18:00:11 bir7 Exp $
- * 		$Id: packet.c,v    0.8.4.7  1993/01/26 22:04:00 bir7 Exp $
+ *		$Id: ip.c,v        0.8.4.8  1992/12/12 19:25:04 bir7 Exp $
+ *		$Id: ip.h,v        0.8.4.2  1993/01/23 18:00:11 bir7 Exp $
+ *		$Id: loopback.c,v  0.8.4.8  1993/01/23 18:00:11 bir7 Exp $
+ *		$Id: packet.c,v    0.8.4.7  1993/01/26 22:04:00 bir7 Exp $
  *		$Id: protocols.c,v 0.8.4.3  1992/11/15 14:55:30 bir7 Exp $
  *		$Id: raw.c,v       0.8.4.12 1993/01/26 22:04:00 bir7 Exp $
  *		$Id: sock.c,v      0.8.4.6  1993/01/28 22:30:00 bir7 Exp $

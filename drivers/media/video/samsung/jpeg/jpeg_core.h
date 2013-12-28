@@ -135,4 +135,3 @@ int jpeg_exe_enc(struct jpeg_control *ctrl);
 
 
 #endif /*__JPEG_CORE_H__*/
-

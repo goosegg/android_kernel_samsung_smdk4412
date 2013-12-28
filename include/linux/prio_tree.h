@@ -27,7 +27,7 @@ struct prio_tree_node {
 
 struct prio_tree_root {
 	struct prio_tree_node	*prio_tree_node;
-	unsigned short 		index_bits;
+	unsigned short		index_bits;
 	unsigned short		raw;
 		/*
 		 * 0: nodes are of type struct prio_tree_node

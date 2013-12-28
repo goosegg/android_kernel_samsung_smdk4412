@@ -582,4 +582,3 @@ struct stmpe811_platform_data stmpe811_pdata = {
 	.irq_gpio = GPIO_ADC_INT,
 };
 #endif
-

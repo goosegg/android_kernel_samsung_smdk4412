@@ -1544,7 +1544,7 @@ static struct platform_driver mx3fb_driver = {
 /*
  * Parse user specified options (`video=mx3fb:')
  * example:
- * 	video=mx3fb:bpp=16
+ *	video=mx3fb:bpp=16
  */
 static int __init mx3fb_setup(void)
 {

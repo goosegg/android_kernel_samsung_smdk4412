@@ -65,7 +65,7 @@ struct user{
 				   This is actually the bottom of the stack,
 				   the top of the stack is always found in the
 				   esp register.  */
-  long int signal;     		/* Signal that caused the core dump. */
+  long int signal;		/* Signal that caused the core dump. */
   int reserved;			/* No longer used */
   unsigned long u_ar0;		/* Used by gdb to help find the values for */
 				/* the registers. */
@@ -74,7 +74,7 @@ struct user{
   int u_debugreg[8];		/* No longer used */
   struct user_fp u_fp;		/* FP state */
   struct user_fp_struct * u_fp0;/* Used by gdb to help find the values for */
-  				/* the FP registers. */
+				/* the FP registers. */
 };
 #define NBPG PAGE_SIZE
 #define UPAGES 1

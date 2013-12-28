@@ -78,4 +78,3 @@ extern unsigned int lpcharge;
 extern void ctrl_bridge_stop_all(void);
 extern void rmnet_usb_ctrl_stop_all(void);
 #endif
-

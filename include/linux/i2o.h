@@ -82,10 +82,10 @@
  *	Ioctl structures
  */
 
-#define 	BLKI2OGRSTRAT	_IOR('2', 1, int)
-#define 	BLKI2OGWSTRAT	_IOR('2', 2, int)
-#define 	BLKI2OSRSTRAT	_IOW('2', 3, int)
-#define 	BLKI2OSWSTRAT	_IOW('2', 4, int)
+#define		BLKI2OGRSTRAT	_IOR('2', 1, int)
+#define		BLKI2OGWSTRAT	_IOR('2', 2, int)
+#define		BLKI2OSRSTRAT	_IOW('2', 3, int)
+#define		BLKI2OSWSTRAT	_IOW('2', 4, int)
 
 /*
  *	I2O Function codes
@@ -199,9 +199,9 @@
 
 /* Reply message status defines for all messages */
 
-#define I2O_REPLY_STATUS_SUCCESS                    	0x00
-#define I2O_REPLY_STATUS_ABORT_DIRTY                	0x01
-#define I2O_REPLY_STATUS_ABORT_NO_DATA_TRANSFER     	0x02
+#define I2O_REPLY_STATUS_SUCCESS			0x00
+#define I2O_REPLY_STATUS_ABORT_DIRTY			0x01
+#define I2O_REPLY_STATUS_ABORT_NO_DATA_TRANSFER		0x02
 #define	I2O_REPLY_STATUS_ABORT_PARTIAL_TRANSFER		0x03
 #define	I2O_REPLY_STATUS_ERROR_DIRTY			0x04
 #define	I2O_REPLY_STATUS_ERROR_NO_DATA_TRANSFER		0x05
@@ -216,7 +216,7 @@
 
 #define I2O_PARAMS_STATUS_SUCCESS		0x00
 #define I2O_PARAMS_STATUS_BAD_KEY_ABORT		0x01
-#define I2O_PARAMS_STATUS_BAD_KEY_CONTINUE   	0x02
+#define I2O_PARAMS_STATUS_BAD_KEY_CONTINUE	0x02
 #define I2O_PARAMS_STATUS_BUFFER_FULL		0x03
 #define I2O_PARAMS_STATUS_BUFFER_TOO_SMALL	0x04
 #define I2O_PARAMS_STATUS_FIELD_UNREADABLE	0x05
@@ -875,12 +875,12 @@ static inline void i2o_msg_post(struct i2o_controller *c,
 };
 
 /**
- * 	i2o_msg_post_wait - Post and wait a message and wait until return
+ *	i2o_msg_post_wait - Post and wait a message and wait until return
  *	@c: controller
  *	@msg: message to post
  *	@timeout: time in seconds to wait
  *
- * 	This API allows an OSM to post a message and then be told whether or
+ *	This API allows an OSM to post a message and then be told whether or
  *	not the system received a successful reply. If the message times out
  *	then the value '-ETIMEDOUT' is returned.
  *

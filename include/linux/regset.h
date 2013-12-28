@@ -156,10 +156,10 @@ struct user_regset {
 	user_regset_active_fn		*active;
 	user_regset_writeback_fn	*writeback;
 	unsigned int			n;
-	unsigned int 			size;
-	unsigned int 			align;
-	unsigned int 			bias;
-	unsigned int 			core_note_type;
+	unsigned int			size;
+	unsigned int			align;
+	unsigned int			bias;
+	unsigned int			core_note_type;
 };
 
 /**

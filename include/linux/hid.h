@@ -299,7 +299,7 @@ struct hid_item {
  * HID device quirks.
  */
 
-/* 
+/*
  * Increase this if you need to configure more HID quirks at module load time
  */
 #define MAX_USBHID_BOOT_QUIRKS 4
@@ -586,7 +586,7 @@ struct hid_usage_id {
  * struct hid_driver
  * @name: driver name (e.g. "Footech_bar-wheel")
  * @id_table: which devices is this driver for (must be non-NULL for probe
- * 	      to be called)
+ *	      to be called)
  * @dyn_list: list of dynamically added device ids
  * @dyn_lock: lock protecting @dyn_list
  * @probe: new device inserted
@@ -600,7 +600,7 @@ struct hid_usage_id {
  * @input_mapped: invoked on input registering after mapping an usage
  * @feature_mapping: invoked on feature registering
  * @input_register: called just before input device is registered after reports
- * 		    are parsed.
+ *		    are parsed.
  * @suspend: invoked on suspend (NULL means nop)
  * @resume: invoked on resume if device was not reset (NULL means nop)
  * @reset_resume: invoked on resume if device was reset (NULL means nop)
@@ -926,4 +926,3 @@ do {									\
 #endif /* __KERNEL__ */
 
 #endif
-

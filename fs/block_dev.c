@@ -92,7 +92,7 @@ static void kill_bdev(struct block_device *bdev)
 		return;
 	invalidate_bh_lrus();
 	truncate_inode_pages(bdev->bd_inode->i_mapping, 0);
-}	
+}
 
 int set_blocksize(struct block_device *bdev, int size)
 {
@@ -380,7 +380,7 @@ static loff_t block_llseek(struct file *file, loff_t offset, int origin)
 	mutex_unlock(&bd_inode->i_mutex);
 	return retval;
 }
-	
+
 int blkdev_fsync(struct file *filp, int datasync)
 {
 	struct inode *bd_inode = filp->f_mapping->host;
@@ -604,7 +604,7 @@ void bdput(struct block_device *bdev)
 }
 
 EXPORT_SYMBOL(bdput);
- 
+
 static struct block_device *bd_acquire(struct inode *inode)
 {
 	struct block_device *bdev;
@@ -676,12 +676,12 @@ static bool bd_may_claim(struct block_device *bdev, struct block_device *whole,
 	if (bdev->bd_holder == holder)
 		return true;	 /* already a holder */
 	else if (bdev->bd_holder != NULL)
-		return false; 	 /* held by someone else */
+		return false;	 /* held by someone else */
 	else if (bdev->bd_contains == bdev)
-		return true;  	 /* is a whole device which isn't held */
+		return true;	 /* is a whole device which isn't held */
 
 	else if (whole->bd_holder == bd_may_claim)
-		return true; 	 /* is a partition of a device that is being partitioned */
+		return true;	 /* is a partition of a device that is being partitioned */
 	else if (whole->bd_holder != NULL)
 		return false;	 /* is a partition of a held device */
 	else
@@ -1594,7 +1594,7 @@ const struct file_operations def_blk_fops = {
 	.llseek		= block_llseek,
 	.read		= do_sync_read,
 	.write		= do_sync_write,
-  	.aio_read	= generic_file_aio_read,
+	.aio_read	= generic_file_aio_read,
 	.aio_write	= blkdev_aio_write,
 	.mmap		= generic_file_mmap,
 	.fsync		= blkdev_fsync,

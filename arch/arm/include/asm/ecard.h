@@ -146,7 +146,7 @@ struct expansion_card {
 	void __iomem		*fiqaddr;	/* address of FIQ register	*/
 	unsigned char		irqmask;	/* IRQ mask			*/
 	unsigned char		fiqmask;	/* FIQ mask			*/
-	unsigned char  		claimed;	/* Card claimed?		*/
+	unsigned char		claimed;	/* Card claimed?		*/
 	unsigned char		easi;		/* EASI card			*/
 
 	void			*irq_data;	/* Data for use for IRQ by card	*/

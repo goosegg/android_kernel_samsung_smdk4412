@@ -389,7 +389,7 @@ static int ad193x_probe(struct snd_soc_codec *codec)
 }
 
 static struct snd_soc_codec_driver soc_codec_dev_ad193x = {
-	.probe = 	ad193x_probe,
+	.probe =	ad193x_probe,
 	.reg_cache_default = ad193x_reg,
 	.reg_cache_size = AD193X_NUM_REGS,
 	.reg_word_size = sizeof(u16),

@@ -67,15 +67,15 @@ struct au1100fb_panel
 {
 	const char name[25];		/* Full name <vendor>_<model> */
 
-	u32   	control_base;		/* Mode-independent control values */
+	u32	control_base;		/* Mode-independent control values */
 	u32	clkcontrol_base;	/* Panel pixclock preferences */
 
 	u32	horztiming;
 	u32	verttiming;
 
 	u32	xres;		/* Maximum horizontal resolution */
-	u32 	yres;		/* Maximum vertical resolution */
-	u32 	bpp;		/* Maximum depth supported */
+	u32	yres;		/* Maximum vertical resolution */
+	u32	bpp;		/* Maximum depth supported */
 };
 
 struct au1100fb_regs
@@ -99,15 +99,15 @@ struct au1100fb_device {
 
 	struct fb_info info;			/* FB driver info record */
 
-	struct au1100fb_panel 	*panel;		/* Panel connected to this device */
+	struct au1100fb_panel	*panel;		/* Panel connected to this device */
 
-	struct au1100fb_regs* 	regs;		/* Registers memory map */
-	size_t       		regs_len;
-	unsigned int 		regs_phys;
+	struct au1100fb_regs*	regs;		/* Registers memory map */
+	size_t			regs_len;
+	unsigned int		regs_phys;
 
-	unsigned char* 		fb_mem;		/* FrameBuffer memory map */
-	size_t	      		fb_len;
-	dma_addr_t    		fb_phys;
+	unsigned char*		fb_mem;		/* FrameBuffer memory map */
+	size_t			fb_len;
+	dma_addr_t		fb_phys;
 };
 
 /********************************************************************/
@@ -366,7 +366,7 @@ static struct au1100fb_panel known_lcd_panels[] =
 
 struct au1100fb_drv_info {
 	int	panel_idx;
-	char 	*opt_mode;
+	char	*opt_mode;
 };
 
 /********************************************************************/

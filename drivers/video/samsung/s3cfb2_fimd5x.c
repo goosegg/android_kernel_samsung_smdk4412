@@ -559,4 +559,3 @@ int s3cfb_set_chroma_key(struct s3cfb_global *ctrl, int id)
 
 	return 0;
 }
-

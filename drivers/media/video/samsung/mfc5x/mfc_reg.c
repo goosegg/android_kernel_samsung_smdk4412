@@ -29,4 +29,3 @@ unsigned int read_reg(unsigned int offset)
 {
 	return __raw_readl(regs + offset);
 }
-

@@ -8,9 +8,9 @@
  * improved on it.
  *
  * Copyright (C) 2007 SGI,
- * 	Christoph Lameter <clameter@sgi.com>
- * 		Generalized, added support for multiple lists and
- * 		constructors / destructors.
+ *	Christoph Lameter <clameter@sgi.com>
+ *		Generalized, added support for multiple lists and
+ *		constructors / destructors.
  */
 #include <linux/kernel.h>
 
@@ -100,4 +100,3 @@ unsigned long quicklist_total_size(void)
 	}
 	return count;
 }
-

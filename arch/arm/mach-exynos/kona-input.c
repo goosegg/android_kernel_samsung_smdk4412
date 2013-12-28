@@ -48,7 +48,7 @@ static int synaptics_ts_set_power(bool en)
 	if (!have_tsp_ldo)
 		return -1;
 	printk(KERN_DEBUG "[TSP] %s(%d)\n", __func__, en);
-	
+
 	ts_powered_on = en;
 
 	regulator = regulator_get(NULL, "tsp_3.3v");

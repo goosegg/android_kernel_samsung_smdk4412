@@ -632,7 +632,7 @@ struct item_head {
 
 /* these operate on indirect items, where you've got an array of ints
 ** at a possibly unaligned location.  These are a noop on ia32
-** 
+**
 ** p is the array of __u32, i is the index into the array, v is the value
 ** to store there.
 */
@@ -839,7 +839,7 @@ static inline void cpu_key_k_offset_dec(struct cpu_key *key)
 
 extern struct reiserfs_key root_key;
 
-/* 
+/*
  * Picture represents a leaf of the S+tree
  *  ______________________________________________________
  * |      |  Array of     |                   |           |
@@ -1048,7 +1048,7 @@ struct stat_data {
 /***************************************************************************/
 /*                      DIRECTORY STRUCTURE                                */
 /***************************************************************************/
-/* 
+/*
    Picture represents the structure of directory items
    ________________________________________________
    |  Array of     |   |     |        |       |   |
@@ -1071,12 +1071,12 @@ struct stat_data {
 #define FIRST_ITEM_OFFSET 1
 
 /*
-   Q: How to get key of object pointed to by entry from entry?  
+   Q: How to get key of object pointed to by entry from entry?
 
    A: Each directory entry has its header. This header has deh_dir_id and deh_objectid fields, those are key
       of object, entry points to */
 
-/* NOT IMPLEMENTED:   
+/* NOT IMPLEMENTED:
    Directory will someday contain stat data of object */
 
 struct reiserfs_de_head {
@@ -1145,8 +1145,8 @@ struct reiserfs_de_head {
 #define mark_de_hidden(deh)	    clear_bit_unaligned (DEH_Visible, &((deh)->deh_state))
 
 #define de_with_sd(deh)		    test_bit_unaligned (DEH_Statdata, &((deh)->deh_state))
-#define de_visible(deh)	    	    test_bit_unaligned (DEH_Visible, &((deh)->deh_state))
-#define de_hidden(deh)	    	    !test_bit_unaligned (DEH_Visible, &((deh)->deh_state))
+#define de_visible(deh)		    test_bit_unaligned (DEH_Visible, &((deh)->deh_state))
+#define de_hidden(deh)		    !test_bit_unaligned (DEH_Visible, &((deh)->deh_state))
 
 extern void make_empty_dir_item_v1(char *body, __le32 dirid, __le32 objid,
 				   __le32 par_dirid, __le32 par_objid);
@@ -1306,7 +1306,7 @@ struct path_element {
    invalid, and this means we must check it when using it to see if it
    is still valid. You'll need to read search_by_key and the comments
    in it, especially about decrement_counters_in_path(), to understand
-   this structure.  
+   this structure.
 
 Paths make the code so much harder to work with and debug.... An
 enormous number of bugs are due to them, and trying to write or modify
@@ -1562,14 +1562,14 @@ struct tree_balance {
 /* When deleting an item. */
 #define M_DELETE	'd'
 /* When truncating an item or removing an entry from a (directory) item. */
-#define M_CUT 		'c'
+#define M_CUT		'c'
 
 /* used when balancing on leaf level skipped (in reiserfsck) */
 #define M_INTERNAL	'n'
 
 /* When further balancing is not needed, then do_balance does not need
    to be called. */
-#define M_SKIP_BALANCING 		's'
+#define M_SKIP_BALANCING		's'
 #define M_CONVERT	'v'
 
 /* modes of leaf_move_items */
@@ -1607,7 +1607,7 @@ static inline struct super_block *sb_from_bi(struct buffer_info *bi)
 +-------------------+------------+--------------+------------+
 |     stat data     |	0        |      0       |   no       |
 +-------------------+------------+--------------+------------+
-| 1st directory item| DOT_OFFSET |DIRENTRY_UNIQUENESS|   no       | 
+| 1st directory item| DOT_OFFSET |DIRENTRY_UNIQUENESS|   no       |
 | non 1st directory | hash value |              |   yes      |
 |     item          |            |              |            |
 +-------------------+------------+--------------+------------+
@@ -1775,8 +1775,8 @@ struct reiserfs_journal_header {
 
 /* both of these can be as low as 1, or as high as you want.  The min is the
 ** number of 4k bitmap nodes preallocated on mount. New nodes are allocated
-** as needed, and released when transactions are committed.  On release, if 
-** the current number of nodes is > max, the node is freed, otherwise, 
+** as needed, and released when transactions are committed.  On release, if
+** the current number of nodes is > max, the node is freed, otherwise,
 ** it is put on a free list for faster use later.
 */
 #define REISERFS_MIN_BITMAP_NODES 10

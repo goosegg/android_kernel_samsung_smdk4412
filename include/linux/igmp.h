@@ -86,7 +86,7 @@ struct igmpv3_query {
 #define IGMP_PIM			0x14	/* PIM routing */
 #define IGMP_TRACE			0x15
 #define IGMPV2_HOST_MEMBERSHIP_REPORT	0x16	/* V2 version of 0x12 */
-#define IGMP_HOST_LEAVE_MESSAGE 	0x17
+#define IGMP_HOST_LEAVE_MESSAGE		0x17
 #define IGMPV3_HOST_MEMBERSHIP_REPORT	0x22	/* V3 version of 0x12 */
 
 #define IGMP_MTRACE_RESP		0x1e
@@ -116,8 +116,8 @@ struct igmpv3_query {
 						/* revert to IGMP v2 router.		*/
 
 #define IGMP_ALL_HOSTS		htonl(0xE0000001L)
-#define IGMP_ALL_ROUTER 	htonl(0xE0000002L)
-#define IGMPV3_ALL_MCR	 	htonl(0xE0000016L)
+#define IGMP_ALL_ROUTER		htonl(0xE0000002L)
+#define IGMPV3_ALL_MCR		htonl(0xE0000016L)
 #define IGMP_LOCAL_GROUP	htonl(0xE0000000L)
 #define IGMP_LOCAL_GROUP_MASK	htonl(0xFFFFFF00L)
 

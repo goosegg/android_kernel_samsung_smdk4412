@@ -28,7 +28,7 @@ enum nuc900_lcddrv_type {
 
 
 #define PALETTE_BUFFER_SIZE	256
-#define PALETTE_BUFF_CLEAR 	(0x80000000) /* entry is clear/invalid */
+#define PALETTE_BUFF_CLEAR	(0x80000000) /* entry is clear/invalid */
 
 struct nuc900fb_info {
 	struct device		*dev;
@@ -37,7 +37,7 @@ struct nuc900fb_info {
 	struct resource		*mem;
 	void __iomem		*io;
 	void __iomem		*irq_base;
-	int 			drv_type;
+	int			drv_type;
 	struct nuc900fb_hw	regs;
 	unsigned long		clk_rate;
 

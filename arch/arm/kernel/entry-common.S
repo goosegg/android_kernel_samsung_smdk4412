@@ -172,7 +172,7 @@ ENDPROC(ret_from_fork)
 
 	mcount_exit
 
-1: 	mcount_get_lr	r1			@ lr of instrumented func
+1:	mcount_get_lr	r1			@ lr of instrumented func
 	mov	r0, lr				@ instrumented function
 	sub	r0, r0, #MCOUNT_INSN_SIZE
 	adr	lr, BSYM(2f)
@@ -326,8 +326,8 @@ ENDPROC(ftrace_stub)
  *-----------------------------------------------------------------------------
  */
 
-	/* If we're optimising for StrongARM the resulting code won't 
-	   run on an ARM7 and we can save a couple of instructions.  
+	/* If we're optimising for StrongARM the resulting code won't
+	   run on an ARM7 and we can save a couple of instructions.
 								--pb */
 #ifdef CONFIG_CPU_ARM710
 #define A710(code...) code
@@ -437,7 +437,7 @@ ENTRY(vector_swi)
 	tst	r10, #_TIF_SECCOMP
 	beq	1f
 	mov	r0, scno
-	bl	__secure_computing	
+	bl	__secure_computing
 	add	r0, sp, #S_R0 + S_OFF		@ pointer to regs
 	ldmia	r0, {r0 - r3}			@ have to reload r0 - r3
 1:
@@ -454,7 +454,7 @@ ENTRY(vector_swi)
 2:	mov	why, #0				@ no longer a real syscall
 	cmp	scno, #(__ARM_NR_BASE - __NR_SYSCALL_BASE)
 	eor	r0, scno, #__NR_SYSCALL_BASE	@ put OS number back
-	bcs	arm_syscall	
+	bcs	arm_syscall
 	b	sys_ni_syscall			@ not private func
 ENDPROC(vector_swi)
 
@@ -644,4 +644,3 @@ ENTRY(sys_oabi_call_table)
 #undef OBSOLETE
 
 #endif
-

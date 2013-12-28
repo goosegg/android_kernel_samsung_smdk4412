@@ -485,7 +485,7 @@ static void check_diagnostics_mode(struct synaptics_drv_data *data)
 		check_delta_cap(data);
 		break;
 #endif
-		
+
 	default:
 		break;
 	}
@@ -1307,4 +1307,3 @@ void remove_tsp_sysfs(struct synaptics_drv_data *data)
 MODULE_AUTHOR("junki671.min@samsung.com");
 MODULE_DESCRIPTION("sec sysfs for synaptics tsp");
 MODULE_LICENSE("GPL");
-

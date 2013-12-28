@@ -45,7 +45,7 @@ struct xenfb_info {
 	int			nr_pages;
 	int			irq;
 	struct xenfb_page	*page;
-	unsigned long 		*mfns;
+	unsigned long		*mfns;
 	int			update_wanted; /* XENFB_TYPE_UPDATE wanted */
 	int			feature_resize; /* XENFB_TYPE_RESIZE ok */
 	struct xenfb_resize	resize;		/* protected by resize_lock */

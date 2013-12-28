@@ -27,11 +27,11 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  *
  * References:
- * 
+ *
  * HP-HIL Technical Reference Manual.  Hewlett Packard Product No. 45918A
  *
  * System Device Controller Microprocessor Firmware Theory of Operation
- * 	for Part Number 1820-4784 Revision B.  Dwg No. A-1820-4784-2
+ *	for Part Number 1820-4784 Revision B.  Dwg No. A-1820-4784-2
  *
  */
 
@@ -51,7 +51,7 @@
  */
 #define HP_SDC_MAX_REG_DELAY 20000
 
-typedef void (hp_sdc_irqhook) (int irq, void *dev_id, 
+typedef void (hp_sdc_irqhook) (int irq, void *dev_id,
 			       uint8_t status, uint8_t data);
 
 int hp_sdc_request_timer_irq(hp_sdc_irqhook *callback);
@@ -128,7 +128,7 @@ int hp_sdc_dequeue_transaction(hp_sdc_transaction *this);
 #define HP_SDC_KBC		0x79	/* Which HIL devs are cooked kbds */
 #define HP_SDC_LPS		0x7a	/* i8042's view of HIL status */
 #define HP_SDC_LPC		0x7b	/* i8042's view of HIL "control" */
-#define HP_SDC_RSV  		0x7c	/* Reserved "for testing" */
+#define HP_SDC_RSV		0x7c	/* Reserved "for testing" */
 #define HP_SDC_LPR		0x7d    /* i8042 count of HIL reconfigs */
 #define HP_SDC_XTD		0x7e    /* "Extended Configuration" register */
 #define HP_SDC_STR		0x7f    /* i8042 self-test result */
@@ -180,8 +180,8 @@ switch (val) {						\
 
 #define HP_SDC_CMD_SET_IM	0x40    /* 010xxxxx == set irq mask */
 
-/* The documents provided do not explicitly state that all registers betweem 
- * 0x01 and 0x1f inclusive can be read by sending their register index as a 
+/* The documents provided do not explicitly state that all registers betweem
+ * 0x01 and 0x1f inclusive can be read by sending their register index as a
  * command, but this is implied and appears to be the case.
  */
 #define HP_SDC_CMD_READ_RAM	0x00	/* Load from i8042 RAM (autoinc) */
@@ -242,14 +242,14 @@ switch (val) {						\
 #define HP_SDC_CMD_DO_RTCW	0xc2	/* i8042 RAM 0x70 --> RTC */
 #define HP_SDC_CMD_DO_RTCR	0xc3	/* RTC[0x70 0:3] --> irq/status/data */
 #define HP_SDC_CMD_DO_BEEP	0xc4	/* i8042 RAM 0x70-74  --> beeper,VT3 */
-#define HP_SDC_CMD_DO_HIL	0xc5	/* i8042 RAM 0x70-73 --> 
+#define HP_SDC_CMD_DO_HIL	0xc5	/* i8042 RAM 0x70-73 -->
 					   HIL MLC R0,R1 i8042 HIL watchdog */
 
 /* Values used to (de)mangle input/output to/from the HIL MLC */
 #define HP_SDC_DATA		0x40	/* Data from an 8042 register */
 #define HP_SDC_HIL_CMD		0x50	/* Data from HIL MLC R1/8042 */
 #define HP_SDC_HIL_R1MASK	0x0f	/* Contents of HIL MLC R1 0:3 */
-#define HP_SDC_HIL_AUTO		0x10	/* Set if POL results from i8042 */   
+#define HP_SDC_HIL_AUTO		0x10	/* Set if POL results from i8042 */
 #define HP_SDC_HIL_ISERR	0x80	/* Has meaning as in next 4 values */
 #define HP_SDC_HIL_RC_DONE	0x80	/* i8042 auto-configured loop */
 #define HP_SDC_HIL_ERR		0x81	/* HIL MLC R2 had a bit set */
@@ -268,7 +268,7 @@ typedef struct {
 	unsigned long	base_io, status_io, data_io; /* Our IO ports */
 
 	uint8_t		im;		/* Interrupt mask */
-	int		set_im; 	/* Interrupt mask needs to be set. */
+	int		set_im;		/* Interrupt mask needs to be set. */
 
 	int		ibf;		/* Last known status of IBF flag */
 	uint8_t		wi;		/* current i8042 write index */

@@ -962,4 +962,3 @@ static int __init init_modem(void)
 	return 0;
 }
 late_initcall(init_modem);
-

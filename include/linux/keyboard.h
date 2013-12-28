@@ -20,7 +20,7 @@
 #define MAX_NR_KEYMAPS	256
 /* This means 128Kb if all keymaps are allocated. Only the superuser
 	may increase the number of keymaps beyond MAX_NR_OF_USER_KEYMAPS. */
-#define MAX_NR_OF_USER_KEYMAPS 256 	/* should be at least 7 */
+#define MAX_NR_OF_USER_KEYMAPS 256	/* should be at least 7 */
 
 #ifdef __KERNEL__
 struct notifier_block;
@@ -89,10 +89,10 @@ extern int unregister_keyboard_notifier(struct notifier_block *nb);
 #define K_SELECT	K(KT_FN,23)
 #define K_PGUP		K(KT_FN,24) /* PGUP is a synonym for PRIOR */
 #define K_PGDN		K(KT_FN,25) /* PGDN is a synonym for NEXT */
-#define K_MACRO	 	K(KT_FN,26)
+#define K_MACRO		K(KT_FN,26)
 #define K_HELP		K(KT_FN,27)
 #define K_DO		K(KT_FN,28)
-#define K_PAUSE	 	K(KT_FN,29)
+#define K_PAUSE		K(KT_FN,29)
 #define K_F21		K(KT_FN,30)
 #define K_F22		K(KT_FN,31)
 #define K_F23		K(KT_FN,32)
@@ -388,8 +388,8 @@ extern int unregister_keyboard_notifier(struct notifier_block *nb);
 #define K_ALTGR		K(KT_SHIFT,KG_ALTGR)
 #define K_SHIFTL	K(KT_SHIFT,KG_SHIFTL)
 #define K_SHIFTR	K(KT_SHIFT,KG_SHIFTR)
-#define K_CTRLL	 	K(KT_SHIFT,KG_CTRLL)
-#define K_CTRLR	 	K(KT_SHIFT,KG_CTRLR)
+#define K_CTRLL		K(KT_SHIFT,KG_CTRLL)
+#define K_CTRLR		K(KT_SHIFT,KG_CTRLR)
 #define K_CAPSSHIFT	K(KT_SHIFT,KG_CAPSSHIFT)
 
 #define K_ASC0		K(KT_ASCII,0)

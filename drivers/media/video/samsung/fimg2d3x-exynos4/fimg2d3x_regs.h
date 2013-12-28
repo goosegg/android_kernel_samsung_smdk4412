@@ -9,7 +9,7 @@
 
 #ifndef __SEC_FIMG2D3X_REGS_H
 #define __SEC_FIMG2D3X_REGS_H
- 
+
 //**********************************************************
 //     Address Definition of SFR
 //**********************************************************
@@ -88,7 +88,7 @@
 //**********************************************************
 //     Bit Definition part
 //**********************************************************
- 
+
 /* software reset register (SOFT_RESET_REG : 0x0000) */
 #define	G2D_SWRESET_R_RESET                     (1<<0)
 
@@ -257,7 +257,7 @@
 */
 #define G2D_ROP_REG_SRC                      (0xcc)
 #define G2D_ROP_REG_DST                      (0xaa)
-#define G2D_ROP_REG_SRC_AND_DST              (0x88) 
+#define G2D_ROP_REG_SRC_AND_DST              (0x88)
 #define G2D_ROP_REG_SRC_OR_DST               (0xee)
 #define G2D_ROP_REG_3RD_OPRND                (0xf0)
 #define G2D_ROP_REG_SRC_AND_3RD_OPRND        (0xc0)

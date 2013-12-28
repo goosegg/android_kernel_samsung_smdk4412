@@ -175,7 +175,7 @@ static void asiliant_set_timing(struct fb_info *p)
 {
 	unsigned hd = p->var.xres / 8;
 	unsigned hs = (p->var.xres + p->var.right_margin) / 8;
-       	unsigned he = (p->var.xres + p->var.right_margin + p->var.hsync_len) / 8;
+	unsigned he = (p->var.xres + p->var.right_margin + p->var.hsync_len) / 8;
 	unsigned ht = (p->var.left_margin + p->var.xres + p->var.right_margin + p->var.hsync_len) / 8;
 	unsigned vd = p->var.yres;
 	unsigned vs = p->var.yres + p->var.lower_margin;
@@ -484,24 +484,24 @@ static struct fb_fix_screeninfo asiliantfb_fix __devinitdata = {
 };
 
 static struct fb_var_screeninfo asiliantfb_var __devinitdata = {
-	.xres 		= 640,
-	.yres 		= 480,
-	.xres_virtual 	= 640,
-	.yres_virtual 	= 480,
+	.xres		= 640,
+	.yres		= 480,
+	.xres_virtual	= 640,
+	.yres_virtual	= 480,
 	.bits_per_pixel = 8,
-	.red 		= { .length = 8 },
-	.green 		= { .length = 8 },
-	.blue 		= { .length = 8 },
-	.height 	= -1,
-	.width 		= -1,
-	.vmode 		= FB_VMODE_NONINTERLACED,
-	.pixclock 	= 39722,
-	.left_margin 	= 48,
-	.right_margin 	= 16,
-	.upper_margin 	= 33,
-	.lower_margin 	= 10,
-	.hsync_len 	= 96,
-	.vsync_len 	= 2,
+	.red		= { .length = 8 },
+	.green		= { .length = 8 },
+	.blue		= { .length = 8 },
+	.height		= -1,
+	.width		= -1,
+	.vmode		= FB_VMODE_NONINTERLACED,
+	.pixclock	= 39722,
+	.left_margin	= 48,
+	.right_margin	= 16,
+	.upper_margin	= 33,
+	.lower_margin	= 10,
+	.hsync_len	= 96,
+	.vsync_len	= 2,
 };
 
 static int __devinit init_asiliant(struct fb_info *p, unsigned long addr)

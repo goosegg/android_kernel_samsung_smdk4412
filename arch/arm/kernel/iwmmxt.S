@@ -27,16 +27,16 @@
 #define XSC(code...)		code
 #endif
 
-#define MMX_WR0		 	(0x00)
-#define MMX_WR1		 	(0x08)
-#define MMX_WR2		 	(0x10)
+#define MMX_WR0			(0x00)
+#define MMX_WR1			(0x08)
+#define MMX_WR2			(0x10)
 #define MMX_WR3			(0x18)
-#define MMX_WR4		 	(0x20)
-#define MMX_WR5		 	(0x28)
-#define MMX_WR6		 	(0x30)
-#define MMX_WR7		 	(0x38)
-#define MMX_WR8		 	(0x40)
-#define MMX_WR9		 	(0x48)
+#define MMX_WR4			(0x20)
+#define MMX_WR5			(0x28)
+#define MMX_WR6			(0x30)
+#define MMX_WR7			(0x38)
+#define MMX_WR8			(0x40)
+#define MMX_WR9			(0x48)
 #define MMX_WR10		(0x50)
 #define MMX_WR11		(0x58)
 #define MMX_WR12		(0x60)
@@ -99,7 +99,7 @@ concan_save:
 
 	@ CUP? wCx
 	tst	r2, #0x1
-	beq 	1f
+	beq	1f
 
 concan_dump:
 
@@ -164,7 +164,7 @@ concan_load:
 
 	@ clear CUP/MUP (only if r1 != 0)
 	teq	r1, #0
-	mov 	r2, #0
+	mov	r2, #0
 	moveq	pc, lr
 	tmcr	wCon, r2
 	mov	pc, lr
@@ -343,4 +343,3 @@ ENTRY(iwmmxt_task_release)
 	.data
 concan_owner:
 	.word	0
-

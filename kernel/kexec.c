@@ -1198,7 +1198,7 @@ void crash_save_cpu(struct pt_regs *regs, int cpu)
 	prstatus.pr_pid = current->pid;
 	elf_core_copy_kernel_regs(&prstatus.pr_reg, regs);
 	buf = append_elf_note(buf, KEXEC_CORE_NOTE_NAME, NT_PRSTATUS,
-		      	      &prstatus, sizeof(prstatus));
+			      &prstatus, sizeof(prstatus));
 	final_note(buf);
 }
 
@@ -1230,7 +1230,7 @@ module_init(crash_notes_memory_init)
  *
  * The function returns 0 on success and -EINVAL on failure.
  */
-static int __init parse_crashkernel_mem(char 			*cmdline,
+static int __init parse_crashkernel_mem(char			*cmdline,
 					unsigned long long	system_ram,
 					unsigned long long	*crash_size,
 					unsigned long long	*crash_base)
@@ -1313,13 +1313,13 @@ static int __init parse_crashkernel_mem(char 			*cmdline,
 /*
  * That function parses "simple" (old) crashkernel command lines like
  *
- * 	crashkernel=size[@offset]
+ *	crashkernel=size[@offset]
  *
  * It returns 0 on success and -EINVAL on failure.
  */
-static int __init parse_crashkernel_simple(char 		*cmdline,
-					   unsigned long long 	*crash_size,
-					   unsigned long long 	*crash_base)
+static int __init parse_crashkernel_simple(char			*cmdline,
+					   unsigned long long	*crash_size,
+					   unsigned long long	*crash_base)
 {
 	char *cur = cmdline;
 
@@ -1339,12 +1339,12 @@ static int __init parse_crashkernel_simple(char 		*cmdline,
  * That function is the entry point for command line parsing and should be
  * called from the arch-specific code.
  */
-int __init parse_crashkernel(char 		 *cmdline,
+int __init parse_crashkernel(char		 *cmdline,
 			     unsigned long long system_ram,
 			     unsigned long long *crash_size,
 			     unsigned long long *crash_base)
 {
-	char 	*p = cmdline, *ck_cmdline = NULL;
+	char	*p = cmdline, *ck_cmdline = NULL;
 	char	*first_colon, *first_space;
 
 	BUG_ON(!crash_size || !crash_base);

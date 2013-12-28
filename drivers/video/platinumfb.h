@@ -8,7 +8,7 @@
  * Copyright (C) 1998 Jon Howell
  *
  *  based on drivers/macintosh/platinum.c: Console support
- * 	for PowerMac "platinum" display adaptor.
+ *	for PowerMac "platinum" display adaptor.
  *  Copyright (C) 1996 Paul Mackerras and Mark Abene.
  *
  *  based on skeletonfb.c:
@@ -365,4 +365,3 @@ struct vmode_attr vmode_attrs[VMODE_MAX] = {
 	{1280, 960, 75},
 	{1280, 1024, 75}
 };
-

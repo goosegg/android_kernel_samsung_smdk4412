@@ -6,7 +6,7 @@
 #if 0
 #define DPRINTK(x)	printk x
 #else
-#define DPRINTK(x) 
+#define DPRINTK(x)
 #endif
 
 #define MAX_STI_ROMS 4		/* max no. of ROMs which this driver handles */
@@ -29,11 +29,11 @@
  *
  * Probably the best solution to all this is have the generic code manage
  * the screen buffer and a kernel thread to call STI occasionally.
- * 
+ *
  * Luckily, the frame buffer guys have the same problem so we can just wait
  * for them to fix it and steal their solution.   prumpf
  */
- 
+
 #include <asm/io.h>
 
 #define STI_WAIT 1
@@ -60,7 +60,7 @@
 /* STI function configuration structs */
 
 typedef union region {
-	struct { 
+	struct {
 		u32 offset	: 14;	/* offset in 4kbyte page */
 		u32 sys_only	: 1;	/* don't map to user space */
 		u32 cache	: 1;	/* map to data cache */
@@ -81,7 +81,7 @@ struct sti_glob_cfg_ext {
 	s16 power;			/* power calculation (in Watts) */
 	s32 freq_ref;			/* frequency reference */
 	u32 sti_mem_addr;		/* pointer to global sti memory (size=sti_mem_request) */
-	u32 future_ptr; 		/* pointer to future data */
+	u32 future_ptr;			/* pointer to future data */
 };
 
 struct sti_glob_cfg {
@@ -121,14 +121,14 @@ struct sti_init_flags {
 	u32 caller_kernel : 1;	/* set only by kernel for each call */
 	u32 caller_other : 1;	/* set only by non-[BR/K] caller */
 	u32 pad	: 14;		/* pad to word boundary */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_init_inptr_ext {
 	u8  config_mon_type;	/* configure to monitor type */
 	u8  pad[1];		/* pad to word boundary */
 	u16 inflight_data;	/* inflight data possible on PCI */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_init_inptr {
@@ -140,7 +140,7 @@ struct sti_init_inptr {
 struct sti_init_outptr {
 	s32 errno;		/* error number on failure */
 	s32 text_planes;	/* number of planes used for text */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 
@@ -150,15 +150,15 @@ struct sti_init_outptr {
 struct sti_conf_flags {
 	u32 wait : 1;		/* should routine idle wait or not */
 	u32 pad : 31;		/* pad to word boundary */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_conf_inptr {
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_conf_outptr_ext {
-	u32 crt_config[3];	/* hardware specific X11/OGL information */	
+	u32 crt_config[3];	/* hardware specific X11/OGL information */
 	u32 crt_hdw[3];
 	u32 future_ptr;
 };
@@ -215,7 +215,7 @@ struct sti_rom {
 	u32 set_cm_entry;
 	u32 dma_ctrl;
 	 u8 res040[7 * 4];
-	
+
 	u32 init_graph_addr;
 	u32 state_mgmt_addr;
 	u32 font_unp_addr;
@@ -262,19 +262,19 @@ struct sti_font_inptr {
 	u8 bg_color;		/* background color of character */
 	s16 dest_x;		/* X location of character upper left */
 	s16 dest_y;		/* Y location of character upper left */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_font_flags {
 	u32 wait : 1;		/* should routine idle wait or not */
 	u32 non_text : 1;	/* font unpack/move in non_text planes =1, text =0 */
 	u32 pad : 30;		/* pad to word boundary */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
-	
+
 struct sti_font_outptr {
 	s32 errno;		/* error number on failure */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 /* STI blockmove structs */
@@ -285,7 +285,7 @@ struct sti_blkmv_flags {
 	u32 clear : 1;		/* clear during move? */
 	u32 non_text : 1;	/* block move in non_text planes =1, text =0 */
 	u32 pad : 28;		/* pad to word boundary */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_blkmv_inptr {
@@ -297,12 +297,12 @@ struct sti_blkmv_inptr {
 	s16 dest_y;		/* dest upper left pixel y location */
 	s16 width;		/* block width in pixels */
 	s16 height;		/* block height in pixels */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 struct sti_blkmv_outptr {
 	s32 errno;		/* error number on failure */
-	u32 future_ptr; 	/* pointer to future data */
+	u32 future_ptr;		/* pointer to future data */
 };
 
 
@@ -310,9 +310,9 @@ struct sti_blkmv_outptr {
 
 struct sti_struct {
 	spinlock_t lock;
-		
+
 	/* the following fields needs to be filled in by the word/byte routines */
-	int font_width;	
+	int font_width;
 	int font_height;
 	/* char **mon_strings; */
 	int sti_mem_request;

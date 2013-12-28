@@ -139,7 +139,7 @@ struct audit_aux_data_pids {
 	uid_t			target_uid[AUDIT_AUX_PIDS];
 	unsigned int		target_sessionid[AUDIT_AUX_PIDS];
 	u32			target_sid[AUDIT_AUX_PIDS];
-	char 			target_comm[AUDIT_AUX_PIDS][TASK_COMM_LEN];
+	char			target_comm[AUDIT_AUX_PIDS][TASK_COMM_LEN];
 	int			pid_count;
 };
 
@@ -220,7 +220,7 @@ struct audit_context {
 		} ipc;
 		struct {
 			mqd_t			mqdes;
-			struct mq_attr 		mqstat;
+			struct mq_attr		mqstat;
 		} mq_getsetattr;
 		struct {
 			mqd_t			mqdes;
@@ -750,7 +750,7 @@ void audit_filter_inodes(struct task_struct *tsk, struct audit_context *ctx)
 		list_for_each_entry_rcu(e, list, list) {
 			if ((e->rule.mask[word] & bit) == bit &&
 			    audit_filter_rules(tsk, &e->rule, ctx, n,
-				    	       &state, false)) {
+					       &state, false)) {
 				rcu_read_unlock();
 				ctx->current_state = state;
 				return;

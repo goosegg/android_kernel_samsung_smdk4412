@@ -5,16 +5,16 @@
  * lock for data where the reader wants a consistent set of information
  * and is willing to retry if the information changes.  Readers never
  * block but they may have to retry if a writer is in
- * progress. Writers do not wait for readers. 
+ * progress. Writers do not wait for readers.
  *
  * This is not as cache friendly as brlock. Also, this will not work
  * for data that contains pointers, because any writer could
  * invalidate a pointer that a reader was following.
  *
  * Expected reader usage:
- * 	do {
+ *	do {
  *	    seq = read_seqbegin(&foo);
- * 	...
+ *	...
  *      } while (read_seqretry(&foo, seq));
  *
  *
@@ -22,7 +22,7 @@
  * to increment the sequence variables because an interrupt routine could
  * change the state of the data.
  *
- * Based on x86_64 vsyscall gettimeofday 
+ * Based on x86_64 vsyscall gettimeofday
  * by Keith Owens and Andrea Arcangeli
  */
 

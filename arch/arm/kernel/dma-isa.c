@@ -138,7 +138,7 @@ static struct resource dma_resources[] = { {
 }, {
 	.name	= "dma low page",
 	.start	= 0x0080,
-	.end 	= 0x008f
+	.end	= 0x008f
 }, {
 	.name	= "dma2",
 	.start	= 0x00c0,

@@ -47,7 +47,7 @@ struct cmos_rtc_board_info {
 #define RTC_HOURS		4
 #define RTC_HOURS_ALARM		5
 /* RTC_*_alarm is always true if 2 MSBs are set */
-# define RTC_ALARM_DONT_CARE 	0xC0
+# define RTC_ALARM_DONT_CARE	0xC0
 
 #define RTC_DAY_OF_WEEK		6
 #define RTC_DAY_OF_MONTH	7
@@ -80,7 +80,7 @@ struct cmos_rtc_board_info {
 #  define RTC_DIV_RESET1	0x60
 #  define RTC_DIV_RESET2	0x70
   /* Periodic intr. / Square wave rate select. 0=none, 1=32.8kHz,... 15=2Hz */
-# define RTC_RATE_SELECT 	0x0F
+# define RTC_RATE_SELECT	0x0F
 
 /**********************************************************************/
 #define RTC_CONTROL	RTC_REG_B

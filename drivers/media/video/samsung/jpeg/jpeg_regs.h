@@ -43,4 +43,3 @@ unsigned int jpeg_get_int_status(void __iomem *base);
 void jpeg_clear_int(void __iomem *base);
 
 #endif /* __JPEG_REGS_H__ */
-

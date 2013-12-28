@@ -8,7 +8,7 @@
  *	found in the file hpfb.c in the same directory.
  *
  *	Based on digital document:
- * 	"PMAG-BA TURBOchannel Color Frame Buffer
+ *	"PMAG-BA TURBOchannel Color Frame Buffer
  *	 Functional Specification", Revision 1.2, August 27, 1990
  *
  *	DECstation related code Copyright (C) 1999, 2000, 2001 by

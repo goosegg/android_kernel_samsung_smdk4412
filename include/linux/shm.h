@@ -38,8 +38,8 @@ struct shmid_ds {
 	__kernel_ipc_pid_t	shm_cpid;	/* pid of creator */
 	__kernel_ipc_pid_t	shm_lpid;	/* pid of last operator */
 	unsigned short		shm_nattch;	/* no. of current attaches */
-	unsigned short 		shm_unused;	/* compatibility */
-	void 			*shm_unused2;	/* ditto - used by DIPC */
+	unsigned short		shm_unused;	/* compatibility */
+	void			*shm_unused2;	/* ditto - used by DIPC */
 	void			*shm_unused3;	/* unused */
 };
 
@@ -57,12 +57,12 @@ struct shmid_ds {
 #define	SHM_EXEC	0100000	/* execution access */
 
 /* super user shmctl commands */
-#define SHM_LOCK 	11
-#define SHM_UNLOCK 	12
+#define SHM_LOCK	11
+#define SHM_UNLOCK	12
 
 /* ipcs ctl commands */
-#define SHM_STAT 	13
-#define SHM_INFO 	14
+#define SHM_STAT	13
+#define SHM_INFO	14
 
 /* Obsolete, used only for backwards compatibility */
 struct	shminfo {
@@ -84,7 +84,7 @@ struct shm_info {
 
 #ifdef __KERNEL__
 struct shmid_kernel /* private to the kernel */
-{	
+{
 	struct kern_ipc_perm	shm_perm;
 	struct file *		shm_file;
 	unsigned long		shm_nattch;

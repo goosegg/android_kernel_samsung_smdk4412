@@ -80,4 +80,3 @@ void s5p_dsim_exit_d_phy(unsigned int dsim_base)
 	/* enable D-PHY */
 	s5p_dsim_enable_d_phy(0);
 }
-

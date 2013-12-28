@@ -57,7 +57,7 @@
 #define LCD_BPP			24	/* Bit Per Pixel */
 
 #define	DMA_BUS_SIZE		16
-#define	LCD_CLK         	(12*1000*1000)	/* 12MHz */
+#define	LCD_CLK			(12*1000*1000)	/* 12MHz */
 
 #define CLOCKS_PER_PIX		3
 

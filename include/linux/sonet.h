@@ -1,13 +1,13 @@
 /* sonet.h - SONET/SHD physical layer control */
- 
+
 /* Written 1995-2000 by Werner Almesberger, EPFL LRC/ICA */
- 
+
 
 #ifndef LINUX_SONET_H
 #define LINUX_SONET_H
 
 #define __SONET_ITEMS \
-    __HANDLE_ITEM(section_bip); 	/* section parity errors (B1) */ \
+    __HANDLE_ITEM(section_bip);		/* section parity errors (B1) */ \
     __HANDLE_ITEM(line_bip);		/* line parity errors (B2) */ \
     __HANDLE_ITEM(path_bip);		/* path parity errors (B3) */ \
     __HANDLE_ITEM(line_febe);		/* line parity errors at remote */ \

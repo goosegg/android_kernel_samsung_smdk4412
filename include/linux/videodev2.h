@@ -126,14 +126,14 @@ enum v4l2_field {
 					 transmitted first */
 };
 #define V4L2_FIELD_HAS_TOP(field)	\
-	((field) == V4L2_FIELD_TOP 	||\
+	((field) == V4L2_FIELD_TOP	||\
 	 (field) == V4L2_FIELD_INTERLACED ||\
 	 (field) == V4L2_FIELD_INTERLACED_TB ||\
 	 (field) == V4L2_FIELD_INTERLACED_BT ||\
 	 (field) == V4L2_FIELD_SEQ_TB	||\
 	 (field) == V4L2_FIELD_SEQ_BT)
 #define V4L2_FIELD_HAS_BOTTOM(field)	\
-	((field) == V4L2_FIELD_BOTTOM 	||\
+	((field) == V4L2_FIELD_BOTTOM	||\
 	 (field) == V4L2_FIELD_INTERLACED ||\
 	 (field) == V4L2_FIELD_INTERLACED_TB ||\
 	 (field) == V4L2_FIELD_INTERLACED_BT ||\
@@ -279,12 +279,12 @@ struct v4l2_capability {
  *	V I D E O   I M A G E   F O R M A T
  */
 struct v4l2_pix_format {
-	__u32         		width;
+	__u32			width;
 	__u32			height;
 	__u32			pixelformat;
-	enum v4l2_field  	field;
-	__u32            	bytesperline;	/* for padding, zero if unused */
-	__u32          		sizeimage;
+	enum v4l2_field		field;
+	__u32			bytesperline;	/* for padding, zero if unused */
+	__u32			sizeimage;
 	enum v4l2_colorspace	colorspace;
 	__u32			priv;		/* private data, depends on pixelformat */
 };
@@ -620,7 +620,7 @@ struct v4l2_plane {
  * @userptr:	for non-multiplanar buffers with memory == V4L2_MEMORY_USERPTR;
  *		a userspace pointer pointing to this buffer
  * @fd:		for non-multiplanar buffers with
- * 		memory == V4L2_MEMORY_DMABUF; a userspace file descriptor
+ *		memory == V4L2_MEMORY_DMABUF; a userspace file descriptor
  *		associated with this buffer
  * @planes:	for multiplanar buffers; userspace pointer to the array of plane
  *		info structs for this buffer
@@ -707,7 +707,7 @@ struct v4l2_clip {
 
 struct v4l2_window {
 	struct v4l2_rect        w;
-	enum v4l2_field  	field;
+	enum v4l2_field		field;
 	__u32			chromakey;
 	struct v4l2_clip	__user *clips;
 	__u32			clipcount;
@@ -858,7 +858,7 @@ typedef __u64 v4l2_std_id;
 				 V4L2_STD_NTSC_M_JP     |\
 				 V4L2_STD_NTSC_M_KR)
 /* Secam macros */
-#define V4L2_STD_SECAM_DK      	(V4L2_STD_SECAM_D	|\
+#define V4L2_STD_SECAM_DK	(V4L2_STD_SECAM_D	|\
 				 V4L2_STD_SECAM_K	|\
 				 V4L2_STD_SECAM_K1)
 /* All Secam Standards */
@@ -959,7 +959,7 @@ struct v4l2_dv_enum_preset {
 };
 
 /*
- * 	D V	P R E S E T	V A L U E S
+ *	D V	P R E S E T	V A L U E S
  */
 #define		V4L2_DV_INVALID		0
 #define		V4L2_DV_480P59_94	1 /* BT.1362 */
@@ -1010,7 +1010,7 @@ struct v4l2_dv_enum_preset {
 #define		V4L2_DV_1080P30_TB		44
 
 /*
- *	D V 	B T	T I M I N G S
+ *	D V	B T	T I M I N G S
  */
 
 /* BT.656/BT.1120 timing data */
@@ -1165,7 +1165,7 @@ struct v4l2_ext_controls {
 #define V4L2_CTRL_CLASS_FLASH 0x009c0000	/* Camera flash controls */
 #define V4L2_CTRL_CLASS_FM_RX 0x009d0000	/* FM Tuner control class */
 
-#define V4L2_CTRL_ID_MASK      	  (0x0fffffff)
+#define V4L2_CTRL_ID_MASK	  (0x0fffffff)
 #define V4L2_CTRL_ID2CLASS(id)    ((id) & 0x0fff0000UL)
 #define V4L2_CTRL_DRIVER_PRIV(id) (((id) & 0xffff) >= 0x1000)
 
@@ -1204,11 +1204,11 @@ struct v4l2_querymenu {
 /*  Control flags  */
 #define V4L2_CTRL_FLAG_DISABLED		0x0001
 #define V4L2_CTRL_FLAG_GRABBED		0x0002
-#define V4L2_CTRL_FLAG_READ_ONLY 	0x0004
-#define V4L2_CTRL_FLAG_UPDATE 		0x0008
-#define V4L2_CTRL_FLAG_INACTIVE 	0x0010
-#define V4L2_CTRL_FLAG_SLIDER 		0x0020
-#define V4L2_CTRL_FLAG_WRITE_ONLY 	0x0040
+#define V4L2_CTRL_FLAG_READ_ONLY	0x0004
+#define V4L2_CTRL_FLAG_UPDATE		0x0008
+#define V4L2_CTRL_FLAG_INACTIVE		0x0010
+#define V4L2_CTRL_FLAG_SLIDER		0x0020
+#define V4L2_CTRL_FLAG_WRITE_ONLY	0x0040
 #define V4L2_CTRL_FLAG_VOLATILE		0x0080
 
 /*  Query flag, to be ORed with the control ID */
@@ -1217,11 +1217,11 @@ struct v4l2_querymenu {
 /*  User-class control IDs defined by V4L2 */
 #define V4L2_CID_MAX_CTRLS		1024
 #define V4L2_CID_BASE			(V4L2_CTRL_CLASS_USER | 0x900)
-#define V4L2_CID_USER_BASE 		V4L2_CID_BASE
+#define V4L2_CID_USER_BASE		V4L2_CID_BASE
 /*  IDs reserved for driver specific controls */
 #define V4L2_CID_PRIVATE_BASE		0x08000000
 
-#define V4L2_CID_USER_CLASS 		(V4L2_CTRL_CLASS_USER | 1)
+#define V4L2_CID_USER_CLASS		(V4L2_CTRL_CLASS_USER | 1)
 #define V4L2_CID_BRIGHTNESS		(V4L2_CID_BASE+0)
 #define V4L2_CID_CONTRAST		(V4L2_CID_BASE+1)
 #define V4L2_CID_SATURATION		(V4L2_CID_BASE+2)
@@ -1259,7 +1259,7 @@ enum v4l2_power_line_frequency {
 #define V4L2_CID_HUE_AUTO			(V4L2_CID_BASE+25)
 #define V4L2_CID_WHITE_BALANCE_TEMPERATURE	(V4L2_CID_BASE+26)
 #define V4L2_CID_SHARPNESS			(V4L2_CID_BASE+27)
-#define V4L2_CID_BACKLIGHT_COMPENSATION 	(V4L2_CID_BASE+28)
+#define V4L2_CID_BACKLIGHT_COMPENSATION		(V4L2_CID_BASE+28)
 #define V4L2_CID_CHROMA_AGC                     (V4L2_CID_BASE+29)
 #define V4L2_CID_COLOR_KILLER                   (V4L2_CID_BASE+30)
 #define V4L2_CID_COLORFX			(V4L2_CID_BASE+31)
@@ -1295,11 +1295,11 @@ enum v4l2_colorfx {
 #define V4L2_CID_LASTP1				(V4L2_CID_BASE+42)
 
 /*  MPEG-class control IDs defined by V4L2 */
-#define V4L2_CID_MPEG_BASE 			(V4L2_CTRL_CLASS_MPEG | 0x900)
-#define V4L2_CID_MPEG_CLASS 			(V4L2_CTRL_CLASS_MPEG | 1)
+#define V4L2_CID_MPEG_BASE			(V4L2_CTRL_CLASS_MPEG | 0x900)
+#define V4L2_CID_MPEG_CLASS			(V4L2_CTRL_CLASS_MPEG | 1)
 
 /*  MPEG streams, specific to multiplexed streams */
-#define V4L2_CID_MPEG_STREAM_TYPE 		(V4L2_CID_MPEG_BASE+0)
+#define V4L2_CID_MPEG_STREAM_TYPE		(V4L2_CID_MPEG_BASE+0)
 enum v4l2_mpeg_stream_type {
 	V4L2_MPEG_STREAM_TYPE_MPEG2_PS   = 0, /* MPEG-2 program stream */
 	V4L2_MPEG_STREAM_TYPE_MPEG2_TS   = 1, /* MPEG-2 transport stream */
@@ -1308,26 +1308,26 @@ enum v4l2_mpeg_stream_type {
 	V4L2_MPEG_STREAM_TYPE_MPEG1_VCD  = 4, /* MPEG-1 VCD-compatible stream */
 	V4L2_MPEG_STREAM_TYPE_MPEG2_SVCD = 5, /* MPEG-2 SVCD-compatible stream */
 };
-#define V4L2_CID_MPEG_STREAM_PID_PMT 		(V4L2_CID_MPEG_BASE+1)
-#define V4L2_CID_MPEG_STREAM_PID_AUDIO 		(V4L2_CID_MPEG_BASE+2)
-#define V4L2_CID_MPEG_STREAM_PID_VIDEO 		(V4L2_CID_MPEG_BASE+3)
-#define V4L2_CID_MPEG_STREAM_PID_PCR 		(V4L2_CID_MPEG_BASE+4)
-#define V4L2_CID_MPEG_STREAM_PES_ID_AUDIO 	(V4L2_CID_MPEG_BASE+5)
-#define V4L2_CID_MPEG_STREAM_PES_ID_VIDEO 	(V4L2_CID_MPEG_BASE+6)
-#define V4L2_CID_MPEG_STREAM_VBI_FMT 		(V4L2_CID_MPEG_BASE+7)
+#define V4L2_CID_MPEG_STREAM_PID_PMT		(V4L2_CID_MPEG_BASE+1)
+#define V4L2_CID_MPEG_STREAM_PID_AUDIO		(V4L2_CID_MPEG_BASE+2)
+#define V4L2_CID_MPEG_STREAM_PID_VIDEO		(V4L2_CID_MPEG_BASE+3)
+#define V4L2_CID_MPEG_STREAM_PID_PCR		(V4L2_CID_MPEG_BASE+4)
+#define V4L2_CID_MPEG_STREAM_PES_ID_AUDIO	(V4L2_CID_MPEG_BASE+5)
+#define V4L2_CID_MPEG_STREAM_PES_ID_VIDEO	(V4L2_CID_MPEG_BASE+6)
+#define V4L2_CID_MPEG_STREAM_VBI_FMT		(V4L2_CID_MPEG_BASE+7)
 enum v4l2_mpeg_stream_vbi_fmt {
 	V4L2_MPEG_STREAM_VBI_FMT_NONE = 0,  /* No VBI in the MPEG stream */
 	V4L2_MPEG_STREAM_VBI_FMT_IVTV = 1,  /* VBI in private packets, IVTV format */
 };
 
 /*  MPEG audio controls specific to multiplexed streams  */
-#define V4L2_CID_MPEG_AUDIO_SAMPLING_FREQ 	(V4L2_CID_MPEG_BASE+100)
+#define V4L2_CID_MPEG_AUDIO_SAMPLING_FREQ	(V4L2_CID_MPEG_BASE+100)
 enum v4l2_mpeg_audio_sampling_freq {
 	V4L2_MPEG_AUDIO_SAMPLING_FREQ_44100 = 0,
 	V4L2_MPEG_AUDIO_SAMPLING_FREQ_48000 = 1,
 	V4L2_MPEG_AUDIO_SAMPLING_FREQ_32000 = 2,
 };
-#define V4L2_CID_MPEG_AUDIO_ENCODING 		(V4L2_CID_MPEG_BASE+101)
+#define V4L2_CID_MPEG_AUDIO_ENCODING		(V4L2_CID_MPEG_BASE+101)
 enum v4l2_mpeg_audio_encoding {
 	V4L2_MPEG_AUDIO_ENCODING_LAYER_1 = 0,
 	V4L2_MPEG_AUDIO_ENCODING_LAYER_2 = 1,
@@ -1335,7 +1335,7 @@ enum v4l2_mpeg_audio_encoding {
 	V4L2_MPEG_AUDIO_ENCODING_AAC     = 3,
 	V4L2_MPEG_AUDIO_ENCODING_AC3     = 4,
 };
-#define V4L2_CID_MPEG_AUDIO_L1_BITRATE 		(V4L2_CID_MPEG_BASE+102)
+#define V4L2_CID_MPEG_AUDIO_L1_BITRATE		(V4L2_CID_MPEG_BASE+102)
 enum v4l2_mpeg_audio_l1_bitrate {
 	V4L2_MPEG_AUDIO_L1_BITRATE_32K  = 0,
 	V4L2_MPEG_AUDIO_L1_BITRATE_64K  = 1,
@@ -1352,7 +1352,7 @@ enum v4l2_mpeg_audio_l1_bitrate {
 	V4L2_MPEG_AUDIO_L1_BITRATE_416K = 12,
 	V4L2_MPEG_AUDIO_L1_BITRATE_448K = 13,
 };
-#define V4L2_CID_MPEG_AUDIO_L2_BITRATE 		(V4L2_CID_MPEG_BASE+103)
+#define V4L2_CID_MPEG_AUDIO_L2_BITRATE		(V4L2_CID_MPEG_BASE+103)
 enum v4l2_mpeg_audio_l2_bitrate {
 	V4L2_MPEG_AUDIO_L2_BITRATE_32K  = 0,
 	V4L2_MPEG_AUDIO_L2_BITRATE_48K  = 1,
@@ -1369,7 +1369,7 @@ enum v4l2_mpeg_audio_l2_bitrate {
 	V4L2_MPEG_AUDIO_L2_BITRATE_320K = 12,
 	V4L2_MPEG_AUDIO_L2_BITRATE_384K = 13,
 };
-#define V4L2_CID_MPEG_AUDIO_L3_BITRATE 		(V4L2_CID_MPEG_BASE+104)
+#define V4L2_CID_MPEG_AUDIO_L3_BITRATE		(V4L2_CID_MPEG_BASE+104)
 enum v4l2_mpeg_audio_l3_bitrate {
 	V4L2_MPEG_AUDIO_L3_BITRATE_32K  = 0,
 	V4L2_MPEG_AUDIO_L3_BITRATE_40K  = 1,
@@ -1386,32 +1386,32 @@ enum v4l2_mpeg_audio_l3_bitrate {
 	V4L2_MPEG_AUDIO_L3_BITRATE_256K = 12,
 	V4L2_MPEG_AUDIO_L3_BITRATE_320K = 13,
 };
-#define V4L2_CID_MPEG_AUDIO_MODE 		(V4L2_CID_MPEG_BASE+105)
+#define V4L2_CID_MPEG_AUDIO_MODE		(V4L2_CID_MPEG_BASE+105)
 enum v4l2_mpeg_audio_mode {
 	V4L2_MPEG_AUDIO_MODE_STEREO       = 0,
 	V4L2_MPEG_AUDIO_MODE_JOINT_STEREO = 1,
 	V4L2_MPEG_AUDIO_MODE_DUAL         = 2,
 	V4L2_MPEG_AUDIO_MODE_MONO         = 3,
 };
-#define V4L2_CID_MPEG_AUDIO_MODE_EXTENSION 	(V4L2_CID_MPEG_BASE+106)
+#define V4L2_CID_MPEG_AUDIO_MODE_EXTENSION	(V4L2_CID_MPEG_BASE+106)
 enum v4l2_mpeg_audio_mode_extension {
 	V4L2_MPEG_AUDIO_MODE_EXTENSION_BOUND_4  = 0,
 	V4L2_MPEG_AUDIO_MODE_EXTENSION_BOUND_8  = 1,
 	V4L2_MPEG_AUDIO_MODE_EXTENSION_BOUND_12 = 2,
 	V4L2_MPEG_AUDIO_MODE_EXTENSION_BOUND_16 = 3,
 };
-#define V4L2_CID_MPEG_AUDIO_EMPHASIS 		(V4L2_CID_MPEG_BASE+107)
+#define V4L2_CID_MPEG_AUDIO_EMPHASIS		(V4L2_CID_MPEG_BASE+107)
 enum v4l2_mpeg_audio_emphasis {
 	V4L2_MPEG_AUDIO_EMPHASIS_NONE         = 0,
 	V4L2_MPEG_AUDIO_EMPHASIS_50_DIV_15_uS = 1,
 	V4L2_MPEG_AUDIO_EMPHASIS_CCITT_J17    = 2,
 };
-#define V4L2_CID_MPEG_AUDIO_CRC 		(V4L2_CID_MPEG_BASE+108)
+#define V4L2_CID_MPEG_AUDIO_CRC			(V4L2_CID_MPEG_BASE+108)
 enum v4l2_mpeg_audio_crc {
 	V4L2_MPEG_AUDIO_CRC_NONE  = 0,
 	V4L2_MPEG_AUDIO_CRC_CRC16 = 1,
 };
-#define V4L2_CID_MPEG_AUDIO_MUTE 		(V4L2_CID_MPEG_BASE+109)
+#define V4L2_CID_MPEG_AUDIO_MUTE		(V4L2_CID_MPEG_BASE+109)
 #define V4L2_CID_MPEG_AUDIO_AAC_BITRATE		(V4L2_CID_MPEG_BASE+110)
 #define V4L2_CID_MPEG_AUDIO_AC3_BITRATE		(V4L2_CID_MPEG_BASE+111)
 enum v4l2_mpeg_audio_ac3_bitrate {
@@ -1437,33 +1437,33 @@ enum v4l2_mpeg_audio_ac3_bitrate {
 };
 
 /*  MPEG video controls specific to multiplexed streams */
-#define V4L2_CID_MPEG_VIDEO_ENCODING 		(V4L2_CID_MPEG_BASE+200)
+#define V4L2_CID_MPEG_VIDEO_ENCODING		(V4L2_CID_MPEG_BASE+200)
 enum v4l2_mpeg_video_encoding {
 	V4L2_MPEG_VIDEO_ENCODING_MPEG_1     = 0,
 	V4L2_MPEG_VIDEO_ENCODING_MPEG_2     = 1,
 	V4L2_MPEG_VIDEO_ENCODING_MPEG_4_AVC = 2,
 };
-#define V4L2_CID_MPEG_VIDEO_ASPECT 		(V4L2_CID_MPEG_BASE+201)
+#define V4L2_CID_MPEG_VIDEO_ASPECT		(V4L2_CID_MPEG_BASE+201)
 enum v4l2_mpeg_video_aspect {
 	V4L2_MPEG_VIDEO_ASPECT_1x1     = 0,
 	V4L2_MPEG_VIDEO_ASPECT_4x3     = 1,
 	V4L2_MPEG_VIDEO_ASPECT_16x9    = 2,
 	V4L2_MPEG_VIDEO_ASPECT_221x100 = 3,
 };
-#define V4L2_CID_MPEG_VIDEO_B_FRAMES 		(V4L2_CID_MPEG_BASE+202)
-#define V4L2_CID_MPEG_VIDEO_GOP_SIZE 		(V4L2_CID_MPEG_BASE+203)
-#define V4L2_CID_MPEG_VIDEO_GOP_CLOSURE 	(V4L2_CID_MPEG_BASE+204)
-#define V4L2_CID_MPEG_VIDEO_PULLDOWN 		(V4L2_CID_MPEG_BASE+205)
-#define V4L2_CID_MPEG_VIDEO_BITRATE_MODE 	(V4L2_CID_MPEG_BASE+206)
+#define V4L2_CID_MPEG_VIDEO_B_FRAMES		(V4L2_CID_MPEG_BASE+202)
+#define V4L2_CID_MPEG_VIDEO_GOP_SIZE		(V4L2_CID_MPEG_BASE+203)
+#define V4L2_CID_MPEG_VIDEO_GOP_CLOSURE		(V4L2_CID_MPEG_BASE+204)
+#define V4L2_CID_MPEG_VIDEO_PULLDOWN		(V4L2_CID_MPEG_BASE+205)
+#define V4L2_CID_MPEG_VIDEO_BITRATE_MODE	(V4L2_CID_MPEG_BASE+206)
 enum v4l2_mpeg_video_bitrate_mode {
 	V4L2_MPEG_VIDEO_BITRATE_MODE_VBR = 0,
 	V4L2_MPEG_VIDEO_BITRATE_MODE_CBR = 1,
 };
-#define V4L2_CID_MPEG_VIDEO_BITRATE 		(V4L2_CID_MPEG_BASE+207)
-#define V4L2_CID_MPEG_VIDEO_BITRATE_PEAK 	(V4L2_CID_MPEG_BASE+208)
+#define V4L2_CID_MPEG_VIDEO_BITRATE		(V4L2_CID_MPEG_BASE+207)
+#define V4L2_CID_MPEG_VIDEO_BITRATE_PEAK	(V4L2_CID_MPEG_BASE+208)
 #define V4L2_CID_MPEG_VIDEO_TEMPORAL_DECIMATION (V4L2_CID_MPEG_BASE+209)
-#define V4L2_CID_MPEG_VIDEO_MUTE 		(V4L2_CID_MPEG_BASE+210)
-#define V4L2_CID_MPEG_VIDEO_MUTE_YUV 		(V4L2_CID_MPEG_BASE+211)
+#define V4L2_CID_MPEG_VIDEO_MUTE		(V4L2_CID_MPEG_BASE+210)
+#define V4L2_CID_MPEG_VIDEO_MUTE_YUV		(V4L2_CID_MPEG_BASE+211)
 #define V4L2_CID_MPEG_VIDEO_DECODER_SLICE_INTERFACE		(V4L2_CID_MPEG_BASE+212)
 #define V4L2_CID_MPEG_VIDEO_DECODER_MPEG4_DEBLOCK_FILTER	(V4L2_CID_MPEG_BASE+213)
 #define V4L2_CID_MPEG_VIDEO_CYCLIC_INTRA_REFRESH_MB		(V4L2_CID_MPEG_BASE+214)
@@ -1601,14 +1601,14 @@ enum v4l2_mpeg_video_mpeg4_profile {
 #define V4L2_CID_MPEG_VIDEO_MPEG4_QPEL		(V4L2_CID_MPEG_BASE+407)
 
 /*  MPEG-class control IDs specific to the CX2341x driver as defined by V4L2 */
-#define V4L2_CID_MPEG_CX2341X_BASE 				(V4L2_CTRL_CLASS_MPEG | 0x1000)
-#define V4L2_CID_MPEG_CX2341X_VIDEO_SPATIAL_FILTER_MODE 	(V4L2_CID_MPEG_CX2341X_BASE+0)
+#define V4L2_CID_MPEG_CX2341X_BASE				(V4L2_CTRL_CLASS_MPEG | 0x1000)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_SPATIAL_FILTER_MODE		(V4L2_CID_MPEG_CX2341X_BASE+0)
 enum v4l2_mpeg_cx2341x_video_spatial_filter_mode {
 	V4L2_MPEG_CX2341X_VIDEO_SPATIAL_FILTER_MODE_MANUAL = 0,
 	V4L2_MPEG_CX2341X_VIDEO_SPATIAL_FILTER_MODE_AUTO   = 1,
 };
-#define V4L2_CID_MPEG_CX2341X_VIDEO_SPATIAL_FILTER 		(V4L2_CID_MPEG_CX2341X_BASE+1)
-#define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE 	(V4L2_CID_MPEG_CX2341X_BASE+2)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_SPATIAL_FILTER		(V4L2_CID_MPEG_CX2341X_BASE+1)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE	(V4L2_CID_MPEG_CX2341X_BASE+2)
 enum v4l2_mpeg_cx2341x_video_luma_spatial_filter_type {
 	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_OFF                  = 0,
 	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_1D_HOR               = 1,
@@ -1616,18 +1616,18 @@ enum v4l2_mpeg_cx2341x_video_luma_spatial_filter_type {
 	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_2D_HV_SEPARABLE      = 3,
 	V4L2_MPEG_CX2341X_VIDEO_LUMA_SPATIAL_FILTER_TYPE_2D_SYM_NON_SEPARABLE = 4,
 };
-#define V4L2_CID_MPEG_CX2341X_VIDEO_CHROMA_SPATIAL_FILTER_TYPE 	(V4L2_CID_MPEG_CX2341X_BASE+3)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_CHROMA_SPATIAL_FILTER_TYPE	(V4L2_CID_MPEG_CX2341X_BASE+3)
 enum v4l2_mpeg_cx2341x_video_chroma_spatial_filter_type {
 	V4L2_MPEG_CX2341X_VIDEO_CHROMA_SPATIAL_FILTER_TYPE_OFF    = 0,
 	V4L2_MPEG_CX2341X_VIDEO_CHROMA_SPATIAL_FILTER_TYPE_1D_HOR = 1,
 };
-#define V4L2_CID_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER_MODE 	(V4L2_CID_MPEG_CX2341X_BASE+4)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER_MODE	(V4L2_CID_MPEG_CX2341X_BASE+4)
 enum v4l2_mpeg_cx2341x_video_temporal_filter_mode {
 	V4L2_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER_MODE_MANUAL = 0,
 	V4L2_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER_MODE_AUTO   = 1,
 };
-#define V4L2_CID_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER 		(V4L2_CID_MPEG_CX2341X_BASE+5)
-#define V4L2_CID_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE 		(V4L2_CID_MPEG_CX2341X_BASE+6)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_TEMPORAL_FILTER		(V4L2_CID_MPEG_CX2341X_BASE+5)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE		(V4L2_CID_MPEG_CX2341X_BASE+6)
 enum v4l2_mpeg_cx2341x_video_median_filter_type {
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_OFF      = 0,
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_HOR      = 1,
@@ -1635,11 +1635,11 @@ enum v4l2_mpeg_cx2341x_video_median_filter_type {
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_HOR_VERT = 3,
 	V4L2_MPEG_CX2341X_VIDEO_MEDIAN_FILTER_TYPE_DIAG     = 4,
 };
-#define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_MEDIAN_FILTER_BOTTOM 	(V4L2_CID_MPEG_CX2341X_BASE+7)
-#define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_MEDIAN_FILTER_TOP 	(V4L2_CID_MPEG_CX2341X_BASE+8)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_MEDIAN_FILTER_BOTTOM	(V4L2_CID_MPEG_CX2341X_BASE+7)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_LUMA_MEDIAN_FILTER_TOP	(V4L2_CID_MPEG_CX2341X_BASE+8)
 #define V4L2_CID_MPEG_CX2341X_VIDEO_CHROMA_MEDIAN_FILTER_BOTTOM	(V4L2_CID_MPEG_CX2341X_BASE+9)
-#define V4L2_CID_MPEG_CX2341X_VIDEO_CHROMA_MEDIAN_FILTER_TOP 	(V4L2_CID_MPEG_CX2341X_BASE+10)
-#define V4L2_CID_MPEG_CX2341X_STREAM_INSERT_NAV_PACKETS 	(V4L2_CID_MPEG_CX2341X_BASE+11)
+#define V4L2_CID_MPEG_CX2341X_VIDEO_CHROMA_MEDIAN_FILTER_TOP	(V4L2_CID_MPEG_CX2341X_BASE+10)
+#define V4L2_CID_MPEG_CX2341X_STREAM_INSERT_NAV_PACKETS		(V4L2_CID_MPEG_CX2341X_BASE+11)
 
 /*  MPEG-class control IDs specific to the Samsung MFC 5.1 driver as defined by V4L2 */
 #define V4L2_CID_MPEG_MFC51_BASE				(V4L2_CTRL_CLASS_MPEG | 0x1100)
@@ -1669,8 +1669,8 @@ enum v4l2_mpeg_mfc51_video_force_frame_type {
 #define V4L2_CID_MPEG_MFC51_VIDEO_H264_NUM_REF_PIC_FOR_P		(V4L2_CID_MPEG_MFC51_BASE+54)
 
 /*  Camera class control IDs */
-#define V4L2_CID_CAMERA_CLASS_BASE 	(V4L2_CTRL_CLASS_CAMERA | 0x900)
-#define V4L2_CID_CAMERA_CLASS 		(V4L2_CTRL_CLASS_CAMERA | 1)
+#define V4L2_CID_CAMERA_CLASS_BASE	(V4L2_CTRL_CLASS_CAMERA | 0x900)
+#define V4L2_CID_CAMERA_CLASS		(V4L2_CTRL_CLASS_CAMERA | 1)
 
 #define V4L2_CID_EXPOSURE_AUTO			(V4L2_CID_CAMERA_CLASS_BASE+1)
 enum  v4l2_exposure_auto_type {
@@ -1858,21 +1858,21 @@ struct v4l2_hw_freq_seek {
  */
 
 struct v4l2_rds_data {
-	__u8 	lsb;
-	__u8 	msb;
-	__u8 	block;
+	__u8	lsb;
+	__u8	msb;
+	__u8	block;
 } __attribute__ ((packed));
 
-#define V4L2_RDS_BLOCK_MSK 	 0x7
-#define V4L2_RDS_BLOCK_A 	 0
-#define V4L2_RDS_BLOCK_B 	 1
-#define V4L2_RDS_BLOCK_C 	 2
-#define V4L2_RDS_BLOCK_D 	 3
-#define V4L2_RDS_BLOCK_C_ALT 	 4
-#define V4L2_RDS_BLOCK_INVALID 	 7
+#define V4L2_RDS_BLOCK_MSK	 0x7
+#define V4L2_RDS_BLOCK_A	 0
+#define V4L2_RDS_BLOCK_B	 1
+#define V4L2_RDS_BLOCK_C	 2
+#define V4L2_RDS_BLOCK_D	 3
+#define V4L2_RDS_BLOCK_C_ALT	 4
+#define V4L2_RDS_BLOCK_INVALID	 7
 
 #define V4L2_RDS_BLOCK_CORRECTED 0x40
-#define V4L2_RDS_BLOCK_ERROR 	 0x80
+#define V4L2_RDS_BLOCK_ERROR	 0x80
 
 /*
  *	A U D I O
@@ -2305,8 +2305,8 @@ struct v4l2_create_buffers {
 #define VIDIOC_S_CROP		 _IOW('V', 60, struct v4l2_crop)
 #define VIDIOC_G_JPEGCOMP	 _IOR('V', 61, struct v4l2_jpegcompression)
 #define VIDIOC_S_JPEGCOMP	 _IOW('V', 62, struct v4l2_jpegcompression)
-#define VIDIOC_QUERYSTD      	 _IOR('V', 63, v4l2_std_id)
-#define VIDIOC_TRY_FMT      	_IOWR('V', 64, struct v4l2_format)
+#define VIDIOC_QUERYSTD		 _IOR('V', 63, v4l2_std_id)
+#define VIDIOC_TRY_FMT		_IOWR('V', 64, struct v4l2_format)
 #define VIDIOC_ENUMAUDIO	_IOWR('V', 65, struct v4l2_audio)
 #define VIDIOC_ENUMAUDOUT	_IOWR('V', 66, struct v4l2_audioout)
 #define VIDIOC_G_PRIORITY        _IOR('V', 67, enum v4l2_priority)
@@ -2328,8 +2328,8 @@ struct v4l2_create_buffers {
 /* Experimental, meant for debugging, testing and internal use.
    Only implemented if CONFIG_VIDEO_ADV_DEBUG is defined.
    You must be root to use these ioctls. Never use these in applications! */
-#define	VIDIOC_DBG_S_REGISTER 	 _IOW('V', 79, struct v4l2_dbg_register)
-#define	VIDIOC_DBG_G_REGISTER 	_IOWR('V', 80, struct v4l2_dbg_register)
+#define	VIDIOC_DBG_S_REGISTER	 _IOW('V', 79, struct v4l2_dbg_register)
+#define	VIDIOC_DBG_G_REGISTER	_IOWR('V', 80, struct v4l2_dbg_register)
 
 /* Experimental, meant for debugging, testing and internal use.
    Never use this ioctl in applications! */

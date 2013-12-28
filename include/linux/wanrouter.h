@@ -3,8 +3,8 @@
 *		This module provides API and common services for WAN Link
 *		Drivers and is completely hardware-independent.
 *
-* Author: 	Nenad Corbic <ncorbic@sangoma.com>
-*		Gideon Hack 	
+* Author:	Nenad Corbic <ncorbic@sangoma.com>
+*		Gideon Hack
 * Additions:	Arnaldo Melo
 *
 * Copyright:	(c) 1995-2000 Sangoma Technologies Inc.
@@ -17,7 +17,7 @@
 * Jul 21, 2000  Nenad Corbic	Added WAN_FT1_READY State
 * Feb 24, 2000  Nenad Corbic    Added support for socket based x25api
 * Jan 28, 2000  Nenad Corbic    Added support for the ASYNC protocol.
-* Oct 04, 1999  Nenad Corbic 	Updated for 2.1.0 release
+* Oct 04, 1999  Nenad Corbic	Updated for 2.1.0 release
 * Jun 02, 1999  Gideon Hack	Added support for the S514 adapter.
 * May 23, 1999	Arnaldo Melo	Added local_addr to wanif_conf_t
 *				WAN_DISCONNECTING state added
@@ -29,15 +29,15 @@
 *				Added 'authenticator' to 'wan_ppp_conf_t'
 * Nov 06, 1997	Jaspreet Singh	Changed Router Driver version to 1.1 from 1.0
 * Oct 20, 1997	Jaspreet Singh	Added 'cir','bc','be' and 'mc' to 'wanif_conf_t'
-*				Added 'enable_IPX' and 'network_number' to 
+*				Added 'enable_IPX' and 'network_number' to
 *				'wan_device_t'.  Also added defines for
 *				UDP PACKET TYPE, Interrupt test, critical values
 *				for RACE conditions.
-* Oct 05, 1997	Jaspreet Singh	Added 'dlci_num' and 'dlci[100]' to 
+* Oct 05, 1997	Jaspreet Singh	Added 'dlci_num' and 'dlci[100]' to
 *				'wan_fr_conf_t' to configure a list of dlci(s)
-*				for a NODE 
+*				for a NODE
 * Jul 07, 1997	Jaspreet Singh	Added 'ttl' to 'wandev_conf_t' & 'wan_device_t'
-* May 29, 1997 	Jaspreet Singh	Added 'tx_int_enabled' to 'wan_device_t'
+* May 29, 1997	Jaspreet Singh	Added 'tx_int_enabled' to 'wan_device_t'
 * May 21, 1997	Jaspreet Singh	Added 'udp_port' to 'wan_device_t'
 * Apr 25, 1997  Farhan Thawar   Added 'udp_port' to 'wandev_conf_t'
 * Jan 16, 1997	Gene Kozin	router_devlist made public
@@ -85,11 +85,11 @@ enum router_ioctls
 #define USED_BY_FIELD	8	/* max length of the used by field */
 
 /* Defines for UDP PACKET TYPE */
-#define UDP_PTPIPE_TYPE 	0x01
+#define UDP_PTPIPE_TYPE		0x01
 #define UDP_FPIPE_TYPE		0x02
 #define UDP_CPIPE_TYPE		0x03
-#define UDP_DRVSTATS_TYPE 	0x04
-#define UDP_INVALID_TYPE  	0x05
+#define UDP_DRVSTATS_TYPE	0x04
+#define UDP_INVALID_TYPE	0x05
 
 /* Command return code */
 #define CMD_OK		0		/* normal firmware return code */
@@ -135,7 +135,7 @@ typedef struct wan_x25_conf
 	unsigned ccitt_compat;	/* compatibility mode: 1988/1984/1980 */
 	unsigned x25_conf_opt;   /* User defined x25 config optoins */
 	unsigned char LAPB_hdlc_only; /* Run in HDLC only mode */
-	unsigned char logging;   /* Control connection logging */  
+	unsigned char logging;   /* Control connection logging */
 	unsigned char oob_on_modem; /* Whether to send modem status to the user app */
 } wan_x25_conf_t;
 
@@ -208,7 +208,7 @@ typedef struct wandev_conf
         char S514_CPU_no[1];	/* S514 PCI adapter CPU number ('A' or 'B') */
         unsigned PCI_slot_no;	/* S514 PCI adapter slot number */
 	char auto_pci_cfg;	/* S515 PCI automatic slot detection */
-	char comm_port;		/* Communication Port (PRI=0, SEC=1) */ 
+	char comm_port;		/* Communication Port (PRI=0, SEC=1) */
 	unsigned bps;		/* data transfer rate */
 	unsigned mtu;		/* maximum transmit unit size */
         unsigned udp_port;      /* UDP port for management */
@@ -223,7 +223,7 @@ typedef struct wandev_conf
 	char receive_only;	/* disable tx buffers */
 	char tty;		/* Create a fake tty device */
 	unsigned tty_major;	/* Major number for wanpipe tty device */
-	unsigned tty_minor; 	/* Minor number for wanpipe tty device */
+	unsigned tty_minor;	/* Minor number for wanpipe tty device */
 	unsigned tty_mode;	/* TTY operation mode SYNC or ASYNC */
 	char backup;		/* Backup Mode */
 	unsigned hw_opt[4];	/* other hardware options */
@@ -300,7 +300,7 @@ typedef struct wandev_conf
 #define	WANOPT_PPP_PEER		2
 
 /* ASY Mode Options */
-#define WANOPT_ONE 		1
+#define WANOPT_ONE		1
 #define WANOPT_TWO		2
 #define WANOPT_ONE_AND_HALF	3
 
@@ -399,7 +399,7 @@ typedef struct wanif_conf
 	unsigned hold_timeout;		/* sec, before re-connecting */
 	unsigned cir;			/* Committed Information Rate fwd,bwd*/
 	unsigned bc;			/* Committed Burst Size fwd, bwd */
-	unsigned be;			/* Excess Burst Size fwd, bwd */ 
+	unsigned be;			/* Excess Burst Size fwd, bwd */
 	unsigned char enable_IPX;	/* Enable or Disable IPX */
 	unsigned char inarp;		/* Send Inverse ARP requests Y/N */
 	unsigned inarp_interval;	/* sec, between InARP requests */
@@ -439,9 +439,9 @@ typedef struct wanif_conf
 	unsigned char async_mode;
 	unsigned tx_bits_per_char;
 	unsigned rx_bits_per_char;
-	unsigned stop_bits;  
+	unsigned stop_bits;
 	unsigned char parity;
- 	unsigned break_timer;
+	unsigned break_timer;
         unsigned inter_char_timer;
 	unsigned rx_complete_length;
 	unsigned xon_char;
@@ -477,7 +477,7 @@ struct wan_device {
 	unsigned mtu;			/* max physical transmit unit size */
 	unsigned udp_port;              /* UDP port for management */
         unsigned char ttl;		/* Time To Live for UDP security */
-	unsigned enable_tx_int; 	/* Transmit Interrupt enabled or not */
+	unsigned enable_tx_int;		/* Transmit Interrupt enabled or not */
 	char interface;			/* RS-232/V.35, etc. */
 	char clocking;			/* external/internal */
 	char line_coding;		/* NRZ/NRZI/FM0/FM1, etc. */
@@ -485,14 +485,14 @@ struct wan_device {
 	char connection;		/* permanent/switched/on-demand */
 	char signalling;		/* Signalling RS232 or V35 */
 	char read_mode;			/* read mode: Polling or interrupt */
-	char new_if_cnt;                /* Number of interfaces per wanpipe */ 
+	char new_if_cnt;                /* Number of interfaces per wanpipe */
 	char del_if_cnt;		/* Number of times del_if() gets called */
 	unsigned char piggyback;        /* Piggibacking a port */
 	unsigned hw_opt[4];		/* other hardware options */
 					/****** status and statistics *******/
 	char state;			/* device state */
 	char api_status;		/* device api status */
-	struct net_device_stats stats; 	/* interface statistics */
+	struct net_device_stats stats;	/* interface statistics */
 	unsigned reserved[16];		/* reserved for future use */
 	unsigned long critical;		/* critical section flag */
 	spinlock_t lock;                /* Support for SMP Locking */

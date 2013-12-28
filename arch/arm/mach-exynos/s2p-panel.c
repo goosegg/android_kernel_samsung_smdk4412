@@ -1043,5 +1043,3 @@ struct ld9040_panel_data s2plus_panel_data = {
 	.elvss_on = SEQ_ELVSS_ON,
 	.gamma_table_size = ARRAY_SIZE(p22Gamma_set),
 };
-
-

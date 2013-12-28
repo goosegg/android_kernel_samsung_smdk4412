@@ -250,7 +250,7 @@ struct tty_port {
  * treatment, but (1) the default 80x24 is usually right and (2) it's
  * most often used by a windowing system, which will set the correct
  * size each time the window is created or resized anyway.
- * 						- TYT, 9/14/92
+ *						- TYT, 9/14/92
  */
 
 struct tty_operations;
@@ -354,25 +354,25 @@ struct tty_file_private {
  * tty->write.  Thus, you must use the inline functions set_bit() and
  * clear_bit() to make things atomic.
  */
-#define TTY_THROTTLED 		0	/* Call unthrottle() at threshold min */
-#define TTY_IO_ERROR 		1	/* Cause an I/O error (may be no ldisc too) */
-#define TTY_OTHER_CLOSED 	2	/* Other side (if any) has closed */
-#define TTY_EXCLUSIVE 		3	/* Exclusive open mode */
-#define TTY_DEBUG 		4	/* Debugging */
-#define TTY_DO_WRITE_WAKEUP 	5	/* Call write_wakeup after queuing new */
-#define TTY_PUSH 		6	/* n_tty private */
-#define TTY_CLOSING 		7	/* ->close() in progress */
-#define TTY_LDISC 		9	/* Line discipline attached */
-#define TTY_LDISC_CHANGING 	10	/* Line discipline changing */
-#define TTY_LDISC_OPEN	 	11	/* Line discipline is open */
-#define TTY_HW_COOK_OUT 	14	/* Hardware can do output cooking */
-#define TTY_HW_COOK_IN 		15	/* Hardware can do input cooking */
-#define TTY_PTY_LOCK 		16	/* pty private */
-#define TTY_NO_WRITE_SPLIT 	17	/* Preserve write boundaries to driver */
-#define TTY_HUPPED 		18	/* Post driver->hangup() */
+#define TTY_THROTTLED		0	/* Call unthrottle() at threshold min */
+#define TTY_IO_ERROR		1	/* Cause an I/O error (may be no ldisc too) */
+#define TTY_OTHER_CLOSED	2	/* Other side (if any) has closed */
+#define TTY_EXCLUSIVE		3	/* Exclusive open mode */
+#define TTY_DEBUG		4	/* Debugging */
+#define TTY_DO_WRITE_WAKEUP	5	/* Call write_wakeup after queuing new */
+#define TTY_PUSH		6	/* n_tty private */
+#define TTY_CLOSING		7	/* ->close() in progress */
+#define TTY_LDISC		9	/* Line discipline attached */
+#define TTY_LDISC_CHANGING	10	/* Line discipline changing */
+#define TTY_LDISC_OPEN		11	/* Line discipline is open */
+#define TTY_HW_COOK_OUT		14	/* Hardware can do output cooking */
+#define TTY_HW_COOK_IN		15	/* Hardware can do input cooking */
+#define TTY_PTY_LOCK		16	/* pty private */
+#define TTY_NO_WRITE_SPLIT	17	/* Preserve write boundaries to driver */
+#define TTY_HUPPED		18	/* Post driver->hangup() */
 #define TTY_FLUSHING		19	/* Flushing to ldisc in progress */
 #define TTY_FLUSHPENDING	20	/* Queued buffer flush pending */
-#define TTY_HUPPING 		21	/* ->hangup() in progress */
+#define TTY_HUPPING		21	/* ->hangup() in progress */
 
 #define TTY_WRITE_FLUSH(tty) tty_write_flush((tty))
 

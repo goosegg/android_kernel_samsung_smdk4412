@@ -167,7 +167,7 @@ struct nfs4_channel_attrs {
 
 /* nfs41 sessions slot seqid */
 struct nfs4_slot {
-	u32		 	seq_nr;
+	u32			seq_nr;
 };
 
 struct nfs4_sequence_args {
@@ -501,7 +501,7 @@ struct nfs_removeres {
 	const struct nfs_server *server;
 	struct nfs_fattr	*dir_attr;
 	struct nfs4_change_info	cinfo;
-	struct nfs4_sequence_res 	seq_res;
+	struct nfs4_sequence_res	seq_res;
 };
 
 /*
@@ -568,7 +568,7 @@ struct nfs_setattrargs {
 	struct iattr *                  iap;
 	const struct nfs_server *	server; /* Needed for name mapping */
 	const u32 *			bitmask;
-	struct nfs4_sequence_args 	seq_args;
+	struct nfs4_sequence_args	seq_args;
 };
 
 struct nfs_setaclargs {
@@ -588,7 +588,7 @@ struct nfs_getaclargs {
 	size_t				acl_len;
 	unsigned int			acl_pgbase;
 	struct page **			acl_pages;
-	struct nfs4_sequence_args 	seq_args;
+	struct nfs4_sequence_args	seq_args;
 };
 
 /* getxattr ACL interface flags */
@@ -800,7 +800,7 @@ struct nfs4_create_arg {
 	const struct iattr *		attrs;
 	const struct nfs_fh *		dir_fh;
 	const u32 *			bitmask;
-	struct nfs4_sequence_args 	seq_args;
+	struct nfs4_sequence_args	seq_args;
 };
 
 struct nfs4_create_res {
@@ -840,7 +840,7 @@ struct nfs4_link_arg {
 	const struct nfs_fh *		dir_fh;
 	const struct qstr *		name;
 	const u32 *			bitmask;
-	struct nfs4_sequence_args 	seq_args;
+	struct nfs4_sequence_args	seq_args;
 };
 
 struct nfs4_link_res {
@@ -1006,7 +1006,7 @@ struct nfs4_secinfo_gss {
 };
 
 struct nfs4_secinfo_flavor {
-	unsigned int 		flavor;
+	unsigned int		flavor;
 	struct nfs4_secinfo_gss	gss;
 };
 
@@ -1046,8 +1046,8 @@ struct nfs_impl_id4 {
 struct nfs41_exchange_id_args {
 	struct nfs_client		*client;
 	nfs4_verifier			*verifier;
-	unsigned int 			id_len;
-	char 				id[NFS4_EXCHANGE_ID_LEN];
+	unsigned int			id_len;
+	char				id[NFS4_EXCHANGE_ID_LEN];
 	u32				flags;
 };
 
@@ -1059,7 +1059,7 @@ struct server_owner {
 
 struct server_scope {
 	uint32_t			server_scope_sz;
-	char 				server_scope[NFS4_OPAQUE_LIMIT];
+	char				server_scope[NFS4_OPAQUE_LIMIT];
 };
 
 struct nfs41_exchange_id_res {
@@ -1216,7 +1216,7 @@ struct nfs_rpc_ops {
 };
 
 /*
- * 	NFS_CALL(getattr, inode, (fattr));
+ *	NFS_CALL(getattr, inode, (fattr));
  * into
  *	NFS_PROTO(inode)->getattr(fattr);
  */

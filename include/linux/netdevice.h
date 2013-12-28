@@ -820,10 +820,10 @@ struct netdev_tc_txq {
  *			  struct nlattr *port[]);
  * int (*ndo_get_vf_port)(struct net_device *dev, int vf, struct sk_buff *skb);
  * int (*ndo_setup_tc)(struct net_device *dev, u8 tc)
- * 	Called to setup 'tc' number of traffic classes in the net device. This
- * 	is always called from the stack with the rtnl lock held and netif tx
- * 	queues stopped. This allows the netdevice to perform queue management
- * 	safely.
+ *	Called to setup 'tc' number of traffic classes in the net device. This
+ *	is always called from the stack with the rtnl lock held and netif tx
+ *	queues stopped. This allows the netdevice to perform queue management
+ *	safely.
  *
  *	Fiber Channel over Ethernet (FCoE) offload functions.
  * int (*ndo_fcoe_enable)(struct net_device *dev);
@@ -1004,7 +1004,7 @@ struct net_device {
 	/* device name hash chain */
 	struct hlist_node	name_hlist;
 	/* snmp alias */
-	char 			*ifalias;
+	char			*ifalias;
 
 	/*
 	 *	I/O specific fields
@@ -1092,7 +1092,7 @@ struct net_device {
 #define NETIF_F_V6_CSUM		(NETIF_F_GEN_CSUM | NETIF_F_IPV6_CSUM)
 #define NETIF_F_ALL_CSUM	(NETIF_F_V4_CSUM | NETIF_F_V6_CSUM)
 
-#define NETIF_F_ALL_TSO 	(NETIF_F_TSO | NETIF_F_TSO6 | NETIF_F_TSO_ECN)
+#define NETIF_F_ALL_TSO		(NETIF_F_TSO | NETIF_F_TSO6 | NETIF_F_TSO_ECN)
 
 #define NETIF_F_ALL_FCOE	(NETIF_F_FCOE_CRC | NETIF_F_FCOE_MTU | \
 				 NETIF_F_FSO)
@@ -1180,7 +1180,7 @@ struct net_device {
 #ifdef CONFIG_NET_DSA
 	void			*dsa_ptr;	/* dsa specific data */
 #endif
-	void 			*atalk_ptr;	/* AppleTalk link 	*/
+	void			*atalk_ptr;	/* AppleTalk link	*/
 	struct in_device __rcu	*ip_ptr;	/* IPv4 specific data	*/
 	struct dn_dev __rcu     *dn_ptr;        /* DECnet specific data */
 	struct inet6_dev __rcu	*ip6_ptr;       /* IPv6 specific data */
@@ -1603,7 +1603,7 @@ static inline struct net_device *first_net_device_rcu(struct net *net)
 	return lh == &net->dev_base_head ? NULL : net_device_entry(lh);
 }
 
-extern int 			netdev_boot_setup_check(struct net_device *dev);
+extern int			netdev_boot_setup_check(struct net_device *dev);
 extern unsigned long		netdev_boot_base(const char *prefix, int unit);
 extern struct net_device *dev_getbyhwaddr_rcu(struct net *net, unsigned short type,
 					      const char *hwaddr);
@@ -1632,10 +1632,10 @@ static inline void unregister_netdevice(struct net_device *dev)
 	unregister_netdevice_queue(dev, NULL);
 }
 
-extern int 		netdev_refcnt_read(const struct net_device *dev);
+extern int		netdev_refcnt_read(const struct net_device *dev);
 extern void		free_netdev(struct net_device *dev);
 extern void		synchronize_net(void);
-extern int 		register_netdevice_notifier(struct notifier_block *nb);
+extern int		register_netdevice_notifier(struct notifier_block *nb);
 extern int		unregister_netdevice_notifier(struct notifier_block *nb);
 extern int		init_dummy_netdev(struct net_device *dev);
 extern void		netdev_resync_ops(struct net_device *dev);
@@ -2687,7 +2687,7 @@ do {								\
 /* netif printk helpers, similar to netdev_printk */
 
 #define netif_printk(priv, type, level, dev, fmt, args...)	\
-do {					  			\
+do {								\
 	if (netif_msg_##type(priv))				\
 		netdev_printk(level, (dev), fmt, ##args);	\
 } while (0)

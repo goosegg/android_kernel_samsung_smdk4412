@@ -1665,4 +1665,3 @@ struct ld9040_panel_data u1_panel_data_a2 = {
 	.gamma22_table = psm2_a2_22Gamma_set,
 	.lcdtype = LCDTYPE_SM2_A2,
 };
-

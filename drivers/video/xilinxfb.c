@@ -135,7 +135,7 @@ struct xilinxfb_drvdata {
 	dma_addr_t	fb_phys;	/* phys. address of the frame buffer */
 	int		fb_alloced;	/* Flag, was the fb memory alloced? */
 
-	u8 		flags;		/* features of the driver */
+	u8		flags;		/* features of the driver */
 
 	u32		reg_ctrl_default;
 

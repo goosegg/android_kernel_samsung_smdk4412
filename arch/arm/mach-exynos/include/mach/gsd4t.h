@@ -24,5 +24,3 @@ struct gsd4t_platform_data {
 };
 
 #endif /* _GSD4T_H */
-
-

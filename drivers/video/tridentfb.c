@@ -1409,7 +1409,7 @@ static int __devinit trident_pci_probe(struct pci_dev *dev,
 		default_par->fill_rect = image_fill_rect;
 		default_par->copy_rect = image_copy_rect;
 		tridentfb_fix.accel = FB_ACCEL_TRIDENT_3DIMAGE;
-	} else { 				/* TGUI 9440/96XX family */
+	} else {				/* TGUI 9440/96XX family */
 		default_par->init_accel = tgui_init_accel;
 		default_par->wait_engine = xp_wait_engine;
 		default_par->fill_rect = tgui_fill_rect;
@@ -1657,4 +1657,3 @@ MODULE_AUTHOR("Jani Monoses <jani@iv.ro>");
 MODULE_DESCRIPTION("Framebuffer driver for Trident cards");
 MODULE_LICENSE("GPL");
 MODULE_ALIAS("cyblafb");
-

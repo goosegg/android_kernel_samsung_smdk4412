@@ -82,7 +82,7 @@ enum mem_cgroup_stat_index {
 	/*
 	 * For MEM_CONTAINER_TYPE_ALL, usage = pagecache + rss.
 	 */
-	MEM_CGROUP_STAT_CACHE, 	   /* # of pages charged as cache */
+	MEM_CGROUP_STAT_CACHE,	   /* # of pages charged as cache */
 	MEM_CGROUP_STAT_RSS,	   /* # of pages charged as anon rss */
 	MEM_CGROUP_STAT_FILE_MAPPED,  /* # of pages charged as file rss */
 	MEM_CGROUP_STAT_SWAPOUT, /* # of pages, swapped out */
@@ -272,7 +272,7 @@ struct mem_cgroup {
 	 * Should we move charges of a task when a task is moved into this
 	 * mem_cgroup ? And what type of charges should we move ?
 	 */
-	unsigned long 	move_charge_at_immigrate;
+	unsigned long	move_charge_at_immigrate;
 	/*
 	 * percpu counter.
 	 */
@@ -2122,7 +2122,7 @@ static void drain_all_stock_async(struct mem_cgroup *root_mem)
 		if (!test_and_set_bit(FLUSHING_CACHED_CHARGE, &stock->flags))
 			schedule_work_on(cpu, &stock->work);
 	}
- 	put_online_cpus();
+	put_online_cpus();
 	mutex_unlock(&percpu_charge_mutex);
 	/* We don't wait for flush_work */
 }
@@ -2498,7 +2498,7 @@ static void __mem_cgroup_commit_charge(struct mem_cgroup *mem,
 	 * is accessed after testing USED bit. To make pc->mem_cgroup visible
 	 * before USED bit, we need memory barrier here.
 	 * See mem_cgroup_add_lru_list(), etc.
- 	 */
+	 */
 	smp_wmb();
 	switch (ctype) {
 	case MEM_CGROUP_CHARGE_TYPE_CACHE:
@@ -2746,7 +2746,7 @@ int mem_cgroup_newpage_charge(struct page *page,
 	 * But page->mapping may have out-of-use anon_vma pointer,
 	 * detecit it by PageAnon() check. newly-mapped-anon's page->mapping
 	 * is NULL.
-  	 */
+	 */
 	if (page_mapped(page) || (page->mapping && !PageAnon(page)))
 		return 0;
 	if (unlikely(!mm))
@@ -3574,7 +3574,7 @@ static int mem_cgroup_resize_limit(struct mem_cgroup *memcg,
 						NULL);
 		curusage = res_counter_read_u64(&memcg->res, RES_USAGE);
 		/* Usage is reduced ? */
-  		if (curusage >= oldusage)
+		if (curusage >= oldusage)
 			retry_count--;
 		else
 			oldusage = curusage;
@@ -3595,7 +3595,7 @@ static int mem_cgroup_resize_memsw_limit(struct mem_cgroup *memcg,
 	int enlarge = 0;
 
 	/* see mem_cgroup_resize_res_limit */
- 	retry_count = children * MEM_CGROUP_RECLAIM_RETRIES;
+	retry_count = children * MEM_CGROUP_RECLAIM_RETRIES;
 	oldusage = res_counter_read_u64(&memcg->memsw, RES_USAGE);
 	while (retry_count) {
 		if (signal_pending(current)) {

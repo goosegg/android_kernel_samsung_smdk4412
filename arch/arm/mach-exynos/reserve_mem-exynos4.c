@@ -153,4 +153,3 @@ struct s5p_media_device media_devs[] = {
 };
 
 int nr_media_devs = (sizeof(media_devs) / sizeof(media_devs[0]));
-

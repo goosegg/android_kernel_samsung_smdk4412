@@ -47,10 +47,10 @@
 #define AD1836_ADC_HIGHPASS_FILTER     8
 
 #define AD1836_ADC_CTRL2               13
-#define AD1836_ADCL1_MUTE 		0
-#define AD1836_ADCR1_MUTE 		1
-#define AD1836_ADCL2_MUTE 		2
-#define AD1836_ADCR2_MUTE 		3
+#define AD1836_ADCL1_MUTE		0
+#define AD1836_ADCR1_MUTE		1
+#define AD1836_ADCL2_MUTE		2
+#define AD1836_ADCR2_MUTE		3
 #define AD1836_ADC_WORD_LEN_MASK       0x30
 #define AD1836_ADC_WORD_OFFSET         5
 #define AD1836_ADC_SERFMT_MASK	       (7 << 6)

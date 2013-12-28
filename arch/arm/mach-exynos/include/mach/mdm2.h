@@ -49,4 +49,3 @@ struct mdm_hsic_pm_platform_data {
 };
 
 #endif
-

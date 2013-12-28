@@ -502,7 +502,7 @@ struct task_cputime {
  * struct thread_group_cputimer - thread group interval timer counts
  * @cputime:		thread group interval timers.
  * @running:		non-zero when there are timers running and
- * 			@cputime receives updates.
+ *			@cputime receives updates.
  * @lock:		lock for fields in this struct.
  *
  * This structure contains the version of task_cputime, above, that is
@@ -1317,9 +1317,9 @@ struct task_struct {
 	unsigned long stack_canary;
 #endif
 
-	/* 
+	/*
 	 * pointers to (original) parent process, youngest child, younger sibling,
-	 * older sibling, respectively.  (p->father can be replaced with 
+	 * older sibling, respectively.  (p->father can be replaced with
 	 * p->real_parent->pid)
 	 */
 	struct task_struct *real_parent; /* real parent process */
@@ -1353,7 +1353,7 @@ struct task_struct {
 	cputime_t prev_utime, prev_stime;
 #endif
 	unsigned long nvcsw, nivcsw; /* context switch counts */
-	struct timespec start_time; 		/* monotonic time */
+	struct timespec start_time;		/* monotonic time */
 	struct timespec real_start_time;	/* boot based time */
 /* mm fault and swap info: this can arguably be seen as either mm-specific or thread-specific */
 	unsigned long min_flt, maj_flt;
@@ -1411,8 +1411,8 @@ struct task_struct {
 	seccomp_t seccomp;
 
 /* Thread group tracking */
-   	u32 parent_exec_id;
-   	u32 self_exec_id;
+	u32 parent_exec_id;
+	u32 self_exec_id;
 /* Protection of (de-)allocation: mm, files, fs, tty, keyrings, mems_allowed,
  * mempolicy */
 	spinlock_t alloc_lock;
@@ -2143,7 +2143,7 @@ static inline int dequeue_signal_lock(struct task_struct *tsk, sigset_t *mask, s
 	spin_unlock_irqrestore(&tsk->sighand->siglock, flags);
 
 	return ret;
-}	
+}
 
 extern void block_all_signals(int (*notifier)(void *priv), void *priv,
 			      sigset_t *mask);
@@ -2414,7 +2414,7 @@ static inline unsigned long stack_not_used(struct task_struct *p)
 {
 	unsigned long *n = end_of_stack(p);
 
-	do { 	/* Skip over canary */
+	do {	/* Skip over canary */
 		n++;
 	} while (!*n);
 

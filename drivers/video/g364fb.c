@@ -6,7 +6,7 @@
  *
  *  This driver is based on tgafb.c
  *
- *	Copyright (C) 1997 Geert Uytterhoeven 
+ *	Copyright (C) 1997 Geert Uytterhoeven
  *	Copyright (C) 1995  Jay Estabrook
  *
  *  This file is subject to the terms and conditions of the GNU General Public
@@ -28,19 +28,19 @@
 #include <asm/io.h>
 #include <asm/jazz.h>
 
-/* 
+/*
  * Various defines for the G364
  */
 #define G364_MEM_BASE   0xe4400000
 #define G364_PORT_BASE  0xe4000000
-#define ID_REG 		0xe4000000	/* Read only */
-#define BOOT_REG 	0xe4080000
-#define TIMING_REG 	0xe4080108	/* to 0x080170 - DON'T TOUCH! */
-#define DISPLAY_REG 	0xe4080118
-#define VDISPLAY_REG 	0xe4080150
-#define MASK_REG 	0xe4080200
-#define CTLA_REG 	0xe4080300
-#define CURS_TOGGLE 	0x800000
+#define ID_REG		0xe4000000	/* Read only */
+#define BOOT_REG	0xe4080000
+#define TIMING_REG	0xe4080108	/* to 0x080170 - DON'T TOUCH! */
+#define DISPLAY_REG	0xe4080118
+#define VDISPLAY_REG	0xe4080150
+#define MASK_REG	0xe4080200
+#define CTLA_REG	0xe4080300
+#define CURS_TOGGLE	0x800000
 #define BIT_PER_PIX	0x700000	/* bits 22 to 20 of Control A */
 #define DELAY_SAMPLE    0x080000
 #define PORT_INTER	0x040000
@@ -60,42 +60,42 @@
 #define INTL_STAND	0x000004
 #define SCRN_FORM	0x000002
 #define ENABLE_VTG	0x000001
-#define TOP_REG 	0xe4080400
-#define CURS_PAL_REG 	0xe4080508	/* to 0x080518 */
-#define CHKSUM_REG 	0xe4080600	/* to 0x080610 - unused */
-#define CURS_POS_REG 	0xe4080638
-#define CLR_PAL_REG 	0xe4080800	/* to 0x080ff8 */
-#define CURS_PAT_REG 	0xe4081000	/* to 0x081ff8 */
-#define MON_ID_REG 	0xe4100000	/* unused */
-#define RESET_REG 	0xe4180000	/* Write only */
+#define TOP_REG		0xe4080400
+#define CURS_PAL_REG	0xe4080508	/* to 0x080518 */
+#define CHKSUM_REG	0xe4080600	/* to 0x080610 - unused */
+#define CURS_POS_REG	0xe4080638
+#define CLR_PAL_REG	0xe4080800	/* to 0x080ff8 */
+#define CURS_PAT_REG	0xe4081000	/* to 0x081ff8 */
+#define MON_ID_REG	0xe4100000	/* unused */
+#define RESET_REG	0xe4180000	/* Write only */
 
 static struct fb_info fb_info;
 
 static struct fb_fix_screeninfo fb_fix __initdata = {
-	.id 		= "G364 8plane",
-	.smem_start 	= 0x40000000,	/* physical address */
-	.type 		= FB_TYPE_PACKED_PIXELS,
-	.visual 	= FB_VISUAL_PSEUDOCOLOR,
-	.ypanstep 	= 1,
-	.accel 		= FB_ACCEL_NONE,
+	.id		= "G364 8plane",
+	.smem_start	= 0x40000000,	/* physical address */
+	.type		= FB_TYPE_PACKED_PIXELS,
+	.visual		= FB_VISUAL_PSEUDOCOLOR,
+	.ypanstep	= 1,
+	.accel		= FB_ACCEL_NONE,
 };
 
 static struct fb_var_screeninfo fb_var __initdata = {
 	.bits_per_pixel = 8,
-	.red 		= { 0, 8, 0 },
-      	.green 		= { 0, 8, 0 },
-      	.blue		= { 0, 8, 0 },
-      	.activate	= FB_ACTIVATE_NOW,
-      	.height		= -1,
-      	.width		= -1,
-      	.pixclock	= 39722,
-      	.left_margin	= 40,
-      	.right_margin	= 24,
-      	.upper_margin	= 32,
-      	.lower_margin	= 11,
-      	.hsync_len 	= 96,
-      	.vsync_len 	= 2,
-      	.vmode		= FB_VMODE_NONINTERLACED,
+	.red		= { 0, 8, 0 },
+	.green		= { 0, 8, 0 },
+	.blue		= { 0, 8, 0 },
+	.activate	= FB_ACTIVATE_NOW,
+	.height		= -1,
+	.width		= -1,
+	.pixclock	= 39722,
+	.left_margin	= 40,
+	.right_margin	= 24,
+	.upper_margin	= 32,
+	.lower_margin	= 11,
+	.hsync_len	= 96,
+	.vsync_len	= 2,
+	.vmode		= FB_VMODE_NONINTERLACED,
 };
 
 /*
@@ -124,7 +124,7 @@ static struct fb_ops g364fb_ops = {
 
 int g364fb_cursor(struct fb_info *info, struct fb_cursor *cursor)
 {
-	
+
 	switch (cursor->enable) {
 	case CM_ERASE:
 		*(unsigned int *) CTLA_REG |= CURS_TOGGLE;
@@ -146,7 +146,7 @@ int g364fb_cursor(struct fb_info *info, struct fb_cursor *cursor)
  *
  *  This call looks only at xoffset, yoffset and the FB_VMODE_YWRAP flag
  */
-static int g364fb_pan_display(struct fb_var_screeninfo *var, 
+static int g364fb_pan_display(struct fb_var_screeninfo *var,
 			      struct fb_info *info)
 {
 	if (var->xoffset || var->yoffset + var->yres > var->yres_virtual)

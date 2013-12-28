@@ -616,4 +616,3 @@ static void __exit lcdfreq_exit(void)
 	platform_driver_unregister(&lcdfreq_driver);
 }
 module_exit(lcdfreq_exit);
-

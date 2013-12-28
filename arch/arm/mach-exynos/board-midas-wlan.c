@@ -196,7 +196,7 @@ static int brcm_wlan_set_carddetect(int onoff)
 
 	udelay(200);
 
-#ifdef CONFIG_MACH_KONA 
+#ifdef CONFIG_MACH_KONA
 	mmc_force_presence_change_onoff(&s3c_device_hsmmc3, onoff);
 	/*temporal code for Kona-Wi-Fi*/
 #else

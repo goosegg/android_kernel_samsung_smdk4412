@@ -143,7 +143,7 @@ static unsigned int DbgLevel; /* DBG_INT|DBG_MODULE|DBG_SUSP|DBG_WAKEUP */
 
 #define EGALAX_DBG(level, fmt, args...) { if ((level&DbgLevel) > 0) \
 			printk(KERN_INFO "[egalax_i2c]: " fmt, ## args); }
-#define IDLE_INTERVAL HZ/20 	/* 50ms */
+#define IDLE_INTERVAL HZ/20	/* 50ms */
 
 static int sendLoopback(struct i2c_client *client)
 {

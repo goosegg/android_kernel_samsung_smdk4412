@@ -63,4 +63,3 @@ extern void s5p_vfree(unsigned int cookie);
 #endif
 
 #endif /* __JPEG_MEM_H__ */
-
