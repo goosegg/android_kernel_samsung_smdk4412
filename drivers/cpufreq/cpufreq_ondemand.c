@@ -34,7 +34,7 @@ u64 freq_boosted_time;
 
 #define DEF_FREQUENCY_DOWN_DIFFERENTIAL		(10)
 #define DEF_FREQUENCY_UP_THRESHOLD		(80)
-#define DEF_SAMPLING_DOWN_FACTOR		(2)
+#define DEF_SAMPLING_DOWN_FACTOR		(1)
 #define MAX_SAMPLING_DOWN_FACTOR		(100000)
 
 #if defined(CONFIG_MACH_SLP_PQ)
@@ -510,7 +510,7 @@ static ssize_t store_powersave_bias(struct kobject *a, struct attribute *b,
 }
 
 #include <linux/store_boostpulse.h>
- 
+
 static ssize_t store_down_differential(struct kobject *a, struct attribute *b,
 				   const char *buf, size_t count)
 {
@@ -607,7 +607,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 
 	this_dbs_info->freq_lo = 0;
 	policy = this_dbs_info->cur_policy;
-	
+
 
 	/* Only core0 controls the boost */
     if (dbs_tuners_ins.boosted && policy->cpu == 0) {
@@ -772,7 +772,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 		freq_next = max_load_freq /
 				(dbs_tuners_ins.up_threshold -
 				 dbs_tuners_ins.down_differential);
-			 
+
 		if (dbs_tuners_ins.boosted &&
           freq_next < boostfreq) {
         freq_next = boostfreq;

@@ -1079,7 +1079,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 	int up_threshold = dbs_tuners_ins.up_threshold;
 
 	policy = this_dbs_info->cur_policy;
-	
+
 
 	/* Only core0 controls the boost */
     if (dbs_tuners_ins.boosted && policy->cpu == 0) {
@@ -1219,7 +1219,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 		freq_next = max_load_freq /
 			(dbs_tuners_ins.up_threshold -
 			 dbs_tuners_ins.down_differential);
-			  
+
 		if (dbs_tuners_ins.boosted &&
           freq_next < boostfreq) {
         freq_next = boostfreq;

@@ -716,7 +716,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
       boostfreq = dbs_tuners_ins.boostfreq;
      else
       boostfreq = policy->max;
- 
+
 	/*
 	 * Every sampling_rate, we check, if current idle time is less
 	 * than 20% (default), then we try to increase frequency
@@ -825,7 +825,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
        dbs_tuners_ins.boostfreq = policy->cur;
        return;
      }
- 
+
 	/* Check for frequency decrease */
 #ifndef CONFIG_ARCH_EXYNOS4
 	/* if we cannot reduce the frequency anymore, break out early */
@@ -851,7 +851,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
            freq_next < boostfreq) {
          freq_next = boostfreq;
        }
- 
+
 		/* No longer fully busy, reset rate_mult */
 		this_dbs_info->rate_mult = 1;
 
@@ -1140,7 +1140,7 @@ MODULE_AUTHOR("Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>");
 MODULE_AUTHOR("Alexey Starikovskiy <alexey.y.starikovskiy@intel.com>");
 MODULE_AUTHOR("Dorimanx <yuri@bynet.co.il>");
 MODULE_DESCRIPTION("'cpufreq_HYPER' - A dynamic cpufreq governor for "
-	"Low Latency Frequency Transition capable processors" 
+	"Low Latency Frequency Transition capable processors"
 "Module include, IOWAIT,FREQ-TUNERS,EARLY-SUSPEND,SUSPEND-FREQ");
 MODULE_LICENSE("GPL");
 

@@ -3192,7 +3192,7 @@ static int __init cpufreq_gov_dbs_init(void) // ZZ: added idle exit time handlin
     int cpu = get_cpu();
     unsigned int i;
     struct cpu_dbs_info_s *this_dbs_info;
-    
+
     idle_time = get_cpu_idle_time_us(cpu, NULL);
     put_cpu();
     if (idle_time != -1ULL) {
