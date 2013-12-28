@@ -24,10 +24,13 @@
 #include <linux/tick.h>
 #include <linux/ktime.h>
 #include <linux/sched.h>
+#include <linux/boostpulse.h>
 
 #include <linux/input.h>
 #include <linux/workqueue.h>
 #include <linux/slab.h>
+
+extern int freq_boosted_time;
 
 /* if kernel support suspend freq changes then disble GOV ability to change suspend freq */
 //#define SUSPEND_FREQ_ON
@@ -141,6 +144,9 @@ static struct dbs_tuners {
 	unsigned int powersave_bias;
 	unsigned int io_is_busy;
 	unsigned int freq_step;
+	unsigned int boosted;
+	unsigned int freq_boost_time;
+	unsigned int boostfreq;
 	unsigned int freq_responsiveness;
 	unsigned int suspend_freq;
 #ifdef CONFIG_HAS_EARLYSUSPEND
@@ -159,6 +165,9 @@ static struct dbs_tuners {
 	.ignore_nice = 0,
 	.powersave_bias = 0,
 	.freq_step = FREQ_STEP,
+	.boosted = 1,
+	.freq_boost_time = 500000,
+	.boostfreq = 800000,
 	.freq_responsiveness = FREQ_FOR_RESPONSIVENESS,
 #ifdef CONFIG_HAS_EARLYSUSPEND
 #ifdef SUSPEND_FREQ_ON
@@ -349,6 +358,9 @@ show_one(ignore_nice_load, ignore_nice);
 show_one(powersave_bias, powersave_bias);
 show_one(down_differential, down_differential);
 show_one(freq_step, freq_step);
+show_one(boostpulse, boosted);
+show_one(boosttime, freq_boost_time);
+show_one(boostfreq, boostfreq);
 show_one(freq_responsiveness, freq_responsiveness);
 #ifdef CONFIG_HAS_EARLYSUSPEND
 #ifdef SUSPEND_FREQ_ON
@@ -500,6 +512,8 @@ static ssize_t store_powersave_bias(struct kobject *a, struct attribute *b,
 	return count;
 }
 
+#include <linux/store_boostpulse.h>
+
 static ssize_t store_down_differential(struct kobject *a, struct attribute *b,
 				   const char *buf, size_t count)
 {
@@ -620,6 +634,9 @@ define_one_global_rw(ignore_nice_load);
 define_one_global_rw(powersave_bias);
 define_one_global_rw(down_differential);
 define_one_global_rw(freq_step);
+define_one_global_rw(boostpulse);
+define_one_global_rw(boosttime);
+define_one_global_rw(boostfreq);
 define_one_global_rw(freq_responsiveness);
 #ifdef CONFIG_HAS_EARLYSUSPEND
 #ifdef SUSPEND_FREQ_ON
@@ -641,6 +658,9 @@ static struct attribute *dbs_attributes[] = {
 	&io_is_busy.attr,
 	&down_differential.attr,
 	&freq_step.attr,
+	&boostpulse.attr,
+	&boosttime.attr,
+	&boostfreq.attr,
 	&freq_responsiveness.attr,
 #ifdef CONFIG_HAS_EARLYSUSPEND
 #ifdef SUSPEND_FREQ_ON
@@ -680,10 +700,23 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 	struct cpufreq_policy *policy;
 	unsigned int j;
 	int up_threshold = dbs_tuners_ins.up_threshold;
+	unsigned int boostfreq;
 
 	this_dbs_info->freq_lo = 0;
 	policy = this_dbs_info->cur_policy;
 
+	/* Only core0 controls the boost */
+     if (dbs_tuners_ins.boosted && policy->cpu == 0) {
+       if (ktime_to_us(ktime_get()) - freq_boosted_time_ondemand >=
+             dbs_tuners_ins.freq_boost_time) {
+         dbs_tuners_ins.boosted = 0;
+       }
+     }
+     if (dbs_tuners_ins.boostfreq != 0)
+      boostfreq = dbs_tuners_ins.boostfreq;
+     else
+      boostfreq = policy->max;
+ 
 	/*
 	 * Every sampling_rate, we check, if current idle time is less
 	 * than 20% (default), then we try to increase frequency
@@ -786,6 +819,13 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 		return;
 	}
 
+	/* check for frequency boost */
+     if (dbs_tuners_ins.boosted && policy->cur < boostfreq) {
+       dbs_freq_increase(policy, boostfreq);
+       dbs_tuners_ins.boostfreq = policy->cur;
+       return;
+     }
+ 
 	/* Check for frequency decrease */
 #ifndef CONFIG_ARCH_EXYNOS4
 	/* if we cannot reduce the frequency anymore, break out early */
@@ -807,6 +847,11 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 				(dbs_tuners_ins.up_threshold -
 				 dbs_tuners_ins.down_differential);
 
+		if (dbs_tuners_ins.boosted &&
+           freq_next < boostfreq) {
+         freq_next = boostfreq;
+       }
+ 
 		/* No longer fully busy, reset rate_mult */
 		this_dbs_info->rate_mult = 1;
 
