@@ -31,4 +31,3 @@ if [ "$2" ]; then
 fi
 
 echo ${navigationbar}
-

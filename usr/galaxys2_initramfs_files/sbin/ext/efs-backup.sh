@@ -12,4 +12,3 @@ then
     /sbin/busybox cp /data/.siyah/efs* /storage/sdcard1
   ) &
 fi
-

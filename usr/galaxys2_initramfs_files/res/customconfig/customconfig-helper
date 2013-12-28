@@ -136,7 +136,7 @@ if [ ! -f $CONFIG_XML ]; then
   mount -o remount,ro /
 fi
 
-if [ ! -f $PROFILE_PATH/$LAST_SELECTED ];then 
+if [ ! -f $PROFILE_PATH/$LAST_SELECTED ];then
   echo default > $PROFILE_PATH/$LAST_SELECTED
   chmod 777 $PROFILE_PATH/$LAST_SELECTED
 fi

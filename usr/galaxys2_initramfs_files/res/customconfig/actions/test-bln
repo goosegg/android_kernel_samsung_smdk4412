@@ -7,4 +7,3 @@ echo 1 > /sys/class/misc/notification/led
 fi
 )&
 echo Turn off the screen to test BLN.
-

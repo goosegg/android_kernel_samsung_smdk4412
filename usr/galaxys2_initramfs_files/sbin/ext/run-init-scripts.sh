@@ -16,4 +16,3 @@ fi;
 if [ -f /data/local/customboot.sh ]; then
   /system/bin/sh /data/local/customboot.sh
 fi;
-
