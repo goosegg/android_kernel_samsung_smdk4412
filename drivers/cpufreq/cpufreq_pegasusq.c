@@ -37,7 +37,7 @@
 #endif
 #define EARLYSUSPEND_HOTPLUGLOCK 1
 
-#define BOOST_CONTROL 2
+extern int freq_boosted_time;
 
 /*
  * runqueue average
@@ -1083,7 +1083,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 
 	/* Only core0 controls the boost */
     if (dbs_tuners_ins.boosted && policy->cpu == 0) {
-      if (ktime_to_us(ktime_get()) - freq_boosted_time_pegasusq >=
+      if (ktime_to_us(ktime_get()) - freq_boosted_time >=
             dbs_tuners_ins.freq_boost_time) {
         dbs_tuners_ins.boosted = 0;
       }

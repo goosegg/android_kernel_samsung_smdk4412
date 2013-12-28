@@ -25,7 +25,8 @@
 #include <linux/pm_qos_params.h>
 #include <linux/boostpulse.h>
 
-#define BOOST_CONTROL 1
+u64 freq_boosted_time;
+
 /*
  * dbs is used in this file as a shortform for demandbased switching
  * It helps to keep variable names smaller, simpler
@@ -610,7 +611,7 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 
 	/* Only core0 controls the boost */
     if (dbs_tuners_ins.boosted && policy->cpu == 0) {
-      if (ktime_to_us(ktime_get()) - freq_boosted_time_ondemand >=
+      if (ktime_to_us(ktime_get()) - freq_boosted_time >=
             dbs_tuners_ins.freq_boost_time) {
         dbs_tuners_ins.boosted = 0;
       }
