@@ -3,6 +3,7 @@
 #define BOOSTPULSE_ONDEMAND "/sys/devices/system/cpu/cpufreq/ondemand/boostpulse"
 #define BOOSTPULSE_PEGASUSQ "/sys/devices/system/cpu/cpufreq/pegasusq/boostpulse"
 #define BOOSTPULSE_HYPER "/sys/devices/system/cpu/cpufreq/HYPER/boostpulse"
+#define BOOSTPULSE_NEOX "/sys/devices/system/cpu/cpufreq/NeoX/boostpulse"
 
 static struct boost_exynos4 {
   int boostpulse_fd;
@@ -64,6 +65,21 @@ inline void touchboost_HYPER(void)
     if (len < 0)
     {
       pr_info("HYPER governor is not active, can't open %s\n", BOOSTPULSE_HYPER);                        
+    }
+  }
+}
+
+inline void touchboost_NEOX(void)
+{
+  int len;
+
+  if (boostpulse_open() >= 0)
+  {
+    len = sys_write(boost.boostpulse_fd, "1", sizeof(BOOSTPULSE_NEOX));
+                        
+    if (len < 0)
+    {
+      pr_info("NEOX governor is not active, can't open %s\n", BOOSTPULSE_NEOX);                        
     }
   }
 }
