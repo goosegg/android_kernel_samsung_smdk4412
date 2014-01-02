@@ -88,5 +88,9 @@ setprop net.dns2 8.8.4.4
 # make sure dynamic fsync is active
 echo "1" > /sys/kernel/dyn_fsync/Dyn_fsync_active
 
+sysctl -w vm.dirty_background_ratio=10;
+sysctl -w vm.dirty_ratio=20;
+sysctl -w vm.swappiness=100;
+
 ##### init scripts #####
 /system/bin/sh sh /sbin/ext/run-init-scripts.sh
