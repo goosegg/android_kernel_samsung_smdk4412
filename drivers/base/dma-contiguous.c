@@ -221,6 +221,13 @@ static int __init cma_init_reserved_areas(void)
 }
 core_initcall(cma_init_reserved_areas);
 
+phys_addr_t cma_get_base(struct device *dev)
+{
+  struct cma *cma = dev_get_cma_area(dev);
+
+  return cma->base_pfn << PAGE_SHIFT;
+}
+
 /**
  * dma_declare_contiguous() - reserve area for contiguous memory handling
  *			      for particular device
