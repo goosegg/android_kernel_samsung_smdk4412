@@ -20,6 +20,8 @@ static inline int boostpulse_open(void)
     {boost.boostpulse_fd = sys_open(BOOSTPULSE_PEGASUSQ, O_WRONLY, 0);}
     if (boost.boostpulse_fd < 0)
     {boost.boostpulse_fd = sys_open(BOOSTPULSE_HYPER, O_WRONLY, 0);}
+    if (boost.boostpulse_fd < 0)
+    {boost.boostpulse_fd = sys_open(BOOSTPULSE_NEOX, O_WRONLY, 0);}
   }
  return boost.boostpulse_fd;
 }
